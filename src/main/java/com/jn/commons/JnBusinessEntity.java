@@ -1,13 +1,67 @@
 package com.jn.commons;
 
 import com.ccp.decorators.CcpMapDecorator;
+import com.ccp.decorators.CcpStringDecorator;
+import com.ccp.decorators.CcpTimeDecorator;
 import com.ccp.dependency.injection.CcpEspecification;
 import com.ccp.especifications.db.crud.CcpDbCrud;
 
 public enum JnBusinessEntity {
-	professional_alias
-	, recruiter
-	, restriction_to_view_resume
+	professional_alias {
+		@Override
+		String getId(CcpMapDecorator data) {
+			String professional = data.getAsString("professional");
+			String hash = new CcpStringDecorator(professional).hash().asString("SHA1");
+			return hash;
+		}
+	}
+	, professional {
+		@Override
+		String getId(CcpMapDecorator data) {
+			String professional = data.getAsString("id");
+			return professional;
+		}
+	}
+	, recruiter {
+		@Override
+		String getId(CcpMapDecorator data) {
+			String professional = data.getAsString("id");
+			return professional;
+		}
+	}
+	, restriction_to_view_resume {
+		@Override
+		String getId(CcpMapDecorator data) {
+			String professional = data.getAsString("professional");
+			String domain = data.getAsString("domain");
+			return professional + "_" + domain;
+		}
+	}
+	, cache_view_resume {
+		@Override
+		String getId(CcpMapDecorator data) {
+			String professional = data.getAsString("professional");
+			String recruiter = data.getAsString("recruiter");
+			return professional + "_" + recruiter;
+		}
+	}
+	, duplicated_view_resume {
+		@Override
+		String getId(CcpMapDecorator data) {
+			String professional = data.getAsString("professional");
+			String recruiter = data.getAsString("recruiter");
+			return professional + "_" + recruiter;
+		}
+	}
+	, view_resume {
+		@Override
+		String getId(CcpMapDecorator data) {
+			String recruiter = data.getAsString("recruiter");
+			String professional = data.getAsString("professional");
+			String currentDate = new CcpTimeDecorator().getFormattedCurrentDateTime("ddMMyyyy");
+			return professional + "_" + recruiter + "_" + currentDate;
+		}
+	}
 	;
 	@CcpEspecification
 	CcpDbCrud crud;
@@ -17,9 +71,19 @@ public enum JnBusinessEntity {
 		return oneById;
 	}
 
-	public boolean exists(String id) {
-		return this.crud.exists(id, this.name());
+	public boolean exists(CcpMapDecorator data) {
+		String id = this.getId(data);
+		boolean exists = this.crud.exists(id, this.name());
+		return exists;
 	}
+	
+	public boolean save(CcpMapDecorator data) {
+		String id = this.getId(data);
+		boolean updated = this.crud.updateOrSave(data, id, this.name());
+		return updated;
+	}
+	
+	abstract String getId(CcpMapDecorator data);
 	
 }
 
