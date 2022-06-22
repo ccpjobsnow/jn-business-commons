@@ -1,5 +1,8 @@
 package com.jn.commons;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.decorators.CcpTimeDecorator;
@@ -20,6 +23,12 @@ public enum JnBusinessEntity {
 		String getId(CcpMapDecorator data) {
 			String professional = data.getAsString("id");
 			return professional;
+		}
+		
+		@Override
+		public Set<String> getSynonyms(Set<String> wordsToAnalyze) {
+			Set<String> synonyms = this.crud.getSynonyms(wordsToAnalyze, this.name(), "Synonyms_words", "Synonyms_phrases");
+			return synonyms;
 		}
 	}
 	, recruiter {
@@ -62,6 +71,16 @@ public enum JnBusinessEntity {
 			return professional + "_" + recruiter + "_" + currentDate;
 		}
 	}
+
+	, keyword_synonym {
+
+		@Override
+		String getId(CcpMapDecorator data) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+	}
 	;
 	@CcpEspecification
 	CcpDbCrud crud;
@@ -85,5 +104,8 @@ public enum JnBusinessEntity {
 	
 	abstract String getId(CcpMapDecorator data);
 	
+	public Set<String> getSynonyms(Set<String> wordsToAnalyze){
+		return new HashSet<>();
+	}
 }
 
