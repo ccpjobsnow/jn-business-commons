@@ -1,27 +1,58 @@
-Sou um sucesso? (recomendações)
-Quem me viu?
-Minhas vagas (comentários, recomendações)
-$$ com seu CV [Meus Dados] (Exclusão, Inativação)
+[D][4]Sou um sucesso? (recomendações)
+[G][2]Quem me viu?
+[G][3]Minhas vagas (comentários, recomendações)
+[G][1]$$ com seu CV [Meus Dados] (Exclusão, Inativação)
+===============================================P
+[G][2]Minhas Vagas (recomendações, quiz)
+[G][3]Meus Cvs(comentários, recomendações)
+[G][1]Buscar curriculos (Histórico)
+[D][4]Busca premium (Histórico)
+===============================================R
+[G][1]Indique e ganhe
+[D][4]Vc, nosso sócio?
+[D][3]Seu negócio 
+[G][1]Conheça-nos
+===============================================F
+[G][1]Status(Mudar modo)
+[G][1](*)E-mail
+[D][3](*)Saldo
+[G][2](*)Chamados
+[G][1](*)Trocar de senha
+[G][1](*)Sair(Histórico de Logins)
+[G][4]Alterar Idioma
+===============================================N
+[G][2]Dados interessantes(Gráficos) 
+[D][3]Nossas Recompensas 
+[D][3]Tarifas
+[G][2]Quanto paga? (Termos pesquisados, cursos)
+===============================================T
+1=N(DADOS DO USUÁRIO);P(CURRICULO);R(BUSCACV)
+2=F(LOTE DE CURRÍCULOS);N(CHAMADOS);P(VISUALIZAÇÕES)
+3=T(TERMOS PESQUISADOS);P(VAGAS)
 ===============================================
-Minhas Vagas (recomendações, quiz)
-Meus Cvs(comentários, recomendações)
-Buscar curriculos (Histórico)
-Busca premium (Histórico)
+4=R(VAGAS);N(SALDO)
+5=R(MEUS CVS);T(TARIFAS E RECOMPENSAS)
+6=R(BUSCA);P(REPUTAÇÃO)
+7=N(IDIOMA);F(CONHEÇA-NOS)
+8=F(PROPAGANDA)
+9=F(SOCIEDADE);T(GRÁFICOS)
 ===============================================
-Indique e ganhe
-Quanto paga?
-Vc, nosso sócio?
-Seu negócio 
-===============================================
-Status(Mudar modo)
-(*)E-mail
-(*)Saldo
-(*)Chamados
-(*)Trocar de senha
-(*)Sair(Histórico de Logins)
-Alterar Idioma
-===============================================
-Dados interessantes 
-Nossas Recompensas 
-Conheça-nos
-Tarifas
+A=40
+B=22
+C=23
+D=39
+E=27
+F=25
+G=23
+H=10
+I=7
+Z=12
+
+Estudos=4
+Fundo=27	
+Login=15
+Neutro=25
+Profissionais=28
+Recrutadores=69
+Scripts=8
+Topo=52
