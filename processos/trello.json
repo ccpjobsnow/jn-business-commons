@@ -1,0 +1,7157 @@
+{
+	"id": "62b246756cb00102c6093019",
+	"name": "JobsNowV2",
+	"desc": "",
+	"descData": null,
+	"closed": false,
+	"dateClosed": null,
+	"idOrganization": "5de58c5a12d19c7ac685b9ac",
+	"idEnterprise": null,
+	"limits": {
+		"attachments": {
+			"perBoard": {
+				"status": "ok",
+				"disableAt": 36000,
+				"warnAt": 28800
+			},
+			"perCard": {
+				"status": "ok",
+				"disableAt": 1000,
+				"warnAt": 800
+			}
+		},
+		"boards": {
+			"totalMembersPerBoard": {
+				"status": "ok",
+				"disableAt": 1600,
+				"warnAt": 1280
+			},
+			"totalAccessRequestsPerBoard": {
+				"status": "ok",
+				"disableAt": 4000,
+				"warnAt": 3200
+			}
+		},
+		"cards": {
+			"openPerBoard": {
+				"status": "ok",
+				"disableAt": 5000,
+				"warnAt": 4000
+			},
+			"openPerList": {
+				"status": "ok",
+				"disableAt": 5000,
+				"warnAt": 4000
+			},
+			"totalPerBoard": {
+				"status": "ok",
+				"disableAt": 2000000,
+				"warnAt": 1600000
+			},
+			"totalPerList": {
+				"status": "ok",
+				"disableAt": 1000000,
+				"warnAt": 800000
+			}
+		},
+		"checklists": {
+			"perBoard": {
+				"status": "ok",
+				"disableAt": 1800000,
+				"warnAt": 1440000
+			},
+			"perCard": {
+				"status": "ok",
+				"disableAt": 500,
+				"warnAt": 400
+			}
+		},
+		"checkItems": {
+			"perChecklist": {
+				"status": "ok",
+				"disableAt": 200,
+				"warnAt": 160
+			}
+		},
+		"customFields": {
+			"perBoard": {
+				"status": "ok",
+				"disableAt": 50,
+				"warnAt": 40
+			}
+		},
+		"customFieldOptions": {
+			"perField": {
+				"status": "ok",
+				"disableAt": 50,
+				"warnAt": 40
+			}
+		},
+		"labels": {
+			"perBoard": {
+				"status": "ok",
+				"disableAt": 1000,
+				"warnAt": 800
+			}
+		},
+		"lists": {
+			"openPerBoard": {
+				"status": "ok",
+				"disableAt": 500,
+				"warnAt": 400
+			},
+			"totalPerBoard": {
+				"status": "ok",
+				"disableAt": 3000,
+				"warnAt": 2400
+			}
+		},
+		"stickers": {
+			"perCard": {
+				"status": "ok",
+				"disableAt": 70,
+				"warnAt": 56
+			}
+		},
+		"reactions": {
+			"perAction": {
+				"status": "ok",
+				"disableAt": 900,
+				"warnAt": 720
+			},
+			"uniquePerAction": {
+				"status": "ok",
+				"disableAt": 17,
+				"warnAt": 14
+			}
+		}
+	},
+	"pinned": false,
+	"starred": false,
+	"url": "https://trello.com/b/Go2hCHII/jobsnowv2",
+	"prefs": {
+		"permissionLevel": "org",
+		"hideVotes": false,
+		"voting": "disabled",
+		"comments": "members",
+		"invitations": "members",
+		"selfJoin": true,
+		"cardCovers": true,
+		"isTemplate": false,
+		"cardAging": "regular",
+		"calendarFeedEnabled": false,
+		"hiddenPluginBoardButtons": [],
+		"switcherViews": [{
+			"_id": "62b246756cb00102c609301a",
+			"viewType": "Board",
+			"enabled": true
+		}, {
+			"_id": "62b246756cb00102c609301b",
+			"viewType": "Table",
+			"enabled": true
+		}, {
+			"_id": "62b246756cb00102c609301c",
+			"viewType": "Calendar",
+			"enabled": false
+		}, {
+			"_id": "62b246756cb00102c609301d",
+			"viewType": "Dashboard",
+			"enabled": false
+		}, {
+			"_id": "62b246756cb00102c609301e",
+			"viewType": "Timeline",
+			"enabled": false
+		}, {
+			"_id": "62b246756cb00102c609301f",
+			"viewType": "Map",
+			"enabled": false
+		}],
+		"background": "blue",
+		"backgroundColor": "#0079BF",
+		"backgroundImage": null,
+		"backgroundImageScaled": null,
+		"backgroundTile": false,
+		"backgroundBrightness": "dark",
+		"backgroundBottomColor": "#0079BF",
+		"backgroundTopColor": "#0079BF",
+		"canBePublic": false,
+		"canBeEnterprise": false,
+		"canBeOrg": false,
+		"canBePrivate": false,
+		"canInvite": true
+	},
+	"shortLink": "Go2hCHII",
+	"subscribed": false,
+	"labelNames": {
+		"green": "Login",
+		"yellow": "Dados e links de usuário",
+		"orange": "Profissionais",
+		"red": "",
+		"purple": "",
+		"blue": "",
+		"sky": "",
+		"lime": "",
+		"pink": "",
+		"black": "",
+		"green_dark": "",
+		"yellow_dark": "",
+		"orange_dark": "",
+		"red_dark": "",
+		"purple_dark": "",
+		"blue_dark": "",
+		"sky_dark": "",
+		"lime_dark": "",
+		"pink_dark": "",
+		"black_dark": "",
+		"green_light": "",
+		"yellow_light": "",
+		"orange_light": "",
+		"red_light": "",
+		"purple_light": "",
+		"blue_light": "",
+		"sky_light": "",
+		"lime_light": "",
+		"pink_light": "",
+		"black_light": ""
+	},
+	"powerUps": [],
+	"dateLastActivity": "2022-06-27T05:50:40.047Z",
+	"dateLastView": "2022-06-27T05:51:39.039Z",
+	"shortUrl": "https://trello.com/b/Go2hCHII",
+	"idTags": [],
+	"datePluginDisable": null,
+	"creationMethod": null,
+	"ixUpdate": "1800",
+	"templateGallery": null,
+	"enterpriseOwned": false,
+	"idBoardSource": null,
+	"premiumFeatures": ["activity", "additionalBoardBackgrounds", "additionalStickers", "advancedChecklists", "boardExport", "butlerBC", "butlerPremium", "csvExport", "customBoardBackgrounds", "customEmoji", "customStickers", "deactivated", "export", "goldMembers", "googleApps", "inviteBoard", "inviteOrg", "isBc", "isPremium", "largeAttachments", "multiBoardGuests", "observers", "paidCorePlugins", "plugins", "privateTemplates", "readSecrets", "removal", "restrictVis", "savedSearches", "shortExportHistory", "starCounts", "superAdmins", "tags", "views"],
+	"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+	"actions": [{
+		"id": "62b9433f471e567ea71ed2fc",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b9433f471e567ea71ed2ea",
+				"name": "Processos Schedulled"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T05:42:23.195Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b94077b46527388b12ed89",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"checklist": {
+				"name": "Tela de detalhar currículo",
+				"id": "62b8f71d27c13431a36cd696"
+			},
+			"old": {
+				"name": "Tela de detalhar currículo (https://www.linkedin.com/feed/)"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			}
+		},
+		"appCreator": null,
+		"type": "updateChecklist",
+		"date": "2022-06-27T05:30:31.374Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b9406709a3a830860bb710",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"checklist": {
+				"name": "Tela de detalhar currículo (https://www.linkedin.com/feed/)",
+				"id": "62b8f71d27c13431a36cd696"
+			},
+			"old": {
+				"name": "Tela de detalhar currículo"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			}
+		},
+		"appCreator": null,
+		"type": "updateChecklist",
+		"date": "2022-06-27T05:30:15.675Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b93817b6ef378868a624a8",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b93817b6ef378868a62497",
+				"name": "Processos Assíncronos"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T04:54:47.691Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b9380e51a06a8720dd8571",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"checklist": {
+				"id": "62b930541e033d3892aea66e",
+				"name": "Processos Assíncronos"
+			}
+		},
+		"appCreator": null,
+		"type": "removeChecklistFromCard",
+		"date": "2022-06-27T04:54:38.423Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b930541e033d3892aea67f",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b930541e033d3892aea66e",
+				"name": "Processos Assíncronos"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T04:21:40.886Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b92fef2843987af12aaf33",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"checklist": {
+				"name": "Mensageria",
+				"id": "62b9297223966703d6aac2cb"
+			},
+			"old": {
+				"name": "Processos Assíncronos"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			}
+		},
+		"appCreator": null,
+		"type": "updateChecklist",
+		"date": "2022-06-27T04:19:59.821Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b92f8a598f2345d867ccb9",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b92f8a598f2345d867cca9",
+				"name": "Processos"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T04:18:18.049Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b9297223966703d6aac2da",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b9297223966703d6aac2cb",
+				"name": "Processos Assíncronos"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T03:52:18.388Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b9256b06a9b534a43c10e5",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b9256b06a9b534a43c10d6",
+				"name": "Endpoints"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T03:35:07.109Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b9252e4064c9393dc2743c",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"checklist": {
+				"name": "Servlet Filters",
+				"id": "62b924bb08f6516075495ef9"
+			},
+			"old": {
+				"name": "Endpoints"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			}
+		},
+		"appCreator": null,
+		"type": "updateChecklist",
+		"date": "2022-06-27T03:34:06.301Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b924bb08f6516075495f4b",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b924bb08f6516075495ef9",
+				"name": "Endpoints"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T03:32:11.720Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b9247c4154693395f356cd",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"checklist": {
+				"name": "Tela de detalhar currículo",
+				"id": "62b8f71d27c13431a36cd696"
+			},
+			"old": {
+				"name": "Componentes de Tela"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			}
+		},
+		"appCreator": null,
+		"type": "updateChecklist",
+		"date": "2022-06-27T03:31:08.598Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b92446e9a4c7127257872d",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"checklist": {
+				"name": "Tela de Opções",
+				"id": "62b9242f2fc53f46bc51a966"
+			},
+			"old": {
+				"name": "Telas"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			}
+		},
+		"appCreator": null,
+		"type": "updateChecklist",
+		"date": "2022-06-27T03:30:14.182Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b9242f2fc53f46bc51a972",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b9242f2fc53f46bc51a966",
+				"name": "Telas"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T03:29:51.900Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b9235bbd9f731eeb188f60",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8cd36353f74546361a1b9",
+				"name": "Tabelas"
+			},
+			"checkItem": {
+				"id": "62b8dfb16cc20918c7cb5ff9",
+				"name": "login_conflict_solved",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T03:26:19.622Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b923582c50da79cb811eb9",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8cd36353f74546361a1b9",
+				"name": "Tabelas"
+			},
+			"checkItem": {
+				"id": "62b8dfb16cc20918c7cb5ff9",
+				"name": "login_conflict_solved",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T03:26:16.959Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b92353b42cc12ba3eb0dee",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b91a09772bed7318cd8b56",
+				"name": "Servlet Filters"
+			},
+			"checkItem": {
+				"id": "62b91a16681de988ae3c793a",
+				"name": "locked_password (401)",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T03:26:11.364Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b9235206a9b534a43b07ca",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b91a09772bed7318cd8b56",
+				"name": "Servlet Filters"
+			},
+			"checkItem": {
+				"id": "62b91a16681de988ae3c793a",
+				"name": "locked_password (401)",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T03:26:10.284Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b92343e7bf7f76d56126b5",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b900bf90754d31775f6cc0",
+				"name": "Tabelas criadas"
+			},
+			"checkItem": {
+				"id": "62b900eeb10a693dd38e77b8",
+				"name": "professional_key",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T03:25:55.996Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b9234314b6105f82b25a7f",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b900bf90754d31775f6cc0",
+				"name": "Tabelas criadas"
+			},
+			"checkItem": {
+				"id": "62b900eeb10a693dd38e77b8",
+				"name": "professional_key",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T03:25:55.217Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b92163329e9e611e7cb593",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b92162329e9e611e7cb586",
+				"name": "Servlet Filters"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T03:17:55.018Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b92093355177379c7f7b45",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b92093355177379c7f7b39",
+				"name": "Endpoints"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T03:14:27.362Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b91a296dc7806482e4778c",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"checklist": {
+				"name": "Servlet Filters",
+				"id": "62b91a09772bed7318cd8b56"
+			},
+			"old": {
+				"name": "Filters"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			}
+		},
+		"appCreator": null,
+		"type": "updateChecklist",
+		"date": "2022-06-27T02:47:05.821Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b91a09772bed7318cd8b64",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b91a09772bed7318cd8b56",
+				"name": "Filters"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T02:46:33.502Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b918578af4386422641fe7",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b918578af4386422641fda",
+				"name": "Endpoints"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T02:39:19.959Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b900bf90754d31775f6ccb",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b900bf90754d31775f6cc0",
+				"name": "Tabelas criadas"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T00:58:39.335Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b90081a8d35004f673e691",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b8f40c66c0bd5b7e2db944",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8f41617e6d280ec3e3831",
+				"name": "Ver Dados Salvos ",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T00:57:37.732Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b900813ea55348a1d90451",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b8f40c66c0bd5b7e2db944",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8f41617e6d280ec3e3831",
+				"name": "Ver Dados Salvos ",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T00:57:37.030Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8fcd2cc9fa65c20e9fb13",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b8f40c66c0bd5b7e2db944",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8f41617e6d280ec3e3831",
+				"name": "Ver Dados Salvos ",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T00:41:54.699Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8fcd1a00ddd8071fb515a",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b8f40c66c0bd5b7e2db944",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8f41617e6d280ec3e3831",
+				"name": "Ver Dados Salvos ",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T00:41:53.858Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8fbf07f67c7351a168d45",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b8f71d27c13431a36cd696",
+				"name": "Componentes de Tela"
+			},
+			"checkItem": {
+				"id": "62b8f7206b70340d75bce098",
+				"name": "Regiões metropolitana onde reside",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T00:38:08.110Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8fbef6ed55537ecd7bced",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b8f71d27c13431a36cd696",
+				"name": "Componentes de Tela"
+			},
+			"checkItem": {
+				"id": "62b8f7206b70340d75bce098",
+				"name": "Regiões metropolitana onde reside",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T00:38:07.486Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f71e27c13431a36cd6a0",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b8f71d27c13431a36cd696",
+				"name": "Componentes de Tela"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T00:17:34.011Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f5b142e5e7263d8a302c",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8da8a21192574dbda5a9b",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8dac9cd0013761a58484d",
+				"name": "Primeiro Login",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T00:11:29.035Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f5b0bb2b668e97587859",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8da8a21192574dbda5a9b",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8dac9cd0013761a58484d",
+				"name": "Primeiro Login",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T00:11:28.393Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f4705069698114f349e4",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b8f40c66c0bd5b7e2db944",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8f4694e71277e4bf4d92a",
+				"name": "Datas no currículo",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T00:06:08.768Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f46fd393da7c01180cfe",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b8f40c66c0bd5b7e2db944",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8f4694e71277e4bf4d92a",
+				"name": "Datas no currículo",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T00:06:07.738Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f40c66c0bd5b7e2db94c",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"checklist": {
+				"id": "62b8f40c66c0bd5b7e2db944",
+				"name": "Funcionalidades"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-27T00:04:28.907Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f3f0e894827b6c15f94c",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8f3f0e894827b6c15f943",
+				"name": "Profissionais",
+				"idShort": 3,
+				"shortLink": "kxn05pTY"
+			},
+			"list": {
+				"id": "62b24bda7306ad51f15f797f",
+				"name": "Fase A"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "createCard",
+		"date": "2022-06-27T00:04:00.522Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f14fdef6398804bd9121",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8cd36353f74546361a1b9",
+				"name": "Tabelas"
+			},
+			"checkItem": {
+				"id": "62b8cd869c642c3840235df3",
+				"name": "login_request",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:52:47.680Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f14ec9e9cf2f5b083249",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8cd36353f74546361a1b9",
+				"name": "Tabelas"
+			},
+			"checkItem": {
+				"id": "62b8cd869c642c3840235df3",
+				"name": "login_request",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:52:46.762Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f14ba16e6964af0e1e2a",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8d0940b2b3c32cbaaa1e2",
+				"name": "Telas"
+			},
+			"checkItem": {
+				"id": "62b8d0a30d0a7e6196d938cf",
+				"name": "loginRequest",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:52:43.822Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f14ada9be6554a5ed409",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8d0940b2b3c32cbaaa1e2",
+				"name": "Telas"
+			},
+			"checkItem": {
+				"id": "62b8d0a30d0a7e6196d938cf",
+				"name": "loginRequest",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:52:42.574Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f144b91c358853d89879",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8d9dd9725fa5bf326f48c",
+				"name": "Processos"
+			},
+			"checkItem": {
+				"id": "62b8d9f03b48de7739f005e1",
+				"name": "loginRequest",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:52:36.141Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f1432c28f08db252437b",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8d9dd9725fa5bf326f48c",
+				"name": "Processos"
+			},
+			"checkItem": {
+				"id": "62b8d9f03b48de7739f005e1",
+				"name": "loginRequest",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:52:35.349Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f0f5772bed7318ba3633",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b8f0f5772bed7318ba3628",
+				"name": "Processos"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-26T23:51:17.936Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8f078c350c0678fc7a20d",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b8f078c350c0678fc7a203",
+				"name": "Funcionalidades"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-26T23:49:12.820Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8efb71430828ba842acca",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b8e51967face1c89a358d3",
+				"name": "Componentes de tela"
+			},
+			"checkItem": {
+				"id": "62b8efb18729fd2f5144db80",
+				"name": "Ultimo acesso",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:45:59.139Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8efb57d509067fd835beb",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b8e51967face1c89a358d3",
+				"name": "Componentes de tela"
+			},
+			"checkItem": {
+				"id": "62b8efb18729fd2f5144db80",
+				"name": "Ultimo acesso",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:45:57.816Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8ef19a061ed5cb67d2b5b",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"checklist": {
+				"id": "62b8e90d3218e17f7a09b5ce",
+				"name": "Tabelas criadas"
+			}
+		},
+		"appCreator": null,
+		"type": "removeChecklistFromCard",
+		"date": "2022-06-26T23:43:21.003Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8ef091b2b076d11eac962",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8da8a21192574dbda5a9b",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8dac9cd0013761a58484d",
+				"name": "Primeiro Login",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:43:05.002Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8ef089e204a7ceedbf2d1",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8da8a21192574dbda5a9b",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8dac9cd0013761a58484d",
+				"name": "Primeiro Login",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:43:04.258Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8e90d3218e17f7a09b5d8",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b8e90d3218e17f7a09b5ce",
+				"name": "Tabelas criadas"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-26T23:17:33.889Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8e7c8117f7619ab132001",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8cd36353f74546361a1b9",
+				"name": "Tabelas"
+			},
+			"checkItem": {
+				"id": "62b8e7a6860240767a05444a",
+				"name": "user_type_activity",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:12:08.044Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8e7c5aead067fade51cf6",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8cd36353f74546361a1b9",
+				"name": "Tabelas"
+			},
+			"checkItem": {
+				"id": "62b8e7a6860240767a05444a",
+				"name": "user_type_activity",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:12:05.719Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8e7832a36582d362bf63e",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"checklist": {
+				"id": "62b8e5b2a45ab68b586e1e8d",
+				"name": "Tabelas criadas"
+			}
+		},
+		"appCreator": null,
+		"type": "removeChecklistFromCard",
+		"date": "2022-06-26T23:10:59.912Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8e7654402ee45495a3c11",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8da8a21192574dbda5a9b",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8e75faf6a816d1de52b80",
+				"name": "Salvar non_recruiter",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:10:29.488Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8e7611480b87393e97cd2",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8da8a21192574dbda5a9b",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8e75faf6a816d1de52b80",
+				"name": "Salvar non_recruiter",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T23:10:25.483Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8e5b2a45ab68b586e1e97",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b8e5b2a45ab68b586e1e8d",
+				"name": "Tabelas criadas"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-26T23:03:14.631Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8e59ec49bb75650780349",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"checklist": {
+				"name": "Componentes de tela",
+				"id": "62b8e51967face1c89a358d3"
+			},
+			"old": {
+				"name": "Elementos de tela"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			}
+		},
+		"appCreator": null,
+		"type": "updateChecklist",
+		"date": "2022-06-26T23:02:54.082Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8e51967face1c89a358db",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b8e51967face1c89a358d3",
+				"name": "Elementos de tela"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-26T23:00:41.735Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8e1ef5ac5f230d8a30b0d",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"name": "Dados e links para usuário",
+				"id": "62b8cff5aa7f51409f726432",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"old": {
+				"name": "Dados e links de usuário"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"list": {
+				"id": "62b24bda7306ad51f15f797f",
+				"name": "Fase A"
+			}
+		},
+		"appCreator": null,
+		"type": "updateCard",
+		"date": "2022-06-26T22:47:11.916Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8e1c1070df67d22d96ce6",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links de usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"checklist": {
+				"id": "62b8d00d50b84e70d9024c12",
+				"name": "Telas"
+			}
+		},
+		"appCreator": null,
+		"type": "removeChecklistFromCard",
+		"date": "2022-06-26T22:46:25.011Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8df36b3b5a8738e9f052a",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8da8a21192574dbda5a9b",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8dac9cd0013761a58484d",
+				"name": "Primeiro Login",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T22:35:34.462Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8df35eea89e069a508bf1",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8da8a21192574dbda5a9b",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8dac9cd0013761a58484d",
+				"name": "Primeiro Login",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T22:35:33.411Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8dab3dbf9c4708178f291",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"checklist": {
+				"name": "Funcionalidades",
+				"id": "62b8da8a21192574dbda5a9b"
+			},
+			"old": {
+				"name": "Atividades"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			}
+		},
+		"appCreator": null,
+		"type": "updateChecklist",
+		"date": "2022-06-26T22:16:19.943Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8da8a21192574dbda5aa7",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8da8a21192574dbda5a9b",
+				"name": "Atividades"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-26T22:15:38.051Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8d9dd9725fa5bf326f497",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8d9dd9725fa5bf326f48c",
+				"name": "Processos"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-26T22:12:45.191Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8d9b50ddb097c6f01ba2d",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"checklist": {
+				"id": "62b8d92c57eaea64e898ce0c",
+				"name": "Processos"
+			}
+		},
+		"appCreator": null,
+		"type": "removeChecklistFromCard",
+		"date": "2022-06-26T22:12:05.590Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8d9a59f549c309767e5af",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8d92c57eaea64e898ce0c",
+				"name": "Processos"
+			},
+			"checkItem": {
+				"id": "62b8d9381ed8228d595fbfe3",
+				"name": "loginRequest",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T22:11:49.352Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8d9a31d00f76dd223af5d",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8d92c57eaea64e898ce0c",
+				"name": "Processos"
+			},
+			"checkItem": {
+				"id": "62b8d9381ed8228d595fbfe3",
+				"name": "loginRequest",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T22:11:47.475Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8d92c57eaea64e898ce17",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8d92c57eaea64e898ce0c",
+				"name": "Processos"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-26T22:09:48.580Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8d689c8b74c78a7106816",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"checklist": {
+				"name": "Tabelas",
+				"id": "62b8cd36353f74546361a1b9"
+			},
+			"old": {
+				"name": "Tabelas criadas"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			}
+		},
+		"appCreator": null,
+		"type": "updateChecklist",
+		"date": "2022-06-26T21:58:33.456Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8d0d9632e00067d6359bc",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8d0940b2b3c32cbaaa1e2",
+				"name": "Telas"
+			},
+			"checkItem": {
+				"id": "62b8d0a30d0a7e6196d938cf",
+				"name": "loginRequest",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T21:34:17.661Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8d0d744c95a49039d93f2",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8d0940b2b3c32cbaaa1e2",
+				"name": "Telas"
+			},
+			"checkItem": {
+				"id": "62b8d0a30d0a7e6196d938cf",
+				"name": "loginRequest",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T21:34:15.636Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8d0940b2b3c32cbaaa1ec",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8d0940b2b3c32cbaaa1e2",
+				"name": "Telas"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-26T21:33:08.988Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8d00e50b84e70d9024c1a",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links de usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b8d00d50b84e70d9024c12",
+				"name": "Telas"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-26T21:30:54.011Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8cff5aa7f51409f72643b",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links de usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"list": {
+				"id": "62b24bda7306ad51f15f797f",
+				"name": "Fase A"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "createCard",
+		"date": "2022-06-26T21:30:29.176Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8cddc7ff2fe7aee38bbcd",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8cd36353f74546361a1b9",
+				"name": "Tabelas criadas"
+			},
+			"checkItem": {
+				"id": "62b8cd869c642c3840235df3",
+				"name": "login_request",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T21:21:32.328Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8cddbc35f5633521a58a7",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8cd36353f74546361a1b9",
+				"name": "Tabelas criadas"
+			},
+			"checkItem": {
+				"id": "62b8cd869c642c3840235df3",
+				"name": "login_request",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-26T21:21:31.348Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8cd36353f74546361a1c1",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"checklist": {
+				"id": "62b8cd36353f74546361a1b9",
+				"name": "Tabelas criadas"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "addChecklistToCard",
+		"date": "2022-06-26T21:18:46.971Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8cd070605495fb039b298",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"card": {
+				"id": "62b8cd070605495fb039b28f",
+				"name": "Login",
+				"idShort": 1,
+				"shortLink": "wVI9n7YV"
+			},
+			"list": {
+				"id": "62b24bda7306ad51f15f797f",
+				"name": "Fase A"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "createCard",
+		"date": "2022-06-26T21:17:59.905Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8cd0298aa0e7d1fb46cf2",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"list": {
+				"name": "Fase A",
+				"id": "62b24bda7306ad51f15f797f"
+			},
+			"old": {
+				"name": "Entre"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "updateList",
+		"date": "2022-06-26T21:17:54.720Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8ccf51bf8620c47bd4827",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"list": {
+				"name": "Entre",
+				"id": "62b24bda7306ad51f15f797f"
+			},
+			"old": {
+				"name": "Fase 1"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "updateList",
+		"date": "2022-06-26T21:17:41.762Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8ccf00788e60422574c3a",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"list": {
+				"name": "Fase 1",
+				"id": "62b24bda7306ad51f15f797f"
+			},
+			"old": {
+				"name": "Login"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "updateList",
+		"date": "2022-06-26T21:17:36.854Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b8cc2d696fae7e24c4cc38",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"list": {
+				"name": "Login",
+				"id": "62b24bda7306ad51f15f797f"
+			},
+			"old": {
+				"name": "Interações com usuarios"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "updateList",
+		"date": "2022-06-26T21:14:21.665Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b24be4a4b80b5680725950",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"list": {
+				"name": "Interações com usuarios",
+				"id": "62b24bda7306ad51f15f797f"
+			},
+			"old": {
+				"name": "Endpoints"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "updateList",
+		"date": "2022-06-21T22:53:24.506Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b24bda7306ad51f15f7983",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"list": {
+				"id": "62b24bda7306ad51f15f797f",
+				"name": "Endpoints"
+			},
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "createList",
+		"date": "2022-06-21T22:53:14.452Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b24bcf62ea1e45021fa701",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"prefs": {
+					"background": "blue"
+				},
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"old": {
+				"prefs": {
+					"background": "62b23d8e7058a64d136f68e3"
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateBoard",
+		"date": "2022-06-21T22:53:03.608Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b246756cb00102c609303f",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"organization": {
+				"id": "5de58c5a12d19c7ac685b9ac",
+				"name": "JobsNow"
+			}
+		},
+		"appCreator": null,
+		"type": "addToOrganizationBoard",
+		"date": "2022-06-21T22:30:13.695Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b246756cb00102c609303c",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			}
+		},
+		"appCreator": null,
+		"type": "createBoard",
+		"date": "2022-06-21T22:30:13.671Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}],
+	"cards": [{
+		"id": "62b8cd070605495fb039b28f",
+		"address": null,
+		"badges": {
+			"attachmentsByType": {
+				"trello": {
+					"board": 0,
+					"card": 0
+				}
+			},
+			"location": false,
+			"votes": 0,
+			"viewingMemberVoted": false,
+			"subscribed": false,
+			"fogbugz": "",
+			"checkItems": 67,
+			"checkItemsChecked": 0,
+			"checkItemsEarliestDue": null,
+			"comments": 0,
+			"attachments": 0,
+			"description": false,
+			"due": null,
+			"dueComplete": false,
+			"start": null
+		},
+		"checkItemStates": null,
+		"closed": false,
+		"coordinates": null,
+		"creationMethod": null,
+		"dueComplete": false,
+		"dateLastActivity": "2022-06-27T03:26:19.660Z",
+		"desc": "",
+		"descData": {
+			"emoji": {}
+		},
+		"due": null,
+		"dueReminder": null,
+		"email": "oniasvieiraju+2svgwkvl8slokdfuw0s+2ymydmixhrm2hxbpe33+0fcl74940h@boards.trello.com",
+		"idBoard": "62b246756cb00102c6093019",
+		"idChecklists": ["62b8cd36353f74546361a1b9", "62b8d0940b2b3c32cbaaa1e2", "62b8d9dd9725fa5bf326f48c", "62b8da8a21192574dbda5a9b", "62b918578af4386422641fda", "62b91a09772bed7318cd8b56"],
+		"idLabels": ["62b8cd1e878e161b5b7fd16d"],
+		"idList": "62b24bda7306ad51f15f797f",
+		"idMembers": [],
+		"idMembersVoted": [],
+		"idShort": 1,
+		"idAttachmentCover": null,
+		"labels": [{
+			"id": "62b8cd1e878e161b5b7fd16d",
+			"idBoard": "62b246756cb00102c6093019",
+			"name": "Login",
+			"color": "green"
+		}],
+		"limits": {
+			"attachments": {
+				"perCard": {
+					"status": "ok",
+					"disableAt": 1000,
+					"warnAt": 800
+				}
+			},
+			"checklists": {
+				"perCard": {
+					"status": "ok",
+					"disableAt": 500,
+					"warnAt": 400
+				}
+			},
+			"stickers": {
+				"perCard": {
+					"status": "ok",
+					"disableAt": 70,
+					"warnAt": 56
+				}
+			}
+		},
+		"locationName": null,
+		"manualCoverAttachment": false,
+		"name": "Login",
+		"pos": 65535,
+		"shortLink": "wVI9n7YV",
+		"shortUrl": "https://trello.com/c/wVI9n7YV",
+		"staticMapUrl": null,
+		"start": null,
+		"subscribed": false,
+		"url": "https://trello.com/c/wVI9n7YV/1-login",
+		"cover": {
+			"idAttachment": null,
+			"color": null,
+			"idUploadedBackground": null,
+			"size": "normal",
+			"brightness": "dark",
+			"idPlugin": null
+		},
+		"isTemplate": false,
+		"cardRole": null,
+		"attachments": [],
+		"pluginData": [],
+		"customFieldItems": []
+	}, {
+		"id": "62b8cff5aa7f51409f726432",
+		"address": null,
+		"badges": {
+			"attachmentsByType": {
+				"trello": {
+					"board": 0,
+					"card": 0
+				}
+			},
+			"location": false,
+			"votes": 0,
+			"viewingMemberVoted": false,
+			"subscribed": false,
+			"fogbugz": "",
+			"checkItems": 28,
+			"checkItemsChecked": 0,
+			"checkItemsEarliestDue": null,
+			"comments": 0,
+			"attachments": 0,
+			"description": false,
+			"due": null,
+			"dueComplete": false,
+			"start": null
+		},
+		"checkItemStates": null,
+		"closed": false,
+		"coordinates": null,
+		"creationMethod": null,
+		"dueComplete": false,
+		"dateLastActivity": "2022-06-27T04:24:05.528Z",
+		"desc": "",
+		"descData": {
+			"emoji": {}
+		},
+		"due": null,
+		"dueReminder": null,
+		"email": "oniasvieiraju+2svgwkvl8slokdfuw0s+2ymyfvp7tmkibwzf0oi+01vfmhziu8@boards.trello.com",
+		"idBoard": "62b246756cb00102c6093019",
+		"idChecklists": ["62b8e51967face1c89a358d3", "62b8f078c350c0678fc7a203", "62b8f0f5772bed7318ba3628", "62b92093355177379c7f7b39", "62b92162329e9e611e7cb586"],
+		"idLabels": ["62b8d00354470855ef75bd63"],
+		"idList": "62b24bda7306ad51f15f797f",
+		"idMembers": [],
+		"idMembersVoted": [],
+		"idShort": 2,
+		"idAttachmentCover": null,
+		"labels": [{
+			"id": "62b8d00354470855ef75bd63",
+			"idBoard": "62b246756cb00102c6093019",
+			"name": "Dados e links de usuário",
+			"color": "yellow"
+		}],
+		"limits": {
+			"attachments": {
+				"perCard": {
+					"status": "ok",
+					"disableAt": 1000,
+					"warnAt": 800
+				}
+			},
+			"checklists": {
+				"perCard": {
+					"status": "ok",
+					"disableAt": 500,
+					"warnAt": 400
+				}
+			},
+			"stickers": {
+				"perCard": {
+					"status": "ok",
+					"disableAt": 70,
+					"warnAt": 56
+				}
+			}
+		},
+		"locationName": null,
+		"manualCoverAttachment": false,
+		"name": "Dados e links para usuário",
+		"pos": 131071,
+		"shortLink": "FirWv2RY",
+		"shortUrl": "https://trello.com/c/FirWv2RY",
+		"staticMapUrl": null,
+		"start": null,
+		"subscribed": false,
+		"url": "https://trello.com/c/FirWv2RY/2-dados-e-links-para-usu%C3%A1rio",
+		"cover": {
+			"idAttachment": null,
+			"color": null,
+			"idUploadedBackground": null,
+			"size": "normal",
+			"brightness": "dark",
+			"idPlugin": null
+		},
+		"isTemplate": false,
+		"cardRole": null,
+		"attachments": [],
+		"pluginData": [],
+		"customFieldItems": []
+	}, {
+		"id": "62b8f3f0e894827b6c15f943",
+		"address": null,
+		"badges": {
+			"attachmentsByType": {
+				"trello": {
+					"board": 0,
+					"card": 0
+				}
+			},
+			"location": false,
+			"votes": 0,
+			"viewingMemberVoted": false,
+			"subscribed": false,
+			"fogbugz": "",
+			"checkItems": 104,
+			"checkItemsChecked": 0,
+			"checkItemsEarliestDue": null,
+			"comments": 0,
+			"attachments": 0,
+			"description": false,
+			"due": null,
+			"dueComplete": false,
+			"start": null
+		},
+		"checkItemStates": null,
+		"closed": false,
+		"coordinates": null,
+		"creationMethod": null,
+		"dueComplete": false,
+		"dateLastActivity": "2022-06-27T05:50:40.047Z",
+		"desc": "",
+		"descData": {
+			"emoji": {}
+		},
+		"due": null,
+		"dueReminder": null,
+		"email": "oniasvieiraju+2svgwkvl8slokdfuw0s+2ymz7jt0tk6xnsm24hv+05belwqksb@boards.trello.com",
+		"idBoard": "62b246756cb00102c6093019",
+		"idChecklists": ["62b8f40c66c0bd5b7e2db944", "62b8f71d27c13431a36cd696", "62b900bf90754d31775f6cc0", "62b9242f2fc53f46bc51a966", "62b924bb08f6516075495ef9", "62b9256b06a9b534a43c10d6", "62b9297223966703d6aac2cb", "62b92f8a598f2345d867cca9", "62b93817b6ef378868a62497", "62b9433f471e567ea71ed2ea"],
+		"idLabels": ["62b8f3fe49490a73137cfc96"],
+		"idList": "62b24bda7306ad51f15f797f",
+		"idMembers": [],
+		"idMembersVoted": [],
+		"idShort": 3,
+		"idAttachmentCover": null,
+		"labels": [{
+			"id": "62b8f3fe49490a73137cfc96",
+			"idBoard": "62b246756cb00102c6093019",
+			"name": "Profissionais",
+			"color": "orange"
+		}],
+		"limits": {
+			"attachments": {
+				"perCard": {
+					"status": "ok",
+					"disableAt": 1000,
+					"warnAt": 800
+				}
+			},
+			"checklists": {
+				"perCard": {
+					"status": "ok",
+					"disableAt": 500,
+					"warnAt": 400
+				}
+			},
+			"stickers": {
+				"perCard": {
+					"status": "ok",
+					"disableAt": 70,
+					"warnAt": 56
+				}
+			}
+		},
+		"locationName": null,
+		"manualCoverAttachment": false,
+		"name": "Profissionais",
+		"pos": 196607,
+		"shortLink": "kxn05pTY",
+		"shortUrl": "https://trello.com/c/kxn05pTY",
+		"staticMapUrl": null,
+		"start": null,
+		"subscribed": false,
+		"url": "https://trello.com/c/kxn05pTY/3-profissionais",
+		"cover": {
+			"idAttachment": null,
+			"color": null,
+			"idUploadedBackground": null,
+			"size": "normal",
+			"brightness": "dark",
+			"idPlugin": null
+		},
+		"isTemplate": false,
+		"cardRole": null,
+		"attachments": [],
+		"pluginData": [],
+		"customFieldItems": []
+	}],
+	"labels": [{
+		"id": "62b8cd1e878e161b5b7fd16d",
+		"idBoard": "62b246756cb00102c6093019",
+		"name": "Login",
+		"color": "green"
+	}, {
+		"id": "62b8d00354470855ef75bd63",
+		"idBoard": "62b246756cb00102c6093019",
+		"name": "Dados e links de usuário",
+		"color": "yellow"
+	}, {
+		"id": "62b8f3fe49490a73137cfc96",
+		"idBoard": "62b246756cb00102c6093019",
+		"name": "Profissionais",
+		"color": "orange"
+	}, {
+		"id": "62b246752d2ecec500dc10dc",
+		"idBoard": "62b246756cb00102c6093019",
+		"name": "",
+		"color": "green"
+	}, {
+		"id": "62b246752d2ecec500dc10df",
+		"idBoard": "62b246756cb00102c6093019",
+		"name": "",
+		"color": "yellow"
+	}, {
+		"id": "62b246752d2ecec500dc10e2",
+		"idBoard": "62b246756cb00102c6093019",
+		"name": "",
+		"color": "orange"
+	}, {
+		"id": "62b246752d2ecec500dc10e5",
+		"idBoard": "62b246756cb00102c6093019",
+		"name": "",
+		"color": "red"
+	}, {
+		"id": "62b246752d2ecec500dc10e6",
+		"idBoard": "62b246756cb00102c6093019",
+		"name": "",
+		"color": "purple"
+	}, {
+		"id": "62b246752d2ecec500dc10e9",
+		"idBoard": "62b246756cb00102c6093019",
+		"name": "",
+		"color": "blue"
+	}],
+	"lists": [{
+		"id": "62b24bda7306ad51f15f797f",
+		"name": "Fase A",
+		"closed": false,
+		"idBoard": "62b246756cb00102c6093019",
+		"pos": 65535,
+		"subscribed": false,
+		"softLimit": null,
+		"limits": {
+			"cards": {
+				"openPerList": {
+					"status": "ok",
+					"disableAt": 5000,
+					"warnAt": 4000
+				},
+				"totalPerList": {
+					"status": "ok",
+					"disableAt": 1000000,
+					"warnAt": 800000
+				}
+			}
+		},
+		"creationMethod": null
+	}],
+	"members": [{
+		"id": "5d62df6d1f8fcd66cb39009c",
+		"aaId": "5e4d403b4d2a000c91148502",
+		"activityBlocked": false,
+		"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+		"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+		"bio": "",
+		"bioData": null,
+		"confirmed": true,
+		"fullName": "Onias Vieira Junior",
+		"idEnterprise": null,
+		"idEnterprisesDeactivated": [],
+		"idMemberReferrer": null,
+		"idPremOrgsAdmin": ["5de58c5a12d19c7ac685b9ac"],
+		"initials": "OJ",
+		"memberType": "normal",
+		"nonPublic": {
+			"fullName": "Onias Vieira Junior",
+			"initials": "OJ",
+			"avatarHash": null
+		},
+		"nonPublicAvailable": true,
+		"products": [10],
+		"url": "https://trello.com/oniasvieirajunior2",
+		"username": "oniasvieirajunior2",
+		"status": "disconnected"
+	}],
+	"checklists": [{
+		"checkItems": [{
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cd869c642c3840235df3",
+			"name": "login_request",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 17325,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cd90abb02f74f1da7eae",
+			"name": "password",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 34295,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cd9668ed0a707e9cb908",
+			"name": "pre_registration",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50921,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cda98a6d3b4de7691d49",
+			"name": "request_token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67695,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cdc13c0d7a0badbb74f6",
+			"name": "locked_request_token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84644,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cdc94bef627629b04d95",
+			"name": "locked_password",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101279,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cdcf9d4dca039d815dab",
+			"name": "locked_token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 118623,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cdd9c2066450c4241404",
+			"name": "login",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 135322,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cdef6093eb79363ebd45",
+			"name": "logout",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 152120,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cec285a8ce87c8d2eb5f",
+			"name": "login_activity",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 169476,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8dfa9e3cbcc0341ebfd39",
+			"name": "login_conflict",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 186328,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8dfb16cc20918c7cb5ff9",
+			"name": "login_conflict_solved",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 203337,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8e79063589e57404678d4",
+			"name": "recruiter",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 220499,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8e7a6860240767a05444a",
+			"name": "user_type_activity",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 253857,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8eec8aaaf838f4d6f0b89",
+			"name": "non_recruiter",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 271113,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8f5bc65328287d8739bb8",
+			"name": "audit",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 287551,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8cd36353f74546361a1b9",
+		"name": "Tabelas",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 16384,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0a30d0a7e6196d938cf",
+			"name": "loginRequest",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16796,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0ab057bd87bb350f246",
+			"name": "savePreRegistration",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 34063,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0b1fbb31d47f02129dd",
+			"name": "errorScreen",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 51258,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0b6bfc5ff07454d838f",
+			"name": "confirmEmail",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 68245,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0b9fe12f938a5f4fbc6",
+			"name": "savePassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 85580,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0bdfe009363d8374cd9",
+			"name": "confirmBadPassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 102113,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0c541f9e638ff56db06",
+			"name": "validatePassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 118841,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0ca9dccea743ff4163c",
+			"name": "requestToken",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 135714,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8d0940b2b3c32cbaaa1e2",
+		"name": "Telas",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 8192,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8d9f03b48de7739f005e1",
+			"name": "loginRequest",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16641,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da1432ed62153235f35c",
+			"name": "savePreRegistration",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 34024,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da19ff3739336d9b37c0",
+			"name": "errorScreen",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50993,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da295f283e04a2940942",
+			"name": "confirmEmail",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67504,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da2d64472832dd8c640d",
+			"name": "savePassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84417,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da326311ec88d40eaa0f",
+			"name": "confirmBadPassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101249,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da3a6c08fa15a2aefbb3",
+			"name": "validatePassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 117930,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da401b2cdd74d8233ab2",
+			"name": "requestToken",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 134735,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8d9dd9725fa5bf326f48c",
+		"name": "Processos",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 4096,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dac9cd0013761a58484d",
+			"name": "Primeiro Login",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 17303,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dacde5d6bd73f9b002a6",
+			"name": "Sugestão para melhorar senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 34141,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db1ae04b7b18e6c3d2d5",
+			"name": "Enviar token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50989,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db25490db234301059b7",
+			"name": "Cadastrar senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67653,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db2964967340312d0de2",
+			"name": "Bloquear token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84100,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db2d7e613e63591b7810",
+			"name": "Pre registro",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 100614,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db33b4582f30488cf020",
+			"name": "Executar Login",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 117206,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db419c981a45b259fea1",
+			"name": "Registrar Historico",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 133792,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db4a5a19de32362cd93d",
+			"name": "Logout",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 150941,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db5789b0104057427211",
+			"name": "Errar senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 167623,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db5bb02010766d1a37df",
+			"name": "Bloquear senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 184952,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db5f29319b73b7cde221",
+			"name": "Desbloquear senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 201410,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db64563f75126f61bbfa",
+			"name": "Desbloquear token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 218101,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dc35a014697c610e6104",
+			"name": "Ativar suporte para token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 234957,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dc3e7f83ce3164fa3862",
+			"name": "Verificar se já está logado",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 251690,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dc441f60c7162ca37c78",
+			"name": "Excluir login expirado",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 268303,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dc898443604807ed316a",
+			"name": "Resolver login conflitante",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 285043,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8de50970d458c2fdc9035",
+			"name": "Salvar path ao fazer logout",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 302086,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8e6225a7cef329eb90177",
+			"name": "Salvar recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 319133,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8e8da952b0146f1b2d15f",
+			"name": "Salvar user_type_activity",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 335958,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8ef014d88a55c7720164e",
+			"name": "Consultar tabela de não RH",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 353145,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8f5a900890c8c571a9c5f",
+			"name": "Salvar auditoria",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 369726,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8ffc11dcf66454ac59fa7",
+			"name": "Redirecionar pagina para usuário",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 386418,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8da8a21192574dbda5a9b",
+		"name": "Funcionalidades",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 2048,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b8e52c941f262736068bd2",
+			"name": "E-mail",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 17167,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b8e56e2a3ab875665af597",
+			"name": "Trocar Modo (Tipo de acesso (Recrutador, Profissional))",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33984,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b8ee72c2ac1a600a45b22d",
+			"name": "Cadastrar como recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 51101,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b8ee7637748a2a399d5861",
+			"name": "Atualizar pre_registration",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67502,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b8ee79666ad14fdb127c92",
+			"name": "Excluir não recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84829,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b8ee7e8cbff7881ed71366",
+			"name": "Excluir recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101252,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b8ee81b469a48d03f572b1",
+			"name": "Cadastrar como não recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 117699,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b8efb18729fd2f5144db80",
+			"name": "Ultimo acesso",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 134896,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8e51967face1c89a358d3",
+		"name": "Componentes de tela",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cff5aa7f51409f726432",
+		"pos": 16384,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f07fd957ed626daa8f46",
+			"name": "Apresentar dados do Login",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16804,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f089bf0da248901351fb",
+			"name": "Cadastrar como recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50608,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f08e4e6bf68883965404",
+			"name": "Cadastrar como não recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67680,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f091e3f03a56a183b0c6",
+			"name": "Excluir recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84260,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f095384ad57bfe0e9793",
+			"name": "Excluir não recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 100781,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f09bdfface03a1412d62",
+			"name": "Atualizar pre_registration",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 117642,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8f078c350c0678fc7a203",
+		"name": "Funcionalidades",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cff5aa7f51409f726432",
+		"pos": 8192,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8f0f5772bed7318ba3628",
+			"state": "incomplete",
+			"id": "62b8f0ff1c0d0e44e2d86422",
+			"name": "requestRecruiterRegistration",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33965,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f0f5772bed7318ba3628",
+			"state": "incomplete",
+			"id": "62b8f104b735798bcd7e1720",
+			"name": "insertRecruiter",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50664,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f0f5772bed7318ba3628",
+			"state": "incomplete",
+			"id": "62b8f1089f67585d31a568bb",
+			"name": "insertNonRecruiter",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67472,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f0f5772bed7318ba3628",
+			"state": "incomplete",
+			"id": "62b8f10c1c945f8868ef7eab",
+			"name": "showMessage",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84659,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8f0f5772bed7318ba3628",
+		"name": "Processos",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cff5aa7f51409f726432",
+		"pos": 12288,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b918578af4386422641fda",
+			"state": "incomplete",
+			"id": "62b91c7deb18dd5c7650cd47",
+			"name": "post: users/{email}/preRegistation/userType/{userType}/channelType/{channelType}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50612,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b918578af4386422641fda",
+			"state": "incomplete",
+			"id": "62b91df109a2f54a288ec7c5",
+			"name": "post: users/{email}/password : body({password})",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67936,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b918578af4386422641fda",
+			"state": "incomplete",
+			"id": "62b91e5fb8c02921b5c878cd",
+			"name": "post: users/{email}/loginRequest",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 85305,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b918578af4386422641fda",
+			"state": "incomplete",
+			"id": "62b91ec4362d3003dff95b2d",
+			"name": "post: users/{email}/login",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 102672,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b918578af4386422641fda",
+			"state": "incomplete",
+			"id": "62b91ed816ff717b36754d0d",
+			"name": "post: users/{email}/logout",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 119401,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b918578af4386422641fda",
+		"name": "Endpoints",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 32768,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91a16681de988ae3c793a",
+			"name": "locked_password (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16831,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91a4f0bfd15073630025a",
+			"name": "locked_token (403)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33997,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91a638483e75398be85c4",
+			"name": "locked_request_token (429)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50917,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91acdb577fc487cd42423",
+			"name": "not_existing_login_request (404)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67488,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91b11d71f651237099e07",
+			"name": "not_existing_password (201)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84625,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91b303e687c5049222613",
+			"name": "not_existing_pre_registration (202)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101567,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91f3d2ac63b19bccdad3a",
+			"name": "bad_password (422)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 118620,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b91a09772bed7318cd8b56",
+		"name": "Servlet Filters",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 49152,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b92093355177379c7f7b39",
+			"state": "incomplete",
+			"id": "62b920c1faeef97c3f721576",
+			"name": "head: recruiters/{email}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16474,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92093355177379c7f7b39",
+			"state": "incomplete",
+			"id": "62b920cb70709225e23e745c",
+			"name": "post: recruiters/{email}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33821,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92093355177379c7f7b39",
+			"state": "incomplete",
+			"id": "62b920d3a51b6376cc358992",
+			"name": "delete: recruiters/{email}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 51170,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b92093355177379c7f7b39",
+		"name": "Endpoints",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cff5aa7f51409f726432",
+		"pos": 32768,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b9216da7ac4a5e88c3811b",
+			"name": "not_existing_pre_registration(401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16786,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b921714af3448bf3b0a25d",
+			"name": "not_existing_password(401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33768,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b92181dbf9c4708194f199",
+			"name": "not_existing_login_request (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50990,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b921848532e686c9101b97",
+			"name": "locked_request_token (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67881,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b921891e3adb56c83c41fb",
+			"name": "locked_token (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84702,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b92197c599525cfb6a5474",
+			"name": "expired_session (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101296,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b930e5cf2b03637ee0774a",
+			"name": "conflict_recruiter (409)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 118273,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b92162329e9e611e7cb586",
+		"name": "Servlet Filters",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cff5aa7f51409f726432",
+		"pos": 49152,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8f41617e6d280ec3e3831",
+			"name": "Ver Dados Salvos ",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 17101,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8f4386896890feea26dd4",
+			"name": "Salvar Currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33826,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8f43b4103a337f2f91bdb",
+			"name": "Salvar Currículo do Telegram",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50506,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8f4402f1b8480200bde07",
+			"name": "Inativar Curriculo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67491,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8f4444dfb042f4fd9550d",
+			"name": "Baixar currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84603,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8f449cf50397b75d8b55d",
+			"name": "Trocar currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101874,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8f44dd835723fb3d5e52c",
+			"name": "Notificar alteraçao do cv ",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 119135,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8f4655c718d41aa817ce3",
+			"name": "Excluir currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 136214,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8f4694e71277e4bf4d92a",
+			"name": "Datas no currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 153620,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8fd59b9e4420502c7546b",
+			"name": "Verificar se currículo está ativo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 25463.5,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8fd8f44c95a4903a576bc",
+			"name": "Salvar currículo no bucket",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 170314,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8fd945d61ae79f8fa9402",
+			"name": "Salvar professional_key",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 186780,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8fd9d091840148c07d129",
+			"name": "Salvar professional_key_synonym",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 221049,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8fda1c35f5633522a9ddb",
+			"name": "Salvar professional_ddd",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 237903,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8fda767f7433f7c98812d",
+			"name": "Detectar tipo do currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 254771,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b8fdb1690fe98c869285ba",
+			"name": "Classificar senioridade",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 271630,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b9007e403bfe804caa5f5d",
+			"name": "Salvar professional_index",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 288901,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b91309470aec03fe6ad0fc",
+			"name": "Excluir professional_key",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 305934,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b91316a00ddd807105ddb1",
+			"name": "Excluir professional_key_synonym",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 340316,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b9131b194123890c21b191",
+			"name": "Filtrar p/ salvar professional_index",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 356817,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b923221427934861c270e6",
+			"name": "Salvar professional_alias",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 373575,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b937d46aed8a0b4b09a51f",
+			"name": "Detectar currículo com telegram",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 390164,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f40c66c0bd5b7e2db944",
+			"state": "incomplete",
+			"id": "62b93ccd36064461a098e91d",
+			"name": "Notificar alteraçao do cv por telegram",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 406571,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8f40c66c0bd5b7e2db944",
+		"name": "Funcionalidades",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8f3f0e894827b6c15f943",
+		"pos": 16384,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f7206b70340d75bce098",
+			"name": "Regiões metropolitana onde reside",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 17169,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f884a8859f7af0895758",
+			"name": "Cargo mais recente ou atual",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 34419,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f8896b55193702645d5b",
+			"name": "Profissão ou função desejada",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 51786,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f8905edb73704620a2fd",
+			"name": "Anos de experiência(Condicional)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 69173,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f9085194df5cfdcc3d32",
+			"name": "Pretensão Mensal Pessoa Jurídica (PJ)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 86137,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f914d064ff3225921bb6",
+			"name": "Pretensão Mensal Carteira Assinada (CLT)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 102897,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f91afa49027f5bc90f36",
+			"name": "Valor em Bitcoin(Condicional)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 120191,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f929598e2173c3f7a21b",
+			"name": "Pretensões negociáveis",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 136930,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f937310b54102f797085",
+			"name": "Dias para disponibilidade(Condicional)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 153375,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f942cc205504d17b8931",
+			"name": "Tenho necessidades especiais (PCD)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 170202,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f94b48386413222e491d",
+			"name": "Empresas que não poderão ver o seu currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 187601,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f9582f195b5fe635c5e0",
+			"name": "Observações",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 204347,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f99e8535ac2c71c38f45",
+			"name": "Data da ultima alteração (Condicional)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 306059,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b8f9a366a2ed8cb83b3977",
+			"name": "Data de inserção (Condicional)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 323401,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f71d27c13431a36cd696",
+			"state": "incomplete",
+			"id": "62b923b0ac77890626589110",
+			"name": "Botão Opções",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 340027,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8f71d27c13431a36cd696",
+		"name": "Tela de detalhar currículo",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8f3f0e894827b6c15f943",
+		"pos": 32768,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b900bf90754d31775f6cc0",
+			"state": "incomplete",
+			"id": "62b900eeb10a693dd38e77b8",
+			"name": "professional_key",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16575,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b900bf90754d31775f6cc0",
+			"state": "incomplete",
+			"id": "62b900f36da16429785237dd",
+			"name": "professional_key_synonym",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 49927,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b900bf90754d31775f6cc0",
+			"state": "incomplete",
+			"id": "62b900f73064c95e0b5f0bf7",
+			"name": "professional_ddd",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67266,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b900bf90754d31775f6cc0",
+			"state": "incomplete",
+			"id": "62b900fb28ce2e2f50f93e44",
+			"name": "professional_index",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 83843,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b900bf90754d31775f6cc0",
+			"state": "incomplete",
+			"id": "62b901017fee681f7d3c1fc7",
+			"name": "professional",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 100832,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b900bf90754d31775f6cc0",
+			"state": "incomplete",
+			"id": "62b91735f6788a10cafa1248",
+			"name": "professional_view_resume",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 117971,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b900bf90754d31775f6cc0",
+			"state": "incomplete",
+			"id": "62b922eefc60d9877ab4226e",
+			"name": "professional_alias",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 135262,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b900bf90754d31775f6cc0",
+		"name": "Tabelas criadas",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8f3f0e894827b6c15f943",
+		"pos": 49152,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b9242f2fc53f46bc51a966",
+			"state": "incomplete",
+			"id": "62b924497baf2544b0fa04e8",
+			"name": "Salvar Dados",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16664,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9242f2fc53f46bc51a966",
+			"state": "incomplete",
+			"id": "62b9244b79457a202d962852",
+			"name": "Excluir Currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33079,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9242f2fc53f46bc51a966",
+			"state": "incomplete",
+			"id": "62b9244d798b6b107deb88df",
+			"name": "(Re)Inativar Currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 49978,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9242f2fc53f46bc51a966",
+			"state": "incomplete",
+			"id": "62b924505066f040c46373f0",
+			"name": "Atualizar Currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 66881,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9242f2fc53f46bc51a966",
+			"state": "incomplete",
+			"id": "62b9245ad221cd16d7186e8d",
+			"name": "Ver currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84286,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b9242f2fc53f46bc51a966",
+		"name": "Tela de Opções",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8f3f0e894827b6c15f943",
+		"pos": 40960,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b924bb08f6516075495ef9",
+			"state": "incomplete",
+			"id": "62b924d389dac328520f16c3",
+			"name": "expired_session (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16813,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b924bb08f6516075495ef9",
+			"state": "incomplete",
+			"id": "62b924d6edc13a60cb5131fe",
+			"name": "locked_token (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33357,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b924bb08f6516075495ef9",
+			"state": "incomplete",
+			"id": "62b924dabe45488784901e5e",
+			"name": "locked_request_token (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 49799,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b924bb08f6516075495ef9",
+			"state": "incomplete",
+			"id": "62b924de33a2948e11cd4f74",
+			"name": "not_existing_login_request (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 66422,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b924bb08f6516075495ef9",
+			"state": "incomplete",
+			"id": "62b924e9d26f4f15bbbb3007",
+			"name": "not_existing_password(401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 83195,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b924bb08f6516075495ef9",
+			"state": "incomplete",
+			"id": "62b924f6c606a90dc5890096",
+			"name": "not_existing_pre_registration(401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 99663,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b924bb08f6516075495ef9",
+			"state": "incomplete",
+			"id": "62b92503386660386de02060",
+			"name": "locked_password (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 116735,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b924bb08f6516075495ef9",
+			"state": "incomplete",
+			"id": "62b92dd0d1be9432cf8c4942",
+			"name": "professional_not_found (404)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 133620,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b924bb08f6516075495ef9",
+		"name": "Servlet Filters",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8f3f0e894827b6c15f943",
+		"pos": 65536,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b9256b06a9b534a43c10d6",
+			"state": "incomplete",
+			"id": "62b9259b7d79f380c473e948",
+			"name": "get: professionals/{email}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16695,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9256b06a9b534a43c10d6",
+			"state": "incomplete",
+			"id": "62b925a6e2392e799fd5e0ef",
+			"name": "post: professionals/{email}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33255,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9256b06a9b534a43c10d6",
+			"state": "incomplete",
+			"id": "62b925b037c1fc75174e7f84",
+			"name": "post: professionals/{email}/resume",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 49996,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9256b06a9b534a43c10d6",
+			"state": "incomplete",
+			"id": "62b925ccc8a64387ac2af221",
+			"name": "post: professionals/{email}/status/{status}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67174,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9256b06a9b534a43c10d6",
+			"state": "incomplete",
+			"id": "62b925f45ffadc2ce86945d4",
+			"name": "get: professionals/{email}/resume",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 24975,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9256b06a9b534a43c10d6",
+			"state": "incomplete",
+			"id": "62b926b47a60d352eb939a81",
+			"name": "delete: professionals/{email}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84492,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b9256b06a9b534a43c10d6",
+		"name": "Endpoints",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8f3f0e894827b6c15f943",
+		"pos": 57344,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b9297223966703d6aac2cb",
+			"state": "incomplete",
+			"id": "62b9297e86ad721563f7f526",
+			"name": "Excluir Dados",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16831,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9297223966703d6aac2cb",
+			"state": "incomplete",
+			"id": "62b929a038030f7759310675",
+			"name": "Salvar Dados",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50611,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9297223966703d6aac2cb",
+			"state": "incomplete",
+			"id": "62b9309f5da245578fb344cc",
+			"name": "Salvar currículo",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 85183,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b9297223966703d6aac2cb",
+		"name": "Mensageria",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8f3f0e894827b6c15f943",
+		"pos": 81920,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b92f8de1e7215d97f0ba59",
+			"name": "getResume",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16395,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b92f90a01f2d372ee14309",
+			"name": "sendToDeleteProfessionalQueue",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33622,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b92f92b785b518fc39da16",
+			"name": "deleteProfessional",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50599,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b92fa9e52b3a14f8442e4d",
+			"name": "sendToSaveResumeQueue",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67936,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b92fb1827a8b2d6fd78e68",
+			"name": "saveResume",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 85251,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b92fb6846b24353579dacc",
+			"name": "showSucessMessage",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101773,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b92fbb6228454521151abf",
+			"name": "showErrorMessage",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 118575,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b92fc0d0861727166c19cc",
+			"name": "sendToSaveDataQueue",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 135332,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b92fc7235be58032ab4e5f",
+			"name": "saveData",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 152068,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b92fd53c63822f9bba0afd",
+			"name": "changeStatus",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 186008,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b92fdc4c86838bc7528105",
+			"name": "getData",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 202870,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b938d6317fbe7ba68dea4f",
+			"name": "saveResumeView",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 219819,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92f8a598f2345d867cca9",
+			"state": "incomplete",
+			"id": "62b93a2750aeba38c38ea5f6",
+			"name": "showUnexpectedMessage",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 236727,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b92f8a598f2345d867cca9",
+		"name": "Processos",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8f3f0e894827b6c15f943",
+		"pos": 98304,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b9381a822aee49118988e7",
+			"name": "logError",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16943,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b9381c1cb3f38df4e17a26",
+			"name": "notifyJnSupport",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33617,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b9381de8d43204d2997c30",
+			"name": "saveProfessional_synonyms",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50361,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b9381f9ba8d52ab47ef220",
+			"name": "saveProfessional_keys",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 66761,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b9382156466e1be03cf73c",
+			"name": "saveProfessional_ddd",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 83223,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b938232d1c043a234f31a4",
+			"name": "saveResumeInBucket",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 100047,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b93827f6d0e73014f83f10",
+			"name": "getProfessionalType",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 117164,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b93829173d5c2ba5fcc781",
+			"name": "extractResumeText",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 133797,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b9382c50552e2b8df99933",
+			"name": "saveProfessionalAlias",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 150531,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b938322b3c927a017c2152",
+			"name": "saveData",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 166927,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b93cb179848b70b7bd496e",
+			"name": "notifyHisTelegram",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 183969,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b93cb431b9f28db8b106cf",
+			"name": "notifyTheProfessional",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 200835,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b9402bffebe218dceffd58",
+			"name": "deleteResumesInBucket",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 218107,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b9402d912773395b65bcbc",
+			"name": "deleteProfessional_synonyms",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 235186,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b9402fde357b7bb480d4fc",
+			"name": "deleteProfessional_keys",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 252431,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b94032c534db05ee397c61",
+			"name": "deleteProfessional_ddd",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 269363,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b94047b17f65762da8cc6d",
+			"name": "deleteProfessional_alias",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 286663,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b93817b6ef378868a62497",
+			"state": "incomplete",
+			"id": "62b94049bdcdd16192b0edcb",
+			"name": "deleteData",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 303160,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b93817b6ef378868a62497",
+		"name": "Processos Assíncronos",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8f3f0e894827b6c15f943",
+		"pos": 114688,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b9433f471e567ea71ed2ea",
+			"state": "incomplete",
+			"id": "62b945214d804d7dcf4e94ef",
+			"name": "saveProfessional_indexes",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16526,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9433f471e567ea71ed2ea",
+			"state": "incomplete",
+			"id": "62b9452523b1bf2b37a80091",
+			"name": "generate_ids",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33016,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9433f471e567ea71ed2ea",
+			"state": "incomplete",
+			"id": "62b94527e8c5f68d01d994e6",
+			"name": "selectProfessional_synonyms",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 49456,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9433f471e567ea71ed2ea",
+			"state": "incomplete",
+			"id": "62b945296a65437c1f50f0af",
+			"name": "selectProfessional_keys",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 66027,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9433f471e567ea71ed2ea",
+			"state": "incomplete",
+			"id": "62b9452ce96c0f253d0e137d",
+			"name": "selectProfessional_ddds",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 83384,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b9433f471e567ea71ed2ea",
+			"state": "incomplete",
+			"id": "62b945302e53b34f31ea625d",
+			"name": "selectProfessionals",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 99953,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b9433f471e567ea71ed2ea",
+		"name": "Processos Schedulled",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8f3f0e894827b6c15f943",
+		"pos": 131072,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}],
+	"customFields": [],
+	"memberships": [{
+		"idMember": "5d62df6d1f8fcd66cb39009c",
+		"memberType": "admin",
+		"unconfirmed": false,
+		"deactivated": false,
+		"id": "62b246756cb00102c6093021"
+	}],
+	"pluginData": []
+}

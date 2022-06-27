@@ -3,7 +3,7 @@
 [G][3]Minhas vagas (comentários, recomendações)
 [G][1]$$ com seu CV [Meus Dados] (Exclusão, Inativação)
 ===============================================P
-[G][2]Minhas Vagas (recomendações, quiz)
+[G][2]Vagas que cadastrei (recomendações, quiz)
 [G][3]Meus Cvs(comentários, recomendações)
 [G][1]Buscar curriculos (Histórico)
 [D][4]Busca premium (Histórico)
@@ -26,33 +26,22 @@
 [D][3]Tarifas
 [G][2]Quanto paga? (Termos pesquisados, cursos)
 ===============================================T
-1=N(DADOS DO USUÁRIO);P(CURRICULO);R(BUSCACV)
+1=N(DADOS DO USUÁRIO);P(CURRICULO);R(BUSCACV);I(FALE CONOSCO)
 2=F(LOTE DE CURRÍCULOS);N(CHAMADOS);P(VISUALIZAÇÕES)
-3=T(TERMOS PESQUISADOS);P(VAGAS)
+3=T(TERMOS PESQUISADOS);P(VAGAS);F(CONHEÇA-NOS);N(IDIOMA)
 ===============================================
-4=R(VAGAS);N(SALDO)
-5=R(MEUS CVS);T(TARIFAS E RECOMPENSAS)
+4=N(SALDO);R(VAGAS);
+5=T(TARIFAS E RECOMPENSAS);R(MEUS CVS);I(QUIZ)
 6=R(BUSCA);P(REPUTAÇÃO)
-7=N(IDIOMA);F(CONHEÇA-NOS)
-8=F(PROPAGANDA)
-9=F(SOCIEDADE);T(GRÁFICOS)
+7=F(PROPAGANDA);F(SOCIEDADE)
+8=I(CURSOS);T(GRÁFICOS)
 ===============================================
-A=40
+A=41
 B=22
-C=23
-D=39
-E=27
-F=25
-G=23
-H=10
-I=7
+C=22
+D=45
+E=19
+F=21
+G=20
+H=21
 Z=12
-
-Estudos=4
-Fundo=27	
-Login=15
-Neutro=25
-Profissionais=28
-Recrutadores=69
-Scripts=8
-Topo=52
