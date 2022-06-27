@@ -13,7 +13,7 @@
 [D][3]Seu negócio 
 [G][1]Conheça-nos
 ===============================================F
-[G][1]Status(Mudar modo)
+[G][1]Quero receber currículos
 [G][1](*)E-mail
 [D][3](*)Saldo
 [G][2](*)Chamados
@@ -22,8 +22,7 @@
 [G][4]Alterar Idioma
 ===============================================N
 [G][2]Dados interessantes(Gráficos) 
-[D][3]Nossas Recompensas 
-[D][3]Tarifas
+[D][3]Tarifas e Recompensas
 [G][2]Quanto paga? (Termos pesquisados, cursos)
 ===============================================T
 1=N(DADOS DO USUÁRIO);P(CURRICULO);R(BUSCACV);I(FALE CONOSCO)

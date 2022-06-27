@@ -215,19 +215,115 @@
 		"black_light": ""
 	},
 	"powerUps": [],
-	"dateLastActivity": "2022-06-27T05:50:40.047Z",
-	"dateLastView": "2022-06-27T05:51:39.039Z",
+	"dateLastActivity": "2022-06-27T06:24:47.877Z",
+	"dateLastView": "2022-06-27T06:28:21.054Z",
 	"shortUrl": "https://trello.com/b/Go2hCHII",
 	"idTags": [],
 	"datePluginDisable": null,
 	"creationMethod": null,
-	"ixUpdate": "1800",
+	"ixUpdate": "1890",
 	"templateGallery": null,
 	"enterpriseOwned": false,
 	"idBoardSource": null,
 	"premiumFeatures": ["activity", "additionalBoardBackgrounds", "additionalStickers", "advancedChecklists", "boardExport", "butlerBC", "butlerPremium", "csvExport", "customBoardBackgrounds", "customEmoji", "customStickers", "deactivated", "export", "goldMembers", "googleApps", "inviteBoard", "inviteOrg", "isBc", "isPremium", "largeAttachments", "multiBoardGuests", "observers", "paidCorePlugins", "plugins", "privateTemplates", "readSecrets", "removal", "restrictVis", "savedSearches", "shortExportHistory", "starCounts", "superAdmins", "tags", "views"],
 	"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
 	"actions": [{
+		"id": "62b94c9f03c1ae6dd77de050",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b8f078c350c0678fc7a203",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8f07fd957ed626daa8f46",
+				"name": "Apresentar dados do Login",
+				"state": "incomplete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T06:22:23.710Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
+		"id": "62b94c9e945aa40e1ee1c7cf",
+		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
+		"data": {
+			"board": {
+				"id": "62b246756cb00102c6093019",
+				"name": "JobsNowV2",
+				"shortLink": "Go2hCHII"
+			},
+			"card": {
+				"id": "62b8cff5aa7f51409f726432",
+				"name": "Dados e links para usuário",
+				"idShort": 2,
+				"shortLink": "FirWv2RY"
+			},
+			"checklist": {
+				"id": "62b8f078c350c0678fc7a203",
+				"name": "Funcionalidades"
+			},
+			"checkItem": {
+				"id": "62b8f07fd957ed626daa8f46",
+				"name": "Apresentar dados do Login",
+				"state": "complete",
+				"textData": {
+					"emoji": {}
+				}
+			}
+		},
+		"appCreator": null,
+		"type": "updateCheckItemStateOnCard",
+		"date": "2022-06-27T06:22:22.673Z",
+		"limits": null,
+		"memberCreator": {
+			"id": "5d62df6d1f8fcd66cb39009c",
+			"activityBlocked": false,
+			"avatarHash": "cfebb3704350c8fd29866554ea740c33",
+			"avatarUrl": "https://trello-members.s3.amazonaws.com/5d62df6d1f8fcd66cb39009c/cfebb3704350c8fd29866554ea740c33",
+			"fullName": "Onias Vieira Junior",
+			"idMemberReferrer": null,
+			"initials": "OJ",
+			"nonPublic": {
+				"fullName": "Onias Vieira Junior",
+				"initials": "OJ",
+				"avatarHash": null
+			},
+			"nonPublicAvailable": true,
+			"username": "oniasvieirajunior2"
+		}
+	}, {
 		"id": "62b9433f471e567ea71ed2fc",
 		"idMemberCreator": "5d62df6d1f8fcd66cb39009c",
 		"data": {
@@ -4319,7 +4415,7 @@
 			"viewingMemberVoted": false,
 			"subscribed": false,
 			"fogbugz": "",
-			"checkItems": 28,
+			"checkItems": 31,
 			"checkItemsChecked": 0,
 			"checkItemsEarliestDue": null,
 			"comments": 0,
@@ -4334,7 +4430,7 @@
 		"coordinates": null,
 		"creationMethod": null,
 		"dueComplete": false,
-		"dateLastActivity": "2022-06-27T04:24:05.528Z",
+		"dateLastActivity": "2022-06-27T06:24:47.877Z",
 		"desc": "",
 		"descData": {
 			"emoji": {}
@@ -4599,1238 +4695,6 @@
 		"status": "disconnected"
 	}],
 	"checklists": [{
-		"checkItems": [{
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8cd869c642c3840235df3",
-			"name": "login_request",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 17325,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8cd90abb02f74f1da7eae",
-			"name": "password",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 34295,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8cd9668ed0a707e9cb908",
-			"name": "pre_registration",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 50921,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8cda98a6d3b4de7691d49",
-			"name": "request_token",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 67695,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8cdc13c0d7a0badbb74f6",
-			"name": "locked_request_token",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 84644,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8cdc94bef627629b04d95",
-			"name": "locked_password",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 101279,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8cdcf9d4dca039d815dab",
-			"name": "locked_token",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 118623,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8cdd9c2066450c4241404",
-			"name": "login",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 135322,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8cdef6093eb79363ebd45",
-			"name": "logout",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 152120,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8cec285a8ce87c8d2eb5f",
-			"name": "login_activity",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 169476,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8dfa9e3cbcc0341ebfd39",
-			"name": "login_conflict",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 186328,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8dfb16cc20918c7cb5ff9",
-			"name": "login_conflict_solved",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 203337,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8e79063589e57404678d4",
-			"name": "recruiter",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 220499,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8e7a6860240767a05444a",
-			"name": "user_type_activity",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 253857,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8eec8aaaf838f4d6f0b89",
-			"name": "non_recruiter",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 271113,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8cd36353f74546361a1b9",
-			"state": "incomplete",
-			"id": "62b8f5bc65328287d8739bb8",
-			"name": "audit",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 287551,
-			"due": null,
-			"idMember": null
-		}],
-		"id": "62b8cd36353f74546361a1b9",
-		"name": "Tabelas",
-		"idBoard": "62b246756cb00102c6093019",
-		"idCard": "62b8cd070605495fb039b28f",
-		"pos": 16384,
-		"limits": {
-			"checkItems": {
-				"perChecklist": {
-					"status": "ok",
-					"disableAt": 200,
-					"warnAt": 160
-				}
-			}
-		},
-		"creationMethod": null
-	}, {
-		"checkItems": [{
-			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
-			"state": "incomplete",
-			"id": "62b8d0a30d0a7e6196d938cf",
-			"name": "loginRequest",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 16796,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
-			"state": "incomplete",
-			"id": "62b8d0ab057bd87bb350f246",
-			"name": "savePreRegistration",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 34063,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
-			"state": "incomplete",
-			"id": "62b8d0b1fbb31d47f02129dd",
-			"name": "errorScreen",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 51258,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
-			"state": "incomplete",
-			"id": "62b8d0b6bfc5ff07454d838f",
-			"name": "confirmEmail",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 68245,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
-			"state": "incomplete",
-			"id": "62b8d0b9fe12f938a5f4fbc6",
-			"name": "savePassword",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 85580,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
-			"state": "incomplete",
-			"id": "62b8d0bdfe009363d8374cd9",
-			"name": "confirmBadPassword",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 102113,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
-			"state": "incomplete",
-			"id": "62b8d0c541f9e638ff56db06",
-			"name": "validatePassword",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 118841,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
-			"state": "incomplete",
-			"id": "62b8d0ca9dccea743ff4163c",
-			"name": "requestToken",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 135714,
-			"due": null,
-			"idMember": null
-		}],
-		"id": "62b8d0940b2b3c32cbaaa1e2",
-		"name": "Telas",
-		"idBoard": "62b246756cb00102c6093019",
-		"idCard": "62b8cd070605495fb039b28f",
-		"pos": 8192,
-		"limits": {
-			"checkItems": {
-				"perChecklist": {
-					"status": "ok",
-					"disableAt": 200,
-					"warnAt": 160
-				}
-			}
-		},
-		"creationMethod": null
-	}, {
-		"checkItems": [{
-			"idChecklist": "62b8d9dd9725fa5bf326f48c",
-			"state": "incomplete",
-			"id": "62b8d9f03b48de7739f005e1",
-			"name": "loginRequest",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 16641,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d9dd9725fa5bf326f48c",
-			"state": "incomplete",
-			"id": "62b8da1432ed62153235f35c",
-			"name": "savePreRegistration",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 34024,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d9dd9725fa5bf326f48c",
-			"state": "incomplete",
-			"id": "62b8da19ff3739336d9b37c0",
-			"name": "errorScreen",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 50993,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d9dd9725fa5bf326f48c",
-			"state": "incomplete",
-			"id": "62b8da295f283e04a2940942",
-			"name": "confirmEmail",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 67504,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d9dd9725fa5bf326f48c",
-			"state": "incomplete",
-			"id": "62b8da2d64472832dd8c640d",
-			"name": "savePassword",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 84417,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d9dd9725fa5bf326f48c",
-			"state": "incomplete",
-			"id": "62b8da326311ec88d40eaa0f",
-			"name": "confirmBadPassword",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 101249,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d9dd9725fa5bf326f48c",
-			"state": "incomplete",
-			"id": "62b8da3a6c08fa15a2aefbb3",
-			"name": "validatePassword",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 117930,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8d9dd9725fa5bf326f48c",
-			"state": "incomplete",
-			"id": "62b8da401b2cdd74d8233ab2",
-			"name": "requestToken",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 134735,
-			"due": null,
-			"idMember": null
-		}],
-		"id": "62b8d9dd9725fa5bf326f48c",
-		"name": "Processos",
-		"idBoard": "62b246756cb00102c6093019",
-		"idCard": "62b8cd070605495fb039b28f",
-		"pos": 4096,
-		"limits": {
-			"checkItems": {
-				"perChecklist": {
-					"status": "ok",
-					"disableAt": 200,
-					"warnAt": 160
-				}
-			}
-		},
-		"creationMethod": null
-	}, {
-		"checkItems": [{
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8dac9cd0013761a58484d",
-			"name": "Primeiro Login",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 17303,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8dacde5d6bd73f9b002a6",
-			"name": "Sugestão para melhorar senha",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 34141,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8db1ae04b7b18e6c3d2d5",
-			"name": "Enviar token",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 50989,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8db25490db234301059b7",
-			"name": "Cadastrar senha",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 67653,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8db2964967340312d0de2",
-			"name": "Bloquear token",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 84100,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8db2d7e613e63591b7810",
-			"name": "Pre registro",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 100614,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8db33b4582f30488cf020",
-			"name": "Executar Login",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 117206,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8db419c981a45b259fea1",
-			"name": "Registrar Historico",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 133792,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8db4a5a19de32362cd93d",
-			"name": "Logout",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 150941,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8db5789b0104057427211",
-			"name": "Errar senha",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 167623,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8db5bb02010766d1a37df",
-			"name": "Bloquear senha",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 184952,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8db5f29319b73b7cde221",
-			"name": "Desbloquear senha",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 201410,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8db64563f75126f61bbfa",
-			"name": "Desbloquear token",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 218101,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8dc35a014697c610e6104",
-			"name": "Ativar suporte para token",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 234957,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8dc3e7f83ce3164fa3862",
-			"name": "Verificar se já está logado",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 251690,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8dc441f60c7162ca37c78",
-			"name": "Excluir login expirado",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 268303,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8dc898443604807ed316a",
-			"name": "Resolver login conflitante",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 285043,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8de50970d458c2fdc9035",
-			"name": "Salvar path ao fazer logout",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 302086,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8e6225a7cef329eb90177",
-			"name": "Salvar recrutador",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 319133,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8e8da952b0146f1b2d15f",
-			"name": "Salvar user_type_activity",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 335958,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8ef014d88a55c7720164e",
-			"name": "Consultar tabela de não RH",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 353145,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8f5a900890c8c571a9c5f",
-			"name": "Salvar auditoria",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 369726,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8da8a21192574dbda5a9b",
-			"state": "incomplete",
-			"id": "62b8ffc11dcf66454ac59fa7",
-			"name": "Redirecionar pagina para usuário",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 386418,
-			"due": null,
-			"idMember": null
-		}],
-		"id": "62b8da8a21192574dbda5a9b",
-		"name": "Funcionalidades",
-		"idBoard": "62b246756cb00102c6093019",
-		"idCard": "62b8cd070605495fb039b28f",
-		"pos": 2048,
-		"limits": {
-			"checkItems": {
-				"perChecklist": {
-					"status": "ok",
-					"disableAt": 200,
-					"warnAt": 160
-				}
-			}
-		},
-		"creationMethod": null
-	}, {
-		"checkItems": [{
-			"idChecklist": "62b8e51967face1c89a358d3",
-			"state": "incomplete",
-			"id": "62b8e52c941f262736068bd2",
-			"name": "E-mail",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 17167,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8e51967face1c89a358d3",
-			"state": "incomplete",
-			"id": "62b8e56e2a3ab875665af597",
-			"name": "Trocar Modo (Tipo de acesso (Recrutador, Profissional))",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 33984,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8e51967face1c89a358d3",
-			"state": "incomplete",
-			"id": "62b8ee72c2ac1a600a45b22d",
-			"name": "Cadastrar como recrutador",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 51101,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8e51967face1c89a358d3",
-			"state": "incomplete",
-			"id": "62b8ee7637748a2a399d5861",
-			"name": "Atualizar pre_registration",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 67502,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8e51967face1c89a358d3",
-			"state": "incomplete",
-			"id": "62b8ee79666ad14fdb127c92",
-			"name": "Excluir não recrutador",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 84829,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8e51967face1c89a358d3",
-			"state": "incomplete",
-			"id": "62b8ee7e8cbff7881ed71366",
-			"name": "Excluir recrutador",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 101252,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8e51967face1c89a358d3",
-			"state": "incomplete",
-			"id": "62b8ee81b469a48d03f572b1",
-			"name": "Cadastrar como não recrutador",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 117699,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8e51967face1c89a358d3",
-			"state": "incomplete",
-			"id": "62b8efb18729fd2f5144db80",
-			"name": "Ultimo acesso",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 134896,
-			"due": null,
-			"idMember": null
-		}],
-		"id": "62b8e51967face1c89a358d3",
-		"name": "Componentes de tela",
-		"idBoard": "62b246756cb00102c6093019",
-		"idCard": "62b8cff5aa7f51409f726432",
-		"pos": 16384,
-		"limits": {
-			"checkItems": {
-				"perChecklist": {
-					"status": "ok",
-					"disableAt": 200,
-					"warnAt": 160
-				}
-			}
-		},
-		"creationMethod": null
-	}, {
-		"checkItems": [{
-			"idChecklist": "62b8f078c350c0678fc7a203",
-			"state": "incomplete",
-			"id": "62b8f07fd957ed626daa8f46",
-			"name": "Apresentar dados do Login",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 16804,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8f078c350c0678fc7a203",
-			"state": "incomplete",
-			"id": "62b8f089bf0da248901351fb",
-			"name": "Cadastrar como recrutador",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 50608,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8f078c350c0678fc7a203",
-			"state": "incomplete",
-			"id": "62b8f08e4e6bf68883965404",
-			"name": "Cadastrar como não recrutador",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 67680,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8f078c350c0678fc7a203",
-			"state": "incomplete",
-			"id": "62b8f091e3f03a56a183b0c6",
-			"name": "Excluir recrutador",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 84260,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8f078c350c0678fc7a203",
-			"state": "incomplete",
-			"id": "62b8f095384ad57bfe0e9793",
-			"name": "Excluir não recrutador",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 100781,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8f078c350c0678fc7a203",
-			"state": "incomplete",
-			"id": "62b8f09bdfface03a1412d62",
-			"name": "Atualizar pre_registration",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 117642,
-			"due": null,
-			"idMember": null
-		}],
-		"id": "62b8f078c350c0678fc7a203",
-		"name": "Funcionalidades",
-		"idBoard": "62b246756cb00102c6093019",
-		"idCard": "62b8cff5aa7f51409f726432",
-		"pos": 8192,
-		"limits": {
-			"checkItems": {
-				"perChecklist": {
-					"status": "ok",
-					"disableAt": 200,
-					"warnAt": 160
-				}
-			}
-		},
-		"creationMethod": null
-	}, {
-		"checkItems": [{
-			"idChecklist": "62b8f0f5772bed7318ba3628",
-			"state": "incomplete",
-			"id": "62b8f0ff1c0d0e44e2d86422",
-			"name": "requestRecruiterRegistration",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 33965,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8f0f5772bed7318ba3628",
-			"state": "incomplete",
-			"id": "62b8f104b735798bcd7e1720",
-			"name": "insertRecruiter",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 50664,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8f0f5772bed7318ba3628",
-			"state": "incomplete",
-			"id": "62b8f1089f67585d31a568bb",
-			"name": "insertNonRecruiter",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 67472,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b8f0f5772bed7318ba3628",
-			"state": "incomplete",
-			"id": "62b8f10c1c945f8868ef7eab",
-			"name": "showMessage",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 84659,
-			"due": null,
-			"idMember": null
-		}],
-		"id": "62b8f0f5772bed7318ba3628",
-		"name": "Processos",
-		"idBoard": "62b246756cb00102c6093019",
-		"idCard": "62b8cff5aa7f51409f726432",
-		"pos": 12288,
-		"limits": {
-			"checkItems": {
-				"perChecklist": {
-					"status": "ok",
-					"disableAt": 200,
-					"warnAt": 160
-				}
-			}
-		},
-		"creationMethod": null
-	}, {
-		"checkItems": [{
-			"idChecklist": "62b918578af4386422641fda",
-			"state": "incomplete",
-			"id": "62b91c7deb18dd5c7650cd47",
-			"name": "post: users/{email}/preRegistation/userType/{userType}/channelType/{channelType}",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 50612,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b918578af4386422641fda",
-			"state": "incomplete",
-			"id": "62b91df109a2f54a288ec7c5",
-			"name": "post: users/{email}/password : body({password})",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 67936,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b918578af4386422641fda",
-			"state": "incomplete",
-			"id": "62b91e5fb8c02921b5c878cd",
-			"name": "post: users/{email}/loginRequest",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 85305,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b918578af4386422641fda",
-			"state": "incomplete",
-			"id": "62b91ec4362d3003dff95b2d",
-			"name": "post: users/{email}/login",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 102672,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b918578af4386422641fda",
-			"state": "incomplete",
-			"id": "62b91ed816ff717b36754d0d",
-			"name": "post: users/{email}/logout",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 119401,
-			"due": null,
-			"idMember": null
-		}],
-		"id": "62b918578af4386422641fda",
-		"name": "Endpoints",
-		"idBoard": "62b246756cb00102c6093019",
-		"idCard": "62b8cd070605495fb039b28f",
-		"pos": 32768,
-		"limits": {
-			"checkItems": {
-				"perChecklist": {
-					"status": "ok",
-					"disableAt": 200,
-					"warnAt": 160
-				}
-			}
-		},
-		"creationMethod": null
-	}, {
-		"checkItems": [{
-			"idChecklist": "62b91a09772bed7318cd8b56",
-			"state": "incomplete",
-			"id": "62b91a16681de988ae3c793a",
-			"name": "locked_password (401)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 16831,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b91a09772bed7318cd8b56",
-			"state": "incomplete",
-			"id": "62b91a4f0bfd15073630025a",
-			"name": "locked_token (403)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 33997,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b91a09772bed7318cd8b56",
-			"state": "incomplete",
-			"id": "62b91a638483e75398be85c4",
-			"name": "locked_request_token (429)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 50917,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b91a09772bed7318cd8b56",
-			"state": "incomplete",
-			"id": "62b91acdb577fc487cd42423",
-			"name": "not_existing_login_request (404)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 67488,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b91a09772bed7318cd8b56",
-			"state": "incomplete",
-			"id": "62b91b11d71f651237099e07",
-			"name": "not_existing_password (201)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 84625,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b91a09772bed7318cd8b56",
-			"state": "incomplete",
-			"id": "62b91b303e687c5049222613",
-			"name": "not_existing_pre_registration (202)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 101567,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b91a09772bed7318cd8b56",
-			"state": "incomplete",
-			"id": "62b91f3d2ac63b19bccdad3a",
-			"name": "bad_password (422)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 118620,
-			"due": null,
-			"idMember": null
-		}],
-		"id": "62b91a09772bed7318cd8b56",
-		"name": "Servlet Filters",
-		"idBoard": "62b246756cb00102c6093019",
-		"idCard": "62b8cd070605495fb039b28f",
-		"pos": 49152,
-		"limits": {
-			"checkItems": {
-				"perChecklist": {
-					"status": "ok",
-					"disableAt": 200,
-					"warnAt": 160
-				}
-			}
-		},
-		"creationMethod": null
-	}, {
-		"checkItems": [{
-			"idChecklist": "62b92093355177379c7f7b39",
-			"state": "incomplete",
-			"id": "62b920c1faeef97c3f721576",
-			"name": "head: recruiters/{email}",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 16474,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b92093355177379c7f7b39",
-			"state": "incomplete",
-			"id": "62b920cb70709225e23e745c",
-			"name": "post: recruiters/{email}",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 33821,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b92093355177379c7f7b39",
-			"state": "incomplete",
-			"id": "62b920d3a51b6376cc358992",
-			"name": "delete: recruiters/{email}",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 51170,
-			"due": null,
-			"idMember": null
-		}],
-		"id": "62b92093355177379c7f7b39",
-		"name": "Endpoints",
-		"idBoard": "62b246756cb00102c6093019",
-		"idCard": "62b8cff5aa7f51409f726432",
-		"pos": 32768,
-		"limits": {
-			"checkItems": {
-				"perChecklist": {
-					"status": "ok",
-					"disableAt": 200,
-					"warnAt": 160
-				}
-			}
-		},
-		"creationMethod": null
-	}, {
-		"checkItems": [{
-			"idChecklist": "62b92162329e9e611e7cb586",
-			"state": "incomplete",
-			"id": "62b9216da7ac4a5e88c3811b",
-			"name": "not_existing_pre_registration(401)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 16786,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b92162329e9e611e7cb586",
-			"state": "incomplete",
-			"id": "62b921714af3448bf3b0a25d",
-			"name": "not_existing_password(401)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 33768,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b92162329e9e611e7cb586",
-			"state": "incomplete",
-			"id": "62b92181dbf9c4708194f199",
-			"name": "not_existing_login_request (401)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 50990,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b92162329e9e611e7cb586",
-			"state": "incomplete",
-			"id": "62b921848532e686c9101b97",
-			"name": "locked_request_token (401)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 67881,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b92162329e9e611e7cb586",
-			"state": "incomplete",
-			"id": "62b921891e3adb56c83c41fb",
-			"name": "locked_token (401)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 84702,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b92162329e9e611e7cb586",
-			"state": "incomplete",
-			"id": "62b92197c599525cfb6a5474",
-			"name": "expired_session (401)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 101296,
-			"due": null,
-			"idMember": null
-		}, {
-			"idChecklist": "62b92162329e9e611e7cb586",
-			"state": "incomplete",
-			"id": "62b930e5cf2b03637ee0774a",
-			"name": "conflict_recruiter (409)",
-			"nameData": {
-				"emoji": {}
-			},
-			"pos": 118273,
-			"due": null,
-			"idMember": null
-		}],
-		"id": "62b92162329e9e611e7cb586",
-		"name": "Servlet Filters",
-		"idBoard": "62b246756cb00102c6093019",
-		"idCard": "62b8cff5aa7f51409f726432",
-		"pos": 49152,
-		"limits": {
-			"checkItems": {
-				"perChecklist": {
-					"status": "ok",
-					"disableAt": 200,
-					"warnAt": 160
-				}
-			}
-		},
-		"creationMethod": null
-	}, {
 		"checkItems": [{
 			"idChecklist": "62b8f40c66c0bd5b7e2db944",
 			"state": "incomplete",
@@ -7134,6 +5998,1271 @@
 		"idBoard": "62b246756cb00102c6093019",
 		"idCard": "62b8f3f0e894827b6c15f943",
 		"pos": 131072,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cd869c642c3840235df3",
+			"name": "login_request",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 17325,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cd90abb02f74f1da7eae",
+			"name": "password",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 34295,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cd9668ed0a707e9cb908",
+			"name": "pre_registration",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50921,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cda98a6d3b4de7691d49",
+			"name": "request_token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67695,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cdc13c0d7a0badbb74f6",
+			"name": "locked_request_token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84644,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cdc94bef627629b04d95",
+			"name": "locked_password",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101279,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cdcf9d4dca039d815dab",
+			"name": "locked_token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 118623,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cdd9c2066450c4241404",
+			"name": "login",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 135322,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cdef6093eb79363ebd45",
+			"name": "logout",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 152120,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8cec285a8ce87c8d2eb5f",
+			"name": "login_activity",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 169476,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8dfa9e3cbcc0341ebfd39",
+			"name": "login_conflict",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 186328,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8dfb16cc20918c7cb5ff9",
+			"name": "login_conflict_solved",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 203337,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8e79063589e57404678d4",
+			"name": "recruiter",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 220499,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8e7a6860240767a05444a",
+			"name": "user_type_activity",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 253857,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8eec8aaaf838f4d6f0b89",
+			"name": "non_recruiter",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 271113,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8cd36353f74546361a1b9",
+			"state": "incomplete",
+			"id": "62b8f5bc65328287d8739bb8",
+			"name": "audit",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 287551,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8cd36353f74546361a1b9",
+		"name": "Tabelas",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 16384,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0a30d0a7e6196d938cf",
+			"name": "loginRequest",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16796,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0ab057bd87bb350f246",
+			"name": "savePreRegistration",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 34063,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0b1fbb31d47f02129dd",
+			"name": "errorScreen",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 51258,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0b6bfc5ff07454d838f",
+			"name": "confirmEmail",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 68245,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0b9fe12f938a5f4fbc6",
+			"name": "savePassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 85580,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0bdfe009363d8374cd9",
+			"name": "confirmBadPassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 102113,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0c541f9e638ff56db06",
+			"name": "validatePassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 118841,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d0940b2b3c32cbaaa1e2",
+			"state": "incomplete",
+			"id": "62b8d0ca9dccea743ff4163c",
+			"name": "requestToken",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 135714,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8d0940b2b3c32cbaaa1e2",
+		"name": "Telas",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 8192,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8d9f03b48de7739f005e1",
+			"name": "loginRequest",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16641,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da1432ed62153235f35c",
+			"name": "savePreRegistration",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 34024,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da19ff3739336d9b37c0",
+			"name": "errorScreen",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50993,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da295f283e04a2940942",
+			"name": "confirmEmail",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67504,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da2d64472832dd8c640d",
+			"name": "savePassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84417,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da326311ec88d40eaa0f",
+			"name": "confirmBadPassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101249,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da3a6c08fa15a2aefbb3",
+			"name": "validatePassword",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 117930,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8d9dd9725fa5bf326f48c",
+			"state": "incomplete",
+			"id": "62b8da401b2cdd74d8233ab2",
+			"name": "requestToken",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 134735,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8d9dd9725fa5bf326f48c",
+		"name": "Processos",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 4096,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dac9cd0013761a58484d",
+			"name": "Primeiro Login",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 17303,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dacde5d6bd73f9b002a6",
+			"name": "Sugestão para melhorar senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 34141,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db1ae04b7b18e6c3d2d5",
+			"name": "Enviar token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50989,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db25490db234301059b7",
+			"name": "Cadastrar senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67653,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db2964967340312d0de2",
+			"name": "Bloquear token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84100,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db2d7e613e63591b7810",
+			"name": "Pre registro",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 100614,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db33b4582f30488cf020",
+			"name": "Executar Login",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 117206,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db419c981a45b259fea1",
+			"name": "Registrar Historico",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 133792,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db4a5a19de32362cd93d",
+			"name": "Logout",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 150941,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db5789b0104057427211",
+			"name": "Errar senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 167623,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db5bb02010766d1a37df",
+			"name": "Bloquear senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 184952,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db5f29319b73b7cde221",
+			"name": "Desbloquear senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 201410,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8db64563f75126f61bbfa",
+			"name": "Desbloquear token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 218101,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dc35a014697c610e6104",
+			"name": "Ativar suporte para token",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 234957,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dc3e7f83ce3164fa3862",
+			"name": "Verificar se já está logado",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 251690,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dc441f60c7162ca37c78",
+			"name": "Excluir login expirado",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 268303,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8dc898443604807ed316a",
+			"name": "Resolver login conflitante",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 285043,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8de50970d458c2fdc9035",
+			"name": "Salvar path ao fazer logout",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 302086,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8e6225a7cef329eb90177",
+			"name": "Salvar recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 319133,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8e8da952b0146f1b2d15f",
+			"name": "Salvar user_type_activity",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 335958,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8ef014d88a55c7720164e",
+			"name": "Consultar tabela de não RH",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 353145,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8f5a900890c8c571a9c5f",
+			"name": "Salvar auditoria",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 369726,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8da8a21192574dbda5a9b",
+			"state": "incomplete",
+			"id": "62b8ffc11dcf66454ac59fa7",
+			"name": "Redirecionar pagina para usuário",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 386418,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8da8a21192574dbda5a9b",
+		"name": "Funcionalidades",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 2048,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b8e52c941f262736068bd2",
+			"name": "Link com E-mail",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 17167,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b8ee72c2ac1a600a45b22d",
+			"name": "Checkbox quero receber currículos",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 51101,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b8efb18729fd2f5144db80",
+			"name": "Link com Ultimo acesso",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 134896,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b94bb822c4bc2fab4bc8e5",
+			"name": "Botão de Trocar senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 151280,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8e51967face1c89a358d3",
+			"state": "incomplete",
+			"id": "62b94bbe4bef627629cd59b4",
+			"name": "Botão de Sair do sistema",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 168606,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8e51967face1c89a358d3",
+		"name": "Componentes de tela",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cff5aa7f51409f726432",
+		"pos": 16384,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f07fd957ed626daa8f46",
+			"name": "Apresentar dados do Login",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16804,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f089bf0da248901351fb",
+			"name": "Cadastrar como recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50608,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f08e4e6bf68883965404",
+			"name": "Cadastrar como não recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67680,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f091e3f03a56a183b0c6",
+			"name": "Excluir recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84260,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f095384ad57bfe0e9793",
+			"name": "Excluir não recrutador",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 100781,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b8f09bdfface03a1412d62",
+			"name": "Atualizar pre_registration",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 117642,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b94aedb28a6c3885eb4e9f",
+			"name": "Sair do sistema",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 134448,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b94af1c0ec9c0e99a51057",
+			"name": "Trocar senha",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 150967,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f078c350c0678fc7a203",
+			"state": "incomplete",
+			"id": "62b94b119411b318c1617435",
+			"name": "Renderização condicional dos componentes ",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 167744,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8f078c350c0678fc7a203",
+		"name": "Funcionalidades",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cff5aa7f51409f726432",
+		"pos": 8192,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b8f0f5772bed7318ba3628",
+			"state": "incomplete",
+			"id": "62b8f0ff1c0d0e44e2d86422",
+			"name": "requestRecruiterRegistration",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33965,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f0f5772bed7318ba3628",
+			"state": "incomplete",
+			"id": "62b8f104b735798bcd7e1720",
+			"name": "insertRecruiter",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50664,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f0f5772bed7318ba3628",
+			"state": "incomplete",
+			"id": "62b8f1089f67585d31a568bb",
+			"name": "insertNonRecruiter",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67472,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f0f5772bed7318ba3628",
+			"state": "incomplete",
+			"id": "62b8f10c1c945f8868ef7eab",
+			"name": "showMessage",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84659,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f0f5772bed7318ba3628",
+			"state": "incomplete",
+			"id": "62b94cf792bef97757712325",
+			"name": "Link para gráficos (Invisível)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101433,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f0f5772bed7318ba3628",
+			"state": "incomplete",
+			"id": "62b94d1b54f6d237d2f451a4",
+			"name": "Tarifas e Recompensas (Invisível)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 118679,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b8f0f5772bed7318ba3628",
+			"state": "incomplete",
+			"id": "62b94d2fdb2e5d7b7e93a9de",
+			"name": "Quanto Paga (Invisível)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 135837,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b8f0f5772bed7318ba3628",
+		"name": "Processos",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cff5aa7f51409f726432",
+		"pos": 12288,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b918578af4386422641fda",
+			"state": "incomplete",
+			"id": "62b91c7deb18dd5c7650cd47",
+			"name": "post: users/{email}/preRegistation/userType/{userType}/channelType/{channelType}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50612,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b918578af4386422641fda",
+			"state": "incomplete",
+			"id": "62b91df109a2f54a288ec7c5",
+			"name": "post: users/{email}/password : body({password})",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67936,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b918578af4386422641fda",
+			"state": "incomplete",
+			"id": "62b91e5fb8c02921b5c878cd",
+			"name": "post: users/{email}/loginRequest",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 85305,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b918578af4386422641fda",
+			"state": "incomplete",
+			"id": "62b91ec4362d3003dff95b2d",
+			"name": "post: users/{email}/login",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 102672,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b918578af4386422641fda",
+			"state": "incomplete",
+			"id": "62b91ed816ff717b36754d0d",
+			"name": "post: users/{email}/logout",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 119401,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b918578af4386422641fda",
+		"name": "Endpoints",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 32768,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91a16681de988ae3c793a",
+			"name": "locked_password (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16831,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91a4f0bfd15073630025a",
+			"name": "locked_token (403)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33997,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91a638483e75398be85c4",
+			"name": "locked_request_token (429)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50917,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91acdb577fc487cd42423",
+			"name": "not_existing_login_request (404)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67488,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91b11d71f651237099e07",
+			"name": "not_existing_password (201)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84625,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91b303e687c5049222613",
+			"name": "not_existing_pre_registration (202)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101567,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b91a09772bed7318cd8b56",
+			"state": "incomplete",
+			"id": "62b91f3d2ac63b19bccdad3a",
+			"name": "bad_password (422)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 118620,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b91a09772bed7318cd8b56",
+		"name": "Servlet Filters",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cd070605495fb039b28f",
+		"pos": 49152,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b92093355177379c7f7b39",
+			"state": "incomplete",
+			"id": "62b920c1faeef97c3f721576",
+			"name": "head: recruiters/{email}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16474,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92093355177379c7f7b39",
+			"state": "incomplete",
+			"id": "62b920cb70709225e23e745c",
+			"name": "post: recruiters/{email}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33821,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92093355177379c7f7b39",
+			"state": "incomplete",
+			"id": "62b920d3a51b6376cc358992",
+			"name": "delete: recruiters/{email}",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 51170,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b92093355177379c7f7b39",
+		"name": "Endpoints",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cff5aa7f51409f726432",
+		"pos": 32768,
+		"limits": {
+			"checkItems": {
+				"perChecklist": {
+					"status": "ok",
+					"disableAt": 200,
+					"warnAt": 160
+				}
+			}
+		},
+		"creationMethod": null
+	}, {
+		"checkItems": [{
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b9216da7ac4a5e88c3811b",
+			"name": "not_existing_pre_registration(401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 16786,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b921714af3448bf3b0a25d",
+			"name": "not_existing_password(401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 33768,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b92181dbf9c4708194f199",
+			"name": "not_existing_login_request (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 50990,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b921848532e686c9101b97",
+			"name": "locked_request_token (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 67881,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b921891e3adb56c83c41fb",
+			"name": "locked_token (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 84702,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b92197c599525cfb6a5474",
+			"name": "expired_session (401)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 101296,
+			"due": null,
+			"idMember": null
+		}, {
+			"idChecklist": "62b92162329e9e611e7cb586",
+			"state": "incomplete",
+			"id": "62b930e5cf2b03637ee0774a",
+			"name": "conflict_recruiter (409)",
+			"nameData": {
+				"emoji": {}
+			},
+			"pos": 118273,
+			"due": null,
+			"idMember": null
+		}],
+		"id": "62b92162329e9e611e7cb586",
+		"name": "Servlet Filters",
+		"idBoard": "62b246756cb00102c6093019",
+		"idCard": "62b8cff5aa7f51409f726432",
+		"pos": 49152,
 		"limits": {
 			"checkItems": {
 				"perChecklist": {
