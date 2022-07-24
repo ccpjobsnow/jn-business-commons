@@ -8,10 +8,10 @@
 [G][1]Buscar curriculos (Histórico)
 [D][4]Busca premium (Histórico)
 ===============================================R
-[G][1]Indique e ganhe
-[D][4]Vc, nosso sócio?
-[D][3]Seu negócio 
-[G][1]Conheça-nos
+[G][1]Indique currículos e ganhe $$
+[D][4]Já pensou você nosso sócio?
+[D][3]Faça propaganda conosco 
+[G][1]Um pouco sobre nós
 ===============================================F
 [G][1]Quero receber currículos
 [G][1](*)E-mail
@@ -21,9 +21,9 @@
 [G][1](*)Sair(Histórico de Logins)
 [G][4]Alterar Idioma
 ===============================================N
-[G][2]Dados interessantes(Gráficos) 
+[G][2]Nossas estatísticas 
 [D][3]Tarifas e Recompensas
-[G][2]Quanto paga? (Termos pesquisados, cursos)
+[G][2]Habilidades que mais pagam(Termos pesquisados, cursos)
 ===============================================T
 1=N(DADOS DO USUÁRIO);P(CURRICULO);R(BUSCACV);I(FALE CONOSCO)
 2=F(LOTE DE CURRÍCULOS);N(CHAMADOS);P(VISUALIZAÇÕES)
@@ -35,12 +35,39 @@
 7=F(PROPAGANDA);F(SOCIEDADE)
 8=I(CURSOS);T(GRÁFICOS)
 ===============================================
-A=41
-B=22
-C=22
-D=45
-E=19
-F=21
-G=20
-H=21
-Z=12
+
+#Tela de topo
+(A)onias85@gmail.com (713 Acessos (último em 22/06/2023 as 13:17:05), Trocar Senha, Sair do Sistema)
+(D)R$ 85.17 (234 Movimentações, Ver extrato)
+(B)27 chamados (13 Solucionados, 14 Em aberto)
+(A)[X]Desejo ver/receber currículos 
+(C)Português do Brasil
+
+#Parte de cima
+Nossas estatísticas 
+Tarifas e Recompensas
+Habilidades que mais pagam(Termos pesquisados, cursos)
+
+
+#Menu Lateral
+Buscar Currículos
+Cadastrar Vagas
+Meus currículos
+Meu currículo
+
+#Rodapé
+Indique currículos e ganhe $$
+Já pensou você nosso sócio?
+Faça propaganda conosco 
+Um pouco sobre nós
+
+Temas das entregas:
+A) Estrutura e prova de conceito
+B) Cobrar RHs por currículos aderentes às suas vagas
+C) Indicações de novos currículos para a plataforma  
+D) Cobrar Rhs e candidatos por comentários sobre candidatos
+E) Melhoria nos cadastros de vagas
+F) Testar candidatos para vagas
+G) Udemy descentralizada
+H) Cadastro de propagandas
+I) Uberização de front end
