@@ -1,109 +1,114 @@
 package com.jn.commons;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
-
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.dependency.injection.CcpEspecification;
 import com.ccp.especifications.db.crud.CcpDbCrud;
-import com.ccp.exceptions.commons.Flow;
+import com.ccp.especifications.db.table.CcpDbTable;
+import com.ccp.especifications.db.table.CcpDbTableField;
+import com.jn.commons.tables.fields.A1D_email_message_sent_today;
+import com.jn.commons.tables.fields.A1D_email_try_to_send_message;
+import com.jn.commons.tables.fields.A1D_locked_password;
+import com.jn.commons.tables.fields.A1D_locked_token;
+import com.jn.commons.tables.fields.A1D_login;
+import com.jn.commons.tables.fields.A1D_login_conflict;
+import com.jn.commons.tables.fields.A1D_login_request;
+import com.jn.commons.tables.fields.A1D_logout;
+import com.jn.commons.tables.fields.A1D_password;
+import com.jn.commons.tables.fields.A1D_password_strength;
+import com.jn.commons.tables.fields.A1D_password_tries;
+import com.jn.commons.tables.fields.A1D_pre_registration;
+import com.jn.commons.tables.fields.A1D_request_token_again;
+import com.jn.commons.tables.fields.A1D_request_token_again_answered;
+import com.jn.commons.tables.fields.A1D_request_unlock_token;
+import com.jn.commons.tables.fields.A1D_request_unlock_token_answered;
+import com.jn.commons.tables.fields.A1D_responder_request_token_again;
+import com.jn.commons.tables.fields.A1D_responder_unlock_token;
+import com.jn.commons.tables.fields.A1D_static;
+import com.jn.commons.tables.fields.A1D_telegram_locked_bot;
+import com.jn.commons.tables.fields.A1D_telegram_message_sent_today;
+import com.jn.commons.tables.fields.A1D_telegram_try_to_send_message;
+import com.jn.commons.tables.fields.A1D_unlock_token_tries;
+import com.jn.commons.tables.fields.A1D_unlocked_password;
+import com.jn.commons.tables.fields.A1D_unlocked_token;
+import com.jn.commons.tables.fields.A2D_job_user_stats;
+import com.jn.commons.tables.fields.A3D_candidate;
+import com.jn.commons.tables.fields.A3D_candidate_resume;
+import com.jn.commons.tables.fields.A3D_candidate_view_resume;
+import com.jn.commons.tables.fields.A3D_denied_view_to_recruiter;
+import com.jn.commons.tables.fields.A3D_grouped_views_by_recruiter;
+import com.jn.commons.tables.fields.A3D_keywords_college;
+import com.jn.commons.tables.fields.A3D_keywords_hr;
+import com.jn.commons.tables.fields.A3D_keywords_it;
+import com.jn.commons.tables.fields.A3D_keywords_operational;
+import com.jn.commons.tables.fields.A3D_recruiter_domains;
+import com.jn.commons.tables.fields.A3D_recruiter_view_resume;
+import com.jn.commons.tables.fields.A3D_resume_exclusion;
+import com.jn.commons.tables.fields.A5D_contact_us_answered;
+import com.jn.commons.tables.fields.A5D_contact_us_requests;
+import com.jn.commons.tables.fields.A5D_responders_contact_us;
 
-public enum JnBusinessEntity {
+public enum JnBusinessEntity  implements CcpDbTable{
 
-	A5D_responders_contact_us("chatId"), 
-	A5D_contact_us_skiped(), 
-	A5D_contact_us_requests(TimeOption.ddMMyyyyHH, "chatId", "supportOperator", "subjectType"), 
-	A5D_contact_us_ignored(), 
-	A5D_contact_us_answered(TimeOption.ddMMyyyy, "chatId", "supportOperator", "subjectType"), 
-	A4D_search_resumes_stats(), 
-	A4D_search_resumes_list(), 
-	A3D_resume_exclusion("resume"), 
-	A3D_recruiter_view_resume(TimeOption.ddMMyyyy, "recruiter", "resume"), 
-	A3D_recruiter_domains("prefix"), 
-	A3D_keywords_operational("keyword"), 
-	A3D_keywords_it("keyword"), 
-	A3D_keywords_hr("keyword"), 
-	A3D_keywords_college("keyword"), 
-	A3D_grouped_views_by_recruiter("recruiter"), 
-	A3D_denied_view_to_recruiter("recruiter", "resume"), 
-	A3D_candidate_view_resume(TimeOption.ddMMyyyyHHmmss, "email"), 
-	A3D_candidate_resume("resume"), 
-	A3D_candidate("email"), 
-	A2D_job_user_stats("email"), 
-	A1D_unlocked_token("email"), 
-	A1D_unlocked_password("email"), 
-	A1D_unlock_token_tries("email"), 
-	A1D_telegram_try_to_send_message("chatId", "botId"), 
-	A1D_telegram_message_sent_today(TimeOption.ddMMyyyy, "chatId", "subjectType", "subject"), 
-	A1D_telegram_locked_bot("chatId", "botId"), 
-	A1D_telegram_api_unavailable(), 
-	A1D_static("name"), 
-	A1D_responder_unlock_token("chatId"), 
-	A1D_responder_request_token_again("chatId"), 
-	A1D_request_unlock_token_answered(TimeOption.ddMMyyyy, "email"), 
-	A1D_request_unlock_token(TimeOption.ddMMyyyy, "email"), 
-	A1D_request_token_again_answered(TimeOption.ddMMyyyy, "email"), 
-	A1D_request_token_again(TimeOption.ddMMyyyy, "email"), 
-	A1D_pre_registration("email"), 
-	A1D_password_tries(TimeOption.ddMMyyyy, "email"), 
-	A1D_password_strength("email"), 
-	A1D_password("email"), 
-	A1D_logout("email"), 
-	A1D_login_request("email"), 
-	A1D_login_conflict_solved(), 
-	A1D_login_conflict("email"), 
-	A1D_login("email"), 
-	A1D_locked_token("email"), 
-	A1D_locked_password("email"), 
-	A1D_email_try_to_send_message(TimeOption.ddMMyyyy, "email", "subjectType", "subject"), 
-	A1D_email_message_sent_today(TimeOption.ddMMyyyy, "email", "subjectType", "subject"), 
-	A1D_email_api_unavailable(), 
+	responders_contact_us(A5D_responders_contact_us.chatId), 
+	contact_us_skiped(), 
+	contact_us_requests(TimeOption.ddMMyyyyHH, A5D_contact_us_requests.chatId, A5D_contact_us_requests.supportOperator, A5D_contact_us_requests.subjectType), 
+	contact_us_ignored(), 
+	contact_us_answered(TimeOption.ddMMyyyy, A5D_contact_us_answered.chatId, A5D_contact_us_answered.supportOperator, A5D_contact_us_answered.subjectType), 
+	search_resumes_stats(), 
+	search_resumes_list(), 
+	resume_exclusion(A3D_resume_exclusion.resume), 
+	recruiter_view_resume(TimeOption.ddMMyyyy, A3D_recruiter_view_resume.recruiter, A3D_recruiter_view_resume.resume), 
+	recruiter_domains(A3D_recruiter_domains.prefix), 
+	keywords_operational(A3D_keywords_operational.keyword), 
+	keywords_it(A3D_keywords_it.keyword), 
+	keywords_hr(A3D_keywords_hr.keyword), 
+	keywords_college(A3D_keywords_college.keyword), 
+	grouped_views_by_recruiter(A3D_grouped_views_by_recruiter.recruiter), 
+	denied_view_to_recruiter(A3D_denied_view_to_recruiter.recruiter, A3D_denied_view_to_recruiter.resume), 
+	candidate_view_resume(TimeOption.ddMMyyyyHHmmss, A3D_candidate_view_resume.email), 
+	candidate_resume(A3D_candidate_resume.resume), 
+	candidate(A3D_candidate.email), 
+	job_user_stats(A2D_job_user_stats.email), 
+	unlocked_token(A1D_unlocked_token.email), 
+	unlocked_password(A1D_unlocked_password.email), 
+	unlock_token_tries(A1D_unlock_token_tries.email), 
+	telegram_try_to_send_message(A1D_telegram_try_to_send_message.chatId, A1D_telegram_try_to_send_message.botId), 
+	telegram_message_sent_today(TimeOption.ddMMyyyy, A1D_telegram_message_sent_today.chatId, A1D_telegram_message_sent_today.subjectType, A1D_telegram_message_sent_today.subject), 
+	telegram_locked_bot(A1D_telegram_locked_bot.chatId, A1D_telegram_locked_bot.botId), 
+	telegram_api_unavailable(), 
+	_static(A1D_static.name), 
+	responder_unlock_token(A1D_responder_unlock_token.chatId), 
+	responder_request_token_again(A1D_responder_request_token_again.chatId), 
+	request_unlock_token_answered(TimeOption.ddMMyyyy, A1D_request_unlock_token_answered.email), 
+	request_unlock_token(TimeOption.ddMMyyyy, A1D_request_unlock_token.email), 
+	request_token_again_answered(TimeOption.ddMMyyyy, A1D_request_token_again_answered.email), 
+	request_token_again(TimeOption.ddMMyyyy, A1D_request_token_again.email), 
+	pre_registration(A1D_pre_registration.email), 
+	password_tries(TimeOption.ddMMyyyy, A1D_password_tries.email), 
+	password_strength(A1D_password_strength.email), 
+	password(A1D_password.email), 
+	logout(A1D_logout.email), 
+	login_request(A1D_login_request.email), 
+	login_conflict_solved(), 
+	login_conflict(A1D_login_conflict.email), 
+	login(A1D_login.email),  
+	locked_token(A1D_locked_token.email), 
+	locked_password(A1D_locked_password.email), 
+	email_try_to_send_message(TimeOption.ddMMyyyy, A1D_email_try_to_send_message.email, A1D_email_try_to_send_message.subjectType, A1D_email_try_to_send_message.subject), 
+	email_message_sent_today(TimeOption.ddMMyyyy, A1D_email_message_sent_today.email, A1D_email_message_sent_today.subjectType, A1D_email_message_sent_today.subject), 
+	email_api_unavailable(), 
 	;
 	
-	final String getId(CcpMapDecorator values,TimeOption timeOptioption, String...keys) {
-		
-		String formattedCurrentDate = timeOptioption.getFormattedCurrentDate();
-		
-		if(keys.length == 0) {
-			
-			if(TimeOption.none != timeOptioption) {
-				return formattedCurrentDate;
-			}
-			
-			return UUID.randomUUID().toString();
-		}
-		
-		List<String> missingKeys = Arrays.asList(keys).stream().filter(key -> values.getAsString(key).trim().isEmpty()).collect(Collectors.toList());
-		
-		if(missingKeys.isEmpty() == false) {
-			throw new Flow(values, 500, "The following keys are missing to compose an id: " + missingKeys + ". Current values: " + values, null);
-		}
-		
-		
-		List<String> collect = Arrays.asList(keys).stream().map(key -> values.getAsString(key).trim()).collect(Collectors.toList());
-		collect = new ArrayList<>(collect);
-		collect.add(0, formattedCurrentDate);
-		String replace = collect.toString().replace(",", "_").replace("[", "").replace("]", "");
-		return replace;
-	}
-
 	final TimeOption timeOption;
-	final String[] keys;
+	final CcpDbTableField[] keys;
 	
 	
-	private JnBusinessEntity(TimeOption timeOption, String... keys) {
+	private JnBusinessEntity(TimeOption timeOption, CcpDbTableField... keys) {
 		this.timeOption = timeOption;
 		this.keys = keys;
 	}
 
-	private JnBusinessEntity(String... keys) {
+	private JnBusinessEntity(CcpDbTableField... keys) {
 		this.timeOption = TimeOption.none;
 		this.keys = keys;
 	}
@@ -111,51 +116,22 @@ public enum JnBusinessEntity {
 	@CcpEspecification
 	CcpDbCrud crud;
 
-	public CcpMapDecorator get(String id) {
-		CcpMapDecorator oneById = this.crud.getOneById(id, this.name());
-		return oneById;
+
+	public TimeOption getTimeOption() {
+		return this.timeOption;
 	}
 
-	public boolean exists(CcpMapDecorator data) {
-		String id = this.getId(data, this.timeOption, this.keys);
-		boolean exists = this.crud.exists(id, this.name());
-		return exists;
+	public CcpDbTableField[] getKeys() {
+		return this.keys;
 	}
-	
-	public boolean save(CcpMapDecorator data) {
-		String id = this.getId(data, this.timeOption, this.keys);
-		boolean updated = this.crud.updateOrSave(data, id, this.name());
-		return updated;
-	}
-	
-	
-	public Set<String> getSynonyms(Set<String> wordsToAnalyze){
-		return new HashSet<>();
-	}
-	
-	public static enum TimeOption{
-		none{
-			@Override
-			String getFormattedCurrentDate() {
-				return "";
-			}
-		}
-		,ddMMyyyy
-		,ddMMyyyyHH
-		,ddMMyyyyHHmm
-		,ddMMyyyyHHmmss
-		,ddMMyyyyHHmmssSSS
-		;
-		String getFormattedCurrentDate() {
-			return getFormattedCurrentDate(System.currentTimeMillis());
-		}
 
-		public String getFormattedCurrentDate(Long date) {
-			Date d = new Date();
-			d.setTime(date);
-			String format = new SimpleDateFormat(this.name()).format(d);
-			return format + "_";
-		}
-	} 
+	public CcpDbCrud getCrud() {
+		return this.crud;
+	}
+	
+	public String getId(CcpMapDecorator values) {
+		String id = this.getId(values, this.timeOption, this.keys);
+		return id;
+	}
 }
 
