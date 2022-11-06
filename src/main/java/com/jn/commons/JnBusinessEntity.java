@@ -7,6 +7,7 @@ import com.ccp.especifications.db.table.CcpDbTable;
 import com.ccp.especifications.db.table.CcpDbTableField;
 import com.jn.commons.tables.fields.A1D_email_message_sent_today;
 import com.jn.commons.tables.fields.A1D_email_try_to_send_message;
+import com.jn.commons.tables.fields.A1D_failed_unlock_token_today;
 import com.jn.commons.tables.fields.A1D_locked_password;
 import com.jn.commons.tables.fields.A1D_locked_token;
 import com.jn.commons.tables.fields.A1D_login;
@@ -14,7 +15,7 @@ import com.jn.commons.tables.fields.A1D_login_conflict;
 import com.jn.commons.tables.fields.A1D_login_request;
 import com.jn.commons.tables.fields.A1D_logout;
 import com.jn.commons.tables.fields.A1D_password;
-import com.jn.commons.tables.fields.A1D_password_strength;
+import com.jn.commons.tables.fields.A1D_weak_password;
 import com.jn.commons.tables.fields.A1D_password_tries;
 import com.jn.commons.tables.fields.A1D_pre_registration;
 import com.jn.commons.tables.fields.A1D_request_token_again;
@@ -85,7 +86,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	request_token_again(TimeOption.ddMMyyyy, A1D_request_token_again.email), 
 	pre_registration(A1D_pre_registration.email), 
 	password_tries(TimeOption.ddMMyyyy, A1D_password_tries.email), 
-	password_strength(A1D_password_strength.email), 
+	weak_password(A1D_weak_password.email), 
 	password(A1D_password.email), 
 	logout(A1D_logout.email), 
 	login_request(A1D_login_request.email), 
@@ -97,6 +98,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	email_try_to_send_message(TimeOption.ddMMyyyy, A1D_email_try_to_send_message.email, A1D_email_try_to_send_message.subjectType, A1D_email_try_to_send_message.subject), 
 	email_message_sent_today(TimeOption.ddMMyyyy, A1D_email_message_sent_today.email, A1D_email_message_sent_today.subjectType, A1D_email_message_sent_today.subject), 
 	email_api_unavailable(), 
+	failed_unlock_token_today(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.email), 
 	;
 	
 	final TimeOption timeOption;
