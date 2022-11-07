@@ -15,7 +15,6 @@ import com.jn.commons.tables.fields.A1D_login_conflict;
 import com.jn.commons.tables.fields.A1D_login_request;
 import com.jn.commons.tables.fields.A1D_logout;
 import com.jn.commons.tables.fields.A1D_password;
-import com.jn.commons.tables.fields.A1D_weak_password;
 import com.jn.commons.tables.fields.A1D_password_tries;
 import com.jn.commons.tables.fields.A1D_pre_registration;
 import com.jn.commons.tables.fields.A1D_request_token_again;
@@ -28,9 +27,11 @@ import com.jn.commons.tables.fields.A1D_static;
 import com.jn.commons.tables.fields.A1D_telegram_locked_bot;
 import com.jn.commons.tables.fields.A1D_telegram_message_sent_today;
 import com.jn.commons.tables.fields.A1D_telegram_try_to_send_message;
+import com.jn.commons.tables.fields.A1D_token_tries;
 import com.jn.commons.tables.fields.A1D_unlock_token_tries;
 import com.jn.commons.tables.fields.A1D_unlocked_password;
 import com.jn.commons.tables.fields.A1D_unlocked_token;
+import com.jn.commons.tables.fields.A1D_weak_password;
 import com.jn.commons.tables.fields.A2D_job_user_stats;
 import com.jn.commons.tables.fields.A3D_candidate;
 import com.jn.commons.tables.fields.A3D_candidate_resume;
@@ -73,6 +74,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	unlocked_token(A1D_unlocked_token.email), 
 	unlocked_password(A1D_unlocked_password.email), 
 	unlock_token_tries(A1D_unlock_token_tries.email), 
+	token_tries(A1D_token_tries.email), 
 	telegram_try_to_send_message(A1D_telegram_try_to_send_message.chatId, A1D_telegram_try_to_send_message.botId), 
 	telegram_message_sent_today(TimeOption.ddMMyyyy, A1D_telegram_message_sent_today.chatId, A1D_telegram_message_sent_today.subjectType, A1D_telegram_message_sent_today.subject), 
 	telegram_locked_bot(A1D_telegram_locked_bot.chatId, A1D_telegram_locked_bot.botId), 
@@ -85,7 +87,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	request_token_again_answered(TimeOption.ddMMyyyy, A1D_request_token_again_answered.email), 
 	request_token_again(TimeOption.ddMMyyyy, A1D_request_token_again.email), 
 	pre_registration(A1D_pre_registration.email), 
-	password_tries(TimeOption.ddMMyyyy, A1D_password_tries.email), 
+	password_tries(A1D_password_tries.email), 
 	weak_password(A1D_weak_password.email), 
 	password(A1D_password.email), 
 	logout(A1D_logout.email), 
@@ -135,5 +137,6 @@ public enum JnBusinessEntity  implements CcpDbTable{
 		String id = this.getId(values, this.timeOption, this.keys);
 		return id;
 	}
+
 }
 
