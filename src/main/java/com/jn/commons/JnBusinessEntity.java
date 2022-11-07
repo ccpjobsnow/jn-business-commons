@@ -70,7 +70,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	candidate_view_resume(TimeOption.ddMMyyyyHHmmss, A3D_candidate_view_resume.email), 
 	candidate_resume(A3D_candidate_resume.resume), 
 	candidate(A3D_candidate.email), 
-	job_user_stats(A2D_job_user_stats.email), 
+	user_stats(A2D_job_user_stats.email), 
 	unlocked_token(A1D_unlocked_token.email), 
 	unlocked_password(A1D_unlocked_password.email), 
 	unlock_token_tries(A1D_unlock_token_tries.email), 
