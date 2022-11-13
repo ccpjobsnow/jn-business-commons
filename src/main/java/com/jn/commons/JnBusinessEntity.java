@@ -32,7 +32,7 @@ import com.jn.commons.tables.fields.A1D_unlock_token_tries;
 import com.jn.commons.tables.fields.A1D_unlocked_password;
 import com.jn.commons.tables.fields.A1D_unlocked_token;
 import com.jn.commons.tables.fields.A1D_weak_password;
-import com.jn.commons.tables.fields.A2D_job_user_stats;
+import com.jn.commons.tables.fields.A1D_job_user_stats;
 import com.jn.commons.tables.fields.A3D_candidate;
 import com.jn.commons.tables.fields.A3D_candidate_resume;
 import com.jn.commons.tables.fields.A3D_candidate_view_resume;
@@ -70,17 +70,24 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	candidate_view_resume(TimeOption.ddMMyyyyHHmmss, A3D_candidate_view_resume.email), 
 	candidate_resume(A3D_candidate_resume.resume), 
 	candidate(A3D_candidate.email), 
-	user_stats(A2D_job_user_stats.email), 
+	user_stats(A1D_job_user_stats.email), 
 	unlocked_token(A1D_unlocked_token.email), 
 	unlocked_password(A1D_unlocked_password.email), 
 	unlock_token_tries(A1D_unlock_token_tries.email), 
 	token_tries(A1D_token_tries.email), 
+	//TODO UNUSED
 	telegram_try_to_send_message(A1D_telegram_try_to_send_message.chatId, A1D_telegram_try_to_send_message.botId), 
+	//TODO UNUSED
 	telegram_message_sent_today(TimeOption.ddMMyyyy, A1D_telegram_message_sent_today.chatId, A1D_telegram_message_sent_today.subjectType, A1D_telegram_message_sent_today.subject), 
+	//TODO UNUSED
 	telegram_locked_bot(A1D_telegram_locked_bot.chatId, A1D_telegram_locked_bot.botId), 
+	//TODO UNUSED
 	telegram_api_unavailable(), 
+	//TODO UNUSED
 	_static(A1D_static.name), 
+	//TODO UNUSED
 	responder_unlock_token(A1D_responder_unlock_token.chatId), 
+	//TODO UNUSED
 	responder_request_token_again(A1D_responder_request_token_again.chatId), 
 	request_unlock_token_answered(TimeOption.ddMMyyyy, A1D_request_unlock_token_answered.email), 
 	request_unlock_token(TimeOption.ddMMyyyy, A1D_request_unlock_token.email), 
@@ -90,15 +97,19 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	password_tries(A1D_password_tries.email), 
 	weak_password(A1D_weak_password.email), 
 	password(A1D_password.email), 
-	logout(A1D_logout.email), 
+	//TODO UNUSED
+	logout(TimeOption.ddMMyyyyHHmm, A1D_logout.email), 
 	login_request(A1D_login_request.email), 
 	login_conflict_solved(), 
 	login_conflict(A1D_login_conflict.email), 
 	login(A1D_login.email),  
 	locked_token(A1D_locked_token.email), 
 	locked_password(A1D_locked_password.email), 
+	//TODO UNUSED
 	email_try_to_send_message(TimeOption.ddMMyyyy, A1D_email_try_to_send_message.email, A1D_email_try_to_send_message.subjectType, A1D_email_try_to_send_message.subject), 
+	//TODO UNUSED
 	email_message_sent_today(TimeOption.ddMMyyyy, A1D_email_message_sent_today.email, A1D_email_message_sent_today.subjectType, A1D_email_message_sent_today.subject), 
+	//TODO UNUSED
 	email_api_unavailable(), 
 	failed_unlock_token_today(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.email), 
 	;
