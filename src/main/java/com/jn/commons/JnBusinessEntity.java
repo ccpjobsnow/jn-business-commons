@@ -1,13 +1,14 @@
 package com.jn.commons;
 
 import com.ccp.decorators.CcpMapDecorator;
-import com.ccp.dependency.injection.CcpEspecification;
+import com.ccp.dependency.injection.CcpSpecification;
 import com.ccp.especifications.db.crud.CcpDbCrud;
 import com.ccp.especifications.db.table.CcpDbTable;
 import com.ccp.especifications.db.table.CcpDbTableField;
 import com.jn.commons.tables.fields.A1D_email_message_sent_today;
 import com.jn.commons.tables.fields.A1D_email_try_to_send_message;
 import com.jn.commons.tables.fields.A1D_failed_unlock_token_today;
+import com.jn.commons.tables.fields.A1D_job_user_stats;
 import com.jn.commons.tables.fields.A1D_locked_password;
 import com.jn.commons.tables.fields.A1D_locked_token;
 import com.jn.commons.tables.fields.A1D_login;
@@ -32,7 +33,6 @@ import com.jn.commons.tables.fields.A1D_unlock_token_tries;
 import com.jn.commons.tables.fields.A1D_unlocked_password;
 import com.jn.commons.tables.fields.A1D_unlocked_token;
 import com.jn.commons.tables.fields.A1D_weak_password;
-import com.jn.commons.tables.fields.A1D_job_user_stats;
 import com.jn.commons.tables.fields.A3D_candidate;
 import com.jn.commons.tables.fields.A3D_candidate_resume;
 import com.jn.commons.tables.fields.A3D_candidate_view_resume;
@@ -66,10 +66,10 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	keywords_hr(A3D_keywords_hr.keyword), 
 	keywords_college(A3D_keywords_college.keyword), 
 	grouped_views_by_recruiter(A3D_grouped_views_by_recruiter.recruiter), 
-	denied_view_to_recruiter(A3D_denied_view_to_recruiter.recruiter, A3D_denied_view_to_recruiter.resume), 
+	denied_view_to_recruiter(A3D_denied_view_to_recruiter.domain, A3D_denied_view_to_recruiter.resume), 
 	candidate_view_resume(TimeOption.ddMMyyyyHHmmss, A3D_candidate_view_resume.email), 
 	candidate_resume(A3D_candidate_resume.resume), 
-	candidate(A3D_candidate.email), 
+	candidate(A3D_candidate.resume), 
 	user_stats(A1D_job_user_stats.email), 
 	unlocked_token(A1D_unlocked_token.email), 
 	unlocked_password(A1D_unlocked_password.email), 
@@ -127,7 +127,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 		this.keys = keys;
 	}
 
-	@CcpEspecification
+	@CcpSpecification
 	CcpDbCrud crud;
 
 
