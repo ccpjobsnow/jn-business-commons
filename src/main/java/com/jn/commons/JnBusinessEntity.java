@@ -25,9 +25,6 @@ import com.jn.commons.tables.fields.A1D_request_unlock_token_answered;
 import com.jn.commons.tables.fields.A1D_responder_request_token_again;
 import com.jn.commons.tables.fields.A1D_responder_unlock_token;
 import com.jn.commons.tables.fields.A1D_static;
-import com.jn.commons.tables.fields.A1D_telegram_locked_bot;
-import com.jn.commons.tables.fields.A1D_telegram_message_sent_today;
-import com.jn.commons.tables.fields.A1D_telegram_try_to_send_message;
 import com.jn.commons.tables.fields.A1D_token_tries;
 import com.jn.commons.tables.fields.A1D_unlock_token_tries;
 import com.jn.commons.tables.fields.A1D_unlocked_password;
@@ -45,17 +42,11 @@ import com.jn.commons.tables.fields.A3D_keywords_operational;
 import com.jn.commons.tables.fields.A3D_recruiter_domains;
 import com.jn.commons.tables.fields.A3D_recruiter_view_resume;
 import com.jn.commons.tables.fields.A3D_resume_exclusion;
-import com.jn.commons.tables.fields.A5D_contact_us_answered;
-import com.jn.commons.tables.fields.A5D_contact_us_requests;
-import com.jn.commons.tables.fields.A5D_responders_contact_us;
 
 public enum JnBusinessEntity  implements CcpDbTable{
 
-	responders_contact_us(A5D_responders_contact_us.chatId), 
 	contact_us_skiped(), 
-	contact_us_requests(TimeOption.ddMMyyyyHH, A5D_contact_us_requests.chatId, A5D_contact_us_requests.supportOperator, A5D_contact_us_requests.subjectType), 
 	contact_us_ignored(), 
-	contact_us_answered(TimeOption.ddMMyyyy, A5D_contact_us_answered.chatId, A5D_contact_us_answered.supportOperator, A5D_contact_us_answered.subjectType), 
 	search_resumes_stats(), 
 	search_resumes_list(), 
 	resume_exclusion(A3D_resume_exclusion.resume), 
@@ -76,13 +67,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	unlock_token_tries(A1D_unlock_token_tries.email), 
 	token_tries(A1D_token_tries.email), 
 	//TODO UNUSED
-	telegram_try_to_send_message(A1D_telegram_try_to_send_message.chatId, A1D_telegram_try_to_send_message.botId), 
-	//TODO UNUSED
-	telegram_message_sent_today(TimeOption.ddMMyyyy, A1D_telegram_message_sent_today.chatId, A1D_telegram_message_sent_today.subjectType, A1D_telegram_message_sent_today.subject), 
-	//TODO UNUSED
-	telegram_locked_bot(A1D_telegram_locked_bot.chatId, A1D_telegram_locked_bot.botId), 
-	//TODO UNUSED
-	telegram_api_unavailable(), 
+	messenger_api_unavailable(), 
 	//TODO UNUSED
 	_static(A1D_static.name), 
 	//TODO UNUSED
@@ -110,7 +95,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	email_message_sent_today(TimeOption.ddMMyyyy, A1D_email_message_sent_today.email, A1D_email_message_sent_today.subjectType, A1D_email_message_sent_today.subject), 
 	//TODO UNUSED
 	email_api_unavailable(), 
-	failed_unlock_token_today(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.email), 
+	failed_unlock_token_today(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.email),
 	;
 	
 	final TimeOption timeOption;
