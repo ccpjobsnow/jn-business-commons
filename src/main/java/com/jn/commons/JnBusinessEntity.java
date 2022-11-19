@@ -82,11 +82,11 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	password_tries(A1D_password_tries.email), 
 	weak_password(A1D_weak_password.email), 
 	password(A1D_password.email), 
-	logout(TimeOption.ddMMyyyyHHmm, A1D_logout.email), 
+	logout(TimeOption.ddMMyyyy, A1D_logout.email), 
 	login_request(A1D_login_request.email), 
 	login_conflict_solved(), 
 	login_conflict(A1D_login_conflict.email), 
-	login(A1D_login.email),  
+	login(TimeOption.ddMMyyyy, A1D_login.email),  
 	locked_token(A1D_locked_token.email), 
 	locked_password(A1D_locked_password.email), 
 	//TODO UNUSED
