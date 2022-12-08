@@ -6,6 +6,7 @@ import com.ccp.especifications.db.crud.CcpDbCrud;
 import com.ccp.especifications.db.table.CcpDbTable;
 import com.ccp.especifications.db.table.CcpDbTableField;
 import com.jn.commons.tables.fields.A1D_email_message_sent_today;
+import com.jn.commons.tables.fields.A5D_contact_us;
 import com.jn.commons.tables.fields.A1D_email_try_to_send_message;
 import com.jn.commons.tables.fields.A1D_failed_unlock_token_today;
 import com.jn.commons.tables.fields.A1D_job_user_stats;
@@ -47,69 +48,70 @@ public enum JnBusinessEntity  implements CcpDbTable{
 
 	contact_us_skiped(), 
 	contact_us_ignored(), 
+	contact_us(TimeOption.ddMMyyyy, A5D_contact_us.values()), 
 	search_resumes_stats(), 
 	search_resumes_list(), 
-	resume_exclusion(A3D_resume_exclusion.resume), 
-	recruiter_view_resume(TimeOption.ddMMyyyy, A3D_recruiter_view_resume.recruiter, A3D_recruiter_view_resume.resume), 
-	recruiter_domains(A3D_recruiter_domains.prefix), 
-	keywords_operational(A3D_keywords_operational.keyword), 
-	keywords_it(A3D_keywords_it.keyword), 
-	keywords_hr(A3D_keywords_hr.keyword), 
-	keywords_college(A3D_keywords_college.keyword), 
-	grouped_views_by_recruiter(A3D_grouped_views_by_recruiter.recruiter), 
-	denied_view_to_recruiter(A3D_denied_view_to_recruiter.domain, A3D_denied_view_to_recruiter.resume), 
-	candidate_view_resume(TimeOption.ddMMyyyyHHmmss, A3D_candidate_view_resume.email), 
-	candidate_resume(A3D_candidate_resume.resume), 
-	candidate(A3D_candidate.resume), 
-	user_stats(A1D_job_user_stats.email), 
-	unlocked_token(A1D_unlocked_token.email), 
-	unlocked_password(A1D_unlocked_password.email), 
-	unlock_token_tries(A1D_unlock_token_tries.email), 
-	token_tries(A1D_token_tries.email), 
+	resume_exclusion(A3D_resume_exclusion.values()), 
+	recruiter_view_resume(TimeOption.ddMMyyyy, A3D_recruiter_view_resume.values()), 
+	recruiter_domains(A3D_recruiter_domains.values()), 
+	keywords_operational(A3D_keywords_operational.values()), 
+	keywords_it(A3D_keywords_it.values()), 
+	keywords_hr(A3D_keywords_hr.values()), 
+	keywords_college(A3D_keywords_college.values()), 
+	grouped_views_by_recruiter(A3D_grouped_views_by_recruiter.values()), 
+	denied_view_to_recruiter(A3D_denied_view_to_recruiter.values()), 
+	candidate_view_resume(TimeOption.ddMMyyyyHHmmss, A3D_candidate_view_resume.values()), 
+	candidate_resume(A3D_candidate_resume.values()), 
+	candidate(A3D_candidate.values()), 
+	user_stats(A1D_job_user_stats.values()), 
+	unlocked_token(A1D_unlocked_token.values()), 
+	unlocked_password(A1D_unlocked_password.values()), 
+	unlock_token_tries(A1D_unlock_token_tries.values()), 
+	token_tries(A1D_token_tries.values()), 
 	//TODO UNUSED
 	messenger_api_unavailable(), 
 	//TODO UNUSED
-	_static(A1D_static.name), 
+	_static(A1D_static.values()), 
 	//TODO UNUSED
-	responder_unlock_token(A1D_responder_unlock_token.chatId), 
+	responder_unlock_token(A1D_responder_unlock_token.values()), 
 	//TODO UNUSED
-	responder_request_token_again(A1D_responder_request_token_again.chatId), 
-	request_unlock_token_answered(TimeOption.ddMMyyyy, A1D_request_unlock_token_answered.email), 
-	request_unlock_token(TimeOption.ddMMyyyy, A1D_request_unlock_token.email), 
-	request_token_again_answered(TimeOption.ddMMyyyy, A1D_request_token_again_answered.email), 
-	request_token_again(TimeOption.ddMMyyyy, A1D_request_token_again.email), 
-	pre_registration(A1D_pre_registration.email), 
-	password_tries(A1D_password_tries.email), 
-	weak_password(A1D_weak_password.email), 
-	password(A1D_password.email), 
-	logout(TimeOption.ddMMyyyy, A1D_logout.email), 
-	login_request(A1D_login_request.email), 
+	responder_request_token_again(A1D_responder_request_token_again.values()), 
+	request_unlock_token_answered(TimeOption.ddMMyyyy, A1D_request_unlock_token_answered.values()), 
+	request_unlock_token(TimeOption.ddMMyyyy, A1D_request_unlock_token.values()), 
+	request_token_again_answered(TimeOption.ddMMyyyy, A1D_request_token_again_answered.values()), 
+	request_token_again(TimeOption.ddMMyyyy, A1D_request_token_again.values()), 
+	pre_registration(A1D_pre_registration.values()), 
+	password_tries(A1D_password_tries.values()), 
+	weak_password(A1D_weak_password.values()), 
+	password(A1D_password.values()), 
+	logout(TimeOption.ddMMyyyy, A1D_logout.values()), 
+	login_request(A1D_login_request.values()), 
 	login_conflict_solved(), 
-	login_conflict(A1D_login_conflict.email), 
-	login(TimeOption.ddMMyyyy, A1D_login.email),  
-	locked_token(A1D_locked_token.email), 
-	locked_password(A1D_locked_password.email), 
+	login_conflict(A1D_login_conflict.values()), 
+	login(TimeOption.ddMMyyyy, A1D_login.values()),  
+	locked_token(A1D_locked_token.values()), 
+	locked_password(A1D_locked_password.values()), 
 	//TODO UNUSED
-	email_try_to_send_message(TimeOption.ddMMyyyy, A1D_email_try_to_send_message.email, A1D_email_try_to_send_message.subjectType, A1D_email_try_to_send_message.subject), 
+	email_try_to_send_message(TimeOption.ddMMyyyy, A1D_email_try_to_send_message.values()), 
 	//TODO UNUSED
-	email_message_sent_today(TimeOption.ddMMyyyy, A1D_email_message_sent_today.email, A1D_email_message_sent_today.subjectType, A1D_email_message_sent_today.subject), 
+	email_message_sent_today(TimeOption.ddMMyyyy, A1D_email_message_sent_today.values()), 
 	//TODO UNUSED
 	email_api_unavailable(), 
-	failed_unlock_token_today(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.email),
+	failed_unlock_token_today(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()),
 	;
 	
 	final TimeOption timeOption;
-	final CcpDbTableField[] keys;
+	final CcpDbTableField[] fields;
 	
 	
 	private JnBusinessEntity(TimeOption timeOption, CcpDbTableField... keys) {
 		this.timeOption = timeOption;
-		this.keys = keys;
+		this.fields = keys;
 	}
 
-	private JnBusinessEntity(CcpDbTableField... keys) {
+	private JnBusinessEntity(CcpDbTableField... fields) {
 		this.timeOption = TimeOption.none;
-		this.keys = keys;
+		this.fields = fields;
 	}
 
 	@CcpSpecification
@@ -120,8 +122,8 @@ public enum JnBusinessEntity  implements CcpDbTable{
 		return this.timeOption;
 	}
 
-	public CcpDbTableField[] getKeys() {
-		return this.keys;
+	public CcpDbTableField[] getFields() {
+		return this.fields;
 	}
 
 	public CcpDbCrud getCrud() {
@@ -129,8 +131,14 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	}
 	
 	public String getId(CcpMapDecorator values) {
-		String id = this.getId(values, this.timeOption, this.keys);
+		String id = this.getId(values, this.timeOption, this.fields);
 		return id;
+	}
+
+	@Override
+	public void saveAuditory(String id, String entityName, CcpMapDecorator values, boolean updated) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

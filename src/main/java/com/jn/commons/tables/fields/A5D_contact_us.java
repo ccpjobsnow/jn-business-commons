@@ -2,16 +2,17 @@ package com.jn.commons.tables.fields;
 
 import com.ccp.especifications.db.table.CcpDbTableField;
 
-public enum A1D_email_api_unavailable implements CcpDbTableField{
-		
+public enum A5D_contact_us implements CcpDbTableField{
+		audit(false), subjectType(true), email(true)
 	;
+	
 	private final boolean primaryKey;
 
 	public boolean isPrimaryKey() {
 		return this.primaryKey;
 	}
 
-	private A1D_email_api_unavailable(boolean primaryKey) {
+	private A5D_contact_us(boolean primaryKey) {
 		this.primaryKey = primaryKey;
 	}
 
