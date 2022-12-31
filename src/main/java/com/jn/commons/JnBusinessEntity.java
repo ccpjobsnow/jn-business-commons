@@ -1,7 +1,7 @@
 package com.jn.commons;
 
 import com.ccp.decorators.CcpMapDecorator;
-import com.ccp.dependency.injection.CcpSpecification;
+import com.ccp.dependency.injection.CcpDependencyInject;
 import com.ccp.especifications.db.crud.CcpDbCrud;
 import com.ccp.especifications.db.table.CcpDbTable;
 import com.ccp.especifications.db.table.CcpDbTableField;
@@ -114,7 +114,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 		this.fields = fields;
 	}
 
-	@CcpSpecification
+	@CcpDependencyInject
 	CcpDbCrud crud;
 
 
