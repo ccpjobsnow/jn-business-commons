@@ -5,8 +5,10 @@ import com.ccp.dependency.injection.CcpDependencyInject;
 import com.ccp.especifications.db.crud.CcpDbCrud;
 import com.ccp.especifications.db.table.CcpDbTable;
 import com.ccp.especifications.db.table.CcpDbTableField;
+import com.jn.commons.tables.fields.A1D_email_api_client_error;
 import com.jn.commons.tables.fields.A1D_email_api_unavailable;
-import com.jn.commons.tables.fields.A1D_email_message_sent_today;
+import com.jn.commons.tables.fields.A1D_email_message_sent;
+import com.jn.commons.tables.fields.A1D_email_reported_as_spam;
 import com.jn.commons.tables.fields.A1D_email_try_to_send_message;
 import com.jn.commons.tables.fields.A1D_failed_unlock_token_today;
 import com.jn.commons.tables.fields.A1D_instant_messenger_api_unavailable;
@@ -102,14 +104,14 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	instant_messenger_api_unavailable(A1D_instant_messenger_api_unavailable.values()), 
 	instant_messenger_try_to_send_message(A1D_instant_messenger_try_to_send_message.values()), 
 	instant_messenger_message_sent(TimeOption.ddMMyyyyHHmmss, A1D_instant_messenger_message_sent.values()), 
-
-	//TODO UNUSED
+	
+	email_api_client_error(A1D_email_api_client_error.values()),
 	email_try_to_send_message(TimeOption.ddMMyyyy, A1D_email_try_to_send_message.values()), 
-	//TODO UNUSED
-	email_message_sent(TimeOption.ddMMyyyy, A1D_email_message_sent_today.values()), 
-	//TODO UNUSED
+	email_message_sent(TimeOption.ddMMyyyy, A1D_email_message_sent.values()), 
+	email_reported_as_spam(A1D_email_reported_as_spam.values()),
 	email_api_unavailable(A1D_email_api_unavailable.values()), 
-	failed_unlock_token(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()),
+	
+	failed_unlock_token(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()), 
 	;
 	
 	final TimeOption timeOption;
@@ -153,5 +155,28 @@ public enum JnBusinessEntity  implements CcpDbTable{
 		
 	}
 
+	public boolean exceededTries(CcpMapDecorator values, String fieldName, int limit) {
+		
+		for(int k = 1; k <= limit; k++) {
+			
+			CcpMapDecorator put = values.put(fieldName, k);
+			
+			boolean exists = this.exists(put);
+			
+			if(exists == false) {
+				this.save(put);
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public void removeTries(CcpMapDecorator values, String fieldName, int limit) {
+		
+		for(int k = 1; k <= limit; k++) {
+			CcpMapDecorator put = values.put(fieldName, k);
+			this.remove(put);
+		}
+	}
 }
 

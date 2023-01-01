@@ -2,8 +2,8 @@ package com.jn.commons.tables.fields;
 
 import com.ccp.especifications.db.table.CcpDbTableField;
 
-public enum A1D_email_api_unavailable implements CcpDbTableField{
-		audit(false), subject(false), subjectType(false), emails(false), sender(false), message(false)
+public enum A1D_email_reported_as_spam implements CcpDbTableField{
+	audit(false), subject(false), subjectType(false), email(true), sender(true), message(false)
 	;
 	private final boolean primaryKey;
 
@@ -11,7 +11,7 @@ public enum A1D_email_api_unavailable implements CcpDbTableField{
 		return this.primaryKey;
 	}
 
-	private A1D_email_api_unavailable(boolean primaryKey) {
+	private A1D_email_reported_as_spam(boolean primaryKey) {
 		this.primaryKey = primaryKey;
 	}
 
