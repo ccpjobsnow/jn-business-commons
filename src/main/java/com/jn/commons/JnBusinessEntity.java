@@ -5,10 +5,14 @@ import com.ccp.dependency.injection.CcpDependencyInject;
 import com.ccp.especifications.db.crud.CcpDbCrud;
 import com.ccp.especifications.db.table.CcpDbTable;
 import com.ccp.especifications.db.table.CcpDbTableField;
+import com.jn.commons.tables.fields.A1D_email_api_unavailable;
 import com.jn.commons.tables.fields.A1D_email_message_sent_today;
-import com.jn.commons.tables.fields.A5D_contact_us;
 import com.jn.commons.tables.fields.A1D_email_try_to_send_message;
 import com.jn.commons.tables.fields.A1D_failed_unlock_token_today;
+import com.jn.commons.tables.fields.A1D_instant_messenger_api_unavailable;
+import com.jn.commons.tables.fields.A1D_instant_messenger_bot_locked;
+import com.jn.commons.tables.fields.A1D_instant_messenger_message_sent;
+import com.jn.commons.tables.fields.A1D_instant_messenger_try_to_send_message;
 import com.jn.commons.tables.fields.A1D_job_user_stats;
 import com.jn.commons.tables.fields.A1D_locked_password;
 import com.jn.commons.tables.fields.A1D_locked_token;
@@ -43,11 +47,16 @@ import com.jn.commons.tables.fields.A3D_keywords_operational;
 import com.jn.commons.tables.fields.A3D_recruiter_domains;
 import com.jn.commons.tables.fields.A3D_recruiter_view_resume;
 import com.jn.commons.tables.fields.A3D_resume_exclusion;
+import com.jn.commons.tables.fields.A5D_contact_us;
 
 public enum JnBusinessEntity  implements CcpDbTable{
 
+	//TODO COMMING SOON
 	contact_us_skiped(), 
+
+	//TODO COMMING SOON
 	contact_us_ignored(), 
+
 	contact_us(TimeOption.ddMMyyyy, A5D_contact_us.values()), 
 	search_resumes_stats(), 
 	search_resumes_list(), 
@@ -68,9 +77,6 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	unlocked_password(A1D_unlocked_password.values()), 
 	unlock_token_tries(A1D_unlock_token_tries.values()), 
 	token_tries(A1D_token_tries.values()), 
-	//TODO UNUSED
-	messenger_api_unavailable(), 
-	//TODO UNUSED
 	_static(A1D_static.values()), 
 	//TODO UNUSED
 	responder_unlock_token(A1D_responder_unlock_token.values()), 
@@ -91,13 +97,19 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	login(TimeOption.ddMMyyyy, A1D_login.values()),  
 	locked_token(A1D_locked_token.values()), 
 	locked_password(A1D_locked_password.values()), 
+
+	instant_messenger_bot_locked(A1D_instant_messenger_bot_locked.values()), 
+	instant_messenger_api_unavailable(A1D_instant_messenger_api_unavailable.values()), 
+	instant_messenger_try_to_send_message(A1D_instant_messenger_try_to_send_message.values()), 
+	instant_messenger_message_sent(TimeOption.ddMMyyyyHHmmss, A1D_instant_messenger_message_sent.values()), 
+
 	//TODO UNUSED
 	email_try_to_send_message(TimeOption.ddMMyyyy, A1D_email_try_to_send_message.values()), 
 	//TODO UNUSED
-	email_message_sent_today(TimeOption.ddMMyyyy, A1D_email_message_sent_today.values()), 
+	email_message_sent(TimeOption.ddMMyyyy, A1D_email_message_sent_today.values()), 
 	//TODO UNUSED
-	email_api_unavailable(), 
-	failed_unlock_token_today(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()),
+	email_api_unavailable(A1D_email_api_unavailable.values()), 
+	failed_unlock_token(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()),
 	;
 	
 	final TimeOption timeOption;
