@@ -1,6 +1,6 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.table.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A1D_request_token_again_answered implements CcpDbTableField{
 		audit(false), email(true)

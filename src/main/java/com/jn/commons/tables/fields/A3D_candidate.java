@@ -1,6 +1,6 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.table.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A3D_candidate implements CcpDbTableField{
 		pj(false), 

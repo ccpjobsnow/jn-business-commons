@@ -1,6 +1,6 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.table.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A3D_denied_view_to_recruiter implements CcpDbTableField{
 		audit(false), recruiter(true), resume(true), domain(false)

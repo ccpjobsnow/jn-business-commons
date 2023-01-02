@@ -1,6 +1,6 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.table.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A1D_email_reported_as_spam implements CcpDbTableField{
 	audit(false), subject(false), subjectType(false), email(true), sender(true), message(false)

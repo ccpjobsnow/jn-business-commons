@@ -1,6 +1,6 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.table.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A1D_instant_messenger_try_to_send_message implements CcpDbTableField{
 		audit(false), botToken(true), chatId(false), subjectType(false), message(false), tries(true)
