@@ -3,7 +3,7 @@ package com.jn.commons.tables.fields;
 import com.ccp.especifications.db.table.CcpDbTableField;
 
 public enum A1D_login_request implements CcpDbTableField{
-		audit(false), email(true)
+		audit(false), email(true), token(false)
 	;
 	
 	private final boolean primaryKey;

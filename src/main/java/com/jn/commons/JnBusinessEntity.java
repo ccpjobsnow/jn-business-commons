@@ -178,5 +178,10 @@ public enum JnBusinessEntity  implements CcpDbTable{
 			this.remove(put);
 		}
 	}
+	
+	public void resetData(CcpMapDecorator values) {
+		this.remove(values);
+		this.save(values);
+	}
 }
 
