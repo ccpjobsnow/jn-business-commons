@@ -47,6 +47,7 @@ import com.jn.commons.tables.fields.A3D_keywords_college;
 import com.jn.commons.tables.fields.A3D_keywords_hr;
 import com.jn.commons.tables.fields.A3D_keywords_it;
 import com.jn.commons.tables.fields.A3D_keywords_operational;
+import com.jn.commons.tables.fields.A3D_keywords_unknown;
 import com.jn.commons.tables.fields.A3D_recruiter_domains;
 import com.jn.commons.tables.fields.A3D_recruiter_view_resume;
 import com.jn.commons.tables.fields.A3D_resume_exclusion;
@@ -64,13 +65,14 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	responder_unlock_token(A1D_responder_unlock_token.values()), 
 	//TODO COMMING SOON
 	responder_request_token_again(A1D_responder_request_token_again.values()), 
-
+	
 	contact_us(TimeOption.ddMMyyyy, A5D_contact_us.values()), 
 	search_resumes_stats(A4D_search_resumes_stats.values()), 
 	search_resumes_list(A4D_search_resumes_list.values()), 
 	resume_exclusion(A3D_resume_exclusion.values()), 
 	recruiter_view_resume(TimeOption.ddMMyyyy, A3D_recruiter_view_resume.values()), 
 	recruiter_domains(A3D_recruiter_domains.values()), 
+	keywords_unknown(A3D_keywords_unknown.values()),
 	keywords_operational(A3D_keywords_operational.values()), 
 	keywords_it(A3D_keywords_it.values()), 
 	keywords_hr(A3D_keywords_hr.values()), 
@@ -182,5 +184,6 @@ public enum JnBusinessEntity  implements CcpDbTable{
 		this.remove(values);
 		this.save(values);
 	}
+	
 }
 
