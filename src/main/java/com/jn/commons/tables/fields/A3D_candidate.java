@@ -11,13 +11,14 @@ public enum A3D_candidate implements CcpDbTableField{
 		email(true), 
 		audit(false), 
 		resume(false), 
+		jobType(false),
 		keywords(false),
 		synonyms(false), 
 		seniority(false), 
 		desiredJob(false), 
 		experience(false), 
 		currentJob(false), 
-		resumeWords(false), 
+		resumeWords(false),
 	;
 	
 	private final boolean primaryKey;

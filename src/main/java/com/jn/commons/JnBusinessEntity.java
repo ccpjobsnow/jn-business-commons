@@ -20,6 +20,7 @@ import com.jn.commons.tables.fields.A1D_locked_password;
 import com.jn.commons.tables.fields.A1D_locked_token;
 import com.jn.commons.tables.fields.A1D_login;
 import com.jn.commons.tables.fields.A1D_login_conflict;
+import com.jn.commons.tables.fields.A1D_login_conflict_solved;
 import com.jn.commons.tables.fields.A1D_login_request;
 import com.jn.commons.tables.fields.A1D_logout;
 import com.jn.commons.tables.fields.A1D_password;
@@ -49,19 +50,24 @@ import com.jn.commons.tables.fields.A3D_keywords_operational;
 import com.jn.commons.tables.fields.A3D_recruiter_domains;
 import com.jn.commons.tables.fields.A3D_recruiter_view_resume;
 import com.jn.commons.tables.fields.A3D_resume_exclusion;
+import com.jn.commons.tables.fields.A4D_search_resumes_list;
+import com.jn.commons.tables.fields.A4D_search_resumes_stats;
 import com.jn.commons.tables.fields.A5D_contact_us;
 
 public enum JnBusinessEntity  implements CcpDbTable{
 
 	//TODO COMMING SOON
 	contact_us_skiped(), 
-
 	//TODO COMMING SOON
 	contact_us_ignored(), 
+	//TODO COMMING SOON
+	responder_unlock_token(A1D_responder_unlock_token.values()), 
+	//TODO COMMING SOON
+	responder_request_token_again(A1D_responder_request_token_again.values()), 
 
 	contact_us(TimeOption.ddMMyyyy, A5D_contact_us.values()), 
-	search_resumes_stats(), 
-	search_resumes_list(), 
+	search_resumes_stats(A4D_search_resumes_stats.values()), 
+	search_resumes_list(A4D_search_resumes_list.values()), 
 	resume_exclusion(A3D_resume_exclusion.values()), 
 	recruiter_view_resume(TimeOption.ddMMyyyy, A3D_recruiter_view_resume.values()), 
 	recruiter_domains(A3D_recruiter_domains.values()), 
@@ -80,10 +86,6 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	unlock_token_tries(A1D_unlock_token_tries.values()), 
 	token_tries(A1D_token_tries.values()), 
 	_static(A1D_static.values()), 
-	//TODO UNUSED
-	responder_unlock_token(A1D_responder_unlock_token.values()), 
-	//TODO UNUSED
-	responder_request_token_again(A1D_responder_request_token_again.values()), 
 	request_unlock_token_answered(TimeOption.ddMMyyyy, A1D_request_unlock_token_answered.values()), 
 	request_unlock_token(TimeOption.ddMMyyyy, A1D_request_unlock_token.values()), 
 	request_token_again_answered(TimeOption.ddMMyyyy, A1D_request_token_again_answered.values()), 
@@ -94,23 +96,20 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	password(A1D_password.values()), 
 	logout(TimeOption.ddMMyyyy, A1D_logout.values()), 
 	login_request(A1D_login_request.values()), 
-	login_conflict_solved(), 
+	login_conflict_solved(A1D_login_conflict_solved.values()), 
 	login_conflict(A1D_login_conflict.values()), 
 	login(TimeOption.ddMMyyyy, A1D_login.values()),  
 	locked_token(A1D_locked_token.values()), 
 	locked_password(A1D_locked_password.values()), 
-
 	instant_messenger_bot_locked(A1D_instant_messenger_bot_locked.values()), 
 	instant_messenger_api_unavailable(A1D_instant_messenger_api_unavailable.values()), 
 	instant_messenger_try_to_send_message(A1D_instant_messenger_try_to_send_message.values()), 
 	instant_messenger_message_sent(TimeOption.ddMMyyyyHHmmss, A1D_instant_messenger_message_sent.values()), 
-	
 	email_api_client_error(A1D_email_api_client_error.values()),
 	email_try_to_send_message(TimeOption.ddMMyyyy, A1D_email_try_to_send_message.values()), 
 	email_message_sent(TimeOption.ddMMyyyy, A1D_email_message_sent.values()), 
 	email_reported_as_spam(A1D_email_reported_as_spam.values()),
 	email_api_unavailable(A1D_email_api_unavailable.values()), 
-	
 	failed_unlock_token(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()), 
 	;
 	
