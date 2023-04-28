@@ -2,11 +2,8 @@ package com.jn.commons.tables.fields;
 
 import com.ccp.especifications.db.utils.CcpDbTableField;
 
-public enum A4D_search_resumes_stats implements CcpDbTableField{
-		audit(false), 
-		requiredKeywords(true),
-		optionalKeywords(true),
-		recruiter(true),
+public enum A4D_resumes_stats implements CcpDbTableField{
+	audit(false), searchId(true), results(false), 
 	;
 	
 	private final boolean primaryKey;
@@ -15,7 +12,7 @@ public enum A4D_search_resumes_stats implements CcpDbTableField{
 		return this.primaryKey;
 	}
 
-	private A4D_search_resumes_stats(boolean primaryKey) {
+	private A4D_resumes_stats(boolean primaryKey) {
 		this.primaryKey = primaryKey;
 	}
 

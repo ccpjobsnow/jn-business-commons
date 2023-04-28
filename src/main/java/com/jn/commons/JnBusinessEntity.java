@@ -51,6 +51,8 @@ import com.jn.commons.tables.fields.A3D_keywords_unknown;
 import com.jn.commons.tables.fields.A3D_recruiter_domains;
 import com.jn.commons.tables.fields.A3D_recruiter_view_resume;
 import com.jn.commons.tables.fields.A3D_resume_exclusion;
+import com.jn.commons.tables.fields.A4D_resumes_list;
+import com.jn.commons.tables.fields.A4D_resumes_stats;
 import com.jn.commons.tables.fields.A4D_search_resumes_list;
 import com.jn.commons.tables.fields.A4D_search_resumes_stats;
 import com.jn.commons.tables.fields.A5D_contact_us;
@@ -67,8 +69,11 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	responder_request_token_again(A1D_responder_request_token_again.values()), 
 	
 	contact_us(TimeOption.ddMMyyyy, A5D_contact_us.values()), 
-	search_resumes_stats(A4D_search_resumes_stats.values()), 
-	search_resumes_list(A4D_search_resumes_list.values()), 
+	search_resumes_stats(TimeOption.ddMMyyyyHH, A4D_search_resumes_stats.values()), 
+	search_resumes_list(TimeOption.ddMMyyyyHH, A4D_search_resumes_list.values()), 
+	resumes_stats(TimeOption.ddMMyyyyHH, A4D_resumes_stats.values()), 
+	resumes_list(TimeOption.ddMMyyyyHH, A4D_resumes_list.values()), 
+
 	resume_exclusion(A3D_resume_exclusion.values()), 
 	recruiter_view_resume(TimeOption.ddMMyyyy, A3D_recruiter_view_resume.values()), 
 	recruiter_domains(A3D_recruiter_domains.values()), 
