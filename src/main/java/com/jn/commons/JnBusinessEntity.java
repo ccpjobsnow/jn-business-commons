@@ -21,7 +21,7 @@ import com.jn.commons.tables.fields.A1D_locked_token;
 import com.jn.commons.tables.fields.A1D_login;
 import com.jn.commons.tables.fields.A1D_login_conflict;
 import com.jn.commons.tables.fields.A1D_login_conflict_solved;
-import com.jn.commons.tables.fields.A1D_login_request;
+import com.jn.commons.tables.fields.A1D_login_token;
 import com.jn.commons.tables.fields.A1D_logout;
 import com.jn.commons.tables.fields.A1D_password;
 import com.jn.commons.tables.fields.A1D_password_tries;
@@ -102,7 +102,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	weak_password(A1D_weak_password.values()), 
 	password(A1D_password.values()), 
 	logout(TimeOption.ddMMyyyy, A1D_logout.values()), 
-	login_request(A1D_login_request.values()), 
+	login_token(A1D_login_token.values()), 
 	login_conflict_solved(A1D_login_conflict_solved.values()), 
 	login_conflict(A1D_login_conflict.values()), 
 	login(TimeOption.ddMMyyyy, A1D_login.values()),  

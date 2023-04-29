@@ -2,7 +2,7 @@ package com.jn.commons.tables.fields;
 
 import com.ccp.especifications.db.utils.CcpDbTableField;
 
-public enum A1D_login_request implements CcpDbTableField{
+public enum A1D_login_token implements CcpDbTableField{
 		audit(false), email(true), token(false)
 	;
 	
@@ -12,7 +12,7 @@ public enum A1D_login_request implements CcpDbTableField{
 		return this.primaryKey;
 	}
 
-	private A1D_login_request(boolean primaryKey) {
+	private A1D_login_token(boolean primaryKey) {
 		this.primaryKey = primaryKey;
 	}
 
