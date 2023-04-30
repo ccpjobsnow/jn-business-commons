@@ -190,5 +190,8 @@ public enum JnBusinessEntity  implements CcpDbTable{
 		this.save(values);
 	}
 	
+	public SaveEntity getSaver(Integer status) {
+		return new SaveEntity(this, status);
+	}
 }
 
