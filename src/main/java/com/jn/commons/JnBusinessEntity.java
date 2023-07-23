@@ -2,6 +2,7 @@ package com.jn.commons;
 
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.dependency.injection.CcpDependencyInject;
+import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.crud.CcpDbCrud;
 import com.ccp.especifications.db.utils.CcpDbTable;
 import com.ccp.especifications.db.utils.CcpDbTableField;
@@ -192,6 +193,11 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	
 	public SaveEntity getSaver(Integer status) {
 		return new SaveEntity(this, status);
+	}
+	
+	public static void loadEntitiesMetadata() {
+		Object[] values = JnBusinessEntity.values();
+		CcpDependencyInjection.injectDependencies(values);
 	}
 }
 
