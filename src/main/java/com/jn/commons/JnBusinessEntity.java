@@ -33,7 +33,7 @@ import com.jn.commons.tables.fields.A1D_request_unlock_token;
 import com.jn.commons.tables.fields.A1D_request_unlock_token_answered;
 import com.jn.commons.tables.fields.A1D_responder_request_token_again;
 import com.jn.commons.tables.fields.A1D_responder_unlock_token;
-import com.jn.commons.tables.fields.A1D_static;
+import com.jn.commons.tables.fields.A1D_template;
 import com.jn.commons.tables.fields.A1D_token_tries;
 import com.jn.commons.tables.fields.A1D_unlock_token_tries;
 import com.jn.commons.tables.fields.A1D_unlocked_password;
@@ -93,7 +93,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	unlocked_password(A1D_unlocked_password.values()), 
 	unlock_token_tries(A1D_unlock_token_tries.values()), 
 	token_tries(A1D_token_tries.values()), 
-	_static(A1D_static.values()), 
+	template(A1D_template.values()), 
 	request_unlock_token_answered(TimeOption.ddMMyyyy, A1D_request_unlock_token_answered.values()), 
 	request_unlock_token(TimeOption.ddMMyyyy, A1D_request_unlock_token.values()), 
 	request_token_again_answered(TimeOption.ddMMyyyy, A1D_request_token_again_answered.values()), 
