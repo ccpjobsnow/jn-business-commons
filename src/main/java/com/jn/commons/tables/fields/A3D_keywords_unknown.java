@@ -3,7 +3,7 @@ package com.jn.commons.tables.fields;
 import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A3D_keywords_unknown implements CcpDbTableField{
-		audit(false), keyword(true), jobType(true), keywordType(false)
+		keyword(true), jobType(true), keywordType(false)
 	;
 	
 	private final boolean primaryKey;

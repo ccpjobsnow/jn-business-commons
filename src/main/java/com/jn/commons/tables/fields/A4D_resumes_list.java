@@ -3,7 +3,7 @@ package com.jn.commons.tables.fields;
 import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A4D_resumes_list implements CcpDbTableField{
-		audit(false), searchId(true), results(false), 
+		searchId(true), results(false), 
 		total(false), from(false), size(false)
 	;
 	

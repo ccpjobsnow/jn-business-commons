@@ -9,7 +9,7 @@ public enum A3D_candidate implements CcpDbTableField{
 		clt(false), 
 		btc(false),
 		email(true), 
-		audit(false), 
+		 
 		resume(false), 
 		jobType(false),
 		keywords(false),

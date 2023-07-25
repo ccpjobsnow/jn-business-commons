@@ -3,7 +3,7 @@ package com.jn.commons.tables.fields;
 import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A1D_unlock_token_tries implements CcpDbTableField{
-		audit(false), email(true), tries(true)
+		email(true), tries(true)
 	;
 	private final boolean primaryKey;
 

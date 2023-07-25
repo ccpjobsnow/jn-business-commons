@@ -3,7 +3,7 @@ package com.jn.commons.tables.fields;
 import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A3D_candidate_resume implements CcpDbTableField{
-		audit(false), resume(true)
+		resume(true)
 	;
 	
 	private final boolean primaryKey;

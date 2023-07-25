@@ -3,7 +3,7 @@ package com.jn.commons.tables.fields;
 import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A1D_email_try_to_send_message implements CcpDbTableField{
-	audit(false), subject(false), subjectType(false), emails(false), sender(true), message(false), tries(true)
+	subject(false), subjectType(false), emails(false), sender(true), message(false), tries(true)
 	;
 	
 	private final boolean primaryKey;

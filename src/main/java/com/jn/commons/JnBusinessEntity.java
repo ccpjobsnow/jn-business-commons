@@ -24,6 +24,7 @@ import com.jn.commons.tables.fields.A1D_login_conflict;
 import com.jn.commons.tables.fields.A1D_login_conflict_solved;
 import com.jn.commons.tables.fields.A1D_login_token;
 import com.jn.commons.tables.fields.A1D_logout;
+import com.jn.commons.tables.fields.A1D_message;
 import com.jn.commons.tables.fields.A1D_password;
 import com.jn.commons.tables.fields.A1D_password_tries;
 import com.jn.commons.tables.fields.A1D_pre_registration;
@@ -33,11 +34,11 @@ import com.jn.commons.tables.fields.A1D_request_unlock_token;
 import com.jn.commons.tables.fields.A1D_request_unlock_token_answered;
 import com.jn.commons.tables.fields.A1D_responder_request_token_again;
 import com.jn.commons.tables.fields.A1D_responder_unlock_token;
-import com.jn.commons.tables.fields.A1D_template;
 import com.jn.commons.tables.fields.A1D_token_tries;
 import com.jn.commons.tables.fields.A1D_unlock_token_tries;
 import com.jn.commons.tables.fields.A1D_unlocked_password;
 import com.jn.commons.tables.fields.A1D_unlocked_token;
+import com.jn.commons.tables.fields.A1D_values;
 import com.jn.commons.tables.fields.A1D_weak_password;
 import com.jn.commons.tables.fields.A3D_candidate;
 import com.jn.commons.tables.fields.A3D_candidate_resume;
@@ -93,7 +94,8 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	unlocked_password(A1D_unlocked_password.values()), 
 	unlock_token_tries(A1D_unlock_token_tries.values()), 
 	token_tries(A1D_token_tries.values()), 
-	template(A1D_template.values()), 
+	message(A1D_message.values()), 
+	values(A1D_values.values()), 
 	request_unlock_token_answered(TimeOption.ddMMyyyy, A1D_request_unlock_token_answered.values()), 
 	request_unlock_token(TimeOption.ddMMyyyy, A1D_request_unlock_token.values()), 
 	request_token_again_answered(TimeOption.ddMMyyyy, A1D_request_token_again_answered.values()), 

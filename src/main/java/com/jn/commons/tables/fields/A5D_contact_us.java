@@ -3,7 +3,7 @@ package com.jn.commons.tables.fields;
 import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A5D_contact_us implements CcpDbTableField{
-		audit(false), subjectType(true), email(false), subject(false), message(false), chatId(false), emailFrom(true)
+		subjectType(true), email(false), subject(false), message(false), chatId(false), emailFrom(true)
 	;
 	
 	private final boolean primaryKey;

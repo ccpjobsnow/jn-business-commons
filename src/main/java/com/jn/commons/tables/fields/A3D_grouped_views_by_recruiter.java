@@ -3,7 +3,7 @@ package com.jn.commons.tables.fields;
 import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A3D_grouped_views_by_recruiter implements CcpDbTableField{
-		audit(false), recruiter(true)
+		recruiter(true)
 	;
 	
 	private final boolean primaryKey;

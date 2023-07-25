@@ -3,7 +3,7 @@ package com.jn.commons.tables.fields;
 import com.ccp.especifications.db.utils.CcpDbTableField;
 
 public enum A3D_recruiter_domains implements CcpDbTableField{
-		audit(false), prefix(true)
+		prefix(true)
 	;
 	
 	private final boolean primaryKey;
