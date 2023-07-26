@@ -3,6 +3,7 @@ package com.jn.commons;
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.dependency.injection.CcpDependencyInject;
 import com.ccp.dependency.injection.CcpDependencyInjection;
+import com.ccp.especifications.db.bulk.CcpBulkable;
 import com.ccp.especifications.db.crud.CcpDbCrud;
 import com.ccp.especifications.db.utils.CcpDbTable;
 import com.ccp.especifications.db.utils.CcpDbTableField;
@@ -59,7 +60,7 @@ import com.jn.commons.tables.fields.A4D_search_resumes_list;
 import com.jn.commons.tables.fields.A4D_search_resumes_stats;
 import com.jn.commons.tables.fields.A5D_contact_us;
 
-public enum JnBusinessEntity  implements CcpDbTable{
+public enum JnBusinessEntity  implements CcpDbTable, CcpBulkable{
 
 	//TODO COMMING SOON
 	contact_us_skiped(), 
