@@ -3,18 +3,18 @@ package com.jn.commons;
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.process.CcpNextStep;
 import com.ccp.process.CcpStepResult;
-import com.jn.commons.JnBusinessEntity;
+import com.jn.commons.JnEntity;
 
 public class EvaluateTries extends CcpNextStep {
 
-	private final JnBusinessEntity table;
+	private final JnEntity table;
 	
 	private final int regularFlow;
 	
 	private final int excedeedFlow;
 	
 	
-	public EvaluateTries(JnBusinessEntity table, int regularFlow, int exceededFlow) {
+	public EvaluateTries(JnEntity table, int regularFlow, int exceededFlow) {
 		this.excedeedFlow = exceededFlow;
 		this.regularFlow = regularFlow;
 		this.table = table;

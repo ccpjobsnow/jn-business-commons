@@ -1,8 +1,8 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.utils.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpField;
 
-public enum A3D_grouped_views_by_recruiter implements CcpDbTableField{
+public enum A3D_grouped_views_by_recruiter implements CcpField{
 		recruiter(true)
 	;
 	

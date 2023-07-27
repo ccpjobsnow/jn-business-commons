@@ -1,8 +1,8 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.utils.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpField;
 
-public enum A1D_failed_unlock_token_today implements CcpDbTableField{
+public enum A1D_failed_unlock_token_today implements CcpField{
 		email(true)
 	;
 	

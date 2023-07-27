@@ -1,8 +1,8 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.utils.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpField;
 
-public enum A1D_instant_messenger_api_unavailable implements CcpDbTableField{
+public enum A1D_instant_messenger_api_unavailable implements CcpField{
 		botToken(false), chatId(false), subjectType(false), message(false)
 	;
 	

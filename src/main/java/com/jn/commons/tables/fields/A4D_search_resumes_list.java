@@ -1,8 +1,8 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.utils.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpField;
 
-public enum A4D_search_resumes_list implements CcpDbTableField{
+public enum A4D_search_resumes_list implements CcpField{
 	requiredKeywords(true),
 	optionalKeywords(true),
 	recruiter(true),

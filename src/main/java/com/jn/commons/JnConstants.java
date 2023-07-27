@@ -6,4 +6,5 @@ public interface JnConstants {
 	String DOT = ".";
 	int ONE_HOUR_IN_SECONDS = 60 * 60;
 	String SLASH = "/";
+	
 }

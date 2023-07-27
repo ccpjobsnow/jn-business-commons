@@ -1,8 +1,8 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.utils.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpField;
 
-public enum A1D_email_message_sent implements CcpDbTableField{
+public enum A1D_email_message_sent implements CcpField{
 	subject(false), subjectType(true), email(true), sender(false), message(false)
 	;
 	

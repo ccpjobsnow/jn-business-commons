@@ -1,8 +1,8 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.utils.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpField;
 
-public enum A1D_login_token implements CcpDbTableField{
+public enum A1D_login_token implements CcpField{
 		email(true), token(false)
 	;
 	

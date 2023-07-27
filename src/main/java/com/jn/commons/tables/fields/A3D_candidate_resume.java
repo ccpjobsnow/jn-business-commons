@@ -1,8 +1,8 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.utils.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpField;
 
-public enum A3D_candidate_resume implements CcpDbTableField{
+public enum A3D_candidate_resume implements CcpField{
 		resume(true)
 	;
 	

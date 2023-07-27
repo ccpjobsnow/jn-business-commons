@@ -1,8 +1,8 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.utils.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpField;
 
-public enum A4D_resumes_stats implements CcpDbTableField{
+public enum A4D_resumes_stats implements CcpField{
 	searchId(true), results(false), 
 	;
 	

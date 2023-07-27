@@ -1,8 +1,8 @@
 package com.jn.commons.tables.fields;
 
-import com.ccp.especifications.db.utils.CcpDbTableField;
+import com.ccp.especifications.db.utils.CcpField;
 
-public enum A3D_keywords_unknown implements CcpDbTableField{
+public enum A3D_keywords_unknown implements CcpField{
 		keyword(true), jobType(true), keywordType(false)
 	;
 	

@@ -1,14 +1,22 @@
 package com.jn.commons;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import com.ccp.decorators.CcpMapDecorator;
+import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.dependency.injection.CcpDependencyInject;
 import com.ccp.dependency.injection.CcpDependencyInjection;
-import com.ccp.especifications.db.crud.CcpDbCrud;
-import com.ccp.especifications.db.utils.CcpDbTable;
-import com.ccp.especifications.db.utils.CcpDbTableField;
+import com.ccp.especifications.db.crud.CcpDao;
+import com.ccp.especifications.db.utils.CcpEntity;
+import com.ccp.exceptions.commons.CcpFlow;
+import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpOperationType;
 import com.jn.commons.tables.fields.A1D_email_api_client_error;
 import com.jn.commons.tables.fields.A1D_email_api_unavailable;
 import com.jn.commons.tables.fields.A1D_email_message_sent;
@@ -62,7 +70,7 @@ import com.jn.commons.tables.fields.A4D_search_resumes_list;
 import com.jn.commons.tables.fields.A4D_search_resumes_stats;
 import com.jn.commons.tables.fields.A5D_contact_us;
 
-public enum JnBusinessEntity  implements CcpDbTable{
+public enum JnEntity  implements CcpEntity{
 
 	//TODO COMMING SOON
 	contact_us_skiped(), 
@@ -108,7 +116,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	weak_password(A1D_weak_password.values()), 
 	password(A1D_password.values()), 
 	logout(TimeOption.ddMMyyyy, A1D_logout.values()), 
-	login_token(A1D_login_token.values()), 
+	login_token(TimeOption.ddMMyyyy, A1D_login_token.values()), 
 	login_conflict_solved(A1D_login_conflict_solved.values()), 
 	login_conflict(A1D_login_conflict.values()), 
 	login(TimeOption.ddMMyyyy, A1D_login.values()),  
@@ -127,32 +135,32 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	;
 	
 	final TimeOption timeOption;
-	final CcpDbTableField[] fields;
+	final CcpField[] fields;
 	
 	
-	private JnBusinessEntity(TimeOption timeOption, CcpDbTableField... keys) {
+	private JnEntity(TimeOption timeOption, CcpField... keys) {
 		this.timeOption = timeOption;
 		this.fields = keys;
 	}
 
-	private JnBusinessEntity(CcpDbTableField... fields) {
+	private JnEntity(CcpField... fields) {
 		this.timeOption = TimeOption.none;
 		this.fields = fields;
 	}
 
 	@CcpDependencyInject
-	CcpDbCrud crud;
+	CcpDao crud;
 
 
 	public TimeOption getTimeOption() {
 		return this.timeOption;
 	}
 
-	public CcpDbTableField[] getFields() {
+	public CcpField[] getFields() {
 		return this.fields;
 	}
 
-	public CcpDbCrud getCrud() {
+	public CcpDao getDao() {
 		return this.crud;
 	}
 	
@@ -161,10 +169,23 @@ public enum JnBusinessEntity  implements CcpDbTable{
 		return id;
 	}
 
-	@Override
-	public void saveAuditory(CcpMapDecorator values, boolean updated) {
-		// TODO Auto-generated method stub
+	public void saveAuditory(CcpMapDecorator values, CcpOperationType operation) {
+
+		boolean isTimeEntity = TimeOption.none.equals(this.timeOption) == false;
 		
+		if(isTimeEntity) {
+			return;
+		}
+		String id = this.getId(values);
+		CcpMapDecorator audit = new CcpMapDecorator()
+		.put("id", id)
+		.put("json", values)
+		.put("index", this.name())
+		.put("operation", values)
+
+		.put("date", System.currentTimeMillis());
+	
+		this.crud.createOrUpdate("audit", audit);
 	}
 
 	public boolean exceededTries(CcpMapDecorator values, String fieldName, int limit) {
@@ -176,7 +197,7 @@ public enum JnBusinessEntity  implements CcpDbTable{
 			boolean exists = this.exists(put);
 			
 			if(exists == false) {
-				this.save(put);
+				this.createOrUpdate(put);
 				return false;
 			}
 		}
@@ -184,8 +205,8 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	}
 	
 	public void resetData(CcpMapDecorator values) {
-		this.remove(values);
-		this.save(values);
+		this.delete(values);
+		this.createOrUpdate(values);
 	}
 	
 	public SaveEntity getSaver(Integer status) {
@@ -193,16 +214,78 @@ public enum JnBusinessEntity  implements CcpDbTable{
 	}
 	
 	public static void loadEntitiesMetadata() {
-		Object[] values = JnBusinessEntity.values();
+		Object[] values = JnEntity.values();
 		CcpDependencyInjection.injectDependencies(values);
 	}
 	
 	public CcpMapDecorator getOnlyExistingFields(CcpMapDecorator values) {
-		CcpDbTableField[] fields = this.getFields();
+		CcpField[] fields = this.getFields();
 		String[] array = Arrays.asList(fields).stream().map(x -> x.name()).collect(Collectors.toList()).toArray(new String[fields.length]);
 		CcpMapDecorator subMap = values.getSubMap(array);
 		return subMap;
 	}
+	
+	private String getId(CcpMapDecorator values,TimeOption timeOptioption, CcpField...fields) {
+
+		Long time = values.getAsLongNumber("_time");
+		if(time == null) {
+			time = System.currentTimeMillis();
+		}
+		
+		String formattedCurrentDate = timeOptioption.getFormattedCurrentDate(time);
+		
+		if(fields.length == 0) {
+			
+			if(TimeOption.none != timeOptioption) {
+				return formattedCurrentDate;
+			}
+			
+			return UUID.randomUUID().toString();
+		}
+		
+		List<CcpField> missingKeys = Arrays.asList(fields).stream().filter(key -> key.isPrimaryKey()).filter(key -> this.getPrimaryKeyFieldValue(key, values).isEmpty()).collect(Collectors.toList());
+		
+		if(missingKeys.isEmpty() == false) {
+			throw new CcpFlow(values, 500, "The following keys are missing to compose an id: " + missingKeys +" for entity " + this.name() + ". Current values: " + values, null);
+		}
+		
+		
+		List<String> onlyPrimaryKeys = Arrays.asList(fields).stream().filter(key -> key.isPrimaryKey()).map(key -> this.getPrimaryKeyFieldValue(key, values)).collect(Collectors.toList());
+
+		if(onlyPrimaryKeys.isEmpty()) {
+			String hash = new CcpStringDecorator(formattedCurrentDate).hash().asString("SHA1");
+			return hash;
+		}
+		
+		Collections.sort(onlyPrimaryKeys);
+		onlyPrimaryKeys = new ArrayList<>(onlyPrimaryKeys);
+
+		if(formattedCurrentDate.trim().isEmpty() == false) {
+			onlyPrimaryKeys.add(0, formattedCurrentDate);
+		}
+		
+		String replace = onlyPrimaryKeys.toString().replace("[", "").replace("]", "");
+		String hash = new CcpStringDecorator(replace).hash().asString("SHA1");
+		return hash;
+	}
+	
+	private String getPrimaryKeyFieldValue(CcpField key, CcpMapDecorator values) {
+		
+		boolean notCollection = values.get(key.name()) instanceof Collection<?> == false;
+		
+		if(notCollection) {
+			String primaryKeyFieldValue = values.getAsString(key.name()).trim() + "_";
+			return primaryKeyFieldValue;
+		}
+		
+		Collection<?> col = values.getAsObject(key.name());
+		ArrayList<?> list = new ArrayList<>(col);
+		list.sort((a, b) -> ("" + a).compareTo("" + b));
+		String primaryKeyFieldValue = list.stream().map(x -> x.toString().trim()).collect(Collectors.toList()).toString() + "_";
+		return primaryKeyFieldValue;
+		
+	}
+
 
 }
 
