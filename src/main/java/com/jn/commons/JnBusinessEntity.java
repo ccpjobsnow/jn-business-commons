@@ -1,9 +1,11 @@
 package com.jn.commons;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.dependency.injection.CcpDependencyInject;
 import com.ccp.dependency.injection.CcpDependencyInjection;
-import com.ccp.especifications.db.bulk.CcpBulkable;
 import com.ccp.especifications.db.crud.CcpDbCrud;
 import com.ccp.especifications.db.utils.CcpDbTable;
 import com.ccp.especifications.db.utils.CcpDbTableField;
@@ -60,7 +62,7 @@ import com.jn.commons.tables.fields.A4D_search_resumes_list;
 import com.jn.commons.tables.fields.A4D_search_resumes_stats;
 import com.jn.commons.tables.fields.A5D_contact_us;
 
-public enum JnBusinessEntity  implements CcpDbTable, CcpBulkable{
+public enum JnBusinessEntity  implements CcpDbTable{
 
 	//TODO COMMING SOON
 	contact_us_skiped(), 
@@ -160,7 +162,7 @@ public enum JnBusinessEntity  implements CcpDbTable, CcpBulkable{
 	}
 
 	@Override
-	public void saveAuditory(String id, String entityName, CcpMapDecorator values, boolean updated) {
+	public void saveAuditory(CcpMapDecorator values, boolean updated) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -194,5 +196,13 @@ public enum JnBusinessEntity  implements CcpDbTable, CcpBulkable{
 		Object[] values = JnBusinessEntity.values();
 		CcpDependencyInjection.injectDependencies(values);
 	}
+	
+	public CcpMapDecorator getOnlyExistingFields(CcpMapDecorator values) {
+		CcpDbTableField[] fields = this.getFields();
+		String[] array = Arrays.asList(fields).stream().map(x -> x.name()).collect(Collectors.toList()).toArray(new String[fields.length]);
+		CcpMapDecorator subMap = values.getSubMap(array);
+		return subMap;
+	}
+
 }
 
