@@ -14,9 +14,10 @@ import com.ccp.dependency.injection.CcpDependencyInject;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.crud.CcpDao;
 import com.ccp.especifications.db.utils.CcpEntity;
-import com.ccp.exceptions.commons.CcpFlow;
 import com.ccp.especifications.db.utils.CcpField;
 import com.ccp.especifications.db.utils.CcpOperationType;
+import com.ccp.exceptions.commons.CcpFlow;
+import com.jn.commons.tables.fields.A1D_audit;
 import com.jn.commons.tables.fields.A1D_email_api_client_error;
 import com.jn.commons.tables.fields.A1D_email_api_unavailable;
 import com.jn.commons.tables.fields.A1D_email_message_sent;
@@ -39,6 +40,7 @@ import com.jn.commons.tables.fields.A1D_message;
 import com.jn.commons.tables.fields.A1D_password;
 import com.jn.commons.tables.fields.A1D_password_tries;
 import com.jn.commons.tables.fields.A1D_pre_registration;
+import com.jn.commons.tables.fields.A1D_record_to_reprocess;
 import com.jn.commons.tables.fields.A1D_request_token_again;
 import com.jn.commons.tables.fields.A1D_request_token_again_answered;
 import com.jn.commons.tables.fields.A1D_request_unlock_token;
@@ -105,14 +107,15 @@ public enum JnEntity  implements CcpEntity{
 	unlocked_password(A1D_unlocked_password.values()), 
 	unlock_token_tries(A1D_unlock_token_tries.values()), 
 	token_tries(A1D_token_tries.values()), 
-	message(A1D_message.values()), 
-	values(A1D_values.values()), 
+	messages(A1D_message.values()), 
+	parameters(A1D_values.values()), 
 	request_unlock_token_answered(TimeOption.ddMMyyyy, A1D_request_unlock_token_answered.values()), 
 	request_unlock_token(TimeOption.ddMMyyyy, A1D_request_unlock_token.values()), 
 	request_token_again_answered(TimeOption.ddMMyyyy, A1D_request_token_again_answered.values()), 
 	request_token_again(TimeOption.ddMMyyyy, A1D_request_token_again.values()), 
 	pre_registration(A1D_pre_registration.values()), 
 	password_tries(A1D_password_tries.values()), 
+	audit(A1D_audit.values()),
 	weak_password(A1D_weak_password.values()), 
 	password(A1D_password.values()), 
 	logout(TimeOption.ddMMyyyy, A1D_logout.values()), 
@@ -132,6 +135,7 @@ public enum JnEntity  implements CcpEntity{
 	email_reported_as_spam(A1D_email_reported_as_spam.values()),
 	email_api_unavailable(A1D_email_api_unavailable.values()), 
 	failed_unlock_token(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()), 
+	record_to_reprocess(A1D_record_to_reprocess.values()),
 	;
 	
 	final TimeOption timeOption;
@@ -176,6 +180,11 @@ public enum JnEntity  implements CcpEntity{
 		if(isTimeEntity) {
 			return;
 		}
+		
+		if(JnEntity.audit.equals(this)) {
+			return;
+		}
+		
 		String id = this.getId(values);
 		CcpMapDecorator audit = new CcpMapDecorator()
 		.put("id", id)
@@ -185,7 +194,7 @@ public enum JnEntity  implements CcpEntity{
 
 		.put("date", System.currentTimeMillis());
 	
-		this.dao.createOrUpdate("audit", audit);
+		this.dao.createOrUpdate(JnEntity.audit.name(), audit);
 	}
 
 	public boolean exceededTries(CcpMapDecorator values, String fieldName, int limit) {
