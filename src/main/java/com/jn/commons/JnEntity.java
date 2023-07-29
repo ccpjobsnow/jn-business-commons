@@ -17,60 +17,61 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpField;
 import com.ccp.especifications.db.utils.CcpOperationType;
 import com.ccp.exceptions.commons.CcpFlow;
-import com.jn.commons.tables.fields.A1D_audit;
-import com.jn.commons.tables.fields.A1D_email_api_client_error;
-import com.jn.commons.tables.fields.A1D_email_api_unavailable;
-import com.jn.commons.tables.fields.A1D_email_message_sent;
-import com.jn.commons.tables.fields.A1D_email_reported_as_spam;
-import com.jn.commons.tables.fields.A1D_email_try_to_send_message;
-import com.jn.commons.tables.fields.A1D_failed_unlock_token_today;
-import com.jn.commons.tables.fields.A1D_instant_messenger_api_unavailable;
-import com.jn.commons.tables.fields.A1D_instant_messenger_bot_locked;
-import com.jn.commons.tables.fields.A1D_instant_messenger_message_sent;
-import com.jn.commons.tables.fields.A1D_instant_messenger_try_to_send_message;
-import com.jn.commons.tables.fields.A1D_job_user_stats;
-import com.jn.commons.tables.fields.A1D_locked_password;
-import com.jn.commons.tables.fields.A1D_locked_token;
-import com.jn.commons.tables.fields.A1D_login;
-import com.jn.commons.tables.fields.A1D_login_conflict;
-import com.jn.commons.tables.fields.A1D_login_conflict_solved;
-import com.jn.commons.tables.fields.A1D_login_token;
-import com.jn.commons.tables.fields.A1D_logout;
-import com.jn.commons.tables.fields.A1D_message;
-import com.jn.commons.tables.fields.A1D_password;
-import com.jn.commons.tables.fields.A1D_password_tries;
-import com.jn.commons.tables.fields.A1D_pre_registration;
-import com.jn.commons.tables.fields.A1D_record_to_reprocess;
-import com.jn.commons.tables.fields.A1D_request_token_again;
-import com.jn.commons.tables.fields.A1D_request_token_again_answered;
-import com.jn.commons.tables.fields.A1D_request_unlock_token;
-import com.jn.commons.tables.fields.A1D_request_unlock_token_answered;
-import com.jn.commons.tables.fields.A1D_responder_request_token_again;
-import com.jn.commons.tables.fields.A1D_responder_unlock_token;
-import com.jn.commons.tables.fields.A1D_token_tries;
-import com.jn.commons.tables.fields.A1D_unlock_token_tries;
-import com.jn.commons.tables.fields.A1D_unlocked_password;
-import com.jn.commons.tables.fields.A1D_unlocked_token;
-import com.jn.commons.tables.fields.A1D_values;
-import com.jn.commons.tables.fields.A1D_weak_password;
-import com.jn.commons.tables.fields.A3D_candidate;
-import com.jn.commons.tables.fields.A3D_candidate_resume;
-import com.jn.commons.tables.fields.A3D_candidate_view_resume;
-import com.jn.commons.tables.fields.A3D_denied_view_to_recruiter;
-import com.jn.commons.tables.fields.A3D_grouped_views_by_recruiter;
-import com.jn.commons.tables.fields.A3D_keywords_college;
-import com.jn.commons.tables.fields.A3D_keywords_hr;
-import com.jn.commons.tables.fields.A3D_keywords_it;
-import com.jn.commons.tables.fields.A3D_keywords_operational;
-import com.jn.commons.tables.fields.A3D_keywords_unknown;
-import com.jn.commons.tables.fields.A3D_recruiter_domains;
-import com.jn.commons.tables.fields.A3D_recruiter_view_resume;
-import com.jn.commons.tables.fields.A3D_resume_exclusion;
-import com.jn.commons.tables.fields.A4D_resumes_list;
-import com.jn.commons.tables.fields.A4D_resumes_stats;
-import com.jn.commons.tables.fields.A4D_search_resumes_list;
-import com.jn.commons.tables.fields.A4D_search_resumes_stats;
-import com.jn.commons.tables.fields.A5D_contact_us;
+import com.jn.commons.entities.fields.A1D_async_task;
+import com.jn.commons.entities.fields.A1D_audit;
+import com.jn.commons.entities.fields.A1D_email_api_client_error;
+import com.jn.commons.entities.fields.A1D_email_api_unavailable;
+import com.jn.commons.entities.fields.A1D_email_message_sent;
+import com.jn.commons.entities.fields.A1D_email_reported_as_spam;
+import com.jn.commons.entities.fields.A1D_email_try_to_send_message;
+import com.jn.commons.entities.fields.A1D_failed_unlock_token_today;
+import com.jn.commons.entities.fields.A1D_instant_messenger_api_unavailable;
+import com.jn.commons.entities.fields.A1D_instant_messenger_bot_locked;
+import com.jn.commons.entities.fields.A1D_instant_messenger_message_sent;
+import com.jn.commons.entities.fields.A1D_instant_messenger_try_to_send_message;
+import com.jn.commons.entities.fields.A1D_job_user_stats;
+import com.jn.commons.entities.fields.A1D_locked_password;
+import com.jn.commons.entities.fields.A1D_locked_token;
+import com.jn.commons.entities.fields.A1D_login;
+import com.jn.commons.entities.fields.A1D_login_conflict;
+import com.jn.commons.entities.fields.A1D_login_conflict_solved;
+import com.jn.commons.entities.fields.A1D_login_token;
+import com.jn.commons.entities.fields.A1D_logout;
+import com.jn.commons.entities.fields.A1D_message;
+import com.jn.commons.entities.fields.A1D_password;
+import com.jn.commons.entities.fields.A1D_password_tries;
+import com.jn.commons.entities.fields.A1D_pre_registration;
+import com.jn.commons.entities.fields.A1D_record_to_reprocess;
+import com.jn.commons.entities.fields.A1D_request_token_again;
+import com.jn.commons.entities.fields.A1D_request_token_again_answered;
+import com.jn.commons.entities.fields.A1D_request_unlock_token;
+import com.jn.commons.entities.fields.A1D_request_unlock_token_answered;
+import com.jn.commons.entities.fields.A1D_responder_request_token_again;
+import com.jn.commons.entities.fields.A1D_responder_unlock_token;
+import com.jn.commons.entities.fields.A1D_token_tries;
+import com.jn.commons.entities.fields.A1D_unlock_token_tries;
+import com.jn.commons.entities.fields.A1D_unlocked_password;
+import com.jn.commons.entities.fields.A1D_unlocked_token;
+import com.jn.commons.entities.fields.A1D_values;
+import com.jn.commons.entities.fields.A1D_weak_password;
+import com.jn.commons.entities.fields.A3D_candidate;
+import com.jn.commons.entities.fields.A3D_candidate_resume;
+import com.jn.commons.entities.fields.A3D_candidate_view_resume;
+import com.jn.commons.entities.fields.A3D_denied_view_to_recruiter;
+import com.jn.commons.entities.fields.A3D_grouped_views_by_recruiter;
+import com.jn.commons.entities.fields.A3D_keywords_college;
+import com.jn.commons.entities.fields.A3D_keywords_hr;
+import com.jn.commons.entities.fields.A3D_keywords_it;
+import com.jn.commons.entities.fields.A3D_keywords_operational;
+import com.jn.commons.entities.fields.A3D_keywords_unknown;
+import com.jn.commons.entities.fields.A3D_recruiter_domains;
+import com.jn.commons.entities.fields.A3D_recruiter_view_resume;
+import com.jn.commons.entities.fields.A3D_resume_exclusion;
+import com.jn.commons.entities.fields.A4D_resumes_list;
+import com.jn.commons.entities.fields.A4D_resumes_stats;
+import com.jn.commons.entities.fields.A4D_search_resumes_list;
+import com.jn.commons.entities.fields.A4D_search_resumes_stats;
+import com.jn.commons.entities.fields.A5D_contact_us;
 
 public enum JnEntity  implements CcpEntity{
 
@@ -136,6 +137,7 @@ public enum JnEntity  implements CcpEntity{
 	email_api_unavailable(A1D_email_api_unavailable.values()), 
 	failed_unlock_token(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()), 
 	record_to_reprocess(A1D_record_to_reprocess.values()),
+	async_task(TimeOption.ddMMyyyyHHmmssSSS, A1D_async_task.values())
 	;
 	
 	final TimeOption timeOption;
@@ -189,7 +191,7 @@ public enum JnEntity  implements CcpEntity{
 		CcpMapDecorator audit = new CcpMapDecorator()
 		.put("id", id)
 		.put("json", values)
-		.put("index", this.name())
+		.put("entity", this.name())
 		.put("operation", values)
 
 		.put("date", System.currentTimeMillis());

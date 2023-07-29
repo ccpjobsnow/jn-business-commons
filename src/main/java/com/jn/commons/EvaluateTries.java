@@ -7,23 +7,23 @@ import com.jn.commons.JnEntity;
 
 public class EvaluateTries extends CcpNextStep {
 
-	private final JnEntity table;
+	private final JnEntity entity;
 	
 	private final int regularFlow;
 	
 	private final int excedeedFlow;
 	
 	
-	public EvaluateTries(JnEntity table, int regularFlow, int exceededFlow) {
+	public EvaluateTries(JnEntity entity, Integer regularFlow, int exceededFlow) {
 		this.excedeedFlow = exceededFlow;
 		this.regularFlow = regularFlow;
-		this.table = table;
+		this.entity = entity;
 	}
 
 	@Override
 	public CcpStepResult executeThisStep(CcpMapDecorator values) {
 		
-		boolean exceededTries = this.table.exceededTries(values, "tries", 3);
+		boolean exceededTries = this.entity.exceededTries(values, "tries", 3);
 		
 		if(exceededTries) {
 			return new CcpStepResult(values, this.excedeedFlow, this);
