@@ -194,7 +194,7 @@ public enum JnEntity  implements CcpEntity{
 
 		.put("date", System.currentTimeMillis());
 	
-		this.dao.createOrUpdate(JnEntity.audit.name(), audit);
+		this.dao.createOrUpdate(JnEntity.audit, audit);
 	}
 
 	public boolean exceededTries(CcpMapDecorator values, String fieldName, int limit) {
@@ -236,7 +236,7 @@ public enum JnEntity  implements CcpEntity{
 	
 	private String getId(CcpMapDecorator values,TimeOption timeOptioption, CcpField...fields) {
 
-		Long time =System.currentTimeMillis();
+		Long time = System.currentTimeMillis();
 		String formattedCurrentDate = timeOptioption.getFormattedCurrentDate(time);
 		
 		if(fields.length == 0) {
