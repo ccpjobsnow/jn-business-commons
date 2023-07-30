@@ -3,7 +3,7 @@ package com.jn.commons.entities.fields;
 import com.ccp.especifications.db.utils.CcpField;
 
 public enum A5D_contact_us implements CcpField{
-		subjectType(true), email(false), subject(false), message(false), chatId(false), sender(true)
+		subjectType(true), email(true), subject(false), message(false), chatId(false), sender(false)
 	;
 	
 	private final boolean primaryKey;

@@ -3,7 +3,7 @@ package com.jn.commons.entities.fields;
 import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_email_try_to_send_message implements CcpField{
-	subject(false), subjectType(false), emails(false), sender(true), message(false), tries(true)
+	apiKey(true), apiUrl(true), request(false), headers(true), response(false), httpStatus(false), date(false), tries(true)
 	;
 	
 	private final boolean primaryKey;

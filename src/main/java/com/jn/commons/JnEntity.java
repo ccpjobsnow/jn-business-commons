@@ -74,22 +74,15 @@ import com.jn.commons.entities.fields.A4D_search_resumes_stats;
 import com.jn.commons.entities.fields.A5D_contact_us;
 
 public enum JnEntity  implements CcpEntity{
-
-	//TODO COMMING SOON
 	contact_us_skiped(), 
-	//TODO COMMING SOON
 	contact_us_ignored(), 
-	//TODO COMMING SOON
 	responder_unlock_token(A1D_responder_unlock_token.values()), 
-	//TODO COMMING SOON
 	responder_request_token_again(A1D_responder_request_token_again.values()), 
-	
 	contact_us(TimeOption.ddMMyyyy, A5D_contact_us.values()), 
 	search_resumes_stats(TimeOption.ddMMyyyyHH, A4D_search_resumes_stats.values()), 
 	search_resumes_list(TimeOption.ddMMyyyyHH, A4D_search_resumes_list.values()), 
 	resumes_stats(TimeOption.ddMMyyyyHH, A4D_resumes_stats.values()), 
 	resumes_list(TimeOption.ddMMyyyyHH, A4D_resumes_list.values()), 
-
 	resume_exclusion(A3D_resume_exclusion.values()), 
 	recruiter_view_resume(TimeOption.ddMMyyyy, A3D_recruiter_view_resume.values()), 
 	recruiter_domains(A3D_recruiter_domains.values()), 
@@ -116,7 +109,6 @@ public enum JnEntity  implements CcpEntity{
 	request_token_again(TimeOption.ddMMyyyy, A1D_request_token_again.values()), 
 	pre_registration(A1D_pre_registration.values()), 
 	password_tries(A1D_password_tries.values()), 
-	audit(A1D_audit.values()),
 	weak_password(A1D_weak_password.values()), 
 	password(A1D_password.values()), 
 	logout(TimeOption.ddMMyyyy, A1D_logout.values()), 
@@ -131,26 +123,35 @@ public enum JnEntity  implements CcpEntity{
 	instant_messenger_try_to_send_message(A1D_instant_messenger_try_to_send_message.values()), 
 	instant_messenger_message_sent(TimeOption.ddMMyyyyHHmmss, A1D_instant_messenger_message_sent.values()), 
 	email_api_client_error(A1D_email_api_client_error.values()),
+	email_api_unavailable(A1D_email_api_unavailable.values()), 
 	email_try_to_send_message(TimeOption.ddMMyyyy, A1D_email_try_to_send_message.values()), 
 	email_message_sent(TimeOption.ddMMyyyy, A1D_email_message_sent.values()), 
 	email_reported_as_spam(A1D_email_reported_as_spam.values()),
-	email_api_unavailable(A1D_email_api_unavailable.values()), 
 	failed_unlock_token(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()), 
 	record_to_reprocess(A1D_record_to_reprocess.values()),
-	async_task(TimeOption.ddMMyyyyHHmmssSSS, A1D_async_task.values())
+	async_task(false, TimeOption.ddMMyyyyHHmmssSSS, A1D_async_task.values()),
+	audit(A1D_audit.values()),
 	;
 	
 	final TimeOption timeOption;
 	final CcpField[] fields;
+	final boolean auditable;
 	
-	
-	private JnEntity(TimeOption timeOption, CcpField... keys) {
+	private JnEntity(TimeOption timeOption, CcpField... fields) {
+		this.auditable = TimeOption.none.equals(timeOption);
 		this.timeOption = timeOption;
-		this.fields = keys;
+		this.fields = fields;
 	}
 
 	private JnEntity(CcpField... fields) {
 		this.timeOption = TimeOption.none;
+		this.auditable = true;
+		this.fields = fields;
+	}
+
+	private JnEntity(boolean auditable, TimeOption timeOption,  CcpField... fields) {
+		this.timeOption = timeOption;
+		this.auditable = auditable;
 		this.fields = fields;
 	}
 
@@ -177,22 +178,16 @@ public enum JnEntity  implements CcpEntity{
 
 	public void saveAuditory(CcpMapDecorator values, CcpOperationType operation) {
 
-		boolean isTimeEntity = TimeOption.none.equals(this.timeOption) == false;
-		
-		if(isTimeEntity) {
+		if(this.auditable == false) {
 			return;
 		}
-		
-		if(JnEntity.audit.equals(this)) {
-			return;
-		}
-		
+
 		String id = this.getId(values);
 		CcpMapDecorator audit = new CcpMapDecorator()
 		.put("id", id)
 		.put("json", values)
 		.put("entity", this.name())
-		.put("operation", values)
+		.put("operation", operation)
 
 		.put("date", System.currentTimeMillis());
 	
@@ -291,6 +286,11 @@ public enum JnEntity  implements CcpEntity{
 		String primaryKeyFieldValue = list.stream().map(x -> x.toString().trim()).collect(Collectors.toList()).toString() + "_";
 		return primaryKeyFieldValue;
 		
+	}
+
+	@Override
+	public boolean isAuditable() {
+		return this.auditable;
 	}
 
 
