@@ -2,11 +2,8 @@ package com.jn.commons.entities.fields;
 
 import com.ccp.especifications.db.utils.CcpField;
 
-public enum A1D_record_to_reprocess implements CcpField{
-		date(true), operation(false),
-		entity(true), id(true),
-		json(false), status(false),
-		reason(false), errorType(false)
+public enum A1D_jobsnow_error implements CcpField{
+	cause(false), stackTrace(false), type(true), message(false)
 	;
 
 	private final boolean primaryKey;
@@ -15,7 +12,7 @@ public enum A1D_record_to_reprocess implements CcpField{
 		return this.primaryKey;
 	}
 
-	private A1D_record_to_reprocess(boolean primaryKey) {
+	private A1D_jobsnow_error(boolean primaryKey) {
 		this.primaryKey = primaryKey;
 	}
 

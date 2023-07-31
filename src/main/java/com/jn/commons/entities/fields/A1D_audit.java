@@ -4,7 +4,7 @@ import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_audit implements CcpField{
 		date(true), operation(false),
-		index(true), id(true),
+		entity(true), id(true),
 		json(false)
 	;
 

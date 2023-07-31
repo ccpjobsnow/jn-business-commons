@@ -5,12 +5,11 @@ import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.dependency.injection.CcpDependencyInject;
 import com.ccp.especifications.mensageria.sender.CcpMensageriaSender;
-import com.ccp.especifications.mensageria.sender.CcpMensageriaTopic;
 import com.ccp.exceptions.mensageria.sender.MensageriaTopicGenericError;
 
-public enum JnTopic implements CcpMensageriaTopic{
+public enum JnTopic{
 	sendUserToken, requestTokenAgain, requestUnlockToken, saveCandidateData, 
-	notifyContactUs, saveResumesQuery, sendEmail, sendInstantMessage, notifyError, removeTries;
+	notifyContactUs, notifyError, saveResumesQuery, sendEmail, sendInstantMessage, removeTries;
 	
 	@CcpDependencyInject
 	CcpMensageriaSender mensageriaSender;

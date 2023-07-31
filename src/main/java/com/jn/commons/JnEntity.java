@@ -12,11 +12,11 @@ import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.dependency.injection.CcpDependencyInject;
 import com.ccp.dependency.injection.CcpDependencyInjection;
-import com.ccp.especifications.db.crud.CcpDao;
+import com.ccp.especifications.db.dao.CcpDao;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpField;
 import com.ccp.especifications.db.utils.CcpOperationType;
-import com.ccp.exceptions.commons.CcpFlow;
+import com.ccp.exceptions.db.MissingKeys;
 import com.jn.commons.entities.fields.A1D_async_task;
 import com.jn.commons.entities.fields.A1D_audit;
 import com.jn.commons.entities.fields.A1D_email_api_client_error;
@@ -30,6 +30,7 @@ import com.jn.commons.entities.fields.A1D_instant_messenger_bot_locked;
 import com.jn.commons.entities.fields.A1D_instant_messenger_message_sent;
 import com.jn.commons.entities.fields.A1D_instant_messenger_try_to_send_message;
 import com.jn.commons.entities.fields.A1D_job_user_stats;
+import com.jn.commons.entities.fields.A1D_jobsnow_error;
 import com.jn.commons.entities.fields.A1D_locked_password;
 import com.jn.commons.entities.fields.A1D_locked_token;
 import com.jn.commons.entities.fields.A1D_login;
@@ -74,7 +75,7 @@ import com.jn.commons.entities.fields.A4D_search_resumes_stats;
 import com.jn.commons.entities.fields.A5D_contact_us;
 
 public enum JnEntity  implements CcpEntity{
-	contact_us_skiped(), 
+	contact_us_skiped(),
 	contact_us_ignored(), 
 	responder_unlock_token(A1D_responder_unlock_token.values()), 
 	responder_request_token_again(A1D_responder_request_token_again.values()), 
@@ -131,6 +132,7 @@ public enum JnEntity  implements CcpEntity{
 	record_to_reprocess(A1D_record_to_reprocess.values()),
 	async_task(false, TimeOption.ddMMyyyyHHmmssSSS, A1D_async_task.values()),
 	audit(A1D_audit.values()),
+	jobsnow_error(TimeOption.ddMMyyyyHH,A1D_jobsnow_error.values()),
 	;
 	
 	final TimeOption timeOption;
@@ -230,7 +232,19 @@ public enum JnEntity  implements CcpEntity{
 		CcpMapDecorator subMap = values.getSubMap(array);
 		return subMap;
 	}
-	
+	private boolean isEmptyPrimaryKey(CcpField key, CcpMapDecorator values) {
+		
+		if(key.isPrimaryKey() == false) {
+			return false;
+		}
+		
+		String primaryKeyFieldValue = this.getPrimaryKeyFieldValue(key, values);
+		if("_".equals(primaryKeyFieldValue)) {
+			return true;
+		}
+		
+		return false;
+	}
 	private String getId(CcpMapDecorator values,TimeOption timeOptioption, CcpField...fields) {
 
 		Long time = System.currentTimeMillis();
@@ -245,10 +259,13 @@ public enum JnEntity  implements CcpEntity{
 			return UUID.randomUUID().toString();
 		}
 		
-		List<CcpField> missingKeys = Arrays.asList(fields).stream().filter(key -> key.isPrimaryKey()).filter(key -> this.getPrimaryKeyFieldValue(key, values).isEmpty()).collect(Collectors.toList());
+		List<CcpField> missingKeys = Arrays.asList(fields).stream().filter(key -> this.isEmptyPrimaryKey(key, values))
+				.collect(Collectors.toList());
 		
-		if(missingKeys.isEmpty() == false) {
-			throw new CcpFlow(values, 500, "The following keys are missing to compose an id: " + missingKeys +" for entity " + this.name() + ". Current values: " + values, null);
+		boolean isMissingKeys = missingKeys.isEmpty() == false;
+		
+		if(isMissingKeys) {
+			throw new MissingKeys(this, missingKeys, values);
 		}
 		
 		
