@@ -1,11 +1,14 @@
 package com.jn.commons;
 
+import java.util.function.Function;
+
 import com.ccp.constantes.CcpConstants;
+import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.decorators.CcpStringDecorator;
-import com.ccp.process.CcpProcess;
+
 
 public interface JnConstants {
-	CcpProcess PUT_EMAIL_TOKEN = values -> values.put("token", new CcpStringDecorator(CcpConstants.CHARACTERS_TO_GENERATE_TOKEN).text().generateToken(8));
+	Function<CcpMapDecorator, CcpMapDecorator> PUT_EMAIL_TOKEN = values -> values.put("token", new CcpStringDecorator(CcpConstants.CHARACTERS_TO_GENERATE_TOKEN).text().generateToken(8));
 	String RESUMES_BUCKET = "JN_RESUMES";
 	String TENANT = "JN_TENANT";
 	String DOT = ".";

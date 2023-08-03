@@ -2,8 +2,8 @@ package com.jn.commons.entities.fields;
 
 import com.ccp.especifications.db.utils.CcpField;
 
-public enum A1D_email_api_client_error implements CcpField{
-		apiKey(true), apiUrl(true), request(true), headers(true), response(false), httpStatus(false), date(false)
+public enum A1D_http_api_error_client implements CcpField{
+		url(true), method(true), headers(true), request(false), apiType(true), response(false), status(false)
 	;
 	
 	private final boolean primaryKey;
@@ -12,7 +12,7 @@ public enum A1D_email_api_client_error implements CcpField{
 		return this.primaryKey;
 	}
 
-	private A1D_email_api_client_error(boolean primaryKey) {
+	private A1D_http_api_error_client(boolean primaryKey) {
 		this.primaryKey = primaryKey;
 	}
 	

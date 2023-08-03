@@ -3,7 +3,7 @@ package com.jn.commons.entities.fields;
 import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_instant_messenger_bot_locked implements CcpField{
-		botToken(true), chatId(true), subjectType(false), message(false)
+		botToken(true), chatId(true), subjectType(false), telegramMessage(false)
 	;
 	
 	private final boolean primaryKey;

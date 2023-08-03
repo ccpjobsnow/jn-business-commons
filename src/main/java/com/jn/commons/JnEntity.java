@@ -19,16 +19,13 @@ import com.ccp.especifications.db.utils.CcpOperationType;
 import com.ccp.exceptions.db.MissingKeys;
 import com.jn.commons.entities.fields.A1D_async_task;
 import com.jn.commons.entities.fields.A1D_audit;
-import com.jn.commons.entities.fields.A1D_email_api_client_error;
-import com.jn.commons.entities.fields.A1D_email_api_unavailable;
+import com.jn.commons.entities.fields.A1D_http_api_error_client;
 import com.jn.commons.entities.fields.A1D_email_message_sent;
 import com.jn.commons.entities.fields.A1D_email_reported_as_spam;
-import com.jn.commons.entities.fields.A1D_email_try_to_send_message;
 import com.jn.commons.entities.fields.A1D_failed_unlock_token_today;
-import com.jn.commons.entities.fields.A1D_instant_messenger_api_unavailable;
+import com.jn.commons.entities.fields.A1D_http_api_error_server;
 import com.jn.commons.entities.fields.A1D_instant_messenger_bot_locked;
 import com.jn.commons.entities.fields.A1D_instant_messenger_message_sent;
-import com.jn.commons.entities.fields.A1D_instant_messenger_try_to_send_message;
 import com.jn.commons.entities.fields.A1D_job_user_stats;
 import com.jn.commons.entities.fields.A1D_jobsnow_error;
 import com.jn.commons.entities.fields.A1D_locked_password;
@@ -42,7 +39,7 @@ import com.jn.commons.entities.fields.A1D_message;
 import com.jn.commons.entities.fields.A1D_password;
 import com.jn.commons.entities.fields.A1D_password_tries;
 import com.jn.commons.entities.fields.A1D_pre_registration;
-import com.jn.commons.entities.fields.A1D_record_to_reprocess;
+import com.jn.commons.entities.fields.*;
 import com.jn.commons.entities.fields.A1D_request_token_again;
 import com.jn.commons.entities.fields.A1D_request_token_again_answered;
 import com.jn.commons.entities.fields.A1D_request_unlock_token;
@@ -75,64 +72,62 @@ import com.jn.commons.entities.fields.A4D_search_resumes_stats;
 import com.jn.commons.entities.fields.A5D_contact_us;
 
 public enum JnEntity  implements CcpEntity{
-	contact_us_skiped(),
-	contact_us_ignored(), 
-	responder_unlock_token(A1D_responder_unlock_token.values()), 
-	responder_request_token_again(A1D_responder_request_token_again.values()), 
-	contact_us(TimeOption.ddMMyyyy, A5D_contact_us.values()), 
-	search_resumes_stats(TimeOption.ddMMyyyyHH, A4D_search_resumes_stats.values()), 
-	search_resumes_list(TimeOption.ddMMyyyyHH, A4D_search_resumes_list.values()), 
-	resumes_stats(TimeOption.ddMMyyyyHH, A4D_resumes_stats.values()), 
-	resumes_list(TimeOption.ddMMyyyyHH, A4D_resumes_list.values()), 
-	resume_exclusion(A3D_resume_exclusion.values()), 
-	recruiter_view_resume(TimeOption.ddMMyyyy, A3D_recruiter_view_resume.values()), 
-	recruiter_domains(A3D_recruiter_domains.values()), 
-	keywords_unknown(A3D_keywords_unknown.values()),
-	keywords_operational(A3D_keywords_operational.values()), 
-	keywords_it(A3D_keywords_it.values()), 
-	keywords_hr(A3D_keywords_hr.values()), 
-	keywords_college(A3D_keywords_college.values()), 
-	grouped_views_by_recruiter(A3D_grouped_views_by_recruiter.values()), 
-	denied_view_to_recruiter(A3D_denied_view_to_recruiter.values()), 
-	candidate_view_resume(TimeOption.ddMMyyyyHHmmss, A3D_candidate_view_resume.values()), 
-	candidate_resume(A3D_candidate_resume.values()), 
+	async_task(false, TimeOption.ddMMyyyyHHmmssSSS, A1D_async_task.values()),
+	audit(A1D_audit.values()),
 	candidate(A3D_candidate.values()), 
-	user_stats(A1D_job_user_stats.values()), 
-	unlocked_token(A1D_unlocked_token.values()), 
-	unlocked_password(A1D_unlocked_password.values()), 
-	unlock_token_tries(A1D_unlock_token_tries.values()), 
-	token_tries(A1D_token_tries.values()), 
-	messages(A1D_message.values()), 
-	parameters(A1D_values.values()), 
-	request_unlock_token_answered(TimeOption.ddMMyyyy, A1D_request_unlock_token_answered.values()), 
-	request_unlock_token(TimeOption.ddMMyyyy, A1D_request_unlock_token.values()), 
-	request_token_again_answered(TimeOption.ddMMyyyy, A1D_request_token_again_answered.values()), 
-	request_token_again(TimeOption.ddMMyyyy, A1D_request_token_again.values()), 
-	pre_registration(A1D_pre_registration.values()), 
-	password_tries(A1D_password_tries.values()), 
-	weak_password(A1D_weak_password.values()), 
-	password(A1D_password.values()), 
-	logout(TimeOption.ddMMyyyy, A1D_logout.values()), 
-	login_token(TimeOption.ddMMyyyy, A1D_login_token.values()), 
-	login_conflict_solved(A1D_login_conflict_solved.values()), 
-	login_conflict(A1D_login_conflict.values()), 
-	login(TimeOption.ddMMyyyy, A1D_login.values()),  
-	locked_token(A1D_locked_token.values()), 
-	locked_password(A1D_locked_password.values()), 
-	instant_messenger_bot_locked(A1D_instant_messenger_bot_locked.values()), 
-	instant_messenger_api_unavailable(A1D_instant_messenger_api_unavailable.values()), 
-	instant_messenger_try_to_send_message(A1D_instant_messenger_try_to_send_message.values()), 
-	instant_messenger_message_sent(TimeOption.ddMMyyyyHHmmss, A1D_instant_messenger_message_sent.values()), 
-	email_api_client_error(A1D_email_api_client_error.values()),
-	email_api_unavailable(A1D_email_api_unavailable.values()), 
-	email_try_to_send_message(TimeOption.ddMMyyyy, A1D_email_try_to_send_message.values()), 
+	candidate_resume(A3D_candidate_resume.values()), 
+	candidate_view_resume(TimeOption.ddMMyyyyHHmmss, A3D_candidate_view_resume.values()), 
+	contact_us(TimeOption.ddMMyyyy, A5D_contact_us.values()), 
+	contact_us_ignored(), 
+	contact_us_skiped(),
+	denied_view_to_recruiter(A3D_denied_view_to_recruiter.values()), 
 	email_message_sent(TimeOption.ddMMyyyy, A1D_email_message_sent.values()), 
 	email_reported_as_spam(A1D_email_reported_as_spam.values()),
 	failed_unlock_token(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()), 
-	record_to_reprocess(A1D_record_to_reprocess.values()),
-	async_task(false, TimeOption.ddMMyyyyHHmmssSSS, A1D_async_task.values()),
-	audit(A1D_audit.values()),
+	grouped_views_by_recruiter(A3D_grouped_views_by_recruiter.values()), 
+	http_api_error_client(A1D_http_api_error_client.values()),
+	http_api_error_server(A1D_http_api_error_server.values()), 
+	http_api_retry_send_request(A1D_http_api_retry_send_request.values()),
+	instant_messenger_bot_locked(A1D_instant_messenger_bot_locked.values()), 
+	instant_messenger_message_sent(TimeOption.ddMMyyyyHHmmss, A1D_instant_messenger_message_sent.values()), 
 	jobsnow_error(TimeOption.ddMMyyyyHH,A1D_jobsnow_error.values()),
+	keywords_college(A3D_keywords_college.values()), 
+	keywords_hr(A3D_keywords_hr.values()), 
+	keywords_it(A3D_keywords_it.values()), 
+	keywords_operational(A3D_keywords_operational.values()), 
+	keywords_unknown(A3D_keywords_unknown.values()),
+	locked_password(A1D_locked_password.values()), 
+	locked_token(A1D_locked_token.values()), 
+	login(TimeOption.ddMMyyyy, A1D_login.values()),  
+	login_conflict(A1D_login_conflict.values()), 
+	login_conflict_solved(A1D_login_conflict_solved.values()), 
+	login_token(TimeOption.ddMMyyyy, A1D_login_token.values()), 
+	logout(TimeOption.ddMMyyyy, A1D_logout.values()), 
+	messages(A1D_message.values()), 
+	parameters(A1D_values.values()), 
+	password(A1D_password.values()), 
+	password_tries(A1D_password_tries.values()), 
+	pre_registration(A1D_pre_registration.values()), 
+	record_to_reprocess(A1D_record_to_reprocess.values()),
+	recruiter_domains(A3D_recruiter_domains.values()), 
+	recruiter_view_resume(TimeOption.ddMMyyyy, A3D_recruiter_view_resume.values()), 
+	request_token_again(TimeOption.ddMMyyyy, A1D_request_token_again.values()), 
+	request_token_again_answered(TimeOption.ddMMyyyy, A1D_request_token_again_answered.values()), 
+	request_unlock_token(TimeOption.ddMMyyyy, A1D_request_unlock_token.values()), 
+	request_unlock_token_answered(TimeOption.ddMMyyyy, A1D_request_unlock_token_answered.values()), 
+	responder_request_token_again(A1D_responder_request_token_again.values()), 
+	responder_unlock_token(A1D_responder_unlock_token.values()), 
+	resume_exclusion(A3D_resume_exclusion.values()), 
+	resumes_list(TimeOption.ddMMyyyyHH, A4D_resumes_list.values()), 
+	resumes_stats(TimeOption.ddMMyyyyHH, A4D_resumes_stats.values()), 
+	search_resumes_list(TimeOption.ddMMyyyyHH, A4D_search_resumes_list.values()), 
+	search_resumes_stats(TimeOption.ddMMyyyyHH, A4D_search_resumes_stats.values()), 
+	token_tries(A1D_token_tries.values()), 
+	unlock_token_tries(A1D_unlock_token_tries.values()), 
+	unlocked_password(A1D_unlocked_password.values()), 
+	unlocked_token(A1D_unlocked_token.values()), 
+	user_stats(A1D_job_user_stats.values()), 
+	weak_password(A1D_weak_password.values()), 
 	;
 	
 	final TimeOption timeOption;

@@ -3,7 +3,7 @@ package com.jn.commons.entities.fields;
 import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_email_reported_as_spam implements CcpField{
-		subject(false), subjectType(false), email(true), sender(true), message(false)
+		subject(false), subjectType(false), email(true), sender(true), emailMessage(false)
 	;
 	private final boolean primaryKey;
 
