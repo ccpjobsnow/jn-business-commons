@@ -10,6 +10,7 @@ public enum TimeOption{
 			return "";
 		}
 	}
+	,MMyyyy
 	,ddMMyyyy
 	,ddMMyyyyHH
 	,ddMMyyyyHHmm
