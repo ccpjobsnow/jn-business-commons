@@ -4,6 +4,7 @@ import com.ccp.constantes.CcpConstants;
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.dependency.injection.CcpDependencyInject;
+import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.mensageria.sender.CcpMensageriaSender;
 import com.ccp.exceptions.mensageria.sender.MensageriaTopicGenericError;
 
@@ -28,6 +29,10 @@ public enum JnTopic{
 		this.mensageriaSender.send(messageSent, this);
 		JnEntity.async_task.createOrUpdate(messageDetails);
 		return messageSent;
+	}
+	public static void loadAllTopics() {
+		Object[] values = JnTopic.values();
+		CcpDependencyInjection.injectDependencies(values);
 	}
 
 

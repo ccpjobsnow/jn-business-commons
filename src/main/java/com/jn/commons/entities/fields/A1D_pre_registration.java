@@ -3,7 +3,7 @@ package com.jn.commons.entities.fields;
 import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_pre_registration implements CcpField{
-		email(true)
+		email(true), channel(false), goal(false)
 	;
 	
 	private final boolean primaryKey;
