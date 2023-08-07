@@ -15,7 +15,8 @@ public enum TimeOption{
 	,ddMMyyyyHH
 	,ddMMyyyyHHmm
 	,ddMMyyyyHHmmss
-	,ddMMyyyyHHmmssSSS
+	,ddMMyyyyHHmmssSSS, 
+	ddMM
 	;
 
 	public String getFormattedCurrentDate(Long date) {

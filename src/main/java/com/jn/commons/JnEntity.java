@@ -19,13 +19,18 @@ import com.ccp.especifications.db.utils.CcpOperationType;
 import com.ccp.exceptions.db.MissingKeys;
 import com.jn.commons.entities.fields.A1D_async_task;
 import com.jn.commons.entities.fields.A1D_audit;
-import com.jn.commons.entities.fields.A1D_http_api_error_client;
 import com.jn.commons.entities.fields.A1D_email_message_sent;
+import com.jn.commons.entities.fields.A1D_email_parameters_to_send;
 import com.jn.commons.entities.fields.A1D_email_reported_as_spam;
+import com.jn.commons.entities.fields.A1D_email_template_message;
 import com.jn.commons.entities.fields.A1D_failed_unlock_token_today;
+import com.jn.commons.entities.fields.A1D_http_api_error_client;
 import com.jn.commons.entities.fields.A1D_http_api_error_server;
+import com.jn.commons.entities.fields.A1D_http_api_retry_send_request;
 import com.jn.commons.entities.fields.A1D_instant_messenger_bot_locked;
 import com.jn.commons.entities.fields.A1D_instant_messenger_message_sent;
+import com.jn.commons.entities.fields.A1D_instant_messenger_parameters_to_send;
+import com.jn.commons.entities.fields.A1D_instant_messenger_template_message;
 import com.jn.commons.entities.fields.A1D_job_user_stats;
 import com.jn.commons.entities.fields.A1D_jobsnow_error;
 import com.jn.commons.entities.fields.A1D_locked_password;
@@ -35,22 +40,21 @@ import com.jn.commons.entities.fields.A1D_login_conflict;
 import com.jn.commons.entities.fields.A1D_login_conflict_solved;
 import com.jn.commons.entities.fields.A1D_login_token;
 import com.jn.commons.entities.fields.A1D_logout;
-import com.jn.commons.entities.fields.A1D_message;
 import com.jn.commons.entities.fields.A1D_password;
 import com.jn.commons.entities.fields.A1D_password_tries;
 import com.jn.commons.entities.fields.A1D_pre_registration;
-import com.jn.commons.entities.fields.*;
+import com.jn.commons.entities.fields.A1D_record_to_reprocess;
 import com.jn.commons.entities.fields.A1D_request_token_again;
 import com.jn.commons.entities.fields.A1D_request_token_again_answered;
 import com.jn.commons.entities.fields.A1D_request_unlock_token;
 import com.jn.commons.entities.fields.A1D_request_unlock_token_answered;
 import com.jn.commons.entities.fields.A1D_responder_request_token_again;
 import com.jn.commons.entities.fields.A1D_responder_unlock_token;
+import com.jn.commons.entities.fields.A1D_support_notification;
 import com.jn.commons.entities.fields.A1D_token_tries;
 import com.jn.commons.entities.fields.A1D_unlock_token_tries;
 import com.jn.commons.entities.fields.A1D_unlocked_password;
 import com.jn.commons.entities.fields.A1D_unlocked_token;
-import com.jn.commons.entities.fields.A1D_values;
 import com.jn.commons.entities.fields.A1D_weak_password;
 import com.jn.commons.entities.fields.A3D_candidate;
 import com.jn.commons.entities.fields.A3D_candidate_resume;
@@ -83,13 +87,17 @@ public enum JnEntity  implements CcpEntity{
 	denied_view_to_recruiter(A3D_denied_view_to_recruiter.values()), 
 	email_message_sent(TimeOption.ddMMyyyy, A1D_email_message_sent.values()), 
 	email_reported_as_spam(A1D_email_reported_as_spam.values()),
+	email_parameters_to_send(A1D_email_parameters_to_send.values()),
+	email_template_message(A1D_email_template_message.values()),
 	failed_unlock_token(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()), 
 	grouped_views_by_recruiter(A3D_grouped_views_by_recruiter.values()), 
 	http_api_error_client(A1D_http_api_error_client.values()),
 	http_api_error_server(A1D_http_api_error_server.values()), 
 	http_api_retry_send_request(A1D_http_api_retry_send_request.values()),
 	instant_messenger_bot_locked(A1D_instant_messenger_bot_locked.values()), 
-	instant_messenger_message_sent(TimeOption.ddMMyyyyHHmmss, A1D_instant_messenger_message_sent.values()), 
+	instant_messenger_message_sent(TimeOption.ddMMyyyyHHmmss, A1D_instant_messenger_message_sent.values()),
+	instant_messenger_parameters_to_send(A1D_instant_messenger_parameters_to_send.values()),
+	instant_messenger_template_message(A1D_instant_messenger_template_message.values()),
 	jobsnow_error(TimeOption.ddMMyyyyHH,A1D_jobsnow_error.values()),
 	keywords_college(A3D_keywords_college.values()), 
 	keywords_hr(A3D_keywords_hr.values()), 
@@ -103,9 +111,7 @@ public enum JnEntity  implements CcpEntity{
 	login_conflict_solved(A1D_login_conflict_solved.values()), 
 	login_token(TimeOption.ddMMyyyy, A1D_login_token.values()), 
 	logout(TimeOption.ddMMyyyy, A1D_logout.values()), 
-	messages(A1D_message.values()), 
-	parameters(A1D_values.values()), 
-	password(A1D_password.values()), 
+	password(TimeOption.ddMM, A1D_password.values()), 
 	password_tries(A1D_password_tries.values()), 
 	pre_registration(A1D_pre_registration.values()), 
 	record_to_reprocess(A1D_record_to_reprocess.values()),
