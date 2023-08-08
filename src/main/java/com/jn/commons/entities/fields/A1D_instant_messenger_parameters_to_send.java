@@ -3,8 +3,7 @@ package com.jn.commons.entities.fields;
 import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_instant_messenger_parameters_to_send implements CcpField{
-	recipient(false), apiUrlKeyName(false), apiTokenKeyName(false), id(true), subjectType(false), 
-	maxTries(false), sleep(false), moreParameters(false)
+	recipient(false), templateId(true), subjectType(false), moreParameters(false)
 	;
 
 	private final boolean primaryKey;

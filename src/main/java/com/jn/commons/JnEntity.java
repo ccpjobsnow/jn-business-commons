@@ -26,7 +26,7 @@ import com.jn.commons.entities.fields.A1D_email_template_message;
 import com.jn.commons.entities.fields.A1D_failed_unlock_token_today;
 import com.jn.commons.entities.fields.A1D_http_api_error_client;
 import com.jn.commons.entities.fields.A1D_http_api_error_server;
-import com.jn.commons.entities.fields.A1D_http_api_retry_send_request;
+import com.jn.commons.entities.fields.*;
 import com.jn.commons.entities.fields.A1D_instant_messenger_bot_locked;
 import com.jn.commons.entities.fields.A1D_instant_messenger_message_sent;
 import com.jn.commons.entities.fields.A1D_instant_messenger_parameters_to_send;
@@ -93,6 +93,7 @@ public enum JnEntity  implements CcpEntity{
 	grouped_views_by_recruiter(A3D_grouped_views_by_recruiter.values()), 
 	http_api_error_client(A1D_http_api_error_client.values()),
 	http_api_error_server(A1D_http_api_error_server.values()), 
+	http_api_parameters(A1D_http_api_parameters.values()),
 	http_api_retry_send_request(A1D_http_api_retry_send_request.values()),
 	instant_messenger_bot_locked(A1D_instant_messenger_bot_locked.values()), 
 	instant_messenger_message_sent(TimeOption.ddMMyyyyHHmmss, A1D_instant_messenger_message_sent.values()),

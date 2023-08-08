@@ -3,7 +3,7 @@ package com.jn.commons.entities.fields;
 import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_email_template_message implements CcpField{
-	 id(true),language(true), subject(false), message(false)
+	templateId(true),language(true), subject(false), message(false)
 	;
 
 	private final boolean primaryKey;
