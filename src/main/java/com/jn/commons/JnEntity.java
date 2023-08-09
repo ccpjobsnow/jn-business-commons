@@ -26,7 +26,8 @@ import com.jn.commons.entities.fields.A1D_email_template_message;
 import com.jn.commons.entities.fields.A1D_failed_unlock_token_today;
 import com.jn.commons.entities.fields.A1D_http_api_error_client;
 import com.jn.commons.entities.fields.A1D_http_api_error_server;
-import com.jn.commons.entities.fields.*;
+import com.jn.commons.entities.fields.A1D_http_api_parameters;
+import com.jn.commons.entities.fields.A1D_http_api_retry_send_request;
 import com.jn.commons.entities.fields.A1D_instant_messenger_bot_locked;
 import com.jn.commons.entities.fields.A1D_instant_messenger_message_sent;
 import com.jn.commons.entities.fields.A1D_instant_messenger_parameters_to_send;
@@ -50,7 +51,6 @@ import com.jn.commons.entities.fields.A1D_request_unlock_token;
 import com.jn.commons.entities.fields.A1D_request_unlock_token_answered;
 import com.jn.commons.entities.fields.A1D_responder_request_token_again;
 import com.jn.commons.entities.fields.A1D_responder_unlock_token;
-import com.jn.commons.entities.fields.A1D_support_notification;
 import com.jn.commons.entities.fields.A1D_token_tries;
 import com.jn.commons.entities.fields.A1D_unlock_token_tries;
 import com.jn.commons.entities.fields.A1D_unlocked_password;
@@ -129,7 +129,6 @@ public enum JnEntity  implements CcpEntity{
 	resumes_stats(TimeOption.ddMMyyyyHH, A4D_resumes_stats.values()), 
 	search_resumes_list(TimeOption.ddMMyyyyHH, A4D_search_resumes_list.values()), 
 	search_resumes_stats(TimeOption.ddMMyyyyHH, A4D_search_resumes_stats.values()), 
-	support_notification(TimeOption.ddMMyyyyHH, A1D_support_notification.values()),
 	token_tries(A1D_token_tries.values()), 
 	unlock_token_tries(A1D_unlock_token_tries.values()), 
 	unlocked_password(A1D_unlocked_password.values()), 

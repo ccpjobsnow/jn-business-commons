@@ -3,7 +3,7 @@ package com.jn.commons.entities.fields;
 import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_http_api_parameters implements CcpField{
-	apiName(true), url(false), token (false), maxTries(false), sleep(false)
+	apiName(true), url(false), token (false), maxTries(false), sleep(false), method(false)
 	;
 	
 	private final boolean primaryKey;
