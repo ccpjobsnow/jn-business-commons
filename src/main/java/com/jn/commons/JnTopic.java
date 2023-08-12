@@ -26,7 +26,7 @@ public enum JnTopic{
 				;
 		String asyncTaskId = JnEntity.async_task.getId(messageDetails);
 		CcpMapDecorator messageSent = values.put("asyncTaskId", asyncTaskId);
-		this.mensageriaSender.send(messageSent, this);
+		this.mensageriaSender.send(this, messageSent);
 		JnEntity.async_task.createOrUpdate(messageDetails);
 		return messageSent;
 	}
