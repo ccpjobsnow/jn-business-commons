@@ -6,7 +6,6 @@ import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.dependency.injection.CcpDependencyInject;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.mensageria.sender.CcpMensageriaSender;
-import com.ccp.exceptions.mensageria.sender.MensageriaTopicGenericError;
 
 public enum JnTopic{
 	sendUserToken, requestTokenAgain, requestUnlockToken, saveCandidateData, 
@@ -27,7 +26,7 @@ public enum JnTopic{
 		String asyncTaskId = JnEntity.async_task.getId(messageDetails);
 		CcpMapDecorator messageSent = values.put("asyncTaskId", asyncTaskId);
 		this.mensageriaSender.send(this, messageSent);
-		JnEntity.async_task.createOrUpdate(messageDetails);
+		JnEntity.async_task.createOrUpdate(messageDetails, asyncTaskId);
 		return messageSent;
 	}
 	public static void loadAllTopics() {
@@ -37,6 +36,6 @@ public enum JnTopic{
 
 
 	public CcpMapDecorator getTranslatedAsyncTaskResult(CcpMapDecorator asyncTask) {
-		throw new MensageriaTopicGenericError();
+		return asyncTask;
 	}
 }

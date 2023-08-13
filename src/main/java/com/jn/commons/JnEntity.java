@@ -304,8 +304,8 @@ public enum JnEntity  implements CcpEntity{
 		list.sort((a, b) -> ("" + a).compareTo("" + b));
 		String primaryKeyFieldValue = list.stream().map(x -> x.toString().trim()).collect(Collectors.toList()).toString() + "_";
 		return primaryKeyFieldValue;
-		
 	}
+	
 
 	@Override
 	public boolean isAuditable() {
