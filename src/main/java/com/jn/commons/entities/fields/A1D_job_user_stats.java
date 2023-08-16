@@ -3,7 +3,8 @@ package com.jn.commons.entities.fields;
 import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_job_user_stats implements CcpField{
-		email(true)
+		email(true), balance(false), lastAccess(false), countAccess(false),
+		openedTickets(false), closedTickets(false), balanceTransacionsCount(false)
 	;
 	
 	private final boolean primaryKey;
