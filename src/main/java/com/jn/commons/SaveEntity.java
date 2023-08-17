@@ -3,6 +3,7 @@ package com.jn.commons;
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.process.CcpNextStep;
 import com.ccp.process.CcpStepResult;
+import com.ccp.process.CcpProcessStatus;
 
 public class SaveEntity extends CcpNextStep {
 
@@ -10,9 +11,9 @@ public class SaveEntity extends CcpNextStep {
 	
 	private final Integer status;
 	
-	SaveEntity(JnEntity entity, Integer status) {
+	SaveEntity(JnEntity entity, CcpProcessStatus status) {
 		this.entity = entity;
-		this.status = status;
+		this.status = status.status();
 	}
 
 	@Override

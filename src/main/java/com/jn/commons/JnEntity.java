@@ -17,6 +17,7 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpField;
 import com.ccp.especifications.db.utils.CcpOperationType;
 import com.ccp.exceptions.db.MissingKeys;
+import com.ccp.process.CcpProcessStatus;
 import com.jn.commons.entities.fields.A1D_async_task;
 import com.jn.commons.entities.fields.A1D_audit;
 import com.jn.commons.entities.fields.A1D_email_message_sent;
@@ -219,7 +220,7 @@ public enum JnEntity  implements CcpEntity{
 		this.createOrUpdate(values);
 	}
 	
-	public SaveEntity getSaver(Integer status) {
+	public SaveEntity getSaver(CcpProcessStatus status) {
 		return new SaveEntity(this, status);
 	}
 	
