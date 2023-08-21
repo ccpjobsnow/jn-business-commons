@@ -3,7 +3,7 @@ package com.jn.commons.entities.fields;
 import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_login implements CcpField{
-		email(true), ip(false), coordinates(false), macAddress(false), userAgent(false)
+		email(true), token(false), ip(false), coordinates(false), macAddress(false), userAgent(false)
 	;
 	
 	private final boolean primaryKey;
