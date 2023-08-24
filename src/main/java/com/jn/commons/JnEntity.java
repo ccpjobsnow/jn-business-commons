@@ -10,8 +10,7 @@ import java.util.stream.Collectors;
 
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.decorators.CcpStringDecorator;
-import com.ccp.dependency.injection.CcpDependencyInject;
-import com.ccp.dependency.injection.CcpDependencyInjection;
+import com.ccp.dependency.injection.CcpInstanceInjection;
 import com.ccp.especifications.db.dao.CcpDao;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpField;
@@ -160,8 +159,7 @@ public enum JnEntity  implements CcpEntity{
 		this.fields = fields;
 	}
 
-	@CcpDependencyInject
-	CcpDao dao;
+	CcpDao dao = CcpInstanceInjection.getInstance(CcpDao.class);
 
 
 	public TimeOption getTimeOption() {
@@ -223,12 +221,6 @@ public enum JnEntity  implements CcpEntity{
 	public SaveEntity getSaver(CcpProcessStatus status) {
 		return new SaveEntity(this, status);
 	}
-	
-	public static void loadEntitiesMetadata() {
-		Object[] values = JnEntity.values();
-		CcpDependencyInjection.injectDependencies(values);
-	}
-	
 	public CcpMapDecorator getOnlyExistingFields(CcpMapDecorator values) {
 		CcpField[] fields = this.getFields();
 		String[] array = Arrays.asList(fields).stream().map(x -> x.name()).collect(Collectors.toList()).toArray(new String[fields.length]);

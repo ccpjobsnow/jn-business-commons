@@ -3,17 +3,14 @@ package com.jn.commons;
 import com.ccp.constantes.CcpConstants;
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.decorators.CcpStringDecorator;
-import com.ccp.dependency.injection.CcpDependencyInject;
-import com.ccp.dependency.injection.CcpDependencyInjection;
+import com.ccp.dependency.injection.CcpInstanceInjection;
 import com.ccp.especifications.mensageria.sender.CcpMensageriaSender;
 
 public enum JnTopic{
 	sendUserToken, requestTokenAgain, requestUnlockToken, saveCandidateData, 
 	notifyContactUs, notifyError, saveResumesQuery, sendEmail, sendInstantMessage, removeTries;
 	
-	@CcpDependencyInject
-	CcpMensageriaSender mensageriaSender;
-
+	final CcpMensageriaSender mensageriaSender = CcpInstanceInjection.hasInstance(CcpMensageriaSender.class) ? CcpInstanceInjection.getInstance(CcpMensageriaSender.class) : null;
 	
 	public CcpMapDecorator send(CcpMapDecorator values) {
 		String token = new CcpStringDecorator(CcpConstants.CHARACTERS_TO_GENERATE_TOKEN).text().generateToken(20);
@@ -29,11 +26,6 @@ public enum JnTopic{
 		JnEntity.async_task.createOrUpdate(messageDetails, asyncTaskId);
 		return messageSent;
 	}
-	public static void loadAllTopics() {
-		Object[] values = JnTopic.values();
-		CcpDependencyInjection.injectDependencies(values);
-	}
-
 
 	public CcpMapDecorator getTranslatedAsyncTaskResult(CcpMapDecorator asyncTask) {
 		return asyncTask;
