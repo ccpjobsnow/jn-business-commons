@@ -3,6 +3,7 @@ package com.jn.commons;
 import com.ccp.constantes.CcpConstants;
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.decorators.CcpStringDecorator;
+import com.ccp.decorators.CcpTimeDecorator;
 import com.ccp.dependency.injection.CcpInstanceInjection;
 import com.ccp.especifications.mensageria.sender.CcpMensageriaSender;
 
@@ -19,6 +20,7 @@ public enum JnTopic{
 				.put("request", values)
 				.put("topic", this.name())
 				.put("started", System.currentTimeMillis())
+				.put("data", new CcpTimeDecorator().getFormattedCurrentDateTime("dd/MM/yyyy HH:mm:ss"))
 				;
 		String asyncTaskId = JnEntity.async_task.getId(messageDetails);
 		CcpMapDecorator messageSent = values.put("asyncTaskId", asyncTaskId);
