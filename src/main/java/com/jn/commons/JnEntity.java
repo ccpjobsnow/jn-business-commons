@@ -218,8 +218,8 @@ public enum JnEntity  implements CcpEntity{
 		this.createOrUpdate(values);
 	}
 	
-	public SaveEntity getSaver(CcpProcessStatus status) {
-		return new SaveEntity(this, status);
+	public SaveEntity getSaver(CcpProcessStatus statusToReturnAfterSaving) {
+		return new SaveEntity(this, statusToReturnAfterSaving);
 	}
 	public CcpMapDecorator getOnlyExistingFields(CcpMapDecorator values) {
 		CcpField[] fields = this.getFields();
