@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.decorators.CcpStringDecorator;
-import com.ccp.dependency.injection.CcpInstanceInjection;
+import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.dao.CcpDao;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpField;
@@ -159,7 +159,7 @@ public enum JnEntity  implements CcpEntity{
 		this.fields = fields;
 	}
 
-	CcpDao dao = CcpInstanceInjection.getInstance(CcpDao.class);
+	CcpDao dao = CcpDependencyInjection.getDependency(CcpDao.class);
 
 
 	public TimeOption getTimeOption() {
@@ -217,7 +217,24 @@ public enum JnEntity  implements CcpEntity{
 		this.delete(values);
 		this.createOrUpdate(values);
 	}
+	private static enum Status implements CcpProcessStatus{
+		nextStep(200)
+		
+		;
+		int status;
+		private Status(int status) {
+			this.status = status;
+		}
+		@Override
+		public int status() {
+			return this.status;
+		}
+		
+	}
 	
+	public SaveEntity getSaver() {
+		return this.getSaver(Status.nextStep);
+	}
 	public SaveEntity getSaver(CcpProcessStatus statusToReturnAfterSaving) {
 		return new SaveEntity(this, statusToReturnAfterSaving);
 	}

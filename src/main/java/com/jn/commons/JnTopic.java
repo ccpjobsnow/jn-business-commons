@@ -4,14 +4,14 @@ import com.ccp.constantes.CcpConstants;
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.decorators.CcpTimeDecorator;
-import com.ccp.dependency.injection.CcpInstanceInjection;
+import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.mensageria.sender.CcpMensageriaSender;
 
 public enum JnTopic{
 	sendUserToken, requestTokenAgain, requestUnlockToken, saveCandidateData, 
 	notifyContactUs, notifyError, saveResumesQuery, sendEmail, sendInstantMessage, removeTries;
 	
-	final CcpMensageriaSender mensageriaSender = CcpInstanceInjection.hasInstance(CcpMensageriaSender.class) ? CcpInstanceInjection.getInstance(CcpMensageriaSender.class) : null;
+	final CcpMensageriaSender mensageriaSender = CcpDependencyInjection.hasDependency(CcpMensageriaSender.class) ? CcpDependencyInjection.getDependency(CcpMensageriaSender.class) : null;
 	
 	public CcpMapDecorator send(CcpMapDecorator values) {
 		String token = new CcpStringDecorator(CcpConstants.CHARACTERS_TO_GENERATE_TOKEN).text().generateToken(20);
