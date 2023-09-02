@@ -1,5 +1,6 @@
 package com.jn.commons;
 
+import java.io.File;
 import java.util.function.Function;
 
 import com.ccp.constantes.CcpConstants;
@@ -15,5 +16,6 @@ public interface JnConstants {
 	int ONE_HOUR_IN_SECONDS = 60 * 60;
 	String SLASH = "/";
 	int maxTries = 3;
+	String DATABASE_SCRIPTS_FOLDER = new File("").getAbsolutePath() +  "/../jn-documentation/database/elasticsearch/scripts/";
 	
 }
