@@ -3,7 +3,8 @@ package com.jn.commons.entities.fields;
 import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_request_token_again_answered implements CcpField{
-		email(true)
+		email(true),
+		token(false)
 	;
 	
 	private final boolean primaryKey;
