@@ -15,6 +15,7 @@ public class SaveEntity extends CcpNextStep {
 	SaveEntity(JnEntity entity, CcpProcessStatus statusToReturnAfterSaving) {
 		this.statusToReturnAfterSaving = statusToReturnAfterSaving.status();
 		this.entity = entity;
+		this.addEmptyStep();
 	}
 
 	@Override
