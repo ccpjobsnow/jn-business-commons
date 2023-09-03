@@ -17,13 +17,14 @@ import com.ccp.especifications.db.utils.CcpField;
 import com.ccp.especifications.db.utils.CcpOperationType;
 import com.ccp.exceptions.db.MissingKeys;
 import com.ccp.process.CcpProcessStatus;
+import com.ccp.process.SuccessStatus;
 import com.jn.commons.entities.fields.A1D_async_task;
 import com.jn.commons.entities.fields.A1D_audit;
 import com.jn.commons.entities.fields.A1D_email_message_sent;
 import com.jn.commons.entities.fields.A1D_email_parameters_to_send;
 import com.jn.commons.entities.fields.A1D_email_reported_as_spam;
 import com.jn.commons.entities.fields.A1D_email_template_message;
-import com.jn.commons.entities.fields.A1D_failed_unlock_token_today;
+import com.jn.commons.entities.fields.A1D_failed_unlock_token;
 import com.jn.commons.entities.fields.A1D_http_api_error_client;
 import com.jn.commons.entities.fields.A1D_http_api_error_server;
 import com.jn.commons.entities.fields.A1D_http_api_parameters;
@@ -89,7 +90,7 @@ public enum JnEntity  implements CcpEntity{
 	email_reported_as_spam(A1D_email_reported_as_spam.values()),
 	email_parameters_to_send(A1D_email_parameters_to_send.values()),
 	email_template_message(A1D_email_template_message.values()),
-	failed_unlock_token(TimeOption.ddMMyyyy, A1D_failed_unlock_token_today.values()), 
+	failed_unlock_token(TimeOption.ddMMyyyy, A1D_failed_unlock_token.values()), 
 	grouped_views_by_recruiter(A3D_grouped_views_by_recruiter.values()), 
 	http_api_error_client(A1D_http_api_error_client.values()),
 	http_api_error_server(A1D_http_api_error_server.values()), 
@@ -217,30 +218,17 @@ public enum JnEntity  implements CcpEntity{
 		this.delete(values);
 		this.createOrUpdate(values);
 	}
-	private static enum Status implements CcpProcessStatus{
-		nextStep(200)
-		
-		;
-		int status;
-		private Status(int status) {
-			this.status = status;
-		}
-		@Override
-		public int status() {
-			return this.status;
-		}
-		
-	}
+	
 	
 	public SaveEntity getSaver() {
-		return this.getSaver(Status.nextStep);
+		return this.getSaver(new SuccessStatus());
 	}
 	public SaveEntity getSaver(CcpProcessStatus statusToReturnAfterSaving) {
 		return new SaveEntity(this, statusToReturnAfterSaving);
 	}
 
 	public DeleteEntity getDeleter() {
-		return this.getDeleter(Status.nextStep);
+		return this.getDeleter(new SuccessStatus());
 	}
 	
 	public DeleteEntity getDeleter(CcpProcessStatus statusToReturnAfterSaving) {
