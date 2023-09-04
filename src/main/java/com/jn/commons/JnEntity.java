@@ -50,8 +50,8 @@ import com.jn.commons.entities.fields.A1D_request_token_again;
 import com.jn.commons.entities.fields.A1D_request_token_again_answered;
 import com.jn.commons.entities.fields.A1D_request_unlock_token;
 import com.jn.commons.entities.fields.A1D_request_unlock_token_answered;
-import com.jn.commons.entities.fields.A1D_responder_request_token_again;
-import com.jn.commons.entities.fields.A1D_responder_unlock_token;
+import com.jn.commons.entities.fields.A1D_request_token_again_responsible;
+import com.jn.commons.entities.fields.A1D_request_unlock_token_responsible;
 import com.jn.commons.entities.fields.A1D_token_tries;
 import com.jn.commons.entities.fields.A1D_unlock_token_tries;
 import com.jn.commons.entities.fields.A1D_unlocked_password;
@@ -123,8 +123,8 @@ public enum JnEntity  implements CcpEntity{
 	request_token_again_answered(TimeOption.ddMMyyyy, A1D_request_token_again_answered.values()), 
 	request_unlock_token(TimeOption.ddMMyyyy, A1D_request_unlock_token.values()), 
 	request_unlock_token_answered(TimeOption.ddMMyyyy, A1D_request_unlock_token_answered.values()), 
-	responder_request_token_again(A1D_responder_request_token_again.values()), 
-	responder_unlock_token(A1D_responder_unlock_token.values()), 
+	request_token_again_responsible(A1D_request_token_again_responsible.values()), 
+	request_unlock_token_responsible(A1D_request_unlock_token_responsible.values()), 
 	resume_exclusion(A3D_resume_exclusion.values()), 
 	resumes_list(TimeOption.ddMMyyyyHH, A4D_resumes_list.values()), 
 	resumes_stats(TimeOption.ddMMyyyyHH, A4D_resumes_stats.values()), 

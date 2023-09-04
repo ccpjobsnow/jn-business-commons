@@ -4,7 +4,8 @@ import com.ccp.especifications.db.utils.CcpField;
 
 public enum A1D_request_token_again_answered implements CcpField{
 		email(true),
-		token(false)
+		token(false),
+		chatId(false)
 	;
 	
 	private final boolean primaryKey;
