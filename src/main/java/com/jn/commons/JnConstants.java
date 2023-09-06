@@ -17,5 +17,5 @@ public interface JnConstants {
 	String SLASH = "/";
 	int maxTries = 3;
 	String DATABASE_SCRIPTS_FOLDER = new File("").getAbsolutePath() +  "/../jn-documentation/database/elasticsearch/scripts/";
-	
+	String DB_URL = "https://34.139.142.228:9200";
 }
