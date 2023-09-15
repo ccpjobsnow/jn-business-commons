@@ -160,7 +160,6 @@ public enum JnEntity  implements CcpEntity{
 		this.fields = fields;
 	}
 
-	CcpDao dao = CcpDependencyInjection.getDependency(CcpDao.class);
 
 
 	public TimeOption getTimeOption() {
@@ -172,7 +171,7 @@ public enum JnEntity  implements CcpEntity{
 	}
 
 	public CcpDao getDao() {
-		return this.dao;
+		return CcpDependencyInjection.getDependency(CcpDao.class);
 	}
 	
 	public String getId(CcpMapDecorator values) {
@@ -195,7 +194,7 @@ public enum JnEntity  implements CcpEntity{
 
 		.put("date", System.currentTimeMillis());
 	
-		this.dao.createOrUpdate(JnEntity.audit, audit);
+		CcpDependencyInjection.getDependency(CcpDao.class).createOrUpdate(JnEntity.audit, audit);
 	}
 
 	public boolean exceededTries(CcpMapDecorator values, String fieldName, int limit) {
