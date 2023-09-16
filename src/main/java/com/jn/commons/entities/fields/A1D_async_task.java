@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A1D_async_task implements CcpField{
+public enum A1D_async_task implements CcpEntityField{
 	started(false), finished(false), topic(false), request(false), id(true), success(false), response(false)
 	;
 

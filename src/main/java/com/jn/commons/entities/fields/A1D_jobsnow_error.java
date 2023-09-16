@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A1D_jobsnow_error implements CcpField{
+public enum A1D_jobsnow_error implements CcpEntityField{
 	cause(false), stackTrace(false), type(true), message(false)
 	;
 

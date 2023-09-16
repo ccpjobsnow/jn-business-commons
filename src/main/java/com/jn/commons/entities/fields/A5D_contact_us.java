@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A5D_contact_us implements CcpField{
+public enum A5D_contact_us implements CcpEntityField{
 		subjectType(true), email(true), subject(false), message(false), chatId(false), sender(false)
 	;
 	

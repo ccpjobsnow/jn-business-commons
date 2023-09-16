@@ -1,14 +1,14 @@
-package com.jn.commons;
+package com.jn.commons.business;
 
 import java.util.function.Function;
 
 import com.ccp.decorators.CcpMapDecorator;
 
-public class LenientProcess implements Function<CcpMapDecorator, CcpMapDecorator>{
+public class JnCommonsBusinessLenientProcess implements Function<CcpMapDecorator, CcpMapDecorator>{
 
 	private final Function<CcpMapDecorator, CcpMapDecorator> process;
 
-	public LenientProcess(Function<CcpMapDecorator, CcpMapDecorator> process) {
+	public JnCommonsBusinessLenientProcess(Function<CcpMapDecorator, CcpMapDecorator> process) {
 		this.process = process;
 	}
 

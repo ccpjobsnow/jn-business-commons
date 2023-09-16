@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A1D_record_to_reprocess implements CcpField{
+public enum A1D_record_to_reprocess implements CcpEntityField{
 		date(true), operation(false),
 		entity(true), id(true),
 		json(false), status(false),

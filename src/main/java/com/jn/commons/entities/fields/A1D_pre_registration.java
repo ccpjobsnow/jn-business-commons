@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A1D_pre_registration implements CcpField{
+public enum A1D_pre_registration implements CcpEntityField{
 		email(true), channel(false), goal(false)
 	;
 	

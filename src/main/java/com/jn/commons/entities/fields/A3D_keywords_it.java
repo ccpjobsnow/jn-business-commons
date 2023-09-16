@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A3D_keywords_it implements CcpField{
+public enum A3D_keywords_it implements CcpEntityField{
 		keyword(true)
 	;
 	

@@ -1,4 +1,4 @@
-package com.jn.commons;
+package com.jn.commons.utils;
 
 public enum JnInstantMessageBotType {
 	instantMessageBotTokenSupport, instantMessageBotTokenUser

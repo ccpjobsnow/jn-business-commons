@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A3D_denied_view_to_recruiter implements CcpField{
+public enum A3D_denied_view_to_recruiter implements CcpEntityField{
 		recruiter(true), resume(true), domain(false)
 	;
 	private final boolean primaryKey;

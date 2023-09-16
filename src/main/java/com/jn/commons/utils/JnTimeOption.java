@@ -1,9 +1,9 @@
-package com.jn.commons;
+package com.jn.commons.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public enum TimeOption{
+public enum JnTimeOption{
 	none{
 		@Override
 		public String getFormattedCurrentDate(Long time) {

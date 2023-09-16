@@ -1,4 +1,4 @@
-package com.jn.commons;
+package com.jn.commons.business;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,9 @@ import java.util.function.Function;
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.dao.CcpDao;
+import com.jn.commons.entities.JnEntity;
 
-public class GetMessage {
+public class JnCommonsBusinessGetMessage {
 
 	private final List<Function<CcpMapDecorator, CcpMapDecorator>> process = new ArrayList<>();
 
@@ -19,9 +20,9 @@ public class GetMessage {
 	
 	private CcpDao dao = CcpDependencyInjection.getDependency(CcpDao.class);
 
-	public GetMessage addFlow(Function<CcpMapDecorator, CcpMapDecorator> process, JnEntity parameterEntity, JnEntity messageEntity) {
+	public JnCommonsBusinessGetMessage addFlow(Function<CcpMapDecorator, CcpMapDecorator> process, JnEntity parameterEntity, JnEntity messageEntity) {
 		
-		GetMessage getMessage = new GetMessage();
+		JnCommonsBusinessGetMessage getMessage = new JnCommonsBusinessGetMessage();
 		
 		getMessage.parameterEntities.addAll(this.parameterEntities);
 		getMessage.messageEntities.addAll(this.messageEntities);
@@ -35,9 +36,9 @@ public class GetMessage {
 		return getMessage;
 	}
 	
-	public GetMessage addLenientFlow(Function<CcpMapDecorator, CcpMapDecorator> process, JnEntity parameterEntity, JnEntity messageEntity) {
-		LenientProcess lenientProcess = new LenientProcess(process);
-		GetMessage addFlow = this.addFlow(lenientProcess, parameterEntity, messageEntity);
+	public JnCommonsBusinessGetMessage addLenientFlow(Function<CcpMapDecorator, CcpMapDecorator> process, JnEntity parameterEntity, JnEntity messageEntity) {
+		JnCommonsBusinessLenientProcess lenientProcess = new JnCommonsBusinessLenientProcess(process);
+		JnCommonsBusinessGetMessage addFlow = this.addFlow(lenientProcess, parameterEntity, messageEntity);
 		return addFlow;
 	}	
 	public CcpMapDecorator execute(Enum<?> id, JnEntity entityToSave, CcpMapDecorator values, String language) {

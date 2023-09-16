@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A1D_http_api_parameters implements CcpField{
+public enum A1D_http_api_parameters implements CcpEntityField{
 	apiName(true), url(false), token (false), maxTries(false), sleep(false), method(false)
 	;
 	

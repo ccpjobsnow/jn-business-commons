@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A1D_locked_password implements CcpField{
+public enum A1D_locked_password implements CcpEntityField{
 		email(true)
 	;
 	

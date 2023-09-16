@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A4D_search_resumes_list implements CcpField{
+public enum A4D_search_resumes_list implements CcpEntityField{
 	requiredKeywords(true),
 	optionalKeywords(true),
 	recruiter(true),

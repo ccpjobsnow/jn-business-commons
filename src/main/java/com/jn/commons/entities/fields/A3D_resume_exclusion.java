@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A3D_resume_exclusion implements CcpField{
+public enum A3D_resume_exclusion implements CcpEntityField{
 		resume(true)
 	;
 	

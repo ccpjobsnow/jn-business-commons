@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A3D_grouped_views_by_recruiter implements CcpField{
+public enum A3D_grouped_views_by_recruiter implements CcpEntityField{
 		recruiter(true)
 	;
 	

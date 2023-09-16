@@ -1,25 +1,27 @@
-package com.jn.commons;
+package com.jn.commons.business;
 
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.process.CcpNextStep;
 import com.ccp.process.CcpStepResult;
+import com.jn.commons.entities.JnEntity;
 import com.ccp.process.CcpProcessStatus;
 
-public class DeleteEntity extends CcpNextStep {
+public class JnCommonsBusinessSaveEntity extends CcpNextStep {
 
 	private final Integer statusToReturnAfterSaving;
 
 	private final JnEntity entity;
 	
 	
-	DeleteEntity(JnEntity entity, CcpProcessStatus statusToReturnAfterSaving) {
+	public JnCommonsBusinessSaveEntity(JnEntity entity, CcpProcessStatus statusToReturnAfterSaving) {
 		this.statusToReturnAfterSaving = statusToReturnAfterSaving.status();
 		this.entity = entity;
+		this.addEmptyStep();
 	}
 
 	@Override
 	public CcpStepResult executeThisStep(CcpMapDecorator values) {
-		this.entity.delete(values);
+		this.entity.createOrUpdate(values);
 		return new CcpStepResult(values.put("entity", this.entity.name()), this.statusToReturnAfterSaving, this);
 	}
 

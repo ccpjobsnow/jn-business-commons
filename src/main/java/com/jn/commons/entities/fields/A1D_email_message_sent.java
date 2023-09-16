@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A1D_email_message_sent implements CcpField{
+public enum A1D_email_message_sent implements CcpEntityField{
 	subject(false), subjectType(true), email(true), sender(false), emailMessage(false)
 	;
 	

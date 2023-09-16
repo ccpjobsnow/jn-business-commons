@@ -1,4 +1,4 @@
-package com.jn.commons;
+package com.jn.commons.utils;
 
 import java.io.File;
 import java.util.function.Function;

@@ -1,8 +1,8 @@
 package com.jn.commons.entities.fields;
 
-import com.ccp.especifications.db.utils.CcpField;
+import com.ccp.especifications.db.utils.CcpEntityField;
 
-public enum A1D_unlocked_token implements CcpField{
+public enum A1D_unlocked_token implements CcpEntityField{
 		email(true)
 	;
 	
