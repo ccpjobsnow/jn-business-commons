@@ -8,19 +8,19 @@ import java.util.function.Function;
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.dao.CcpDao;
-import com.jn.commons.entities.JnEntity;
+import com.ccp.especifications.db.utils.CcpEntity;
 
 public class JnCommonsBusinessGetMessage {
 
 	private final List<Function<CcpMapDecorator, CcpMapDecorator>> process = new ArrayList<>();
 
-	private final List<JnEntity> parameterEntities = new ArrayList<>() ;
+	private final List<CcpEntity> parameterEntities = new ArrayList<>() ;
 	
-	private final List<JnEntity> messageEntities = new ArrayList<>();
+	private final List<CcpEntity> messageEntities = new ArrayList<>();
 	
 	private CcpDao dao = CcpDependencyInjection.getDependency(CcpDao.class);
 
-	public JnCommonsBusinessGetMessage addFlow(Function<CcpMapDecorator, CcpMapDecorator> process, JnEntity parameterEntity, JnEntity messageEntity) {
+	public JnCommonsBusinessGetMessage addFlow(Function<CcpMapDecorator, CcpMapDecorator> process, CcpEntity parameterEntity, CcpEntity messageEntity) {
 		
 		JnCommonsBusinessGetMessage getMessage = new JnCommonsBusinessGetMessage();
 		
@@ -36,19 +36,19 @@ public class JnCommonsBusinessGetMessage {
 		return getMessage;
 	}
 	
-	public JnCommonsBusinessGetMessage addLenientFlow(Function<CcpMapDecorator, CcpMapDecorator> process, JnEntity parameterEntity, JnEntity messageEntity) {
+	public JnCommonsBusinessGetMessage addLenientFlow(Function<CcpMapDecorator, CcpMapDecorator> process, CcpEntity parameterEntity, CcpEntity messageEntity) {
 		JnCommonsBusinessLenientProcess lenientProcess = new JnCommonsBusinessLenientProcess(process);
 		JnCommonsBusinessGetMessage addFlow = this.addFlow(lenientProcess, parameterEntity, messageEntity);
 		return addFlow;
 	}	
-	public CcpMapDecorator execute(Enum<?> id, JnEntity entityToSave, CcpMapDecorator values, String language) {
+	public CcpMapDecorator execute(Enum<?> id, CcpEntity entityToSave, CcpMapDecorator values, String language) {
 		
-		List<JnEntity> allEntitiesToSearch = new ArrayList<>();
+		List<CcpEntity> allEntitiesToSearch = new ArrayList<>();
 		allEntitiesToSearch.addAll(this.parameterEntities);
 		allEntitiesToSearch.addAll(this.messageEntities);
 		allEntitiesToSearch.add(entityToSave);
 		
-		JnEntity[] entities = allEntitiesToSearch.toArray(new JnEntity[allEntitiesToSearch.size()]);
+		CcpEntity[] entities = allEntitiesToSearch.toArray(new CcpEntity[allEntitiesToSearch.size()]);
 		CcpMapDecorator idToSearch = values.put("language", language)
 				.put("templateId", id.name());
 		CcpMapDecorator allData = this.dao.getAllData(idToSearch, entities);
@@ -59,9 +59,9 @@ public class JnCommonsBusinessGetMessage {
 		}
 		int k = 0;
 		
-		for (JnEntity messageEntity : this.messageEntities) {
+		for (CcpEntity messageEntity : this.messageEntities) {
 			
-			JnEntity parameterEntity = this.parameterEntities.get(k);
+			CcpEntity parameterEntity = this.parameterEntities.get(k);
 			
 			CcpMapDecorator parameterData = allData.getInternalMap(parameterEntity.name());
 			CcpMapDecorator moreParameters = parameterData.getInternalMap("moreParameters");

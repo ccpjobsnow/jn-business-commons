@@ -2,20 +2,20 @@ package com.jn.commons.business;
 
 import com.ccp.decorators.CcpMapDecorator;
 import com.ccp.process.CcpNextStep;
-import com.ccp.process.CcpStepResult;
-import com.jn.commons.entities.JnEntity;
 import com.ccp.process.CcpProcessStatus;
+import com.ccp.process.CcpStepResult;
+import com.jn.commons.entities.JnBaseEntity;
 
 public class JnCommonsBusinessEvaluateTries extends CcpNextStep {
 
-	private final JnEntity entity;
+	private final JnBaseEntity entity;
 	
 	private final int regularFlow;
 	
 	private final int excedeedFlow;
 	
 	
-	public JnCommonsBusinessEvaluateTries(JnEntity entity, CcpProcessStatus regularFlow, CcpProcessStatus exceededFlow) {
+	public JnCommonsBusinessEvaluateTries(JnBaseEntity entity, CcpProcessStatus regularFlow, CcpProcessStatus exceededFlow) {
 		this.excedeedFlow = exceededFlow.status();
 		this.regularFlow = regularFlow.status();
 		this.entity = entity;

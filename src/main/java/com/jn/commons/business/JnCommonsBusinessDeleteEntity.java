@@ -1,19 +1,19 @@
 package com.jn.commons.business;
 
 import com.ccp.decorators.CcpMapDecorator;
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.process.CcpNextStep;
-import com.ccp.process.CcpStepResult;
-import com.jn.commons.entities.JnEntity;
 import com.ccp.process.CcpProcessStatus;
+import com.ccp.process.CcpStepResult;
 
 public class JnCommonsBusinessDeleteEntity extends CcpNextStep {
 
 	private final Integer statusToReturnAfterSaving;
 
-	private final JnEntity entity;
+	private final CcpEntity entity;
 	
 	
-	public JnCommonsBusinessDeleteEntity(JnEntity entity, CcpProcessStatus statusToReturnAfterSaving) {
+	public JnCommonsBusinessDeleteEntity(CcpEntity entity, CcpProcessStatus statusToReturnAfterSaving) {
 		this.statusToReturnAfterSaving = statusToReturnAfterSaving.status();
 		this.entity = entity;
 	}

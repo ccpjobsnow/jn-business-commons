@@ -6,7 +6,7 @@ import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.decorators.CcpTimeDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.mensageria.sender.CcpMensageriaSender;
-import com.jn.commons.entities.JnEntity;
+import com.jn.commons.entities.JnEntityAsyncTask;
 
 public enum JnTopic{
 	sendUserToken, requestTokenAgain, requestUnlockToken, saveCandidateData, 
@@ -23,10 +23,11 @@ public enum JnTopic{
 				.put("started", System.currentTimeMillis())
 				.put("data", new CcpTimeDecorator().getFormattedCurrentDateTime("dd/MM/yyyy HH:mm:ss"))
 				;
-		String asyncTaskId = JnEntity.async_task.getId(messageDetails);
+		JnEntityAsyncTask asyncTask = new JnEntityAsyncTask();
+		String asyncTaskId = asyncTask.getId(messageDetails);
 		CcpMapDecorator messageSent = values.put("asyncTaskId", asyncTaskId);
 		this.mensageriaSender.send(this, messageSent);
-		JnEntity.async_task.createOrUpdate(messageDetails, asyncTaskId);
+		asyncTask.createOrUpdate(messageDetails, asyncTaskId);
 		return messageSent;
 	}
 
