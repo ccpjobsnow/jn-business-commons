@@ -188,12 +188,22 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return null;
 	}
 	
+
 	
-	public static JnBaseEntity valueOf(Class<? extends JnBaseEntity> clazz, String name) {
-		return null;
+	@SuppressWarnings("unchecked")
+	public static CcpEntity valueOf(Class<? extends JnBaseEntity> clazz, String entityName) {
+		String packageName = clazz.getPackage().getName();
+		String fullNameClass = packageName + "." + entityName;
+		try {
+			Class<CcpEntity> forName = (Class<CcpEntity>) Class.forName(fullNameClass);
+			CcpEntity newInstance = forName.newInstance();
+			return newInstance;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
-	public static JnBaseEntity valueOf(String name) {
+	public static CcpEntity valueOf(String name) {
 		return valueOf(JnBaseEntity.class, name);
 	}
 }
