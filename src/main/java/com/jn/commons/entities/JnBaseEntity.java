@@ -185,10 +185,16 @@ public abstract class JnBaseEntity implements CcpEntity{
 
 	@Override
 	public String name() {
-		return null;
+		String simpleName = this.getClass().getSimpleName();
+		String snackCase = new CcpStringDecorator(simpleName).text().toSnackCase();
+		String substring = snackCase.substring(snackCase.indexOf("entity") + 7);
+		return substring;
 	}
 	
-
+	@Override
+	public String toString() {
+		return this.name();
+	}
 	
 	@SuppressWarnings("unchecked")
 	public static CcpEntity valueOf(Class<? extends JnBaseEntity> clazz, String entityName) {
