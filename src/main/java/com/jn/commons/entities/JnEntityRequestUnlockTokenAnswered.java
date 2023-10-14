@@ -8,7 +8,7 @@ public class JnEntityRequestUnlockTokenAnswered extends JnBaseEntity{
 		super(JnTimeOption.ddMMyyyy, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
-		email(true), chatId(false), token(false)
+		email(true), chatId(false), password(false)
 		;
 		
 		private final boolean primaryKey;
