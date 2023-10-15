@@ -17,7 +17,7 @@ public interface JnConstants {
 		String token = apply.getAsString("token");
 		CcpPasswordHandler passwordHandler = CcpDependencyInjection.getDependency(CcpPasswordHandler.class);
 		String passwordHash = passwordHandler.getPasswordHash(token);
-		CcpMapDecorator put = values.put("password", passwordHash);
+		CcpMapDecorator put = values.put("password", passwordHash).put("token", token);
 		return put;
 	};	
 	String RESUMES_BUCKET = "JN_RESUMES";
