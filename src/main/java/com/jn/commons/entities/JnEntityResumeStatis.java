@@ -1,11 +1,11 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.utils.JnTimeOption;
+import com.ccp.especifications.db.utils.CcpTimeOption;
 
 public class JnEntityResumeStatis extends JnBaseEntity{
 	public JnEntityResumeStatis() {
-		super(JnTimeOption.ddMMyyyyHH, Fields.values());
+		super(CcpTimeOption.ddMMyyyyHH, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
 		searchId(true), results(false), 

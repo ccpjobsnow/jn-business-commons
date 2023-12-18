@@ -1,11 +1,6 @@
 package com.jn.commons.entities;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 import com.ccp.decorators.CcpMapDecorator;
@@ -15,32 +10,31 @@ import com.ccp.especifications.db.dao.CcpDao;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.CcpEntityOperationType;
-import com.ccp.exceptions.db.CcpEntityMissingKeys;
+import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.ccp.process.CcpProcessStatus;
 import com.ccp.process.CcpSuccessStatus;
 import com.jn.commons.business.JnCommonsBusinessDeleteEntity;
 import com.jn.commons.business.JnCommonsBusinessSaveEntity;
-import com.jn.commons.utils.JnTimeOption;
 
 public abstract class JnBaseEntity implements CcpEntity{
 
-	final JnTimeOption timeOption;
+	final CcpTimeOption timeOption;
 	final CcpEntityField[] fields;
 	final boolean auditable;
 	
-	protected JnBaseEntity(JnTimeOption timeOption, CcpEntityField... fields) {
-		this.auditable = JnTimeOption.none.equals(timeOption);
+	protected JnBaseEntity(CcpTimeOption timeOption, CcpEntityField... fields) {
+		this.auditable = CcpTimeOption.none.equals(timeOption);
 		this.timeOption = timeOption;
 		this.fields = fields;
 	}
 
 	protected JnBaseEntity(CcpEntityField[] fields) {
-		this.timeOption = JnTimeOption.none;
+		this.timeOption = CcpTimeOption.none;
 		this.auditable = true;
 		this.fields = fields;
 	}
 
-	protected JnBaseEntity(boolean auditable, JnTimeOption timeOption,  CcpEntityField... fields) {
+	protected JnBaseEntity(boolean auditable, CcpTimeOption timeOption,  CcpEntityField... fields) {
 		this.timeOption = timeOption;
 		this.auditable = auditable;
 		this.fields = fields;
@@ -48,48 +42,6 @@ public abstract class JnBaseEntity implements CcpEntity{
 
 	public CcpEntityField[] getFields() {
 		return this.fields;
-	}
-
-	public String getId(CcpMapDecorator values) {
-		Long time = System.currentTimeMillis();
-		String formattedCurrentDate = this.timeOption.getFormattedCurrentDate(time);
-		
-		if(fields.length == 0) {
-			
-			if(JnTimeOption.none != this.timeOption) {
-				return formattedCurrentDate;
-			}
-			
-			return UUID.randomUUID().toString();
-		}
-		
-		List<CcpEntityField> missingKeys = Arrays.asList(fields).stream().filter(key -> this.isEmptyPrimaryKey(key, values))
-				.collect(Collectors.toList());
-		
-		boolean isMissingKeys = missingKeys.isEmpty() == false;
-		
-		if(isMissingKeys) {
-			throw new CcpEntityMissingKeys(this, missingKeys, values);
-		}
-		
-		
-		List<String> onlyPrimaryKeys = Arrays.asList(fields).stream().filter(key -> key.isPrimaryKey()).map(key -> this.getPrimaryKeyFieldValue(key, values)).collect(Collectors.toList());
-
-		if(onlyPrimaryKeys.isEmpty()) {
-			String hash = new CcpStringDecorator(formattedCurrentDate).hash().asString("SHA1");
-			return hash;
-		}
-		
-		Collections.sort(onlyPrimaryKeys);
-		onlyPrimaryKeys = new ArrayList<>(onlyPrimaryKeys);
-
-		if(formattedCurrentDate.trim().isEmpty() == false) {
-			onlyPrimaryKeys.add(0, formattedCurrentDate);
-		}
-		
-		String replace = onlyPrimaryKeys.toString().replace("[", "").replace("]", "");
-		String hash = new CcpStringDecorator(replace).hash().asString("SHA1");
-		return hash;
 	}
 
 	public void saveAuditory(CcpMapDecorator values, CcpEntityOperationType operation) {
@@ -147,37 +99,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 		CcpMapDecorator subMap = values.getSubMap(array);
 		return subMap;
 	}
-	private boolean isEmptyPrimaryKey(CcpEntityField key, CcpMapDecorator values) {
-		
-		if(key.isPrimaryKey() == false) {
-			return false;
-		}
-		
-		String primaryKeyFieldValue = this.getPrimaryKeyFieldValue(key, values);
-		if("_".equals(primaryKeyFieldValue)) {
-			return true;
-		}
-		
-		return false;
-	}
-	
-	private String getPrimaryKeyFieldValue(CcpEntityField key, CcpMapDecorator values) {
-		
-		boolean notCollection = values.get(key.name()) instanceof Collection<?> == false;
-		
-		if(notCollection) {
-			String primaryKeyFieldValue = values.getAsString(key.name()).trim() + "_";
-			return primaryKeyFieldValue;
-		}
-		
-		Collection<?> col = values.getAsObject(key.name());
-		ArrayList<?> list = new ArrayList<>(col);
-		list.sort((a, b) -> ("" + a).compareTo("" + b));
-		String primaryKeyFieldValue = list.stream().map(x -> x.toString().trim()).collect(Collectors.toList()).toString() + "_";
-		return primaryKeyFieldValue;
-	}
-	
-
+//
 	@Override
 	public boolean isAuditable() {
 		return this.auditable;
@@ -211,5 +133,10 @@ public abstract class JnBaseEntity implements CcpEntity{
 
 	public static CcpEntity valueOf(String name) {
 		return valueOf(JnBaseEntity.class, name);
+	}
+
+	@Override
+	public CcpTimeOption getTimeOption() {
+		return this.timeOption;
 	}
 }

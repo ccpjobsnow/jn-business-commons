@@ -1,12 +1,12 @@
 package com.jn.commons.entities.vis;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.JnBaseEntity;
-import com.jn.commons.utils.JnTimeOption;
 
 public class VisEntityWithdrawDone extends JnBaseEntity{
 	public VisEntityWithdrawDone() {
-		super(false, JnTimeOption.ddMMyyyy, Fields.values());
+		super(false, CcpTimeOption.ddMMyyyy, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
 		walletReceiver(true),
