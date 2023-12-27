@@ -124,7 +124,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 		String fullNameClass = packageName + "." + entityName;
 		try {
 			Class<CcpEntity> forName = (Class<CcpEntity>) Class.forName(fullNameClass);
-			CcpEntity newInstance = forName.newInstance();
+			CcpEntity newInstance = forName.getDeclaredConstructor().newInstance();
 			return newInstance;
 		} catch (Exception e) {
 			throw new RuntimeException(e);
