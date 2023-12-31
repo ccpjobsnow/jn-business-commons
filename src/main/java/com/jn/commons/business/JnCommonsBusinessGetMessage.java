@@ -5,14 +5,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
 
-import com.ccp.decorators.CcpMapDecorator;
+import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.dao.CcpDao;
 import com.ccp.especifications.db.utils.CcpEntity;
 
 public class JnCommonsBusinessGetMessage {
 
-	private final List<Function<CcpMapDecorator, CcpMapDecorator>> process = new ArrayList<>();
+	private final List<Function<CcpJsonRepresentation, CcpJsonRepresentation>> process = new ArrayList<>();
 
 	private final List<CcpEntity> parameterEntities = new ArrayList<>() ;
 	
@@ -20,7 +20,7 @@ public class JnCommonsBusinessGetMessage {
 	
 	private CcpDao dao = CcpDependencyInjection.getDependency(CcpDao.class);
 
-	public JnCommonsBusinessGetMessage addOneStep(Function<CcpMapDecorator, CcpMapDecorator> process, CcpEntity parameterEntity, CcpEntity messageEntity) {
+	public JnCommonsBusinessGetMessage addOneStep(Function<CcpJsonRepresentation, CcpJsonRepresentation> process, CcpEntity parameterEntity, CcpEntity messageEntity) {
 		
 		JnCommonsBusinessGetMessage getMessage = new JnCommonsBusinessGetMessage();
 		
@@ -36,12 +36,12 @@ public class JnCommonsBusinessGetMessage {
 		return getMessage;
 	}
 	
-	public JnCommonsBusinessGetMessage addOneLenientStep(Function<CcpMapDecorator, CcpMapDecorator> step, CcpEntity parameterEntity, CcpEntity messageEntity) {
+	public JnCommonsBusinessGetMessage addOneLenientStep(Function<CcpJsonRepresentation, CcpJsonRepresentation> step, CcpEntity parameterEntity, CcpEntity messageEntity) {
 		JnCommonsBusinessLenientProcess lenientProcess = new JnCommonsBusinessLenientProcess(step);
 		JnCommonsBusinessGetMessage addFlow = this.addOneStep(lenientProcess, parameterEntity, messageEntity);
 		return addFlow;
 	}	
-	public CcpMapDecorator executeAllSteps(Enum<?> entityId, CcpEntity entityToSave, CcpMapDecorator entityValues, String language) {
+	public CcpJsonRepresentation executeAllSteps(Enum<?> entityId, CcpEntity entityToSave, CcpJsonRepresentation entityValues, String language) {
 		
 		List<CcpEntity> allEntitiesToSearch = new ArrayList<>();
 		allEntitiesToSearch.addAll(this.parameterEntities);
@@ -49,9 +49,9 @@ public class JnCommonsBusinessGetMessage {
 		allEntitiesToSearch.add(entityToSave);
 		
 		CcpEntity[] entities = allEntitiesToSearch.toArray(new CcpEntity[allEntitiesToSearch.size()]);
-		CcpMapDecorator idToSearch = entityValues.put("language", language)
+		CcpJsonRepresentation idToSearch = entityValues.put("language", language)
 				.put("templateId", entityId.name());
-		CcpMapDecorator allData = this.dao.getAllData(idToSearch, entities);
+		CcpJsonRepresentation allData = this.dao.getAllData(idToSearch, entities);
 		boolean alreadySaved = allData.containsAllKeys(entityToSave.name());
 		
 		if(alreadySaved) {
@@ -63,21 +63,21 @@ public class JnCommonsBusinessGetMessage {
 			
 			CcpEntity parameterEntity = this.parameterEntities.get(k);
 			
-			CcpMapDecorator parameterData = allData.getInternalMap(parameterEntity.name());
-			CcpMapDecorator moreParameters = parameterData.getInternalMap("moreParameters");
-			CcpMapDecorator allParameters = parameterData.removeKey("moreParameters").putAll(moreParameters);
-			CcpMapDecorator messageData = allData.getInternalMap(messageEntity.name());
+			CcpJsonRepresentation parameterData = allData.getInnerJson(parameterEntity.name());
+			CcpJsonRepresentation moreParameters = parameterData.getInnerJson("moreParameters");
+			CcpJsonRepresentation allParameters = parameterData.removeKey("moreParameters").putAll(moreParameters);
+			CcpJsonRepresentation messageData = allData.getInnerJson(messageEntity.name());
 			
-			CcpMapDecorator allDataTogether = messageData.putAll(allParameters).putAll(entityValues);
+			CcpJsonRepresentation allDataTogether = messageData.putAll(allParameters).putAll(entityValues);
 			
 			Set<String> keySet = messageData.keySet();
 			
-			CcpMapDecorator messageToSend = allDataTogether;
+			CcpJsonRepresentation messageToSend = allDataTogether;
 			
 			for (String key : keySet) {
 				messageToSend = messageToSend.putFilledTemplate(key, key);
 			}
-			Function<CcpMapDecorator, CcpMapDecorator> process = this.process.get(k);
+			Function<CcpJsonRepresentation, CcpJsonRepresentation> process = this.process.get(k);
 			process.apply(messageToSend);
 			k++;
 		}

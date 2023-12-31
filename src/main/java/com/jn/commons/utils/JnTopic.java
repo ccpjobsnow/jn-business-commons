@@ -1,7 +1,7 @@
 package com.jn.commons.utils;
 
 import com.ccp.constantes.CcpConstants;
-import com.ccp.decorators.CcpMapDecorator;
+import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.decorators.CcpTimeDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
@@ -14,9 +14,9 @@ public enum JnTopic{
 	
 	final CcpMensageriaSender mensageriaSender = CcpDependencyInjection.hasDependency(CcpMensageriaSender.class) ? CcpDependencyInjection.getDependency(CcpMensageriaSender.class) : null;
 	
-	public CcpMapDecorator send(CcpMapDecorator values) {
+	public CcpJsonRepresentation send(CcpJsonRepresentation values) {
 		String token = new CcpStringDecorator(CcpConstants.CHARACTERS_TO_GENERATE_TOKEN).text().generateToken(20);
-		CcpMapDecorator messageDetails = new CcpMapDecorator()
+		CcpJsonRepresentation messageDetails = CcpConstants.EMPTY_JSON
 				.put("id", token)
 				.put("request", values)
 				.put("topic", this.name())
@@ -25,13 +25,13 @@ public enum JnTopic{
 				;
 		JnEntityAsyncTask asyncTask = new JnEntityAsyncTask();
 		String asyncTaskId = asyncTask.getId(messageDetails);
-		CcpMapDecorator messageSent = values.put("asyncTaskId", asyncTaskId);
+		CcpJsonRepresentation messageSent = values.put("asyncTaskId", asyncTaskId);
 		this.mensageriaSender.send(this, messageSent);
 		asyncTask.createOrUpdate(messageDetails, asyncTaskId);
 		return messageSent;
 	}
 
-	public CcpMapDecorator getTranslatedAsyncTaskResult(CcpMapDecorator asyncTask) {
+	public CcpJsonRepresentation getTranslatedAsyncTaskResult(CcpJsonRepresentation asyncTask) {
 		return asyncTask;
 	}
 }

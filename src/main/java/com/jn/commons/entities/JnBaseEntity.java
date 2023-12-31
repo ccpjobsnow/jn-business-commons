@@ -3,7 +3,8 @@ package com.jn.commons.entities;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-import com.ccp.decorators.CcpMapDecorator;
+import com.ccp.constantes.CcpConstants;
+import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.dao.CcpDao;
@@ -44,14 +45,14 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return this.fields;
 	}
 
-	public void saveAuditory(CcpMapDecorator values, CcpEntityOperationType operation) {
+	public void saveAuditory(CcpJsonRepresentation values, CcpEntityOperationType operation) {
 
 		if(this.auditable == false) {
 			return;
 		}
 
 		String id = this.getId(values);
-		CcpMapDecorator audit = new CcpMapDecorator()
+		CcpJsonRepresentation audit = CcpConstants.EMPTY_JSON
 		.put("id", id)
 		.put("json", values)
 		.put("entity", this.name())
@@ -62,11 +63,11 @@ public abstract class JnBaseEntity implements CcpEntity{
 		CcpDependencyInjection.getDependency(CcpDao.class).createOrUpdate(new JnEntityAudit(), audit);
 	}
 
-	public boolean exceededTries(CcpMapDecorator values, String fieldName, int limit) {
+	public boolean exceededTries(CcpJsonRepresentation values, String fieldName, int limit) {
 		
 		for(int k = 1; k <= limit; k++) {
 			
-			CcpMapDecorator put = values.put(fieldName, k);
+			CcpJsonRepresentation put = values.put(fieldName, k);
 			
 			boolean exists = this.exists(put);
 			
@@ -93,10 +94,10 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return new JnCommonsBusinessDeleteEntity(this, statusToReturnAfterSaving);
 	}
 	
-	public CcpMapDecorator getOnlyExistingFields(CcpMapDecorator values) {
+	public CcpJsonRepresentation getOnlyExistingFields(CcpJsonRepresentation values) {
 		CcpEntityField[] fields = this.getFields();
 		String[] array = Arrays.asList(fields).stream().map(x -> x.name()).collect(Collectors.toList()).toArray(new String[fields.length]);
-		CcpMapDecorator subMap = values.getSubMap(array);
+		CcpJsonRepresentation subMap = values.getJsonPiece(array);
 		return subMap;
 	}
 //

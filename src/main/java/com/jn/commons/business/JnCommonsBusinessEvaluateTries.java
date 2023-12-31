@@ -1,6 +1,6 @@
 package com.jn.commons.business;
 
-import com.ccp.decorators.CcpMapDecorator;
+import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.process.CcpNextStep;
 import com.ccp.process.CcpProcessStatus;
 import com.ccp.process.CcpStepResult;
@@ -22,7 +22,7 @@ public class JnCommonsBusinessEvaluateTries extends CcpNextStep {
 	}
 
 	@Override
-	public CcpStepResult executeThisStep(CcpMapDecorator values) {
+	public CcpStepResult executeThisStep(CcpJsonRepresentation values) {
 		
 		boolean exceededTries = this.entity.exceededTries(values, "tries", 3);
 		

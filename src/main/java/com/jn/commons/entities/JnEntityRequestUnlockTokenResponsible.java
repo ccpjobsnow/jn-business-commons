@@ -1,6 +1,6 @@
 package com.jn.commons.entities;
 
-import com.ccp.decorators.CcpMapDecorator;
+import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.utils.CcpEntityField;
 
 public class JnEntityRequestUnlockTokenResponsible extends JnBaseEntity{
@@ -22,7 +22,7 @@ public class JnEntityRequestUnlockTokenResponsible extends JnBaseEntity{
 
 	}
 	@Override
-	public String getId(CcpMapDecorator values) {
+	public String getId(CcpJsonRepresentation values) {
 		return super.getId(values);
 	}
 }

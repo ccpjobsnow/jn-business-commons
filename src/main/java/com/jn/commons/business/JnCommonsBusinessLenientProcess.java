@@ -2,20 +2,20 @@ package com.jn.commons.business;
 
 import java.util.function.Function;
 
-import com.ccp.decorators.CcpMapDecorator;
+import com.ccp.decorators.CcpJsonRepresentation;
 
-public class JnCommonsBusinessLenientProcess implements Function<CcpMapDecorator, CcpMapDecorator>{
+public class JnCommonsBusinessLenientProcess implements Function<CcpJsonRepresentation, CcpJsonRepresentation>{
 
-	private final Function<CcpMapDecorator, CcpMapDecorator> process;
+	private final Function<CcpJsonRepresentation, CcpJsonRepresentation> process;
 
-	public JnCommonsBusinessLenientProcess(Function<CcpMapDecorator, CcpMapDecorator> process) {
+	public JnCommonsBusinessLenientProcess(Function<CcpJsonRepresentation, CcpJsonRepresentation> process) {
 		this.process = process;
 	}
 
 	@Override
-	public CcpMapDecorator apply(CcpMapDecorator t) {
+	public CcpJsonRepresentation apply(CcpJsonRepresentation t) {
 		try {
-			CcpMapDecorator apply = this.process.apply(t);
+			CcpJsonRepresentation apply = this.process.apply(t);
 			return apply;
 		} catch (Exception e) {
 			 return t;

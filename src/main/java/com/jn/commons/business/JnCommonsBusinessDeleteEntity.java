@@ -1,6 +1,6 @@
 package com.jn.commons.business;
 
-import com.ccp.decorators.CcpMapDecorator;
+import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.process.CcpNextStep;
 import com.ccp.process.CcpProcessStatus;
@@ -19,7 +19,7 @@ public class JnCommonsBusinessDeleteEntity extends CcpNextStep {
 	}
 
 	@Override
-	public CcpStepResult executeThisStep(CcpMapDecorator values) {
+	public CcpStepResult executeThisStep(CcpJsonRepresentation values) {
 		this.entity.delete(values);
 		return new CcpStepResult(values.put("entity", this.entity.name()), this.statusToReturnAfterSaving, this);
 	}
