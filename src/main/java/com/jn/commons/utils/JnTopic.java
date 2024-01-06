@@ -9,8 +9,8 @@ import com.ccp.especifications.mensageria.sender.CcpMensageriaSender;
 import com.jn.commons.entities.JnEntityAsyncTask;
 
 public enum JnTopic{
-	sendUserToken, requestTokenAgain, requestUnlockToken,  
-	notifyContactUs, notifyError, sendEmail, sendInstantMessage, removeTries;
+	jnSendUserToken, jnRequestTokenAgain, jnRequestUnlockToken,  
+	jnNotifyContactUs, jnNotifyError, jnSendEmail, jnSendInstantMessage, jnRemoveTries;
 	
 	final CcpMensageriaSender mensageriaSender = CcpDependencyInjection.hasDependency(CcpMensageriaSender.class) ? CcpDependencyInjection.getDependency(CcpMensageriaSender.class) : null;
 	
