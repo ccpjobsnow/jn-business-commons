@@ -41,7 +41,7 @@ public class JnCommonsBusinessGetMessage {
 		JnCommonsBusinessGetMessage addFlow = this.addOneStep(lenientProcess, parameterEntity, messageEntity);
 		return addFlow;
 	}	
-	public CcpJsonRepresentation executeAllSteps(Enum<?> entityId, CcpEntity entityToSave, CcpJsonRepresentation entityValues, String language) {
+	public CcpJsonRepresentation executeAllSteps(String entityId, CcpEntity entityToSave, CcpJsonRepresentation entityValues, String language) {
 		
 		List<CcpEntity> allEntitiesToSearch = new ArrayList<>();
 		allEntitiesToSearch.addAll(this.parameterEntities);
@@ -50,7 +50,7 @@ public class JnCommonsBusinessGetMessage {
 		
 		CcpEntity[] entities = allEntitiesToSearch.toArray(new CcpEntity[allEntitiesToSearch.size()]);
 		CcpJsonRepresentation idToSearch = entityValues.put("language", language)
-				.put("templateId", entityId.name());
+				.put("templateId", entityId);
 		CcpJsonRepresentation allData = this.dao.getAllData(idToSearch, entities);
 		boolean alreadySaved = allData.containsAllKeys(entityToSave.name());
 		
