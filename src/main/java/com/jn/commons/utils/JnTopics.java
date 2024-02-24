@@ -1,6 +1,8 @@
 package com.jn.commons.utils;
 
-public enum JnTopics {
+import com.ccp.especifications.mensageria.sender.CcpTopic;
+
+public enum JnTopics implements CcpTopic {
 	requestTokenAgain{
 
 		public String getTopicName() {
@@ -31,5 +33,4 @@ public enum JnTopics {
 		}
 	},
 	;
-	public abstract String getTopicName();
 }

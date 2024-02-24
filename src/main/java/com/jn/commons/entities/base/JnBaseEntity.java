@@ -1,4 +1,4 @@
-package com.jn.commons.entities;
+package com.jn.commons.entities.base;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -16,6 +16,7 @@ import com.ccp.process.CcpProcessStatus;
 import com.ccp.process.CcpSuccessStatus;
 import com.jn.commons.business.JnCommonsBusinessDeleteEntity;
 import com.jn.commons.business.JnCommonsBusinessSaveEntity;
+import com.jn.commons.entities.JnEntityAudit;
 
 public abstract class JnBaseEntity implements CcpEntity{
 

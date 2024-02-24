@@ -4,7 +4,7 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.process.CcpNextStep;
 import com.ccp.process.CcpProcessStatus;
 import com.ccp.process.CcpStepResult;
-import com.jn.commons.entities.JnBaseEntity;
+import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnCommonsBusinessEvaluateTries extends CcpNextStep {
 
