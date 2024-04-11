@@ -18,8 +18,6 @@ public class JnCommonsBusinessGetMessage {
 	
 	private final List<CcpEntity> messageEntities = new ArrayList<>();
 	
-	private CcpDao dao = CcpDependencyInjection.getDependency(CcpDao.class);
-
 	public JnCommonsBusinessGetMessage addOneStep(Function<CcpJsonRepresentation, CcpJsonRepresentation> process, CcpEntity parameterEntity, CcpEntity messageEntity) {
 		
 		JnCommonsBusinessGetMessage getMessage = new JnCommonsBusinessGetMessage();
@@ -31,7 +29,7 @@ public class JnCommonsBusinessGetMessage {
 		getMessage.parameterEntities.add(parameterEntity);
 		getMessage.messageEntities.add(messageEntity);
 		getMessage.process.add(process);
-		getMessage.dao = this.dao;
+//		getMessage.dao = this.dao;
 		
 		return getMessage;
 	}
@@ -51,7 +49,8 @@ public class JnCommonsBusinessGetMessage {
 		CcpEntity[] entities = allEntitiesToSearch.toArray(new CcpEntity[allEntitiesToSearch.size()]);
 		CcpJsonRepresentation idToSearch = entityValues.put("language", language)
 				.put("templateId", entityId);
-		CcpJsonRepresentation allData = this.dao.getAllData(idToSearch, entities);
+		CcpDao dao = CcpDependencyInjection.getDependency(CcpDao.class);
+		CcpJsonRepresentation allData = dao.getAllData(idToSearch, entities);
 		boolean alreadySaved = allData.containsAllKeys(entityToSave.name());
 		
 		if(alreadySaved) {
