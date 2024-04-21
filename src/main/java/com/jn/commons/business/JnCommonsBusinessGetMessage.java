@@ -51,7 +51,7 @@ public class JnCommonsBusinessGetMessage {
 				.put("templateId", entityId);
 		CcpDao dao = CcpDependencyInjection.getDependency(CcpDao.class);
 		CcpJsonRepresentation allData = dao.getAllData(idToSearch, entities);
-		boolean alreadySaved = allData.containsAllKeys(entityToSave.name());
+		boolean alreadySaved = allData.containsAllKeys(entityToSave.getEntityName());
 		
 		if(alreadySaved) {
 			return entityValues;
@@ -62,10 +62,10 @@ public class JnCommonsBusinessGetMessage {
 			
 			CcpEntity parameterEntity = this.parameterEntities.get(k);
 			
-			CcpJsonRepresentation parameterData = allData.getInnerJson(parameterEntity.name());
+			CcpJsonRepresentation parameterData = allData.getInnerJson(parameterEntity.getEntityName());
 			CcpJsonRepresentation moreParameters = parameterData.getInnerJson("moreParameters");
 			CcpJsonRepresentation allParameters = parameterData.removeKey("moreParameters").putAll(moreParameters);
-			CcpJsonRepresentation messageData = allData.getInnerJson(messageEntity.name());
+			CcpJsonRepresentation messageData = allData.getInnerJson(messageEntity.getEntityName());
 			
 			CcpJsonRepresentation allDataTogether = messageData.putAll(allParameters).putAll(entityValues);
 			

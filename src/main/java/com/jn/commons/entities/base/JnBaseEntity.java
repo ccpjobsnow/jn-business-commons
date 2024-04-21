@@ -7,10 +7,10 @@ import com.ccp.constantes.CcpConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
+import com.ccp.especifications.db.bulk.CcpEntityOperationType;
 import com.ccp.especifications.db.dao.CcpDao;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.CcpEntityOperationType;
 import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.ccp.process.CcpProcessStatus;
 import com.ccp.process.CcpSuccessStatus;
@@ -53,15 +53,18 @@ public abstract class JnBaseEntity implements CcpEntity{
 		}
 
 		String id = this.getId(values);
+		String entityName = this.getEntityName();
 		CcpJsonRepresentation audit = CcpConstants.EMPTY_JSON
 		.put("id", id)
 		.put("json", values)
-		.put("entity", this.name())
+		.put("entity", entityName)
 		.put("operation", operation)
 
 		.put("date", System.currentTimeMillis());
 	
-		CcpDependencyInjection.getDependency(CcpDao.class).createOrUpdate(new JnEntityAudit(), audit);
+		JnEntityAudit entity = new JnEntityAudit();
+		CcpDao dependency = CcpDependencyInjection.getDependency(CcpDao.class);
+		dependency.createOrUpdate(entity, audit);
 	}
 
 	public boolean exceededTries(CcpJsonRepresentation values, String fieldName, int limit) {
@@ -108,7 +111,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 	}
 
 	@Override
-	public String name() {
+	public String getEntityName() {
 		String simpleName = this.getClass().getSimpleName();
 		String snackCase = new CcpStringDecorator(simpleName).text().toSnakeCase();
 		String substring = snackCase.substring(snackCase.indexOf("entity") + 7);
@@ -117,7 +120,8 @@ public abstract class JnBaseEntity implements CcpEntity{
 	
 	@Override
 	public String toString() {
-		return this.name();
+		String entityName = this.getEntityName();
+		return entityName;
 	}
 	
 	@SuppressWarnings("unchecked")

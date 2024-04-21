@@ -21,7 +21,7 @@ public class JnCommonsBusinessDeleteEntity extends CcpNextStep {
 	@Override
 	public CcpStepResult executeThisStep(CcpJsonRepresentation values) {
 		this.entity.delete(values);
-		return new CcpStepResult(values.put("entity", this.entity.name()), this.statusToReturnAfterSaving, this);
+		return new CcpStepResult(values.put("entity", this.entity.getEntityName()), this.statusToReturnAfterSaving, this);
 	}
 
 }

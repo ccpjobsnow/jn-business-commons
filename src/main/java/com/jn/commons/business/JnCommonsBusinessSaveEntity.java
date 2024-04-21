@@ -22,7 +22,7 @@ public class JnCommonsBusinessSaveEntity extends CcpNextStep {
 	@Override
 	public CcpStepResult executeThisStep(CcpJsonRepresentation values) {
 		this.entity.createOrUpdate(values);
-		return new CcpStepResult(values.put("entity", this.entity.name()), this.statusToReturnAfterSaving, this);
+		return new CcpStepResult(values.put("entity", this.entity.getEntityName()), this.statusToReturnAfterSaving, this);
 	}
 
 }
