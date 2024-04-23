@@ -18,7 +18,7 @@ public class JnCommonsBusinessLenientProcess implements Function<CcpJsonRepresen
 			CcpJsonRepresentation apply = this.process.apply(t);
 			return apply;
 		} catch (Exception e) {
-			 return t;
+			return t;
 		}
 	}
 	

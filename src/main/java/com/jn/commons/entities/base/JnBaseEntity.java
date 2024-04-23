@@ -14,8 +14,8 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.ccp.process.CcpProcessStatus;
 import com.ccp.process.CcpSuccessStatus;
-import com.jn.commons.business.JnCommonsBusinessDeleteEntity;
-import com.jn.commons.business.JnCommonsBusinessSaveEntity;
+import com.jn.commons.business.steps.JnCommonsBusinessStepDeleteEntity;
+import com.jn.commons.business.steps.JnCommonsBusinessStepSaveEntity;
 import com.jn.commons.entities.JnEntityAudit;
 
 public abstract class JnBaseEntity implements CcpEntity{
@@ -83,19 +83,19 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return true;
 	}
 	
-	public JnCommonsBusinessSaveEntity getSaver() {
+	public JnCommonsBusinessStepSaveEntity getSaver() {
 		return this.getSaver(new CcpSuccessStatus());
 	}
-	public JnCommonsBusinessSaveEntity getSaver(CcpProcessStatus statusToReturnAfterSaving) {
-		return new JnCommonsBusinessSaveEntity(this, statusToReturnAfterSaving);
+	public JnCommonsBusinessStepSaveEntity getSaver(CcpProcessStatus statusToReturnAfterSaving) {
+		return new JnCommonsBusinessStepSaveEntity(this, statusToReturnAfterSaving);
 	}
 
-	public JnCommonsBusinessDeleteEntity getDeleter() {
+	public JnCommonsBusinessStepDeleteEntity getDeleter() {
 		return this.getDeleter(new CcpSuccessStatus());
 	}
 	
-	public JnCommonsBusinessDeleteEntity getDeleter(CcpProcessStatus statusToReturnAfterSaving) {
-		return new JnCommonsBusinessDeleteEntity(this, statusToReturnAfterSaving);
+	public JnCommonsBusinessStepDeleteEntity getDeleter(CcpProcessStatus statusToReturnAfterSaving) {
+		return new JnCommonsBusinessStepDeleteEntity(this, statusToReturnAfterSaving);
 	}
 	
 	public CcpJsonRepresentation getOnlyExistingFields(CcpJsonRepresentation values) {

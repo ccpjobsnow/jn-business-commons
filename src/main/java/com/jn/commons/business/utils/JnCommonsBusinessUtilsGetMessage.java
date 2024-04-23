@@ -1,4 +1,4 @@
-package com.jn.commons.business;
+package com.jn.commons.business.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +9,9 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.dao.CcpDao;
 import com.ccp.especifications.db.utils.CcpEntity;
+import com.jn.commons.business.JnCommonsBusinessLenientProcess;
 
-public class JnCommonsBusinessGetMessage {
+public class JnCommonsBusinessUtilsGetMessage {
 
 	private final List<Function<CcpJsonRepresentation, CcpJsonRepresentation>> process = new ArrayList<>();
 
@@ -18,9 +19,9 @@ public class JnCommonsBusinessGetMessage {
 	
 	private final List<CcpEntity> messageEntities = new ArrayList<>();
 	
-	public JnCommonsBusinessGetMessage addOneStep(Function<CcpJsonRepresentation, CcpJsonRepresentation> process, CcpEntity parameterEntity, CcpEntity messageEntity) {
+	public JnCommonsBusinessUtilsGetMessage addOneStep(Function<CcpJsonRepresentation, CcpJsonRepresentation> process, CcpEntity parameterEntity, CcpEntity messageEntity) {
 		
-		JnCommonsBusinessGetMessage getMessage = new JnCommonsBusinessGetMessage();
+		JnCommonsBusinessUtilsGetMessage getMessage = new JnCommonsBusinessUtilsGetMessage();
 		
 		getMessage.parameterEntities.addAll(this.parameterEntities);
 		getMessage.messageEntities.addAll(this.messageEntities);
@@ -34,9 +35,9 @@ public class JnCommonsBusinessGetMessage {
 		return getMessage;
 	}
 	
-	public JnCommonsBusinessGetMessage addOneLenientStep(Function<CcpJsonRepresentation, CcpJsonRepresentation> step, CcpEntity parameterEntity, CcpEntity messageEntity) {
+	public JnCommonsBusinessUtilsGetMessage addOneLenientStep(Function<CcpJsonRepresentation, CcpJsonRepresentation> step, CcpEntity parameterEntity, CcpEntity messageEntity) {
 		JnCommonsBusinessLenientProcess lenientProcess = new JnCommonsBusinessLenientProcess(step);
-		JnCommonsBusinessGetMessage addFlow = this.addOneStep(lenientProcess, parameterEntity, messageEntity);
+		JnCommonsBusinessUtilsGetMessage addFlow = this.addOneStep(lenientProcess, parameterEntity, messageEntity);
 		return addFlow;
 	}	
 	public CcpJsonRepresentation executeAllSteps(String entityId, CcpEntity entityToSave, CcpJsonRepresentation entityValues, String language) {
