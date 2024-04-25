@@ -5,7 +5,10 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityContactUs extends JnBaseEntity{
-	public JnEntityContactUs() {
+
+	public static final JnEntityContactUs INSTANCE = new JnEntityContactUs();
+	
+	private JnEntityContactUs() {
 		super(CcpTimeOption.ddMMyyyy, Fields.values());
 	}
 	

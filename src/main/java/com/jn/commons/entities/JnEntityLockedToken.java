@@ -5,7 +5,9 @@ import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityLockedToken extends JnBaseEntity{
 
-	public JnEntityLockedToken() {
+	public static final JnEntityLockedToken INSTANCE = new JnEntityLockedToken();
+
+	private JnEntityLockedToken() {
 		super(Fields.values());
 	}
 	

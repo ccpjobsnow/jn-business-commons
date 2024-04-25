@@ -5,9 +5,13 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityAsyncTask extends JnBaseEntity{
-	public JnEntityAsyncTask() {
+
+	public static final JnEntityAsyncTask INSTANCE = new JnEntityAsyncTask();
+
+	private JnEntityAsyncTask() {
 		super(false, CcpTimeOption.ddMMyyyyHHmmssSSS, Fields.values());
 	}
+	
 	public static enum Fields implements CcpEntityField{
 		started(false), finished(false), topic(false), request(false), id(true), success(false), response(false)
 		;

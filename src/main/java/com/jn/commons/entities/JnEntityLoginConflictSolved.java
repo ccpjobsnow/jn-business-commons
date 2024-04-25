@@ -4,9 +4,13 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityLoginConflictSolved extends JnBaseEntity{
-	public JnEntityLoginConflictSolved() {
+
+	public static final JnEntityLoginConflictSolved INSTANCE = new JnEntityLoginConflictSolved();
+	
+	private JnEntityLoginConflictSolved() {
 		super(Fields.values());
 	}
+	
 	public static enum Fields implements CcpEntityField{
 		email(true)
 		;

@@ -4,7 +4,10 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityHttpApiRetrySendRequest extends JnBaseEntity{
-	public JnEntityHttpApiRetrySendRequest() {
+
+	public static final JnEntityHttpApiRetrySendRequest INSTANCE = new JnEntityHttpApiRetrySendRequest();
+	
+	private JnEntityHttpApiRetrySendRequest() {
 		super(Fields.values());
 	}
 	

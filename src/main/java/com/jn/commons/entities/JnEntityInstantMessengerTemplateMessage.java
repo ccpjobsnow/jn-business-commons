@@ -4,9 +4,13 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityInstantMessengerTemplateMessage extends JnBaseEntity{
-	public JnEntityInstantMessengerTemplateMessage() {
+
+	public static final JnEntityInstantMessengerTemplateMessage INSTANCE = new JnEntityInstantMessengerTemplateMessage();
+
+	private JnEntityInstantMessengerTemplateMessage() {
 		super(Fields.values());
 	}
+	
 	public static enum Fields implements CcpEntityField{
 		templateId(true),language(true), subject(false), message(false)
 		;

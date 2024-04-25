@@ -4,7 +4,10 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityEmailReportedAsSpam extends JnBaseEntity{
-	public JnEntityEmailReportedAsSpam() {
+
+	public static final JnEntityEmailReportedAsSpam INSTANCE = new JnEntityEmailReportedAsSpam();
+	
+	private JnEntityEmailReportedAsSpam() {
 		super(Fields.values());
 	}
 	

@@ -62,9 +62,8 @@ public abstract class JnBaseEntity implements CcpEntity{
 
 		.put("date", System.currentTimeMillis());
 	
-		JnEntityAudit entity = new JnEntityAudit();
 		CcpDao dependency = CcpDependencyInjection.getDependency(CcpDao.class);
-		dependency.createOrUpdate(entity, audit);
+		dependency.createOrUpdate(JnEntityAudit.INSTANCE, audit);
 	}
 
 	public boolean exceededTries(CcpJsonRepresentation values, String fieldName, int limit) {

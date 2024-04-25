@@ -4,9 +4,14 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityEmailParametersToSend extends JnBaseEntity{
-	public JnEntityEmailParametersToSend() {
+	
+	public static final JnEntityEmailParametersToSend INSTANCE = new JnEntityEmailParametersToSend();
+
+	
+	private JnEntityEmailParametersToSend() {
 		super(Fields.values());
 	}
+	
 	public static enum Fields implements CcpEntityField{
 		email(false), sender(false), templateId(true), subjectType(false), moreParameters(false)
 		;

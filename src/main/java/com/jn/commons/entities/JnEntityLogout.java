@@ -5,9 +5,13 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityLogout extends JnBaseEntity{
-	public JnEntityLogout() {
+
+	public static final JnEntityLogout INSTANCE = new JnEntityLogout();
+	
+	private JnEntityLogout() {
 		super(CcpTimeOption.ddMMyyyy, Fields.values());
 	}
+	
 	public static enum Fields implements CcpEntityField{
 		email(true)
 		;

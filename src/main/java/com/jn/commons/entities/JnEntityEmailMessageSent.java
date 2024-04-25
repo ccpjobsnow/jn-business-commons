@@ -4,7 +4,11 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityEmailMessageSent extends JnBaseEntity{
-	public JnEntityEmailMessageSent() {
+	
+	public static final JnEntityEmailMessageSent INSTANCE = new JnEntityEmailMessageSent();
+
+	
+	private JnEntityEmailMessageSent() {
 		super(Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{

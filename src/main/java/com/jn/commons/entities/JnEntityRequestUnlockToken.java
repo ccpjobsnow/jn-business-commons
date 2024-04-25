@@ -5,9 +5,13 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityRequestUnlockToken extends JnBaseEntity{
-	public JnEntityRequestUnlockToken() {
+	
+	public static final JnEntityRequestUnlockToken INSTANCE = new JnEntityRequestUnlockToken();
+	
+	private JnEntityRequestUnlockToken() {
 		super(CcpTimeOption.ddMMyyyy, Fields.values());
 	}
+	
 	public static enum Fields implements CcpEntityField{
 		email(true), language(false)
 		;

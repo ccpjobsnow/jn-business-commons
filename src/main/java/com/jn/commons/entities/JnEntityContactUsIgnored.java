@@ -4,7 +4,7 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityContactUsIgnored extends JnBaseEntity{
-	public JnEntityContactUsIgnored() {
+	private JnEntityContactUsIgnored() {
 		super(new CcpEntityField[] {});//TODO FALTA OS FIELDS
 	}
 	

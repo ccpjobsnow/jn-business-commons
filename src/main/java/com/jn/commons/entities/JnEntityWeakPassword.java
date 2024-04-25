@@ -4,9 +4,11 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityWeakPassword extends JnBaseEntity{
-	public JnEntityWeakPassword() {
+	private JnEntityWeakPassword() {
 		super(Fields.values());
 	}
+	public static final JnEntityWeakPassword INSTANCE = new JnEntityWeakPassword();	
+	
 	public static enum Fields implements CcpEntityField{
 		email(true), password(false)
 		;

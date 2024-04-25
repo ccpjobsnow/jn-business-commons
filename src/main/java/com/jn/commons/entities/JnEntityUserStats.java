@@ -4,9 +4,13 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityUserStats extends JnBaseEntity{
-	public JnEntityUserStats() {
+	
+	public static final JnEntityUserStats INSTANCE = new JnEntityUserStats();
+	
+	private JnEntityUserStats() {
 		super(Fields.values());
 	}
+	
 	public static enum Fields implements CcpEntityField{
 		email(true), balance(false), lastAccess(false), countAccess(false),
 		openedTickets(false), closedTickets(false), balanceTransacionsCount(false)

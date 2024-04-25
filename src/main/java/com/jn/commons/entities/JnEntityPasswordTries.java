@@ -4,9 +4,13 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityPasswordTries extends JnBaseEntity{
-	public JnEntityPasswordTries() {
+
+	public static final JnEntityPasswordTries INSTANCE = new JnEntityPasswordTries();
+	
+	private JnEntityPasswordTries() {
 		super(Fields.values());
 	}
+	
 	public static enum Fields implements CcpEntityField{
 		email(true), tries(true)
 		;

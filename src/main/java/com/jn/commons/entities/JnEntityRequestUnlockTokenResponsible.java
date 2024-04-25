@@ -5,7 +5,11 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityRequestUnlockTokenResponsible extends JnBaseEntity{
-	public JnEntityRequestUnlockTokenResponsible() {
+
+	public static final JnEntityRequestUnlockTokenResponsible INSTANCE = new JnEntityRequestUnlockTokenResponsible();
+
+	
+	private JnEntityRequestUnlockTokenResponsible() {
 		super(Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{

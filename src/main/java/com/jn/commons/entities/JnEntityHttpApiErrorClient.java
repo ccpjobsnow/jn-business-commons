@@ -4,7 +4,10 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityHttpApiErrorClient extends JnBaseEntity{
-	public JnEntityHttpApiErrorClient() {
+	
+	public static final JnEntityHttpApiErrorClient INSTANCE = new JnEntityHttpApiErrorClient();
+
+	private JnEntityHttpApiErrorClient() {
 		super(Fields.values());
 	}
 	

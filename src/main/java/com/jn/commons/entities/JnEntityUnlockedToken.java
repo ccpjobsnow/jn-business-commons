@@ -4,7 +4,10 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityUnlockedToken extends JnBaseEntity{
-	public JnEntityUnlockedToken() {
+
+	public static final JnEntityUnlockedToken INSTANCE = new JnEntityUnlockedToken();
+	
+	private JnEntityUnlockedToken() {
 		super(Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{

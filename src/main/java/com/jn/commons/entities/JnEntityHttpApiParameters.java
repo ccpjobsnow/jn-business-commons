@@ -4,7 +4,10 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityHttpApiParameters extends JnBaseEntity{
-	public JnEntityHttpApiParameters() {
+
+	public static final JnEntityHttpApiParameters INSTANCE = new JnEntityHttpApiParameters();
+	
+	private JnEntityHttpApiParameters() {
 		super(Fields.values());
 	}
 	

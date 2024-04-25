@@ -5,7 +5,11 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityInstantMessengerMessageSent extends JnBaseEntity{
-	public JnEntityInstantMessengerMessageSent() {
+	
+	public static final JnEntityInstantMessengerMessageSent INSTANCE = new JnEntityInstantMessengerMessageSent();
+
+	
+	private JnEntityInstantMessengerMessageSent() {
 		super(CcpTimeOption.ddMMyyyyHHmmss, Fields.values());
 	}
 	

@@ -5,9 +5,13 @@ import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityPassword extends JnBaseEntity{
-	public JnEntityPassword() {
+	
+	public static final JnEntityPassword INSTANCE = new JnEntityPassword();
+	
+	private JnEntityPassword() {
 		super(CcpTimeOption.ddMM, Fields.values());
 	}
+	
 	public static enum Fields implements CcpEntityField{
 		email(true), password(false)
 		;
