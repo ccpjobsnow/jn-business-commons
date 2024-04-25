@@ -5,7 +5,7 @@ import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityContactUsIgnored extends JnBaseEntity{
 	private JnEntityContactUsIgnored() {
-		super(new CcpEntityField[] {});//TODO FALTA OS FIELDS
+		super(new CcpEntityField[] {});//FIXME FALTA OS FIELDS
 	}
 	
 	public static enum Fields implements CcpEntityField{
