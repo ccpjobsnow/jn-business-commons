@@ -6,14 +6,14 @@ import com.ccp.process.CcpNextStep;
 import com.ccp.process.CcpProcessStatus;
 import com.ccp.process.CcpStepResult;
 
-public class JnCommonsBusinessStepDeleteEntity extends CcpNextStep {
+public class CommonsBusinessStepDeleteEntity extends CcpNextStep {
 
 	private final Integer statusToReturnAfterSaving;
 
 	private final CcpEntity entity;
 	
 	
-	public JnCommonsBusinessStepDeleteEntity(CcpEntity entity, CcpProcessStatus statusToReturnAfterSaving) {
+	public CommonsBusinessStepDeleteEntity(CcpEntity entity, CcpProcessStatus statusToReturnAfterSaving) {
 		this.statusToReturnAfterSaving = statusToReturnAfterSaving.status();
 		this.entity = entity;
 	}

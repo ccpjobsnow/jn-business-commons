@@ -6,7 +6,7 @@ import com.ccp.process.CcpProcessStatus;
 import com.ccp.process.CcpStepResult;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class JnCommonsBusinessStepEvaluateTries extends CcpNextStep {
+public class CommonsBusinessStepEvaluateTries extends CcpNextStep {
 
 	private final JnBaseEntity entity;
 	
@@ -15,7 +15,7 @@ public class JnCommonsBusinessStepEvaluateTries extends CcpNextStep {
 	private final int excedeedFlow;
 	
 	
-	public JnCommonsBusinessStepEvaluateTries(JnBaseEntity entity, CcpProcessStatus regularFlow, CcpProcessStatus exceededFlow) {
+	public CommonsBusinessStepEvaluateTries(JnBaseEntity entity, CcpProcessStatus regularFlow, CcpProcessStatus exceededFlow) {
 		this.excedeedFlow = exceededFlow.status();
 		this.regularFlow = regularFlow.status();
 		this.entity = entity;

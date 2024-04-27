@@ -4,11 +4,11 @@ import java.util.function.Function;
 
 import com.ccp.decorators.CcpJsonRepresentation;
 
-public class JnCommonsBusinessLenientProcess implements Function<CcpJsonRepresentation, CcpJsonRepresentation>{
+public class CommonsBusinessLenientProcess implements Function<CcpJsonRepresentation, CcpJsonRepresentation>{
 
 	private final Function<CcpJsonRepresentation, CcpJsonRepresentation> process;
 
-	public JnCommonsBusinessLenientProcess(Function<CcpJsonRepresentation, CcpJsonRepresentation> process) {
+	public CommonsBusinessLenientProcess(Function<CcpJsonRepresentation, CcpJsonRepresentation> process) {
 		this.process = process;
 	}
 
