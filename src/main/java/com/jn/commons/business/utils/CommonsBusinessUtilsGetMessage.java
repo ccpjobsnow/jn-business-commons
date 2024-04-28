@@ -70,7 +70,7 @@ public class CommonsBusinessUtilsGetMessage {
 			
 			CcpJsonRepresentation allDataTogether = messageData.putAll(allParameters).putAll(entityValues);
 			
-			Set<String> keySet = messageData.keySet();
+ 			Set<String> keySet = messageData.keySet();
 			
 			CcpJsonRepresentation messageToSend = allDataTogether;
 			

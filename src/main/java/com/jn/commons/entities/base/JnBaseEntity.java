@@ -1,5 +1,6 @@
 package com.jn.commons.entities.base;
 
+import java.lang.reflect.Constructor;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -126,10 +127,12 @@ public abstract class JnBaseEntity implements CcpEntity{
 	@SuppressWarnings("unchecked")
 	public static CcpEntity valueOf(Class<? extends JnBaseEntity> clazz, String entityName) {
 		String packageName = clazz.getPackage().getName();
-		String fullNameClass = packageName + "." + entityName;
+		String fullNameClass = packageName.replace(".base", "") + "." + entityName;
 		try {
 			Class<CcpEntity> forName = (Class<CcpEntity>) Class.forName(fullNameClass);
-			CcpEntity newInstance = forName.getDeclaredConstructor().newInstance();
+			Constructor<CcpEntity> declaredConstructor = forName.getDeclaredConstructor();
+			declaredConstructor.setAccessible(true);
+			CcpEntity newInstance = declaredConstructor.newInstance();
 			return newInstance;
 		} catch (Exception e) {
 			throw new RuntimeException(e);

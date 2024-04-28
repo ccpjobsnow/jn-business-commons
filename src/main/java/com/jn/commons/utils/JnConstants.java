@@ -10,7 +10,7 @@ import com.ccp.especifications.password.CcpPasswordHandler;
 
 
 public interface JnConstants {
-	Function<CcpJsonRepresentation, CcpJsonRepresentation> PUT_EMAIL_TOKEN = values -> values.put("token", new CcpStringDecorator(CcpConstants.CHARACTERS_TO_GENERATE_TOKEN).text().generateToken(8));
+	Function<CcpJsonRepresentation, CcpJsonRepresentation> PUT_EMAIL_TOKEN = values -> values.put("token", new CcpStringDecorator(CcpConstants.CHARACTERS_TO_GENERATE_TOKEN).text().generateToken(8).content);
 	Function<CcpJsonRepresentation, CcpJsonRepresentation> PUT_PASSWORD = values -> {
 		CcpJsonRepresentation apply = PUT_EMAIL_TOKEN.apply(values);
 		String token = apply.getAsString("token");
