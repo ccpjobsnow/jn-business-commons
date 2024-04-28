@@ -112,7 +112,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 	@Override
 	public String getEntityName() {
 		String simpleName = this.getClass().getSimpleName();
-		String snackCase = new CcpStringDecorator(simpleName).text().toSnakeCase();
+		String snackCase = new CcpStringDecorator(simpleName).text().toSnakeCase().content;
 		String substring = snackCase.substring(snackCase.indexOf("entity") + 7);
 		return substring;
 	}

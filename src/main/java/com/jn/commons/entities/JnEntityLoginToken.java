@@ -9,7 +9,7 @@ public class JnEntityLoginToken extends JnBaseEntity{
 	public static final JnEntityLoginToken INSTANCE = new JnEntityLoginToken();
 
 	private JnEntityLoginToken() {
-		super(CcpTimeOption.ddMMyyyy, Fields.values());
+		super(CcpTimeOption.none, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{
