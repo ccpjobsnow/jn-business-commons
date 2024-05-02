@@ -13,10 +13,6 @@ import com.ccp.especifications.db.dao.CcpDao;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.CcpTimeOption;
-import com.ccp.process.CcpProcessStatus;
-import com.ccp.process.CcpSuccessStatus;
-import com.jn.commons.business.steps.CommonsBusinessStepDeleteEntity;
-import com.jn.commons.business.steps.CommonsBusinessStepSaveEntity;
 import com.jn.commons.entities.JnEntityAudit;
 
 public abstract class JnBaseEntity implements CcpEntity{
@@ -82,22 +78,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 		}
 		return true;
 	}
-	
-	public CommonsBusinessStepSaveEntity getSaver() {
-		return this.getSaver(new CcpSuccessStatus());
-	}
-	public CommonsBusinessStepSaveEntity getSaver(CcpProcessStatus statusToReturnAfterSaving) {
-		return new CommonsBusinessStepSaveEntity(this, statusToReturnAfterSaving);
-	}
 
-	public CommonsBusinessStepDeleteEntity getDeleter() {
-		return this.getDeleter(new CcpSuccessStatus());
-	}
-	
-	public CommonsBusinessStepDeleteEntity getDeleter(CcpProcessStatus statusToReturnAfterSaving) {
-		return new CommonsBusinessStepDeleteEntity(this, statusToReturnAfterSaving);
-	}
-	
 	public CcpJsonRepresentation getOnlyExistingFields(CcpJsonRepresentation values) {
 		CcpEntityField[] fields = this.getFields();
 		String[] array = Arrays.asList(fields).stream().map(x -> x.name()).collect(Collectors.toList()).toArray(new String[fields.length]);

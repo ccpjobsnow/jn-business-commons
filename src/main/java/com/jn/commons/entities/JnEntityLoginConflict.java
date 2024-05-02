@@ -12,7 +12,7 @@ public class JnEntityLoginConflict extends JnBaseEntity{
 	}
 	
 	public static enum Fields implements CcpEntityField{
-		email(true)
+		email(true), oldLogin(false), newLogin(false)
 		;
 		
 		private final boolean primaryKey;

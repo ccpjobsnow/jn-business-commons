@@ -1,7 +1,7 @@
 package com.jn.commons.utils;
 
 public enum JnAsyncBusiness {
-	requestTokenAgain, requestUnlockToken, sendUserToken, removeTries, notifyError, 
+	executeLogout, savePassword, executeLogin, sendUserToken, notifyError, 
 	notifyContactUs, grouperBalance, grouperSupport, grouperLogin, sendInstantMessage, 
 	sendEmailMessage,
 	;
