@@ -12,7 +12,7 @@ public class JnEntityTokenAttempts extends JnBaseEntity{
 		super(Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
-		email(true), tries(true)
+		email(true), attempts(false)
 		;
 		
 		private final boolean primaryKey;

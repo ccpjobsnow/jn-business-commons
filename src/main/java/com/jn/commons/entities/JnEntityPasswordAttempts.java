@@ -3,16 +3,16 @@ package com.jn.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class JnEntityPasswordTries extends JnBaseEntity{
+public class JnEntityPasswordAttempts extends JnBaseEntity{
 
-	public static final JnEntityPasswordTries INSTANCE = new JnEntityPasswordTries();
+	public static final JnEntityPasswordAttempts INSTANCE = new JnEntityPasswordAttempts();
 	
-	private JnEntityPasswordTries() {
+	private JnEntityPasswordAttempts() {
 		super(Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{
-		email(true), tries(true)
+		email(true), attempts(false)
 		;
 		
 		private final boolean primaryKey;
