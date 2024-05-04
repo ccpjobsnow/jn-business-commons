@@ -3,16 +3,17 @@ package com.jn.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class JnEntityTokenAttempts extends JnBaseEntity{
-
-	public static final JnEntityTokenAttempts INSTANCE = new JnEntityTokenAttempts();
-
+public class JnEntityLoginStats extends JnBaseEntity{
 	
-	private JnEntityTokenAttempts() {
+	public static final JnEntityLoginStats INSTANCE = new JnEntityLoginStats();
+	
+	private JnEntityLoginStats() {
 		super(Fields.values());
 	}
+	
 	public static enum Fields implements CcpEntityField{
-		email(true), attempts(false)
+		email(true), balance(false), lastAccess(false), countAccess(false),
+		openedTickets(false), closedTickets(false), balanceTransacionsCount(false)
 		;
 		
 		private final boolean primaryKey;

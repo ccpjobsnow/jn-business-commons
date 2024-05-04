@@ -1,17 +1,15 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class JnEntityLogout extends JnBaseEntity{
+public class JnEntityLoginUnlockedPassword extends JnBaseEntity{
 
-	public static final JnEntityLogout INSTANCE = new JnEntityLogout();
-	
-	private JnEntityLogout() {
-		super(CcpTimeOption.ddMMyyyy, Fields.values());
+	public static final JnEntityLoginUnlockedPassword INSTANCE = new JnEntityLoginUnlockedPassword();
+
+	private JnEntityLoginUnlockedPassword() {
+		super(Fields.values());
 	}
-	
 	public static enum Fields implements CcpEntityField{
 		email(true)
 		;

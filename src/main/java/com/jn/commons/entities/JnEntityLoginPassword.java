@@ -1,17 +1,19 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class JnEntityUnlockedToken extends JnBaseEntity{
-
-	public static final JnEntityUnlockedToken INSTANCE = new JnEntityUnlockedToken();
+public class JnEntityLoginPassword extends JnBaseEntity{
 	
-	private JnEntityUnlockedToken() {
-		super(Fields.values());
+	public static final JnEntityLoginPassword INSTANCE = new JnEntityLoginPassword();
+	
+	private JnEntityLoginPassword() {
+		super(CcpTimeOption.ddMM, Fields.values());
 	}
+	
 	public static enum Fields implements CcpEntityField{
-		email(true)
+		email(true), password(false)
 		;
 		
 		private final boolean primaryKey;
@@ -24,4 +26,5 @@ public class JnEntityUnlockedToken extends JnBaseEntity{
 		}
 
 	}
+
 }

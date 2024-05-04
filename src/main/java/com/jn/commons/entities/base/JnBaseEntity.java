@@ -9,7 +9,7 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.bulk.CcpEntityOperationType;
-import com.ccp.especifications.db.dao.CcpDao;
+import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.CcpTimeOption;
@@ -59,7 +59,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 
 		.put("date", System.currentTimeMillis());
 	
-		CcpDao dependency = CcpDependencyInjection.getDependency(CcpDao.class);
+		CcpCrud dependency = CcpDependencyInjection.getDependency(CcpCrud.class);
 		dependency.createOrUpdate(JnEntityAudit.INSTANCE, audit);
 	}
 

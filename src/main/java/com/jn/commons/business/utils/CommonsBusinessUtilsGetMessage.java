@@ -7,7 +7,7 @@ import java.util.function.Function;
 
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.dependency.injection.CcpDependencyInjection;
-import com.ccp.especifications.db.dao.CcpDao;
+import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.jn.commons.business.CommonsBusinessLenientProcess;
 
@@ -50,8 +50,8 @@ public class CommonsBusinessUtilsGetMessage {
 		CcpEntity[] entities = allEntitiesToSearch.toArray(new CcpEntity[allEntitiesToSearch.size()]);
 		CcpJsonRepresentation idToSearch = entityValues.put("language", language)
 				.put("templateId", entityId);
-		CcpDao dao = CcpDependencyInjection.getDependency(CcpDao.class);
-		CcpJsonRepresentation allData = dao.getAllData(idToSearch, entities);
+		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
+		CcpJsonRepresentation allData = crud.getAllData(idToSearch, entities);
 		boolean alreadySaved = allData.containsAllKeys(entityToSave.getEntityName());
 		
 		if(alreadySaved) {
