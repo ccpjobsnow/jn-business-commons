@@ -30,7 +30,6 @@ public class CommonsBusinessUtilsGetMessage {
 		getMessage.parameterEntities.add(parameterEntity);
 		getMessage.messageEntities.add(messageEntity);
 		getMessage.process.add(process);
-//		getMessage.dao = this.dao;
 		
 		return getMessage;
 	}
