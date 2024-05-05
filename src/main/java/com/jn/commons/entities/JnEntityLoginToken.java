@@ -13,7 +13,7 @@ public class JnEntityLoginToken extends JnBaseEntity{
 	}
 	
 	public static enum Fields implements CcpEntityField{
-		email(true), token(false)
+		email(true), tokenHash(false)
 		;
 		
 		private final boolean primaryKey;

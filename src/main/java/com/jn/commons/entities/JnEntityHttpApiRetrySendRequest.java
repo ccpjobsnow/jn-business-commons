@@ -1,5 +1,6 @@
 package com.jn.commons.entities;
 
+import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
@@ -10,7 +11,22 @@ public class JnEntityHttpApiRetrySendRequest extends JnBaseEntity{
 	private JnEntityHttpApiRetrySendRequest() {
 		super(Fields.values());
 	}
-	
+	public boolean exceededTries(CcpJsonRepresentation values, String fieldName, int limit) {
+		
+		for(int k = 1; k <= limit; k++) {
+			
+			CcpJsonRepresentation put = values.put(fieldName, k);
+			
+			boolean exists = this.exists(put);
+			
+			if(exists == false) {
+				this.createOrUpdate(put);
+				return false;
+			}
+		}
+		return true;
+	}
+
 	public static enum Fields implements CcpEntityField{
 		url(true), method(true), headers(true), request(false), apiName(true), tries(true), response(false), status(false)
 		;

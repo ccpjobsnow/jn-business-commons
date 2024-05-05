@@ -12,7 +12,7 @@ public class CommonsBusinessLenientProcess implements Function<CcpJsonRepresenta
 		this.process = process;
 	}
 
-	@Override
+	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation t) {
 		try {
 			CcpJsonRepresentation apply = this.process.apply(t);

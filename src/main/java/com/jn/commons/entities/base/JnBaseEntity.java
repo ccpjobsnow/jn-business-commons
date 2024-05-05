@@ -63,22 +63,6 @@ public abstract class JnBaseEntity implements CcpEntity{
 		dependency.createOrUpdate(JnEntityAudit.INSTANCE, audit);
 	}
 
-	public boolean exceededTries(CcpJsonRepresentation values, String fieldName, int limit) {
-		
-		for(int k = 1; k <= limit; k++) {
-			
-			CcpJsonRepresentation put = values.put(fieldName, k);
-			
-			boolean exists = this.exists(put);
-			
-			if(exists == false) {
-				this.createOrUpdate(put);
-				return false;
-			}
-		}
-		return true;
-	}
-
 	public CcpJsonRepresentation getOnlyExistingFields(CcpJsonRepresentation values) {
 		CcpEntityField[] fields = this.getFields();
 		String[] array = Arrays.asList(fields).stream().map(x -> x.name()).collect(Collectors.toList()).toArray(new String[fields.length]);
@@ -86,12 +70,10 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return subMap;
 	}
 //
-	@Override
 	public boolean isAuditable() {
 		return this.auditable;
 	}
 
-	@Override
 	public String getEntityName() {
 		String simpleName = this.getClass().getSimpleName();
 		String snackCase = new CcpStringDecorator(simpleName).text().toSnakeCase().content;
@@ -99,7 +81,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return substring;
 	}
 	
-	@Override
+	
 	public String toString() {
 		String entityName = this.getEntityName();
 		return entityName;
@@ -124,7 +106,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return valueOf(JnBaseEntity.class, name);
 	}
 
-	@Override
+	
 	public CcpTimeOption getTimeOption() {
 		return this.timeOption;
 	}
