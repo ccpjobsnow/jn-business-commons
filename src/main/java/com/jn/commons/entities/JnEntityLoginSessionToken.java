@@ -4,16 +4,16 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class JnEntityLoginSession extends JnBaseEntity{
+public class JnEntityLoginSessionToken extends JnBaseEntity{
 
-	public static final JnEntityLoginSession INSTANCE = new JnEntityLoginSession();
+	public static final JnEntityLoginSessionToken INSTANCE = new JnEntityLoginSessionToken();
 	
-	private JnEntityLoginSession() {
+	private JnEntityLoginSessionToken() {
 		super(CcpTimeOption.ddMMyyyy, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{
-		email(true), token(false), ip(false), coordinates(false), macAddress(false), userAgent(false)
+		email(true), sessionToken(true), ip(true), coordinates(false), macAddress(false), userAgent(true)
 		;
 		
 		private final boolean primaryKey;

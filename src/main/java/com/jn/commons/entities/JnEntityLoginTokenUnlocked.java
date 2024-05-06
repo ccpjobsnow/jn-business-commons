@@ -3,14 +3,13 @@ package com.jn.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
-public class JnEntityLoginLockedToken extends JnBaseEntity{
+public class JnEntityLoginTokenUnlocked extends JnBaseEntity{
 
-	public static final JnEntityLoginLockedToken INSTANCE = new JnEntityLoginLockedToken();
-
-	private JnEntityLoginLockedToken() {
+	public static final JnEntityLoginTokenUnlocked INSTANCE = new JnEntityLoginTokenUnlocked();
+	
+	private JnEntityLoginTokenUnlocked() {
 		super(Fields.values());
 	}
-	
 	public static enum Fields implements CcpEntityField{
 		email(true)
 		;
@@ -23,5 +22,6 @@ public class JnEntityLoginLockedToken extends JnBaseEntity{
 		public boolean isPrimaryKey() {
 			return this.primaryKey;
 		}
+
 	}
 }

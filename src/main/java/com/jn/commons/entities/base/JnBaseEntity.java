@@ -17,6 +17,7 @@ import com.jn.commons.entities.JnEntityAudit;
 
 public abstract class JnBaseEntity implements CcpEntity{
 
+	final String name = this.getEntityName();
 	final CcpTimeOption timeOption;
 	final CcpEntityField[] fields;
 	final boolean auditable;
