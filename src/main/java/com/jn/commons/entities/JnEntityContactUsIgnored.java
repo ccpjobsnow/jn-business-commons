@@ -1,12 +1,12 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.CcpTimeOption;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnDisposableEntity;
+import com.jn.commons.entities.base.JnRecordStorageTimeExpiration;
 
-public class JnEntityContactUsIgnored extends JnBaseEntity{
+public class JnEntityContactUsIgnored extends JnDisposableEntity{
 	private JnEntityContactUsIgnored() {
-		super(CcpTimeOption.ddMMyyyy, Fields.values());
+		super(JnRecordStorageTimeExpiration.daily, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

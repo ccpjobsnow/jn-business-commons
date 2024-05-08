@@ -1,15 +1,15 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.CcpTimeOption;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnDisposableEntity;
+import com.jn.commons.entities.base.JnRecordStorageTimeExpiration;
 
-public class JnEntityJobsnowError extends JnBaseEntity{
+public class JnEntityJobsnowError extends JnDisposableEntity{
 
 	public static final JnEntityJobsnowError INSTANCE = new JnEntityJobsnowError();
 
 	private JnEntityJobsnowError() {
-		super(CcpTimeOption.ddMMyyyyHH,Fields.values());
+		super(JnRecordStorageTimeExpiration.hourly, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

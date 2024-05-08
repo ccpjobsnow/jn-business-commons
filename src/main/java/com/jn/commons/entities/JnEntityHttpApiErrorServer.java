@@ -1,15 +1,16 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnDisposableEntity;
+import com.jn.commons.entities.base.JnRecordStorageTimeExpiration;
 
-public class JnEntityHttpApiErrorServer extends JnBaseEntity{
+public class JnEntityHttpApiErrorServer extends JnDisposableEntity{
 	
 	public static final JnEntityHttpApiErrorServer INSTANCE = new JnEntityHttpApiErrorServer();
 
 	
 	private JnEntityHttpApiErrorServer() {
-		super(Fields.values());
+		super(JnRecordStorageTimeExpiration.hourly, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

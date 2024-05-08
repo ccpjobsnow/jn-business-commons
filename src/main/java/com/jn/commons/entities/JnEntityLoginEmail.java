@@ -1,7 +1,6 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityLoginEmail extends JnBaseEntity{
@@ -9,7 +8,7 @@ public class JnEntityLoginEmail extends JnBaseEntity{
 	public static final JnEntityLoginEmail INSTANCE = new JnEntityLoginEmail();
 
 	private JnEntityLoginEmail() {
-		super(CcpTimeOption.none, Fields.values());
+		super(Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

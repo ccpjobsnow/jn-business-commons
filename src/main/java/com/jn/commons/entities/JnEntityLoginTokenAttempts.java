@@ -1,15 +1,16 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnDisposableEntity;
+import com.jn.commons.entities.base.JnRecordStorageTimeExpiration;
 
-public class JnEntityLoginTokenAttempts extends JnBaseEntity{
+public class JnEntityLoginTokenAttempts extends JnDisposableEntity{
 
 	public static final JnEntityLoginTokenAttempts INSTANCE = new JnEntityLoginTokenAttempts();
 
 	
 	private JnEntityLoginTokenAttempts() {
-		super(Fields.values());
+		super(JnRecordStorageTimeExpiration.daily, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
 		email(true), attempts(false)

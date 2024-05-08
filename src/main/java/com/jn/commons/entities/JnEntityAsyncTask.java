@@ -1,7 +1,6 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.CcpTimeOption;
 import com.jn.commons.entities.base.JnBaseEntity;
 
 public class JnEntityAsyncTask extends JnBaseEntity{
@@ -9,7 +8,7 @@ public class JnEntityAsyncTask extends JnBaseEntity{
 	public static final JnEntityAsyncTask INSTANCE = new JnEntityAsyncTask();
 
 	private JnEntityAsyncTask() {
-		super(false, CcpTimeOption.ddMMyyyyHHmmssSSS, Fields.values());
+		super(Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

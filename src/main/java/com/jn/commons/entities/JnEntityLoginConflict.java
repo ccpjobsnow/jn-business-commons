@@ -1,14 +1,15 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnDisposableEntity;
+import com.jn.commons.entities.base.JnRecordStorageTimeExpiration;
 
-public class JnEntityLoginConflict extends JnBaseEntity{
+public class JnEntityLoginConflict extends JnDisposableEntity{
 
 	public static final JnEntityLoginConflict INSTANCE = new JnEntityLoginConflict();
 
 	private JnEntityLoginConflict() {
-		super(Fields.values());
+		super(JnRecordStorageTimeExpiration.hourly, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

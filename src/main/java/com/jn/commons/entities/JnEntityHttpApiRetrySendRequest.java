@@ -2,14 +2,15 @@ package com.jn.commons.entities;
 
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnDisposableEntity;
+import com.jn.commons.entities.base.JnRecordStorageTimeExpiration;
 
-public class JnEntityHttpApiRetrySendRequest extends JnBaseEntity{
+public class JnEntityHttpApiRetrySendRequest extends JnDisposableEntity{
 
 	public static final JnEntityHttpApiRetrySendRequest INSTANCE = new JnEntityHttpApiRetrySendRequest();
 	
 	private JnEntityHttpApiRetrySendRequest() {
-		super(Fields.values());
+		super(JnRecordStorageTimeExpiration.hourly, Fields.values());
 	}
 	public boolean exceededTries(CcpJsonRepresentation values, String fieldName, int limit) {
 		

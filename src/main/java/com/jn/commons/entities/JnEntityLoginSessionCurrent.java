@@ -1,15 +1,15 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.CcpTimeOption;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnDisposableEntity;
+import com.jn.commons.entities.base.JnRecordStorageTimeExpiration;
 
-public class JnEntityLoginSessionCurrent extends JnBaseEntity{
+public class JnEntityLoginSessionCurrent extends JnDisposableEntity{
 
 	public static final JnEntityLoginSessionCurrent INSTANCE = new JnEntityLoginSessionCurrent();
 	
 	private JnEntityLoginSessionCurrent() {
-		super(CcpTimeOption.ddMMyyyy, Fields.values());
+		super(JnRecordStorageTimeExpiration.hourly, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

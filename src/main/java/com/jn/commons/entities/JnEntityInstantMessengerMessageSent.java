@@ -1,16 +1,16 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.CcpTimeOption;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnDisposableEntity;
+import com.jn.commons.entities.base.JnRecordStorageTimeExpiration;
 
-public class JnEntityInstantMessengerMessageSent extends JnBaseEntity{
+public class JnEntityInstantMessengerMessageSent extends JnDisposableEntity{
 	
 	public static final JnEntityInstantMessengerMessageSent INSTANCE = new JnEntityInstantMessengerMessageSent();
 
 	
 	private JnEntityInstantMessengerMessageSent() {
-		super(CcpTimeOption.ddMMyyyyHHmmss, Fields.values());
+		super(JnRecordStorageTimeExpiration.daily, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{
