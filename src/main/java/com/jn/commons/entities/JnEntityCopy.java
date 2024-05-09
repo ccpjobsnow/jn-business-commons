@@ -1,11 +1,10 @@
 package com.jn.commons.entities;
 
-import com.ccp.decorators.CcpJsonRepresentation;
-import com.ccp.especifications.db.bulk.CcpBulkItem;
-import com.ccp.especifications.db.bulk.CcpEntityOperationType;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnIncopiableEntity;
 
+@JnIncopiableEntity
 public class JnEntityCopy extends JnBaseEntity{
 
 	public static final JnEntityCopy INSTANCE = new JnEntityCopy();
@@ -25,8 +24,5 @@ public class JnEntityCopy extends JnBaseEntity{
 		public boolean isPrimaryKey() {
 			return this.primaryKey;
 		}
-	}
-	public CcpBulkItem getRecordToBulkOperation(CcpJsonRepresentation values, CcpEntityOperationType operation) {
-		throw new UnsupportedOperationException();
 	}
 }

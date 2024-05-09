@@ -2,7 +2,9 @@ package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnIncopiableEntity;
 
+@JnIncopiableEntity
 public class JnEntityRecordToReprocess extends JnBaseEntity{
 	
 	public static final JnEntityRecordToReprocess INSTANCE = new JnEntityRecordToReprocess();
