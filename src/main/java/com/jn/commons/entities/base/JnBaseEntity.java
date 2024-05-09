@@ -30,16 +30,11 @@ public abstract class JnBaseEntity implements CcpEntity{
 		this.fields = fields;
 	}
 
+	@Override
 	public CcpEntityField[] getFields() {
 		return this.fields;
 	}
 
-	public CcpJsonRepresentation getOnlyExistingFields(CcpJsonRepresentation values) {
-		CcpEntityField[] fields = this.getFields();
-		String[] array = Arrays.asList(fields).stream().map(x -> x.name()).collect(Collectors.toList()).toArray(new String[fields.length]);
-		CcpJsonRepresentation subMap = values.getJsonPiece(array);
-		return subMap;
-	}
 
 	public String getEntityName() {
 		String simpleName = this.getClass().getSimpleName();
@@ -47,7 +42,6 @@ public abstract class JnBaseEntity implements CcpEntity{
 		String substring = snackCase.substring(snackCase.indexOf("entity") + 7);
 		return substring;
 	}
-	
 	
 	public String toString() {
 		String entityName = this.getEntityName();
@@ -103,7 +97,6 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return jsonPiece;
 	}
 	
-
 	private List<String> getPrimaryKeyNames() {
 		CcpEntityField[] fields = this.getFields();
 		List<String> onlyPrimaryKey = new ArrayList<>(Arrays.asList(fields).stream().filter(x -> x.isPrimaryKey()).map(x -> x.name()).collect(Collectors.toList()));
