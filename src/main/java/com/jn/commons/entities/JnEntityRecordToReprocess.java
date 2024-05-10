@@ -14,7 +14,7 @@ public class JnEntityRecordToReprocess extends JnBaseEntity{
 		super(Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
-		date(true), operation(false),
+		timestamp(true), operation(false),
 		entity(true), id(true),
 		json(false), status(false),
 		reason(false), errorType(false)

@@ -30,6 +30,7 @@ public class JnEntityHttpApiRetrySendRequest extends JnDisposableEntity{
 
 	public static enum Fields implements CcpEntityField{
 		url(true), method(true), headers(true), request(false), apiName(true), tries(true), response(false), status(false)
+		,timestamp(false), details(false)
 		;
 		
 		private final boolean primaryKey;

@@ -7,24 +7,26 @@ import java.util.Date;
 import com.ccp.decorators.CcpTimeDecorator;
 
 public enum JnRecordStorageTimeExpiration{
-	yyyy(Calendar.YEAR)
-	,monthly(Calendar.MONTH)
-	,ddMMyyyyHHmm(Calendar.MINUTE)
-	,daily(Calendar.DAY_OF_MONTH)
-	,ddMMyyyyHHmmss(Calendar.SECOND)
-	,hourly(Calendar.HOUR_OF_DAY)
-	,ddMMyyyyHHmmssSSS(Calendar.MILLISECOND), 
+	yearly(Calendar.YEAR, "yyyy")
+	,monthly(Calendar.MONTH, "yyyyMM")
+	,minute(Calendar.MINUTE, "ddMMyyyy HH:mm")
+	,daily(Calendar.DAY_OF_MONTH, "ddMMyyyy")
+	,second(Calendar.SECOND, "ddMMyyyy HH:mm:ss")
+	,hourly(Calendar.HOUR_OF_DAY, "ddMMyyyy HH")
+	,millisecond(Calendar.MILLISECOND, "ddMMyyyy HH:mm:ss.SSS"), 
 	;
 	private final int calendarField;
+	private final String format;
 	
-	private JnRecordStorageTimeExpiration(int calendarField) {
+	private JnRecordStorageTimeExpiration(int calendarField, String format) {
 		this.calendarField = calendarField;
+		this.format = format;
 	}
 
 	public String getFormattedCurrentDate(Long date) {
 		Date d = new Date();
 		d.setTime(date);
-		String format = new SimpleDateFormat(this.name()).format(d);
+		String format = new SimpleDateFormat(this.format).format(d);
 		return format;
 	}
 	

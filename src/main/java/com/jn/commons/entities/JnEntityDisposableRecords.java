@@ -1,16 +1,22 @@
 package com.jn.commons.entities;
 
+import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.db.bulk.CcpEntityOperationType;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 import com.jn.commons.entities.base.JnIncopiableEntity;
 
 @JnIncopiableEntity
-public class JnEntityCopy extends JnBaseEntity{
+public class JnEntityDisposableRecords extends JnBaseEntity{
 
-	public static final JnEntityCopy INSTANCE = new JnEntityCopy();
+	public static final JnEntityDisposableRecords INSTANCE = new JnEntityDisposableRecords();
 
-	private JnEntityCopy() {
+	private JnEntityDisposableRecords() {
 		super(Fields.values());
+	}
+	
+	protected CcpJsonRepresentation getAuditRecord(CcpJsonRepresentation values, CcpEntityOperationType operation) {
+		throw new UnsupportedOperationException();
 	}
 	
 	public static enum Fields implements CcpEntityField{

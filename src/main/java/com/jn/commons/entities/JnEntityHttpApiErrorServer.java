@@ -15,6 +15,7 @@ public class JnEntityHttpApiErrorServer extends JnDisposableEntity{
 	
 	public static enum Fields implements CcpEntityField{
 		url(true), method(true), headers(true), request(false), apiName(true), response(false), status(false)
+		,timestamp(false)
 		;
 		
 		private final boolean primaryKey;

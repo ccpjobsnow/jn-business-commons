@@ -138,16 +138,22 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return ccpBulkItem;
 	}
 
-	private CcpJsonRepresentation getAuditRecord(CcpJsonRepresentation values, CcpEntityOperationType operation) {
+	protected CcpJsonRepresentation getAuditRecord(CcpJsonRepresentation values, CcpEntityOperationType operation) {
+		
+		boolean isLogEntity = this.getPrimaryKeyNames().size() == this.fields.length;
+		if(isLogEntity) {
+			throw new UnsupportedOperationException();
+		}
+		
 		String id = this.getId(values);
 		String entityName = this.getEntityName();
-	
+		CcpJsonRepresentation onlyExistingFields = this.getOnlyExistingFields(values);
 		CcpJsonRepresentation audit = 
 				CcpConstants.EMPTY_JSON
 				.put("timestamp", System.currentTimeMillis())
+				.put("json", "" + onlyExistingFields)
 				.put("operation", operation)
 				.put("entity", entityName)
-				.put("json", values)
 				.put("id", id)
 		;
 		return audit;
@@ -156,33 +162,54 @@ public abstract class JnBaseEntity implements CcpEntity{
 	public boolean create(CcpJsonRepresentation values) {
 		boolean created = CcpEntity.super.create(values);
 		CcpEntityOperationType operation = created ? CcpEntityOperationType.create : CcpEntityOperationType.update;
-		CcpJsonRepresentation auditRecord = this.getAuditRecord(values, operation);
-		JnEntityAudit.INSTANCE.createOrUpdate(auditRecord);
-		return created;
+		try {
+			CcpJsonRepresentation auditRecord = this.getAuditRecord(values, operation);
+			JnEntityAudit.INSTANCE.createOrUpdate(auditRecord);
+			return created;
+		} catch (UnsupportedOperationException e) {
+			return created;
+		}
 	}
 
 	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation data, String id) {
-		boolean exists = this.exists(id);
-		CcpEntityOperationType operation = exists ? CcpEntityOperationType.create : CcpEntityOperationType.update;
 		CcpJsonRepresentation createOrUpdate = CcpEntity.super.createOrUpdate(data, id);
-		CcpJsonRepresentation auditRecord = this.getAuditRecord(data, operation);
-		JnEntityAudit.INSTANCE.createOrUpdate(auditRecord);
+		try {
+			boolean exists = this.exists(id);
+			CcpEntityOperationType operation = exists ? CcpEntityOperationType.create : CcpEntityOperationType.update;
+			CcpJsonRepresentation auditRecord = this.getAuditRecord(data, operation);
+			JnEntityAudit.INSTANCE.createOrUpdate(auditRecord);
+			
+		} catch (UnsupportedOperationException e) {
+		}
 		return createOrUpdate;
 	}
 	
 	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation values) {
 		CcpJsonRepresentation createOrUpdate = CcpEntity.super.createOrUpdate(values);
-		boolean exists = this.exists(values);
-		CcpEntityOperationType operation = exists ? CcpEntityOperationType.create : CcpEntityOperationType.update;
-		CcpJsonRepresentation auditRecord = this.getAuditRecord(values, operation);
-		JnEntityAudit.INSTANCE.createOrUpdate(auditRecord);
-		return createOrUpdate;
+		if(this instanceof JnDisposableEntity) {
+			return createOrUpdate;
+		}
+		try {
+			boolean exists = this.exists(values);
+			CcpEntityOperationType operation = exists ? CcpEntityOperationType.create : CcpEntityOperationType.update;
+			
+			CcpJsonRepresentation auditRecord = this.getAuditRecord(values, operation);
+			JnEntityAudit.INSTANCE.createOrUpdate(auditRecord);
+			return createOrUpdate;
+			
+		} catch (Exception e) {
+			return createOrUpdate;
+		}
 	}
 	
 	public boolean delete(CcpJsonRepresentation values) {
 		boolean delete = CcpEntity.super.delete(values);
-		CcpJsonRepresentation auditRecord = this.getAuditRecord(values, CcpEntityOperationType.delete);
-		JnEntityAudit.INSTANCE.createOrUpdate(auditRecord);
+		try {
+			CcpJsonRepresentation auditRecord = this.getAuditRecord(values, CcpEntityOperationType.delete);
+			JnEntityAudit.INSTANCE.createOrUpdate(auditRecord);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		return delete;
 	}
 	
@@ -192,5 +219,13 @@ public abstract class JnBaseEntity implements CcpEntity{
 		CcpJsonRepresentation auditRecord = this.getAuditRecord(oneById, CcpEntityOperationType.delete);
 		JnEntityAudit.INSTANCE.createOrUpdate(auditRecord);
 		return delete;
+	}
+	
+	protected List<CcpBulkItem> toCreateBulkItems(String... jsons){
+		List<CcpBulkItem> collect = Arrays.asList(jsons)
+		.stream().map(x -> new CcpJsonRepresentation(x))
+		.map(x -> new CcpBulkItem(x, CcpEntityOperationType.create, this))
+		.collect(Collectors.toList());
+		return collect;
 	}
 }

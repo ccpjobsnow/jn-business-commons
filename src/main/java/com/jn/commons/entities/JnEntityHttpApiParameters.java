@@ -1,5 +1,8 @@
 package com.jn.commons.entities;
 
+import java.util.List;
+
+import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnBaseEntity;
 
@@ -25,5 +28,25 @@ public class JnEntityHttpApiParameters extends JnBaseEntity{
 		}
 
 	}
+	
+	public List<CcpBulkItem> getFirstRecordsToInsert() {
+		List<CcpBulkItem> createBulkItems = super.toCreateBulkItems("{"
+				+ "	\"apiName\": \"email\","
+				+ "	\"url\": \"urlEmailKey\","
+				+ "	\"token\": \"tokenEmailKey\","
+				+ "	\"method\": \"POST\","
+				+ "	\"sleep\": 3000,"
+				+ "	\"maxTries\": 3"
+				+ "}", 
+				"{"
+				+ "	\"apiName\": \"instantMessenger\","
+				+ "	\"url\": \"urlInstantMessengerKey\","
+				+ "	\"token\": \"tokenInstantMessengerKey\","
+				+ "	\"method\": \"POST\","
+				+ "	\"sleep\": 3000,"
+				+ "	\"maxTries\": 3"
+				+ "}");
 
+		return createBulkItems;
+	}
 }
