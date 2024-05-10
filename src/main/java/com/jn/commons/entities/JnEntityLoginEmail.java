@@ -1,9 +1,9 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnAuditableEntity;
 
-public class JnEntityLoginEmail extends JnBaseEntity{
+public class JnEntityLoginEmail extends JnAuditableEntity{
 	
 	public static final JnEntityLoginEmail INSTANCE = new JnEntityLoginEmail();
 

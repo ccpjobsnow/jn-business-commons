@@ -1,11 +1,13 @@
 package com.jn.commons.entities;
 
+import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.db.bulk.CcpEntityOperationType;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnAuditableEntity;
 import com.jn.commons.entities.base.JnIncopiableEntity;
 
 @JnIncopiableEntity
-public class JnEntityRecordToReprocess extends JnBaseEntity{
+public class JnEntityRecordToReprocess extends JnAuditableEntity{
 	
 	public static final JnEntityRecordToReprocess INSTANCE = new JnEntityRecordToReprocess();
 
@@ -13,6 +15,9 @@ public class JnEntityRecordToReprocess extends JnBaseEntity{
 	private JnEntityRecordToReprocess() {
 		super(Fields.values());
 	}
+	
+	protected void saveAuditory(CcpJsonRepresentation values, CcpEntityOperationType operation) {}
+
 	public static enum Fields implements CcpEntityField{
 		timestamp(true), operation(false),
 		entity(true), id(true),

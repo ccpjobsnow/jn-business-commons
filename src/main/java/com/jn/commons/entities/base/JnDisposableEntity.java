@@ -25,7 +25,6 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 	}
 
 	public String getId(CcpJsonRepresentation values) {
-
 		Long time = System.currentTimeMillis();
 		String formattedCurrentDate = this.timeOption.getFormattedCurrentDate(time);
 
@@ -53,9 +52,6 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return hash;
 	}
 	
-	protected void saveAuditory(CcpJsonRepresentation values, CcpEntityOperationType operation) {}
-	
-
 	private CcpJsonRepresentation getCopyIdToSearch(CcpJsonRepresentation data) {
 		String copyId = this.getCopyId(data);
 		
@@ -257,7 +253,4 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return oneById;
 	}
 	
-	protected CcpJsonRepresentation getAuditRecord(CcpJsonRepresentation values, CcpEntityOperationType operation) {
-		throw new UnsupportedOperationException();
-	}
 }

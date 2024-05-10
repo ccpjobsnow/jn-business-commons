@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnAuditableEntity;
 
-public class JnEntityInstantMessengerTemplateMessage extends JnBaseEntity{
+public class JnEntityInstantMessengerTemplateMessage extends JnAuditableEntity{
 
 	public static final JnEntityInstantMessengerTemplateMessage INSTANCE = new JnEntityInstantMessengerTemplateMessage();
 

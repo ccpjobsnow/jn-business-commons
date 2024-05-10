@@ -3,9 +3,11 @@ package com.jn.commons.entities;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.bulk.CcpEntityOperationType;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnBaseEntity;
+import com.jn.commons.entities.base.JnAuditableEntity;
+import com.jn.commons.entities.base.JnIncopiableEntity;
 
-public class JnEntityAsyncTask extends JnBaseEntity{
+@JnIncopiableEntity
+public class JnEntityAsyncTask extends JnAuditableEntity{
 
 	public static final JnEntityAsyncTask INSTANCE = new JnEntityAsyncTask();
 
@@ -27,7 +29,5 @@ public class JnEntityAsyncTask extends JnBaseEntity{
 			return this.primaryKey;
 		}
 	}
-	protected CcpJsonRepresentation getAuditRecord(CcpJsonRepresentation values, CcpEntityOperationType operation) {
-		throw new UnsupportedOperationException();
-	}
+	protected void saveAuditory(CcpJsonRepresentation values, CcpEntityOperationType operation) {}
 }
