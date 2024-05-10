@@ -17,14 +17,14 @@ import com.jn.commons.entities.JnEntityDisposableRecords;
 
 public abstract class JnDisposableEntity extends JnBaseEntity {
 
-	private final JnRecordStorageTimeExpiration timeOption;
+	private final JnDiposableRecordTimeExpiration timeOption;
 	
-	protected JnDisposableEntity(JnRecordStorageTimeExpiration timeOption, CcpEntityField[] fields) {
+	protected JnDisposableEntity(JnDiposableRecordTimeExpiration timeOption, CcpEntityField[] fields) {
 		super(fields);
 		this.timeOption = timeOption;
 	}
 
-	public String getId(CcpJsonRepresentation values) {
+	public final String getId(CcpJsonRepresentation values) {
 		Long time = System.currentTimeMillis();
 		String formattedCurrentDate = this.timeOption.getFormattedCurrentDate(time);
 
@@ -61,7 +61,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return copyIdToSearch;
 	}
 	
-	public CcpBulkItem getRecordToBulkOperation(CcpJsonRepresentation values, CcpEntityOperationType operation) {
+	public final CcpBulkItem getRecordToBulkOperation(CcpJsonRepresentation values, CcpEntityOperationType operation) {
 		CcpJsonRepresentation recordCopy = this.getRecordCopy(values);
 		
 		CcpBulkItem ccpBulkItem = new CcpBulkItem(recordCopy, operation, JnEntityDisposableRecords.INSTANCE);
@@ -93,7 +93,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return recordCopyToSave;
 	}
 
-	public boolean create(CcpJsonRepresentation values) {
+	public final boolean create(CcpJsonRepresentation values) {
 		
 		boolean created = super.create(values);
 		
@@ -108,21 +108,21 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 	}
 
 	
-	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation data, String id) {
+	public final CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation data, String id) {
 		CcpJsonRepresentation createOrUpdate = super.createOrUpdate(data, id);
 		boolean createCopy = this.createCopy(createOrUpdate);
 		CcpJsonRepresentation put = createOrUpdate.put("createCopy", createCopy);
 		return put;
 	}
 	
-	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation values) {
+	public final CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation values) {
 		CcpJsonRepresentation createOrUpdate = super.createOrUpdate(values);
 		boolean createCopy = this.createCopy(createOrUpdate);
 		CcpJsonRepresentation put = createOrUpdate.put("createCopy", createCopy);
 		return put;
 	}
 	
-	public boolean delete(CcpJsonRepresentation values) {
+	public final boolean delete(CcpJsonRepresentation values) {
 		boolean delete = super.delete(values);
 		
 		if(delete == false) {
@@ -144,7 +144,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return deleteCopy;
 	}
 	
-	public boolean delete(String id) {
+	public final boolean delete(String id) {
 		
 		boolean delete = super.delete(id);
 		
@@ -156,7 +156,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return deleteCopy;
 	}
 	
-	public boolean exists(CcpJsonRepresentation data) {
+	public final boolean exists(CcpJsonRepresentation data) {
 		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(data);
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
 		CcpSelectUnionAll unionAll = crud.unionAll(Arrays.asList(copyIdToSearch, data), this, JnEntityDisposableRecords.INSTANCE);
@@ -186,7 +186,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 	}
 	
 	
-	public CcpJsonRepresentation getOneById(CcpJsonRepresentation data) {
+	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation data) {
 		
 		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(data);
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
@@ -220,7 +220,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return oneById;
 	}
 
-	public CcpJsonRepresentation getOneById(CcpJsonRepresentation data, Function<CcpJsonRepresentation, CcpJsonRepresentation> ifNotFound) {
+	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation data, Function<CcpJsonRepresentation, CcpJsonRepresentation> ifNotFound) {
 		
 		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(data);
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
@@ -253,4 +253,8 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return oneById;
 	}
 	
+	public final boolean canSaveCopy() {
+		return true;
+	}
+
 }

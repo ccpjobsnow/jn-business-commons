@@ -46,21 +46,21 @@ public abstract class JnBaseEntity implements CcpEntity{
 
 	abstract public CcpBulkItem getRecordToBulkOperation(CcpJsonRepresentation values, CcpEntityOperationType operation);
 
-	public CcpJsonRepresentation getPrimaryKeyValues(CcpJsonRepresentation values) {
+	public final CcpJsonRepresentation getPrimaryKeyValues(CcpJsonRepresentation values) {
 		
 		List<String> onlyPrimaryKey = this.getPrimaryKeyNames();
 		CcpJsonRepresentation jsonPiece = values.getJsonPiece(onlyPrimaryKey);
 		return jsonPiece;
 	}
 
-	public String getEntityName() {
+	public final String getEntityName() {
 		String simpleName = this.getClass().getSimpleName();
 		String snackCase = new CcpStringDecorator(simpleName).text().toSnakeCase().content;
 		String substring = snackCase.substring(snackCase.indexOf("entity") + 7);
 		return substring;
 	}
 
-	public CcpEntityField[] getFields() {
+	public final CcpEntityField[] getFields() {
 		return this.fields;
 	}
 
@@ -75,5 +75,12 @@ public abstract class JnBaseEntity implements CcpEntity{
 		.map(x -> new CcpBulkItem(x, CcpEntityOperationType.create, this))
 		.collect(Collectors.toList());
 		return collect;
+	}
+	
+	public boolean canSaveCopy() {
+		List<String> primaryKeyNames = this.getPrimaryKeyNames();
+		int size = primaryKeyNames.size();
+		boolean b = size < this.fields.length;
+		return b;
 	}
 }

@@ -2,7 +2,7 @@ package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnDisposableEntity;
-import com.jn.commons.entities.base.JnRecordStorageTimeExpiration;
+import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
 
 public class JnEntityInstantMessengerMessageSent extends JnDisposableEntity{
 	
@@ -10,7 +10,7 @@ public class JnEntityInstantMessengerMessageSent extends JnDisposableEntity{
 
 	
 	private JnEntityInstantMessengerMessageSent() {
-		super(JnRecordStorageTimeExpiration.daily, Fields.values());
+		super(JnDiposableRecordTimeExpiration.daily, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

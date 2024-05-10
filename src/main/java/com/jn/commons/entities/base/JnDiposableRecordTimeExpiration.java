@@ -6,7 +6,7 @@ import java.util.Date;
 
 import com.ccp.decorators.CcpTimeDecorator;
 
-public enum JnRecordStorageTimeExpiration{
+public enum JnDiposableRecordTimeExpiration{
 	yearly(Calendar.YEAR, "yyyy")
 	,monthly(Calendar.MONTH, "yyyyMM")
 	,minute(Calendar.MINUTE, "ddMMyyyy HH:mm")
@@ -18,7 +18,7 @@ public enum JnRecordStorageTimeExpiration{
 	private final int calendarField;
 	private final String format;
 	
-	private JnRecordStorageTimeExpiration(int calendarField, String format) {
+	private JnDiposableRecordTimeExpiration(int calendarField, String format) {
 		this.calendarField = calendarField;
 		this.format = format;
 	}

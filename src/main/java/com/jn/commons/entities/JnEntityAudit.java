@@ -1,12 +1,8 @@
 package com.jn.commons.entities;
 
-import com.ccp.decorators.CcpJsonRepresentation;
-import com.ccp.especifications.db.bulk.CcpEntityOperationType;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.base.JnAuditableEntity;
-import com.jn.commons.entities.base.JnIncopiableEntity;
 
-@JnIncopiableEntity
 public class JnEntityAudit extends JnAuditableEntity{
 
 	public static final JnEntityAudit INSTANCE = new JnEntityAudit();
@@ -30,6 +26,9 @@ public class JnEntityAudit extends JnAuditableEntity{
 			return this.primaryKey;
 		}
 	}
-	protected void saveAuditory(CcpJsonRepresentation values, CcpEntityOperationType operation) {}
+	
+	public boolean canSaveCopy() {
+		return false;
+	}
 	
 }

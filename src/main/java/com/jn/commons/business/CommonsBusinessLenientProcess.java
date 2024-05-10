@@ -18,6 +18,7 @@ public class CommonsBusinessLenientProcess implements Function<CcpJsonRepresenta
 			CcpJsonRepresentation apply = this.process.apply(t);
 			return apply;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return t;
 		}
 	}

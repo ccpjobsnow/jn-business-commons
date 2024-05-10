@@ -15,25 +15,28 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.jn.commons.entities.JnEntityAudit;
 
 public abstract class JnAuditableEntity extends JnBaseEntity{
-
+	
 	protected JnAuditableEntity(CcpEntityField... fields) {
 		super(fields);
 	}
-	protected void saveAuditory(CcpJsonRepresentation values, CcpEntityOperationType operation) {
-
+	private final void saveAuditory(CcpJsonRepresentation values, CcpEntityOperationType operation) {
+		boolean canNotSaveCopy = this.canSaveCopy() == false;
+		if(canNotSaveCopy) {
+			return;
+		}
 		CcpJsonRepresentation audit = this.getAuditRecord(values, operation);
 		CcpCrud dependency = CcpDependencyInjection.getDependency(CcpCrud.class);
 		dependency.createOrUpdate(JnEntityAudit.INSTANCE, audit);
 	}
 
-	public CcpBulkItem getRecordToBulkOperation(CcpJsonRepresentation values, CcpEntityOperationType operation) {
+	public final CcpBulkItem getRecordToBulkOperation(CcpJsonRepresentation values, CcpEntityOperationType operation) {
 		
 		CcpJsonRepresentation audit = this.getAuditRecord(values, operation);
 		CcpBulkItem ccpBulkItem = new CcpBulkItem(audit, CcpEntityOperationType.create, JnEntityAudit.INSTANCE);
 		return ccpBulkItem;
 	}
 
-	public String getId(CcpJsonRepresentation values) {
+	public final String getId(CcpJsonRepresentation values) {
 
 		List<String> primaryKeyNames = this.getPrimaryKeyNames();
 		
@@ -68,20 +71,20 @@ public abstract class JnAuditableEntity extends JnBaseEntity{
 	}
 	
 
-	public boolean delete(String id) {
+	public final boolean delete(String id) {
 		boolean delete = super.delete(id);
 		CcpJsonRepresentation oneById = this.getOneById(id);
 		this.saveAuditory(oneById, CcpEntityOperationType.delete);
 		return delete;
 	}
 
-	public boolean delete(CcpJsonRepresentation values) {
+	public final boolean delete(CcpJsonRepresentation values) {
 		boolean delete = super.delete(values);
 		this.saveAuditory(values, CcpEntityOperationType.delete);
 		return delete;
 	}
 	
-	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation values) {
+	public final CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation values) {
 		CcpJsonRepresentation createOrUpdate = super.createOrUpdate(values);
 		try {
 			boolean exists = this.exists(values);
@@ -93,7 +96,7 @@ public abstract class JnAuditableEntity extends JnBaseEntity{
 			return createOrUpdate;
 		}
 	}
-	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation data, String id) {
+	public final CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation data, String id) {
 		CcpJsonRepresentation createOrUpdate = super.createOrUpdate(data, id);
 		boolean exists = this.exists(id);
 		CcpEntityOperationType operation = exists ? CcpEntityOperationType.create : CcpEntityOperationType.update;
@@ -101,7 +104,7 @@ public abstract class JnAuditableEntity extends JnBaseEntity{
 		return createOrUpdate;
 	}
 
-	public boolean create(CcpJsonRepresentation values) {
+	public final boolean create(CcpJsonRepresentation values) {
 		boolean created = super.create(values);
 		CcpEntityOperationType operation = created ? CcpEntityOperationType.create : CcpEntityOperationType.update;
 		this.saveAuditory(values, operation);
