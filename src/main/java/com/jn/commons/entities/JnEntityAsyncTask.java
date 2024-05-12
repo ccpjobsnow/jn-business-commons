@@ -12,7 +12,7 @@ public class JnEntityAsyncTask extends JnAuditableEntity{
 	}
 	
 	public static enum Fields implements CcpEntityField{
-		started(false), finished(false), topic(false), request(false), id(true), success(false), response(false)
+		started(false), finished(false), enlapsedTime(false), topic(false), request(false), messageId(true), success(false), response(false)
 		;
 		private final boolean primaryKey;
 

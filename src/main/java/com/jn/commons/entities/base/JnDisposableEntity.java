@@ -1,7 +1,6 @@
 package com.jn.commons.entities.base;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.function.Function;
 
 import com.ccp.constantes.CcpConstants;
@@ -38,26 +37,14 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return hash;
 	}
 
-	private String getCopyId(CcpJsonRepresentation values) {
-
-		String entityName = this.getEntityName();
-
-		ArrayList<Object> onlyPrimaryKeysValues = new ArrayList<>();
-		onlyPrimaryKeysValues.add(entityName);
-		ArrayList<Object> sortedPrimaryKeyValues = this.getSortedPrimaryKeyValues(values);
-		onlyPrimaryKeysValues.addAll(sortedPrimaryKeyValues);
-		
-		String replace = onlyPrimaryKeysValues.toString().replace("[", "").replace("]", "");
-		String hash = new CcpStringDecorator(replace).hash().asString("SHA1");
-		return hash;
-	}
 	
-	private CcpJsonRepresentation getCopyIdToSearch(CcpJsonRepresentation data) {
-		String copyId = this.getCopyId(data);
+	public CcpJsonRepresentation getCopyIdToSearch(CcpJsonRepresentation data) {
+		
+		String id = this.getId(data);
 		
 		String entityName = this.getEntityName();
 		
-		CcpJsonRepresentation copyIdToSearch = CcpConstants.EMPTY_JSON.put("id", copyId).put("entity", entityName);
+		CcpJsonRepresentation copyIdToSearch = CcpConstants.EMPTY_JSON.put("id", id).put("entity", entityName);
 		return copyIdToSearch;
 	}
 	
@@ -69,7 +56,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return ccpBulkItem;
 	}
 	
-	private boolean createCopy(CcpJsonRepresentation values) {
+	private boolean saveCopy(CcpJsonRepresentation values) {
 		
 		CcpJsonRepresentation recordCopyToSave = this.getRecordCopy(values);
 		
@@ -81,14 +68,11 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 	private CcpJsonRepresentation getRecordCopy(CcpJsonRepresentation values) {
 		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(values);
 
-		String copyId = this.getCopyId(values);
-
 		Long nextTimeStamp = this.timeOption.getNextTimeStamp();
 		CcpJsonRepresentation onlyExistingFields = this.getOnlyExistingFields(values);
 		CcpJsonRepresentation recordCopyToSave = copyIdToSearch
 				.put("timestamp", nextTimeStamp)
 				.put("json", onlyExistingFields)
-				.put("id", copyId)
 				;
 		return recordCopyToSave;
 	}
@@ -98,27 +82,22 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		boolean created = super.create(values);
 		
 		boolean updated = created == false;
-		
-		if(updated) {
-			return false;
-		}
-		
-		boolean createCopy = this.createCopy(values);
-		return createCopy;
+		this.saveCopy(values);
+		return updated;
 	}
 
 	
 	public final CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation data, String id) {
 		CcpJsonRepresentation createOrUpdate = super.createOrUpdate(data, id);
-		boolean createCopy = this.createCopy(createOrUpdate);
-		CcpJsonRepresentation put = createOrUpdate.put("createCopy", createCopy);
+		boolean saveCopy = this.saveCopy(createOrUpdate);
+		CcpJsonRepresentation put = createOrUpdate.put("createCopy", saveCopy);
 		return put;
 	}
 	
 	public final CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation values) {
 		CcpJsonRepresentation createOrUpdate = super.createOrUpdate(values);
-		boolean createCopy = this.createCopy(createOrUpdate);
-		CcpJsonRepresentation put = createOrUpdate.put("createCopy", createCopy);
+		boolean saveCopy = this.saveCopy(createOrUpdate);
+		CcpJsonRepresentation put = createOrUpdate.put("createCopy", saveCopy);
 		return put;
 	}
 	
@@ -133,14 +112,14 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 	}
 
 	private boolean deleteCopy(CcpJsonRepresentation values) {
-		String copyId = this.getCopyId(values);
-		boolean doesNotExist = this.exists(copyId) == false;
+		String id = this.getId(values);
+		boolean doesNotExist = this.exists(id) == false;
 	
 		if(doesNotExist) {
 			return false;
 		}
-		
-		boolean deleteCopy = JnEntityDisposableRecords.INSTANCE.delete(copyId);
+		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(values);
+		boolean deleteCopy = JnEntityDisposableRecords.INSTANCE.delete(copyIdToSearch);
 		return deleteCopy;
 	}
 	
@@ -159,7 +138,8 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 	public final boolean exists(CcpJsonRepresentation data) {
 		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(data);
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
-		CcpSelectUnionAll unionAll = crud.unionAll(Arrays.asList(copyIdToSearch, data), this, JnEntityDisposableRecords.INSTANCE);
+		CcpJsonRepresentation putAll = copyIdToSearch.putAll(data);
+		CcpSelectUnionAll unionAll = crud.unionAll(putAll, this, JnEntityDisposableRecords.INSTANCE);
 
 		boolean isPresentInOriginalEntity = unionAll.isPresent(this, data);
 		
@@ -188,34 +168,36 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 	
 	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation data) {
 		
-		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(data);
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
-		CcpSelectUnionAll unionAll = crud.unionAll(Arrays.asList(copyIdToSearch, data), this, JnEntityDisposableRecords.INSTANCE);
+		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(data);
+		CcpJsonRepresentation putAll = copyIdToSearch.putAll(data);
+		CcpSelectUnionAll unionAll = crud.unionAll(putAll, this, JnEntityDisposableRecords.INSTANCE);
 
-		boolean isPresentInOriginalEntity = unionAll.isPresent(this, data);
+		boolean isPresentInOriginalEntity = unionAll.isPresent(this, putAll);
 		
 		if(isPresentInOriginalEntity) {
-			CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(this, data);
+			CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(this, putAll);
 			return requiredEntityRow;
 		}
 	
-		boolean isNotPresentInCopyEntity = unionAll.isPresent(JnEntityDisposableRecords.INSTANCE, copyIdToSearch) == false;
+		boolean isNotPresentInCopyEntity = unionAll.isPresent(JnEntityDisposableRecords.INSTANCE, putAll) == false;
 
 		if(isNotPresentInCopyEntity) {
-			CcpJsonRepresentation oneById = super.getOneById(data);
+			CcpJsonRepresentation oneById = super.getOneById(putAll);
 			return oneById;
 		}
 
-		CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(JnEntityDisposableRecords.INSTANCE, copyIdToSearch);
+		CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(JnEntityDisposableRecords.INSTANCE, putAll);
 		Long timeStamp = requiredEntityRow.getAsLongNumber("timestamp");
 		
 		boolean validTimeStamp = timeStamp > System.currentTimeMillis();
 		
 		if(validTimeStamp) {
-			return requiredEntityRow;
+			CcpJsonRepresentation innerJson = requiredEntityRow.getInnerJson("json");
+			return innerJson;
 		}
 		
-		CcpJsonRepresentation oneById = super.getOneById(data);
+		CcpJsonRepresentation oneById = super.getOneById(putAll);
 		
 		return oneById;
 	}
@@ -224,7 +206,8 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		
 		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(data);
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
-		CcpSelectUnionAll unionAll = crud.unionAll(Arrays.asList(copyIdToSearch, data), this, JnEntityDisposableRecords.INSTANCE);
+		CcpJsonRepresentation putAll = copyIdToSearch.putAll(data);
+		CcpSelectUnionAll unionAll = crud.unionAll(putAll, this, JnEntityDisposableRecords.INSTANCE);
 
 		boolean isPresentInOriginalEntity = unionAll.isPresent(this, data);
 		

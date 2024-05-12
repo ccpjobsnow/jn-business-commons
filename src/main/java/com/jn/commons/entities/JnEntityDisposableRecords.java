@@ -11,7 +11,6 @@ public class JnEntityDisposableRecords extends JnAuditableEntity{
 		super(Fields.values());
 	}
 	
-	
 	public static enum Fields implements CcpEntityField{
 		entity(true), id(true), timestamp(false),json(false);
 		
