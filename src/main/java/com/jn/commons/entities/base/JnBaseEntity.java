@@ -44,8 +44,6 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return onlyPrimaryKeys;
 	}
 
-	abstract public CcpBulkItem getRecordToBulkOperation(CcpJsonRepresentation values, CcpEntityOperationType operation);
-
 	public final CcpJsonRepresentation getPrimaryKeyValues(CcpJsonRepresentation values) {
 		
 		List<String> onlyPrimaryKey = this.getPrimaryKeyNames();
@@ -82,5 +80,21 @@ public abstract class JnBaseEntity implements CcpEntity{
 		int size = primaryKeyNames.size();
 		boolean b = size < this.fields.length;
 		return b;
+	}
+	
+	public final int hashCode() {
+		String entityName = this.getEntityName();
+		return entityName.hashCode();
+	}
+	
+	public final boolean equals(Object obj) {
+		try {
+			String entityName = ((JnBaseEntity)obj).getEntityName();
+			String entityName2 = this.getEntityName();
+			boolean equals = entityName.equals(entityName2);
+			return equals;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 }
