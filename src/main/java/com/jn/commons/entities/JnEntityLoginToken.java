@@ -1,15 +1,15 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnDisposableEntity;
 import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
+import com.jn.commons.entities.base.JnDisposableAndStatusChangebleEntity;
 
-public class JnEntityLoginToken extends JnDisposableEntity{
+public class JnEntityLoginToken extends JnDisposableAndStatusChangebleEntity{
 	
 	public static final JnEntityLoginToken INSTANCE = new JnEntityLoginToken();
 
 	private JnEntityLoginToken() {
-		super(JnDiposableRecordTimeExpiration.daily, Fields.values());
+		super("login_token_locked", JnDiposableRecordTimeExpiration.daily, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

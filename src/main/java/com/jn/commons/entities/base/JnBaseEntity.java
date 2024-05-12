@@ -51,7 +51,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return jsonPiece;
 	}
 
-	public final String getEntityName() {
+	public String getEntityName() {
 		String simpleName = this.getClass().getSimpleName();
 		String snackCase = new CcpStringDecorator(simpleName).text().toSnakeCase().content;
 		String substring = snackCase.substring(snackCase.indexOf("entity") + 7);
@@ -96,5 +96,9 @@ public abstract class JnBaseEntity implements CcpEntity{
 		} catch (Exception e) {
 			return false;
 		}
+	}
+	
+	public boolean hasMirrorEntity() {
+		return false;
 	}
 }

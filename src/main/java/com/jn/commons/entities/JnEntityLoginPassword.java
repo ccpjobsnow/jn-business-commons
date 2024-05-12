@@ -1,15 +1,14 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnDisposableEntity;
-import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
+import com.jn.commons.entities.base.JnAuditableAndStatusChangebleEntity;
 
-public class JnEntityLoginPassword extends JnDisposableEntity{
+public class JnEntityLoginPassword extends JnAuditableAndStatusChangebleEntity{
 	
 	public static final JnEntityLoginPassword INSTANCE = new JnEntityLoginPassword();
 	
 	private JnEntityLoginPassword() {
-		super(JnDiposableRecordTimeExpiration.monthly, Fields.values());
+		super("login_password_locked", Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

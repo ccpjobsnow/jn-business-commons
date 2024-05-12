@@ -16,7 +16,7 @@ import com.jn.commons.entities.JnEntityAudit;
 
 public abstract class JnAuditableEntity extends JnBaseEntity{
 	
-	protected JnAuditableEntity(CcpEntityField... fields) {
+	protected JnAuditableEntity(CcpEntityField[] fields) {
 		super(fields);
 	}
 	private final void saveAuditory(CcpJsonRepresentation values, CcpEntityOperationType operation) {
@@ -55,7 +55,7 @@ public abstract class JnAuditableEntity extends JnBaseEntity{
 		return hash;
 	}
 	
-	protected CcpJsonRepresentation getAuditRecord(CcpJsonRepresentation values, CcpEntityOperationType operation) {
+	private CcpJsonRepresentation getAuditRecord(CcpJsonRepresentation values, CcpEntityOperationType operation) {
 		String id = this.getId(values);
 		String entityName = this.getEntityName();
 		CcpJsonRepresentation onlyExistingFields = this.getOnlyExistingFields(values);
@@ -71,20 +71,20 @@ public abstract class JnAuditableEntity extends JnBaseEntity{
 	}
 	
 
-	public final boolean delete(String id) {
+	public boolean delete(String id) {
 		boolean delete = super.delete(id);
 		CcpJsonRepresentation oneById = this.getOneById(id);
 		this.saveAuditory(oneById, CcpEntityOperationType.delete);
 		return delete;
 	}
 
-	public final boolean delete(CcpJsonRepresentation values) {
+	public boolean delete(CcpJsonRepresentation values) {
 		boolean delete = super.delete(values);
 		this.saveAuditory(values, CcpEntityOperationType.delete);
 		return delete;
 	}
 	
-	public final CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation values) {
+	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation values) {
 		CcpJsonRepresentation createOrUpdate = super.createOrUpdate(values);
 		try {
 			boolean exists = this.exists(values);
@@ -96,7 +96,7 @@ public abstract class JnAuditableEntity extends JnBaseEntity{
 			return createOrUpdate;
 		}
 	}
-	public final CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation data, String id) {
+	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation data, String id) {
 		CcpJsonRepresentation createOrUpdate = super.createOrUpdate(data, id);
 		boolean exists = this.exists(id);
 		CcpEntityOperationType operation = exists ? CcpEntityOperationType.create : CcpEntityOperationType.update;
@@ -104,7 +104,7 @@ public abstract class JnAuditableEntity extends JnBaseEntity{
 		return createOrUpdate;
 	}
 
-	public final boolean create(CcpJsonRepresentation values) {
+	public boolean create(CcpJsonRepresentation values) {
 		boolean created = super.create(values);
 		CcpEntityOperationType operation = created ? CcpEntityOperationType.create : CcpEntityOperationType.update;
 		this.saveAuditory(values, operation);
