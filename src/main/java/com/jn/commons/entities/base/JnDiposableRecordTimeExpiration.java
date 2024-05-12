@@ -13,7 +13,6 @@ public enum JnDiposableRecordTimeExpiration{
 	,daily(Calendar.DAY_OF_MONTH, "ddMMyyyy")
 	,second(Calendar.SECOND, "ddMMyyyy HH:mm:ss")
 	,hourly(Calendar.HOUR_OF_DAY, "ddMMyyyy HH")
-	,millisecond(Calendar.MILLISECOND, "ddMMyyyy HH:mm:ss.SSS"), 
 	;
 	private final int calendarField;
 	private final String format;
