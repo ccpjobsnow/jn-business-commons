@@ -13,6 +13,7 @@ public enum StatusExecuteLogin implements CcpProcessStatus{
 	missingPassword(202),
 	expectedStatus(200),
 	invalidSession(401),
+	weakPassword(422)
 	;
 
 	public final int status;
