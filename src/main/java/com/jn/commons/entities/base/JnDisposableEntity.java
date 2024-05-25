@@ -1,6 +1,7 @@
 package com.jn.commons.entities.base;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 import com.ccp.constantes.CcpConstants;
@@ -55,9 +56,9 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 	}
 
 	
-	public CcpJsonRepresentation getCopyIdToSearch(CcpJsonRepresentation data) {
+	public CcpJsonRepresentation getCopyIdToSearch(CcpJsonRepresentation json) {
 		
-		String id = this.getCopyId(data);
+		String id = this.getCopyId(json);
 		
 		String entityName = this.getEntityName();
 		
@@ -158,13 +159,13 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		CcpJsonRepresentation putAll = copyIdToSearch.putAll(data);
 		CcpSelectUnionAll unionAll = crud.unionAll(putAll, this, JnEntityDisposableRecords.INSTANCE);
 
-		boolean isPresentInOriginalEntity = unionAll.isPresent(this, data);
+		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(unionAll, data);
 		
 		if(isPresentInOriginalEntity) {
 			return true;
 		}
 	
-		boolean isNotPresentInCopyEntity = unionAll.isPresent(JnEntityDisposableRecords.INSTANCE, copyIdToSearch) == false;
+		boolean isNotPresentInCopyEntity = JnEntityDisposableRecords.INSTANCE.isPresentInThisUnionAll(unionAll, copyIdToSearch) == false;
 		
 		if(isNotPresentInCopyEntity) {
 			return false;
@@ -183,21 +184,21 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 	}
 	
 	
-	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation data) {
+	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation json) {
 		
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
-		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(data);
-		CcpJsonRepresentation putAll = copyIdToSearch.putAll(data);
+		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
+		CcpJsonRepresentation putAll = copyIdToSearch.putAll(json);
 		CcpSelectUnionAll unionAll = crud.unionAll(putAll, this, JnEntityDisposableRecords.INSTANCE);
 
-		boolean isPresentInOriginalEntity = unionAll.isPresent(this, putAll);
+		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(unionAll, putAll);
 		
 		if(isPresentInOriginalEntity) {
 			CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(this, putAll);
 			return requiredEntityRow;
 		}
 	
-		boolean isNotPresentInCopyEntity = unionAll.isPresent(JnEntityDisposableRecords.INSTANCE, putAll) == false;
+		boolean isNotPresentInCopyEntity = JnEntityDisposableRecords.INSTANCE.isPresentInThisUnionAll(unionAll, json) == false;
 
 		if(isNotPresentInCopyEntity) {
 			CcpJsonRepresentation oneById = super.getOneById(putAll);
@@ -219,24 +220,24 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return oneById;
 	}
 
-	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation data, Function<CcpJsonRepresentation, CcpJsonRepresentation> ifNotFound) {
+	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation json, Function<CcpJsonRepresentation, CcpJsonRepresentation> ifNotFound) {
 		
-		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(data);
+		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
-		CcpJsonRepresentation putAll = copyIdToSearch.putAll(data);
+		CcpJsonRepresentation putAll = copyIdToSearch.putAll(json);
 		CcpSelectUnionAll unionAll = crud.unionAll(putAll, this, JnEntityDisposableRecords.INSTANCE);
 
-		boolean isPresentInOriginalEntity = unionAll.isPresent(this, data);
+		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(unionAll, json);
 		
 		if(isPresentInOriginalEntity) {
-			CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(this, data);
+			CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(this, json);
 			return requiredEntityRow;
 		}
 	
-		boolean isNotPresentInCopyEntity = unionAll.isPresent(JnEntityDisposableRecords.INSTANCE, copyIdToSearch) == false;
+		boolean isNotPresentInCopyEntity = JnEntityDisposableRecords.INSTANCE.isPresentInThisUnionAll(unionAll, copyIdToSearch) == false;
 
 		if(isNotPresentInCopyEntity) {
-			CcpJsonRepresentation oneById = super.getOneById(data, ifNotFound);
+			CcpJsonRepresentation oneById = super.getOneById(json, ifNotFound);
 			return oneById;
 		}
 
@@ -249,7 +250,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 			return requiredEntityRow;
 		}
 		
-		CcpJsonRepresentation oneById = super.getOneById(data, ifNotFound);
+		CcpJsonRepresentation oneById = super.getOneById(json, ifNotFound);
 		return oneById;
 	}
 	
@@ -257,4 +258,74 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return true;
 	}
 
+	public List<CcpJsonRepresentation> getParametersToSearch(CcpJsonRepresentation json) {
+		List<CcpJsonRepresentation> mainParametersToSearch = super.getParametersToSearch(json);
+		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
+		List<CcpJsonRepresentation> othersParametersToSearch = JnEntityDisposableRecords.INSTANCE.getParametersToSearch(copyIdToSearch);
+		ArrayList<CcpJsonRepresentation> result = new ArrayList<>();
+		result.addAll(othersParametersToSearch);
+		result.addAll(mainParametersToSearch);
+		return result;
+	}
+
+	public boolean isPresentInThisUnionAll(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
+		
+		boolean presentInThisUnionAll = super.isPresentInThisUnionAll(unionAll, json);
+		
+		if(presentInThisUnionAll) {
+			return true;
+		}
+		
+		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
+
+		boolean notFoundInDisposable = JnEntityDisposableRecords.INSTANCE.isPresentInThisUnionAll(unionAll, copyIdToSearch) == false;
+		
+		if(notFoundInDisposable) {
+			return false;
+		}
+		
+		CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(JnEntityDisposableRecords.INSTANCE, copyIdToSearch);
+		
+		boolean valid = this.isValid(requiredEntityRow);
+		return valid;
+	}
+
+	private boolean isValid(CcpJsonRepresentation requiredEntityRow) {
+		
+		String timeStampFieldName = JnEntityDisposableRecords.Fields.timestamp.name();
+		
+		boolean recordNotFound = requiredEntityRow.containsAllKeys(timeStampFieldName) == false;
+		if(recordNotFound) {
+			return false;
+		}
+		
+		Long timeStamp = requiredEntityRow.getAsLongNumber(timeStampFieldName);
+		
+		if(timeStamp > System.currentTimeMillis()) {
+			return true;
+		}
+		return false;
+	}
+
+	public CcpJsonRepresentation getRecordFromUnionAll(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
+		
+		CcpJsonRepresentation recordFromUnionAll = super.getRecordFromUnionAll(unionAll, json);
+		
+		boolean recordFound = recordFromUnionAll.isEmpty() == false;
+		
+		if(recordFound) {
+			return recordFromUnionAll;
+		}
+		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
+		CcpJsonRepresentation recordFromDisposable = JnEntityDisposableRecords.INSTANCE.getRecordFromUnionAll(unionAll, copyIdToSearch);
+		
+		boolean isInvalid = this.isValid(recordFromDisposable) == false;
+	
+		if(isInvalid) {
+			return CcpConstants.EMPTY_JSON;
+		}
+		
+		CcpJsonRepresentation innerJson = recordFromDisposable.getInnerJson(JnEntityDisposableRecords.Fields.json.name());
+		return innerJson;
+	}
 }

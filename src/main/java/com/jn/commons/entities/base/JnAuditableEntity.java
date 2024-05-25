@@ -110,5 +110,5 @@ public abstract class JnAuditableEntity extends JnBaseEntity{
 		this.saveAuditory(values, operation);
 		return created;
 	}
-	
+
 }

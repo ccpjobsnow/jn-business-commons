@@ -14,7 +14,7 @@ public class JnEntityInstantMessengerMessageSent extends JnDisposableEntity{
 	}
 	
 	public static enum Fields implements CcpEntityField{
-		token(true), recipient(true), subjectType(false), message(false), interval(true)
+		token(true), recipient(true), subjectType(true), message(false), interval(false)
 		;
 		
 		private final boolean primaryKey;
