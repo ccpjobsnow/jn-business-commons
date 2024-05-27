@@ -125,17 +125,11 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		if(delete == false) {
 			return false;
 		}
-		boolean deleteCopy = this.deleteCopy(values);
-		return deleteCopy;
+		this.deleteCopy(values);
+		return delete;
 	}
 
 	private boolean deleteCopy(CcpJsonRepresentation values) {
-		String id = this.getId(values);
-		boolean doesNotExist = this.exists(id) == false;
-	
-		if(doesNotExist) {
-			return false;
-		}
 		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(values);
 		boolean deleteCopy = JnEntityDisposableRecords.INSTANCE.delete(copyIdToSearch);
 		return deleteCopy;
@@ -286,11 +280,11 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		
 		CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(JnEntityDisposableRecords.INSTANCE, copyIdToSearch);
 		
-		boolean valid = this.isValid(requiredEntityRow);
+		boolean valid = this.isValidTimestamp(requiredEntityRow);
 		return valid;
 	}
 
-	private boolean isValid(CcpJsonRepresentation requiredEntityRow) {
+	private boolean isValidTimestamp(CcpJsonRepresentation requiredEntityRow) {
 		
 		String timeStampFieldName = JnEntityDisposableRecords.Fields.timestamp.name();
 		
@@ -319,7 +313,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
 		CcpJsonRepresentation recordFromDisposable = JnEntityDisposableRecords.INSTANCE.getRecordFromUnionAll(unionAll, copyIdToSearch);
 		
-		boolean isInvalid = this.isValid(recordFromDisposable) == false;
+		boolean isInvalid = this.isValidTimestamp(recordFromDisposable) == false;
 	
 		if(isInvalid) {
 			return CcpConstants.EMPTY_JSON;

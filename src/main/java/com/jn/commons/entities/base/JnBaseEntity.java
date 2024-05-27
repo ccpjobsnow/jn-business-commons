@@ -114,6 +114,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 		
 		String entityName = this.getEntityName();
 		String id = this.getId(json);
+		
 		CcpJsonRepresentation mainRecord = CcpConstants.EMPTY_JSON
 		.put(fieldNameToEntity, entityName)
 		.put(fieldNameToId, id)
@@ -141,4 +142,10 @@ public abstract class JnBaseEntity implements CcpEntity{
 		
 		return jsonValue;
 	}
+	
+	public CcpEntity fromCache() {
+		JnCacheEntity jnCacheEntity = new JnCacheEntity(this);
+		return jnCacheEntity;
+	}
+
 }
