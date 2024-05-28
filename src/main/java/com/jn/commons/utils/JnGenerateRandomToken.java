@@ -20,13 +20,13 @@ public class JnGenerateRandomToken implements Function<CcpJsonRepresentation, Cc
 
 
 
-	public CcpJsonRepresentation apply(CcpJsonRepresentation values) {
+	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 
 		final String CHARACTERS_TO_GENERATE_TOKEN = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 		
 		String token = new CcpStringDecorator(CHARACTERS_TO_GENERATE_TOKEN).text().generateToken(this.size).content;
 		
-		CcpJsonRepresentation put = values.put(this.fieldName, token);
+		CcpJsonRepresentation put = json.put(this.fieldName, token);
 		
 		return put;
 	}

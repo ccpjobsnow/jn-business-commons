@@ -12,11 +12,11 @@ public class JnEntityHttpApiRetrySendRequest extends JnDisposableEntity{
 	private JnEntityHttpApiRetrySendRequest() {
 		super(JnDiposableRecordTimeExpiration.hourly, Fields.values());
 	}
-	public boolean exceededTries(CcpJsonRepresentation values, String fieldName, int limit) {
+	public boolean exceededTries(CcpJsonRepresentation json, String fieldName, int limit) {
 		
 		for(int k = 1; k <= limit; k++) {
 			
-			CcpJsonRepresentation put = values.put(fieldName, k);
+			CcpJsonRepresentation put = json.put(fieldName, k);
 			
 			boolean exists = this.exists(put);
 			

@@ -35,4 +35,11 @@ public enum JnDiposableRecordTimeExpiration{
 		long timeInMillis = cal.getTimeInMillis();
 		return timeInMillis;
 	}
+	
+	public String getNextDate() {
+		Long nextTimeStamp = this.getNextTimeStamp();
+		CcpTimeDecorator ctd = new CcpTimeDecorator(nextTimeStamp);
+		String formattedDateTime = ctd.getFormattedDateTime("dd/MM/yyyy HH:mm:ss.SSS");
+		return formattedDateTime;
+	}
 } 

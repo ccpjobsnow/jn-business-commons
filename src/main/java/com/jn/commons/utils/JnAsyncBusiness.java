@@ -1,6 +1,6 @@
 package com.jn.commons.utils;
 
-public enum JnAsyncBusiness {
+public enum JnAsyncBusiness implements JnTopic{
 	executeLogout, 
 	updatePassword, 
 	executeLogin, 
@@ -15,4 +15,10 @@ public enum JnAsyncBusiness {
 	lockPassword, 
 	lockToken,
 	;
+
+	@Override
+	public Class<?> validationClass() {
+		Class<? extends JnAsyncBusiness> class1 = this.getClass();
+		return class1;
+	}
 }

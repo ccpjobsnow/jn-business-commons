@@ -1,5 +1,6 @@
 package com.jn.commons.validations;
 
+import com.ccp.constantes.CcpConstants;
 import com.ccp.validation.annotations.ObjectTextSize;
 import com.ccp.validation.annotations.Regex;
 import com.ccp.validation.annotations.SimpleObject;
@@ -9,7 +10,7 @@ import com.ccp.validation.enums.SimpleObjectValidations;
 
 @ValidationRules(
 		regex = {
-				@Regex(value = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$", fields = "password")
+				@Regex(value = CcpConstants.STRONG_PASSWORD_REGEX, fields = "password")
 		},
 		simpleObject = {
 		@SimpleObject(rule = SimpleObjectValidations.requiredFields, fields = { "password", "token" }) },

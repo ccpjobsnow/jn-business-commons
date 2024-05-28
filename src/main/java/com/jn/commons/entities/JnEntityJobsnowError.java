@@ -9,7 +9,7 @@ public class JnEntityJobsnowError extends JnDisposableEntity{
 	public static final JnEntityJobsnowError INSTANCE = new JnEntityJobsnowError();
 
 	private JnEntityJobsnowError() {
-		super(JnDiposableRecordTimeExpiration.hourly, Fields.values());
+		super(JnDiposableRecordTimeExpiration.minute, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

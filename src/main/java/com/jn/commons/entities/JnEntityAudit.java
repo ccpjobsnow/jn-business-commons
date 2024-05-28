@@ -12,8 +12,11 @@ public class JnEntityAudit extends JnAuditableEntity{
 	}
 	
 	public static enum Fields implements CcpEntityField{
-		timestamp(true), operation(false),
-		entity(true), id(true),
+		timestamp(true), 
+		operation(false),
+		date(false),
+		entity(true), 
+		id(true),
 		json(false)
 		;
 		

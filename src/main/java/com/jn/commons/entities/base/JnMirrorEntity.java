@@ -13,40 +13,40 @@ public abstract class JnMirrorEntity extends JnAuditableEntity {
 		super(fields);
 	}
 	
-	public boolean create(CcpJsonRepresentation values) {
+	public boolean create(CcpJsonRepresentation json) {
 
-		return super.create(values);
+		return super.create(json);
 	}
 
-	private void validateMirrorEntity(CcpJsonRepresentation values) {
+	private void validateMirrorEntity(CcpJsonRepresentation json) {
 		CcpEntity mirrorEntity = this.getMirrorEntity();
-		boolean doesNotExist = mirrorEntity.exists(values) == false;
+		boolean doesNotExist = mirrorEntity.exists(json) == false;
 		
 		if(doesNotExist) {
 			return;
 		}
-		String id = mirrorEntity.getId(values);
+		String id = mirrorEntity.calculateId(json);
 		String errorMessage = String.format("The id '%s' has been moved from '%s' to '%s' ", id, this, mirrorEntity);
-		throw new CcpFlow(values, 301, errorMessage, new String[0]);
+		throw new CcpFlow(json, 301, errorMessage, new String[0]);
 	}
 	
-	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation data) {
-		this.validateMirrorEntity(data);
-		CcpJsonRepresentation oneById = super.getOneById(data);
+	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation json) {
+		this.validateMirrorEntity(json);
+		CcpJsonRepresentation oneById = super.getOneById(json);
 		return oneById;
 	}
 	
-	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation data, Function<CcpJsonRepresentation, CcpJsonRepresentation> ifNotFound) {
-		this.validateMirrorEntity(data);
-		CcpJsonRepresentation oneById = super.getOneById(data, ifNotFound);
+	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation json, Function<CcpJsonRepresentation, CcpJsonRepresentation> ifNotFound) {
+		this.validateMirrorEntity(json);
+		CcpJsonRepresentation oneById = super.getOneById(json, ifNotFound);
 		return oneById;
 	}
 	
-	public boolean delete(CcpJsonRepresentation values) {
+	public boolean delete(CcpJsonRepresentation json) {
 		
-		boolean delete = super.delete(values);
+		boolean delete = super.delete(json);
 		CcpEntity mirrorEntity = this.getMirrorEntity();
-		mirrorEntity.create(values);
+		mirrorEntity.create(json);
 		return delete;
 	}
 

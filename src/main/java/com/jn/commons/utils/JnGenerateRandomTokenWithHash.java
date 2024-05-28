@@ -20,11 +20,11 @@ public class JnGenerateRandomTokenWithHash implements Function<CcpJsonRepresenta
 		this.size = size;
 	}
 
-	public CcpJsonRepresentation apply(CcpJsonRepresentation values) {
+	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 
 		JnGenerateRandomToken transformer = new JnGenerateRandomToken(this.size, this.fieldName);
 	
-		CcpJsonRepresentation transformed = values.getTransformed(transformer);
+		CcpJsonRepresentation transformed = json.getTransformed(transformer);
 		
 		String token = transformed.getAsString(this.fieldName);
 		

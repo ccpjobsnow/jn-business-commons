@@ -28,9 +28,9 @@ public abstract class JnBaseEntity implements CcpEntity{
 		this.fields = fields;
 	}
 	
-	protected ArrayList<Object> getSortedPrimaryKeyValues(CcpJsonRepresentation values) {
+	protected ArrayList<Object> getSortedPrimaryKeyValues(CcpJsonRepresentation json) {
 		
-		CcpJsonRepresentation primaryKeyValues = this.getPrimaryKeyValues(values);
+		CcpJsonRepresentation primaryKeyValues = this.getPrimaryKeyValues(json);
 		
 		List<String> primaryKeyNames = this.getPrimaryKeyNames();
 		
@@ -39,7 +39,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 		boolean isMissingKeys = missingKeys.isEmpty() == false;
 		
 		if(isMissingKeys) {
-			throw new RuntimeException("It is missing the keys '" + missingKeys + "' from entity '" + this + "' in the object " + values );
+			throw new RuntimeException("It is missing the keys '" + missingKeys + "' from entity '" + this + "' in the object " + json );
 		}
 		
 		TreeMap<String, Object> treeMap = new TreeMap<>(primaryKeyValues.content);
@@ -48,10 +48,10 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return onlyPrimaryKeys;
 	}
 
-	public final CcpJsonRepresentation getPrimaryKeyValues(CcpJsonRepresentation values) {
+	public final CcpJsonRepresentation getPrimaryKeyValues(CcpJsonRepresentation json) {
 		
 		List<String> onlyPrimaryKey = this.getPrimaryKeyNames();
-		CcpJsonRepresentation jsonPiece = values.getJsonPiece(onlyPrimaryKey);
+		CcpJsonRepresentation jsonPiece = json.getJsonPiece(onlyPrimaryKey);
 		return jsonPiece;
 	}
 
@@ -113,7 +113,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 		String fieldNameToId = dependency.getFieldNameToId();
 		
 		String entityName = this.getEntityName();
-		String id = this.getId(json);
+		String id = this.calculateId(json);
 		
 		CcpJsonRepresentation mainRecord = CcpConstants.EMPTY_JSON
 		.put(fieldNameToEntity, entityName)
@@ -126,7 +126,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 	public boolean isPresentInThisUnionAll(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
 		
 		String index = this.getEntityName();
-		String id = this.getId(json);
+		String id = this.calculateId(json);
 
 		boolean present = unionAll.isPresent(index, id);
 		
@@ -135,7 +135,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 	
 	public CcpJsonRepresentation getRecordFromUnionAll(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
 
-		String id = this.getId(json);
+		String id = this.calculateId(json);
 		String index = this.getEntityName();
 		
 		CcpJsonRepresentation jsonValue = unionAll.getEntityRow(index, id);
