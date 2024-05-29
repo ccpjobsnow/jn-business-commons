@@ -57,7 +57,7 @@ public abstract class JnAuditableEntity extends JnBaseEntity{
 	}
 	
 	private CcpJsonRepresentation getAuditRecord(CcpJsonRepresentation json, CcpEntityOperationType operation) {
-		String id = this.calculateId(json);
+		String id = this.getPrimaryKeyValues(json).asUgglyJson();
 		String entityName = this.getEntityName();
 		CcpJsonRepresentation onlyExistingFields = this.getOnlyExistingFields(json);
 		CcpTimeDecorator ctd = new CcpTimeDecorator();
