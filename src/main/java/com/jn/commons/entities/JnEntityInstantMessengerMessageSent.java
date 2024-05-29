@@ -10,7 +10,7 @@ public class JnEntityInstantMessengerMessageSent extends JnDisposableEntity{
 
 	
 	private JnEntityInstantMessengerMessageSent() {
-		super(JnDiposableRecordTimeExpiration.daily, Fields.values());
+		super(JnDiposableRecordTimeExpiration.hourly, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{
