@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Function;
 
 import com.ccp.constantes.CcpConstants;
+import com.ccp.decorators.CcpHashDecorator;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
@@ -34,7 +35,8 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		onlyPrimaryKeysValues.addAll(sortedPrimaryKeyValues);
 		
 		String replace = onlyPrimaryKeysValues.toString().replace("[", "").replace("]", "");
-		String hash = new CcpStringDecorator(replace).hash().asString("SHA1");
+		CcpHashDecorator hash2 = new CcpStringDecorator(replace).hash();
+		String hash = hash2.asString("SHA1");
 		return hash;
 	}
 

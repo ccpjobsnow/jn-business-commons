@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.ccp.constantes.CcpConstants;
+import com.ccp.decorators.CcpHashDecorator;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.decorators.CcpTimeDecorator;
@@ -52,7 +53,8 @@ public abstract class JnAuditableEntity extends JnBaseEntity{
 		ArrayList<Object> sortedPrimaryKeyValues = this.getSortedPrimaryKeyValues(json);
 		
 		String replace = sortedPrimaryKeyValues.toString().replace("[", "").replace("]", "");
-		String hash = new CcpStringDecorator(replace).hash().asString("SHA1");
+		CcpHashDecorator hash2 = new CcpStringDecorator(replace).hash();
+		String hash = hash2.asString("SHA1");
 		return hash;
 	}
 	

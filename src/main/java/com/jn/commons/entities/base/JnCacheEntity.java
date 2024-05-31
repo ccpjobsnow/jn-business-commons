@@ -226,4 +226,9 @@ public class JnCacheEntity implements CcpEntity {
 		List<String> primaryKeyNames = this.entity.getPrimaryKeyNames();
 		return primaryKeyNames;
 	}
+
+	public CcpEntity fromCache() {
+		CcpEntity fromCache = this.fromCache();
+		return fromCache;
+	}
 }
