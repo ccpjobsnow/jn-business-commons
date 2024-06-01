@@ -87,6 +87,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 
 	private CcpJsonRepresentation getRecordCopy(CcpJsonRepresentation json) {
 		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
+		String id = this.getPrimaryKeyValues(json).asUgglyJson();
 
 		Long nextTimeStamp = this.timeOption.getNextTimeStamp();
 		String nextDate = this.timeOption.getNextDate();
@@ -95,6 +96,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 				.put("timestamp", nextTimeStamp)
 				.put("json", onlyExistingFields)
 				.put("date", nextDate)
+				.put("id", id)
 				;
 		return recordCopyToSave;
 	}
@@ -177,7 +179,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 			return false;
 		}
 		
-		CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(JnEntityDisposableRecord.INSTANCE, copyIdToSearch);
+		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.INSTANCE.getRequiredEntityRow(unionAll, copyIdToSearch);
 		Long timeStamp = requiredEntityRow.getAsLongNumber("timestamp");
 		
 		boolean obsoleteTimeStamp = timeStamp <= System.currentTimeMillis();
@@ -195,23 +197,23 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
 		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
 		CcpJsonRepresentation putAll = copyIdToSearch.putAll(json);
-		CcpSelectUnionAll unionAll = crud.unionAll(putAll, this, JnEntityDisposableRecord.INSTANCE);
+		CcpSelectUnionAll searchResults = crud.unionAll(putAll, this, JnEntityDisposableRecord.INSTANCE);
 
-		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(unionAll, putAll);
+		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(searchResults, putAll);
 		
 		if(isPresentInOriginalEntity) {
-			CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(this, putAll);
+			CcpJsonRepresentation requiredEntityRow = this.getRequiredEntityRow(searchResults, putAll);
 			return requiredEntityRow;
 		}
 	
-		boolean isNotPresentInCopyEntity = JnEntityDisposableRecord.INSTANCE.isPresentInThisUnionAll(unionAll, json) == false;
+		boolean isNotPresentInCopyEntity = JnEntityDisposableRecord.INSTANCE.isPresentInThisUnionAll(searchResults, json) == false;
 
 		if(isNotPresentInCopyEntity) {
 			CcpJsonRepresentation oneById = super.getOneById(putAll);
 			return oneById;
 		}
 
-		CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(JnEntityDisposableRecord.INSTANCE, putAll);
+		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.INSTANCE.getRequiredEntityRow(searchResults, putAll);
 		Long timeStamp = requiredEntityRow.getAsLongNumber("timestamp");
 		
 		boolean validTimeStamp = timeStamp > System.currentTimeMillis();
@@ -236,7 +238,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(unionAll, json);
 		
 		if(isPresentInOriginalEntity) {
-			CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(this, json);
+			CcpJsonRepresentation requiredEntityRow = this.getRequiredEntityRow(unionAll, json);
 			return requiredEntityRow;
 		}
 	
@@ -247,7 +249,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 			return oneById;
 		}
 
-		CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(JnEntityDisposableRecord.INSTANCE, copyIdToSearch);
+		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.INSTANCE.getRequiredEntityRow(unionAll, copyIdToSearch);
 		Long timeStamp = requiredEntityRow.getAsLongNumber("timestamp");
 		
 		boolean validTimeStamp = timeStamp > System.currentTimeMillis();
@@ -290,7 +292,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 			return false;
 		}
 		
-		CcpJsonRepresentation requiredEntityRow = unionAll.getRequiredEntityRow(JnEntityDisposableRecord.INSTANCE, copyIdToSearch);
+		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.INSTANCE.getRequiredEntityRow(unionAll, copyIdToSearch);
 		
 		boolean valid = this.isValidTimestamp(requiredEntityRow);
 		return valid;
