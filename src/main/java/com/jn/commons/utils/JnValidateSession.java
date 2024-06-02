@@ -2,6 +2,7 @@ package com.jn.commons.utils;
 
 import java.util.function.Function;
 
+import com.ccp.constantes.CcpConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.crud.CcpGetEntityId;
 import com.jn.commons.entities.JnEntityLoginEmail;
@@ -24,7 +25,7 @@ public class JnValidateSession implements Function<CcpJsonRepresentation, CcpJso
 			.ifThisIdIsNotPresentInEntity(JnEntityLoginPassword.INSTANCE).returnStatus(StatusExecuteLogin.missingPassword).and()
 			.ifThisIdIsNotPresentInEntity(JnEntityLoginEmail.INSTANCE).returnStatus(StatusExecuteLogin.missingEmail).and()
 			.ifThisIdIsNotPresentInEntity(JnEntityLoginSessionToken.INSTANCE).returnStatus(StatusExecuteLogin.invalidSession).andFinallyReturningThisFields("sessionToken")
-		.endThisProcedureRetrievingTheResultingData();
+		.endThisProcedureRetrievingTheResultingData(CcpConstants.DO_NOTHING);
 		return json;
 	}
 
