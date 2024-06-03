@@ -152,7 +152,14 @@ public abstract class JnBaseEntity implements CcpEntity{
 	private CcpJsonRepresentation addTimeFields(CcpJsonRepresentation json) {
 		CcpTimeDecorator ctd = new CcpTimeDecorator();
 		String formattedDateTime = ctd.getFormattedDateTime("dd/MM/yyyy HH:mm:ss.SSS");
+		boolean containsAllFields = json.containsAllFields("timestamp");
+		
+		if(containsAllFields) {
+			return json;
+		}
+		
 		CcpJsonRepresentation put = json.put("timestamp", ctd.time).put("date", formattedDateTime);
+		
 		return put;
 	}
 	
