@@ -302,7 +302,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		
 		String timeStampFieldName = JnEntityDisposableRecord.Fields.timestamp.name();
 		
-		boolean recordNotFound = requiredEntityRow.containsAllKeys(timeStampFieldName) == false;
+		boolean recordNotFound = requiredEntityRow.containsAllFields(timeStampFieldName) == false;
 		if(recordNotFound) {
 			return false;
 		}

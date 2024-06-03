@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import com.ccp.constantes.CcpConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;
+import com.ccp.decorators.CcpTimeDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.bulk.CcpEntityOperationType;
@@ -34,7 +35,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 		
 		List<String> primaryKeyNames = this.getPrimaryKeyNames();
 		
-		Set<String> missingKeys = primaryKeyValues.getMissingKeys(primaryKeyNames);
+		Set<String> missingKeys = primaryKeyValues.getMissingFields(primaryKeyNames);
 
 		boolean isMissingKeys = missingKeys.isEmpty() == false;
 		
@@ -148,4 +149,28 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return jnCacheEntity;
 	}
 
+	private CcpJsonRepresentation addTimeFields(CcpJsonRepresentation json) {
+		CcpTimeDecorator ctd = new CcpTimeDecorator();
+		String formattedDateTime = ctd.getFormattedDateTime("dd/MM/yyyy HH:mm:ss.SSS");
+		CcpJsonRepresentation put = json.put("timestamp", ctd.time).put("date", formattedDateTime);
+		return put;
+	}
+	
+	public boolean create(CcpJsonRepresentation json) {
+		CcpJsonRepresentation addTimeFields = this.addTimeFields(json);
+		boolean create = CcpEntity.super.create(addTimeFields);
+		return create;
+	}
+	
+	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation json) {
+		CcpJsonRepresentation addTimeFields = this.addTimeFields(json);
+		CcpJsonRepresentation createOrUpdate = CcpEntity.super.createOrUpdate(addTimeFields);
+		return createOrUpdate;
+	}
+	
+	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation json, String id) {
+		CcpJsonRepresentation addTimeFields = this.addTimeFields(json);
+		CcpJsonRepresentation createOrUpdate = CcpEntity.super.createOrUpdate(addTimeFields, id);
+		return createOrUpdate;
+	}
 }
