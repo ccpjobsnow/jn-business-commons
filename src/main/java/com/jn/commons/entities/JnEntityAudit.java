@@ -1,8 +1,11 @@
 package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.validation.annotations.ValidationRules;
 import com.jn.commons.entities.base.JnAuditableEntity;
+import com.jn.commons.validations.JsonFieldsValidationJnAudit;
 
+@ValidationRules(rulesClass = JsonFieldsValidationJnAudit.class)
 public class JnEntityAudit extends JnAuditableEntity{
 
 	public static final JnEntityAudit INSTANCE = new JnEntityAudit();
