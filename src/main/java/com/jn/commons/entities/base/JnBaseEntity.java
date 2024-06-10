@@ -180,4 +180,6 @@ public abstract class JnBaseEntity implements CcpEntity{
 		CcpJsonRepresentation createOrUpdate = CcpEntity.super.createOrUpdate(addTimeFields, id);
 		return createOrUpdate;
 	}
+	
+
 }
