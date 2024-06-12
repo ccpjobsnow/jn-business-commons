@@ -83,8 +83,8 @@ public abstract class JnBaseEntity implements CcpEntity{
 	public boolean canSaveCopy() {
 		List<String> primaryKeyNames = this.getPrimaryKeyNames();
 		int size = primaryKeyNames.size();
-		boolean b = size < this.fields.length;
-		return b;
+		boolean entityHasJustPrimaryKeys = size < this.fields.length;
+		return entityHasJustPrimaryKeys;
 	}
 	
 	public final int hashCode() {
@@ -180,4 +180,6 @@ public abstract class JnBaseEntity implements CcpEntity{
 		CcpJsonRepresentation createOrUpdate = CcpEntity.super.createOrUpdate(addTimeFields, id);
 		return createOrUpdate;
 	}
+	
+
 }

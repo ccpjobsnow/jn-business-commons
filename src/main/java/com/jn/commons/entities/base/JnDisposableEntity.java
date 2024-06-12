@@ -40,27 +40,9 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 		return hash;
 	}
 
-	private final String getCopyId(CcpJsonRepresentation json) {
-
-		ArrayList<Object> onlyPrimaryKeysValues = new ArrayList<>();
-		ArrayList<Object> sortedPrimaryKeyValues = this.getSortedPrimaryKeyValues(json);
-		
-		boolean hasNoPrimaryKey = sortedPrimaryKeyValues.isEmpty();
-		if(hasNoPrimaryKey) {
-			String entityName = this.getEntityName();
-			throw new RuntimeException("This entity must have at least one field mapped as primary key mapped. Entity: " + entityName);
-		}
-		onlyPrimaryKeysValues.addAll(sortedPrimaryKeyValues);
-		
-		String replace = onlyPrimaryKeysValues.toString().replace("[", "").replace("]", "");
-		String hash = new CcpStringDecorator(replace).hash().asString("SHA1");
-		return hash;
-	}
-
-	
 	public CcpJsonRepresentation getCopyIdToSearch(CcpJsonRepresentation json) {
 		
-		String id = this.getCopyId(json);
+		String id = this.getPrimaryKeyValues(json).asUgglyJson();
 		
 		String entityName = this.getEntityName();
 		

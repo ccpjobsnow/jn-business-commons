@@ -13,9 +13,9 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 
 public class JnCacheEntity implements CcpEntity {
 
-	private final CcpEntity entity;
+	private final JnBaseEntity entity;
 
-	protected JnCacheEntity(CcpEntity entity) {
+	protected JnCacheEntity(JnBaseEntity entity) {
 		this.entity = entity;
 	}
 
