@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-package com.jn.commons.validations;
-
-import com.ccp.validation.annotations.AllowedValues;
-import com.ccp.validation.annotations.SimpleObject;
-import com.ccp.validation.annotations.ValidationRules;
-import com.ccp.validation.enums.AllowedValuesValidations;
-import com.ccp.validation.enums.SimpleObjectValidations;
-
-@ValidationRules(
-	simpleObject = {
-			@SimpleObject(
-					fields = {"json", "operation"}, 
-					rule = SimpleObjectValidations.requiredFields
-					)
-	},
-	
-	allowedValues = {
-			@AllowedValues(
-					fields = "operation", 
-					allowedValues = {"create", "update", "delete"}, 
-					rule = AllowedValuesValidations.arrayWithAllowedTexts
-					)
-	}
-)
-
-public class JsonFieldsValidationJnAudit {
-
-}
-=======
 package com.jn.commons.validations;
 
 import com.ccp.validation.annotations.AllowedValues;
@@ -46,4 +16,3 @@ import com.ccp.validation.enums.SimpleObjectValidations;
 public class JsonFieldsValidationJnAudit {
 
 }
->>>>>>> 4b374430734edb6dc47c97d1ee5d99009b897d1f
