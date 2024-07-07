@@ -149,7 +149,7 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return jnCacheEntity;
 	}
 
-	private CcpJsonRepresentation addTimeFields(CcpJsonRepresentation json) {
+	public CcpJsonRepresentation addTimeFields(CcpJsonRepresentation json) {
 		CcpTimeDecorator ctd = new CcpTimeDecorator();
 		String formattedDateTime = ctd.getFormattedDateTime("dd/MM/yyyy HH:mm:ss.SSS");
 		boolean containsAllFields = json.containsAllFields("timestamp");
@@ -181,5 +181,9 @@ public abstract class JnBaseEntity implements CcpEntity{
 		return createOrUpdate;
 	}
 	
-
+	public CcpBulkItem toBulkItem(CcpJsonRepresentation json, CcpEntityOperationType operation) {
+		CcpJsonRepresentation addTimeFields = this.addTimeFields(json);
+		CcpBulkItem bulkItem = CcpEntity.super.toBulkItem(addTimeFields, operation);
+		return bulkItem;
+	}
 }

@@ -12,11 +12,6 @@ public abstract class JnMirrorEntity extends JnAuditableEntity {
 	protected JnMirrorEntity(CcpEntityField[] fields) {
 		super(fields);
 	}
-	
-	public boolean create(CcpJsonRepresentation json) {
-
-		return super.create(json);
-	}
 
 	private void validateMirrorEntity(CcpJsonRepresentation json) {
 		CcpEntity mirrorEntity = this.getMirrorEntity();

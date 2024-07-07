@@ -16,6 +16,9 @@ public interface JnTopic {
 		Class<?> clazz = this.validationClass();
 		ValidationRules rules = clazz.getAnnotation(ValidationRules.class);
 		ArrayList<String> list = new ArrayList<>();
+		if(rules == null) {
+			return new String[] {};
+		}
 		SimpleObject[] simpleObject = rules.simpleObject();
 		for (SimpleObject so : simpleObject) {
 			SimpleObjectValidations rule = so.rule();
