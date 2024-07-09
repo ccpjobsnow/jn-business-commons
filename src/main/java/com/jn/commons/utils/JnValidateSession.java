@@ -18,7 +18,8 @@ public class JnValidateSession implements Function<CcpJsonRepresentation, CcpJso
 	public static final JnValidateSession INSTANCE = new JnValidateSession();
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
-		new CcpGetEntityId(json)
+		CcpJsonRepresentation transformed = json.getTransformed(JnTransformEmailHash.INSTANCE);
+		new CcpGetEntityId(transformed)
 		.toBeginProcedureAnd()
 			.ifThisIdIsPresentInEntity(JnEntityLoginToken.INSTANCE.getMirrorEntity()).returnStatus(StatusExecuteLogin.lockedToken).and()
 			.ifThisIdIsPresentInEntity(JnEntityLoginPassword.INSTANCE.getMirrorEntity()).returnStatus(StatusExecuteLogin.lockedPassword).and()
