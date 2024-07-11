@@ -6,6 +6,7 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.exceptions.process.CcpFlow;
+import com.ccp.process.CcpProcessStatus;
 
 public abstract class JnMirrorEntity extends JnAuditableEntity {
 
@@ -22,7 +23,7 @@ public abstract class JnMirrorEntity extends JnAuditableEntity {
 		}
 		String id = mirrorEntity.calculateId(json);
 		String errorMessage = String.format("The id '%s' has been moved from '%s' to '%s' ", id, this, mirrorEntity);
-		throw new CcpFlow(json, 301, errorMessage, new String[0]);
+		throw new CcpFlow(json, CcpProcessStatus.REDIRECT, errorMessage, new String[0]);
 	}
 	
 	public final CcpJsonRepresentation getOneById(CcpJsonRepresentation json) {

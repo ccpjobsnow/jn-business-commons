@@ -5,6 +5,7 @@ import java.util.function.Function;
 import com.ccp.constantes.CcpConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.crud.CcpGetEntityId;
+import com.ccp.json.transformers.CcpJsonTransformerGenerateFieldHash;
 import com.jn.commons.entities.JnEntityLoginEmail;
 import com.jn.commons.entities.JnEntityLoginPassword;
 import com.jn.commons.entities.JnEntityLoginSessionToken;
@@ -18,7 +19,8 @@ public class JnValidateSession implements Function<CcpJsonRepresentation, CcpJso
 	public static final JnValidateSession INSTANCE = new JnValidateSession();
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
-		CcpJsonRepresentation transformed = json.getTransformed(JnTransformEmailHash.INSTANCE);
+		CcpJsonTransformerGenerateFieldHash transformer = new CcpJsonTransformerGenerateFieldHash("email", "originalEmail");
+		CcpJsonRepresentation transformed = json.getTransformed(transformer);
 		new CcpGetEntityId(transformed)
 		.toBeginProcedureAnd()
 			.ifThisIdIsPresentInEntity(JnEntityLoginToken.INSTANCE.getMirrorEntity()).returnStatus(StatusExecuteLogin.lockedToken).and()
@@ -27,7 +29,7 @@ public class JnValidateSession implements Function<CcpJsonRepresentation, CcpJso
 			.ifThisIdIsNotPresentInEntity(JnEntityLoginEmail.INSTANCE).returnStatus(StatusExecuteLogin.missingEmail).and()
 			.ifThisIdIsNotPresentInEntity(JnEntityLoginSessionToken.INSTANCE).returnStatus(StatusExecuteLogin.invalidSession).andFinallyReturningThisFields("sessionToken")
 		.endThisProcedureRetrievingTheResultingData(CcpConstants.DO_NOTHING);
-		return json;
+		return transformed;
 	}
 
 }

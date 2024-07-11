@@ -13,7 +13,7 @@ public class JnEntityLoginToken extends JnDisposableAndStatusChangebleEntity{
 	}
 	
 	public static enum Fields implements CcpEntityField{
-		email(true), tokenHash(false),ip(true), coordinates(false), macAddress(false), userAgent(true)
+		email(true), originalEmail(false), tokenHash(false),ip(true), coordinates(false), macAddress(false), userAgent(true)
 		;
 		
 		private final boolean primaryKey;
