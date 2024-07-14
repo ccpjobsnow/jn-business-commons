@@ -19,17 +19,22 @@ public class JnValidateSession implements Function<CcpJsonRepresentation, CcpJso
 	public static final JnValidateSession INSTANCE = new JnValidateSession();
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
-		CcpJsonTransformerGenerateFieldHash transformer = new CcpJsonTransformerGenerateFieldHash("email", "originalEmail");
-		CcpJsonRepresentation transformed = json.getTransformed(transformer);
-		new CcpGetEntityId(transformed)
-		.toBeginProcedureAnd()
+		try {
+			
+			CcpJsonTransformerGenerateFieldHash transformer = new CcpJsonTransformerGenerateFieldHash("email", "originalEmail");
+			CcpJsonRepresentation transformed = json.getTransformed(transformer);
+			new CcpGetEntityId(transformed)
+			.toBeginProcedureAnd()
 			.ifThisIdIsPresentInEntity(JnEntityLoginToken.INSTANCE.getMirrorEntity()).returnStatus(StatusExecuteLogin.lockedToken).and()
 			.ifThisIdIsPresentInEntity(JnEntityLoginPassword.INSTANCE.getMirrorEntity()).returnStatus(StatusExecuteLogin.lockedPassword).and()
 			.ifThisIdIsNotPresentInEntity(JnEntityLoginPassword.INSTANCE).returnStatus(StatusExecuteLogin.missingPassword).and()
 			.ifThisIdIsNotPresentInEntity(JnEntityLoginEmail.INSTANCE).returnStatus(StatusExecuteLogin.missingEmail).and()
 			.ifThisIdIsNotPresentInEntity(JnEntityLoginSessionToken.INSTANCE).returnStatus(StatusExecuteLogin.invalidSession).andFinallyReturningThisFields("sessionToken")
-		.endThisProcedureRetrievingTheResultingData(CcpConstants.DO_NOTHING);
-		return transformed;
+			.endThisProcedureRetrievingTheResultingData(CcpConstants.DO_NOTHING);
+			return transformed;
+		} catch (Exception e) {
+			return json;
+		}
 	}
 
 }
