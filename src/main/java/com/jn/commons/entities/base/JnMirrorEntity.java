@@ -3,6 +3,7 @@ package com.jn.commons.entities.base;
 import java.util.function.Function;
 
 import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.exceptions.process.CcpFlow;
@@ -57,6 +58,17 @@ public abstract class JnMirrorEntity extends JnAuditableEntity {
 	public final boolean hasMirrorEntity() {
 		return true;
 	}
-
+	public CcpJsonRepresentation getRequiredEntityRow(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
+		CcpEntity mirrorEntity = this.getMirrorEntity();
+		
+		boolean itIsInMirrorEntity = mirrorEntity.isPresentInThisUnionAll(unionAll, json);
+		if(itIsInMirrorEntity) {
+			CcpJsonRepresentation requiredEntityRow = mirrorEntity.getRequiredEntityRow(unionAll, json);
+			return requiredEntityRow;
+		}
+		
+		CcpJsonRepresentation requiredEntityRow = super.getRequiredEntityRow(unionAll, json);
+		return requiredEntityRow;
+	}
 
 }
