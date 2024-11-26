@@ -228,7 +228,6 @@ public class JnCacheEntity implements CcpEntity {
 	}
 
 	public CcpEntity fromCache() {
-		CcpEntity fromCache = this.fromCache();
-		return fromCache;
+		throw new UnsupportedOperationException();
 	}
 }

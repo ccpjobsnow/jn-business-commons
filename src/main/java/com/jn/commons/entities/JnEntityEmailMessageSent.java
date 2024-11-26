@@ -12,7 +12,7 @@ public class JnEntityEmailMessageSent extends JnDisposableEntity{
 		super(JnDiposableRecordTimeExpiration.daily, Fields.values());
 	}
 	public static enum Fields implements CcpEntityField{
-		subject(false), subjectType(true), email(true), sender(false), emailMessage(false)
+		subject(false), subjectType(true), email(true), sender(false), message(false)
 		;
 		
 		private final boolean primaryKey;

@@ -12,7 +12,7 @@ public class JnEntityEmailReportedAsSpam extends JnAuditableEntity{
 	}
 	
 	public static enum Fields implements CcpEntityField{
-		subject(false), subjectType(false), email(true), sender(true), emailMessage(false)
+		subject(false), subjectType(false), email(true), sender(true), message(false)
 		;
 		
 		private final boolean primaryKey;
