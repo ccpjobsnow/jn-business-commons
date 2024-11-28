@@ -27,7 +27,7 @@ public abstract class JnDisposableEntity extends JnBaseEntity {
 
 	public final String calculateId(CcpJsonRepresentation json) {
 		Long time = System.currentTimeMillis();
-		String formattedCurrentDate = this.timeOption.getFormattedCurrentDate(time);
+		String formattedCurrentDate = this.timeOption.getFormattedDate(time);
 
 		ArrayList<Object> onlyPrimaryKeysValues = new ArrayList<>();
 		onlyPrimaryKeysValues.add(formattedCurrentDate);

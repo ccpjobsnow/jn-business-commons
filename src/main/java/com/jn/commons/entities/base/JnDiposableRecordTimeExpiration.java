@@ -15,14 +15,14 @@ public enum JnDiposableRecordTimeExpiration{
 	,hourly(Calendar.HOUR_OF_DAY, "ddMMyyyy HH")
 	;
 	private final int calendarField;
-	private final String format;
+	public final String format;
 	
 	private JnDiposableRecordTimeExpiration(int calendarField, String format) {
 		this.calendarField = calendarField;
 		this.format = format;
 	}
 
-	public String getFormattedCurrentDate(Long date) {
+	public String getFormattedDate(Long date) {
 		Date d = new Date();
 		d.setTime(date);
 		String format = new SimpleDateFormat(this.format).format(d);
