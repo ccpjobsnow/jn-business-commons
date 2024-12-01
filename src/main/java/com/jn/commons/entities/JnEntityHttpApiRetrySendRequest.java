@@ -1,27 +1,24 @@
 package com.jn.commons.entities;
 
 import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnDisposableEntity;
-import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+//disposable hourly
+public class JnEntityHttpApiRetrySendRequest {
 
-public class JnEntityHttpApiRetrySendRequest extends JnDisposableEntity{
-
-	public static final JnEntityHttpApiRetrySendRequest INSTANCE = new JnEntityHttpApiRetrySendRequest();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityHttpApiRetrySendRequest.class);
 	
-	private JnEntityHttpApiRetrySendRequest() {
-		super(JnDiposableRecordTimeExpiration.hourly, Fields.values());
-	}
-	public boolean exceededTries(CcpJsonRepresentation json, String fieldName, int limit) {
+	public static boolean exceededTries(CcpJsonRepresentation json, String fieldName, int limit) {
 		
 		for(int k = 1; k <= limit; k++) {
 			
 			CcpJsonRepresentation put = json.put(fieldName, k);
 			
-			boolean exists = this.exists(put);
+			boolean exists = ENTITY.exists(put);
 			
 			if(exists == false) {
-				this.createOrUpdate(put);
+				ENTITY.createOrUpdate(put);
 				return false;
 			}
 		}

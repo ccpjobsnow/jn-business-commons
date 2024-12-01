@@ -1,16 +1,23 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
-import com.jn.commons.entities.base.JnDisposableAndStatusChangebleEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityCacheable;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifcations;
+import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.ccp.especifications.db.utils.decorators.CcpLongevityCache;
+import com.ccp.especifications.db.utils.decorators.CcpLongevityEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
+import com.jn.commons.entities.base.JnDisposableEntity;
 
-public class JnEntityLoginSessionCurrent extends JnDisposableAndStatusChangebleEntity{
+@CcpEntityExpurgable(expurgableEntityFactory = JnDisposableEntity.class, longevityEntity = CcpLongevityEntity.hourly)
+@CcpEntityCacheable(cacheLongevity = CcpLongevityCache.HOUR)
+@CcpEntityTwin(twinEntityName = "login_session_terminated")
+@CcpEntitySpecifcations
+public class JnEntityLoginSessionCurrent {
 
-	public static final JnEntityLoginSessionCurrent INSTANCE = new JnEntityLoginSessionCurrent();
-	
-	private JnEntityLoginSessionCurrent() {
-		super("login_session_terminated", JnDiposableRecordTimeExpiration.hourly, Fields.values());
-	}
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityLoginSessionCurrent.class);
 	
 	public static enum Fields implements CcpEntityField{
 		email(true), sessionToken(false), ip(false), coordinates(false), macAddress(false), userAgent(false)

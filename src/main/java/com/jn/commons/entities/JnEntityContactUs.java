@@ -1,16 +1,12 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnDisposableEntity;
-import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+//disposable DAILY
+public class JnEntityContactUs{
 
-public class JnEntityContactUs extends JnDisposableEntity{
-
-	public static final JnEntityContactUs INSTANCE = new JnEntityContactUs();
-	
-	private JnEntityContactUs() {
-		super(JnDiposableRecordTimeExpiration.daily, Fields.values());
-	}
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityContactUs.class);
 	
 	public static enum Fields implements CcpEntityField{
 		subjectType(true), email(true), subject(false), message(false), chatId(false), sender(false)

@@ -1,16 +1,13 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnDisposableEntity;
-import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class JnEntityLoginSessionToken extends JnDisposableEntity{
+//super(CcpLongevityEntity.hourly, Fields.values());
+public class JnEntityLoginSessionToken {
 
-	public static final JnEntityLoginSessionToken INSTANCE = new JnEntityLoginSessionToken();
-	
-	private JnEntityLoginSessionToken() {
-		super(JnDiposableRecordTimeExpiration.hourly, Fields.values());
-	}
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityLoginSessionToken.class);
 	
 	public static enum Fields implements CcpEntityField{
 		email(true), sessionToken(true), ip(true), coordinates(false), macAddress(false), userAgent(true)

@@ -1,17 +1,14 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class JnEntityRecordToReprocess extends JnAuditableEntity{
+//super(Fields.values());
+public class JnEntityRecordToReprocess {
 	
-	public static final JnEntityRecordToReprocess INSTANCE = new JnEntityRecordToReprocess();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityRecordToReprocess.class);
 
-	
-	private JnEntityRecordToReprocess() {
-		super(Fields.values());
-	}
-	
 	public static enum Fields implements CcpEntityField{
 		timestamp(true), operation(false),
 		entity(true), id(true),
@@ -29,7 +26,7 @@ public class JnEntityRecordToReprocess extends JnAuditableEntity{
 		}
 	}
 	
-	public boolean canSaveCopy() {
+	public boolean isCopyableEntity() {
 		return false;
 	}
 }

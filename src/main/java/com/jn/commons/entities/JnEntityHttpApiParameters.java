@@ -1,18 +1,12 @@
 package com.jn.commons.entities;
 
-import java.util.List;
-
-import com.ccp.especifications.db.bulk.CcpBulkItem;
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+//audit
+public class JnEntityHttpApiParameters {
 
-public class JnEntityHttpApiParameters extends JnAuditableEntity{
-
-	public static final JnEntityHttpApiParameters INSTANCE = new JnEntityHttpApiParameters();
-	
-	private JnEntityHttpApiParameters() {
-		super(Fields.values());
-	}
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityHttpApiParameters.class);
 	
 	public static enum Fields implements CcpEntityField{
 		apiName(true), url(false), token (false), maxTries(false), sleep(false), method(false)
@@ -29,24 +23,24 @@ public class JnEntityHttpApiParameters extends JnAuditableEntity{
 
 	}
 	
-	public List<CcpBulkItem> getFirstRecordsToInsert() {
-		List<CcpBulkItem> createBulkItems = super.toCreateBulkItems("{"
-				+ "	\"apiName\": \"email\","
-				+ "	\"url\": \"urlEmailKey\","
-				+ "	\"token\": \"tokenEmailKey\","
-				+ "	\"method\": \"POST\","
-				+ "	\"sleep\": 3000,"
-				+ "	\"maxTries\": 3"
-				+ "}", 
-				"{"
-				+ "	\"apiName\": \"instantMessenger\","
-				+ "	\"url\": \"urlInstantMessengerKey\","
-				+ "	\"token\": \"tokenInstantMessengerKey\","
-				+ "	\"method\": \"POST\","
-				+ "	\"sleep\": 3000,"
-				+ "	\"maxTries\": 3"
-				+ "}");
-
-		return createBulkItems;
-	}
+//	public List<CcpBulkItem> getFirstRecordsToInsert() {
+//		List<CcpBulkItem> createBulkItems = super.toCreateBulkItems("{"
+//				+ "	\"apiName\": \"email\","
+//				+ "	\"url\": \"urlEmailKey\","
+//				+ "	\"token\": \"tokenEmailKey\","
+//				+ "	\"method\": \"POST\","
+//				+ "	\"sleep\": 3000,"
+//				+ "	\"maxTries\": 3"
+//				+ "}", 
+//				"{"
+//				+ "	\"apiName\": \"instantMessenger\","
+//				+ "	\"url\": \"urlInstantMessengerKey\","
+//				+ "	\"token\": \"tokenInstantMessengerKey\","
+//				+ "	\"method\": \"POST\","
+//				+ "	\"sleep\": 3000,"
+//				+ "	\"maxTries\": 3"
+//				+ "}");
+//
+//		return createBulkItems;
+//	}
 }

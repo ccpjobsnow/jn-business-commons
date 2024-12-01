@@ -1,18 +1,16 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 import com.ccp.validation.annotations.ValidationRules;
-import com.jn.commons.entities.base.JnAuditableEntity;
 import com.jn.commons.validations.JsonFieldsValidationJnAudit;
-
+//audit
 @ValidationRules(rulesClass = JsonFieldsValidationJnAudit.class)
-public class JnEntityAudit extends JnAuditableEntity{
+public class JnEntityAudit {
 
-	public static final JnEntityAudit INSTANCE = new JnEntityAudit();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityAudit.class);
 
-	private JnEntityAudit() {
-		super(Fields.values());
-	}
 	
 	public static enum Fields implements CcpEntityField{
 		timestamp(true), 
@@ -33,7 +31,7 @@ public class JnEntityAudit extends JnAuditableEntity{
 		}
 	}
 	
-	public boolean canSaveCopy() {
+	public boolean isCopyableEntity() {
 		return false;
 	}
 	

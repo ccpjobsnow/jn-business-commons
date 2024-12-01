@@ -1,16 +1,13 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
-
-public class JnEntityInstantMessengerBotLocked extends JnAuditableEntity{
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+//entity
+public class JnEntityInstantMessengerBotLocked {
 	
-	public static final JnEntityInstantMessengerBotLocked INSTANCE = new JnEntityInstantMessengerBotLocked();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityInstantMessengerBotLocked.class);
 
-	private JnEntityInstantMessengerBotLocked() {
-		super(Fields.values());
-	}
-	
 	public static enum Fields implements CcpEntityField{
 		token(true), recipient(true), subjectType(false), message(false)
 		;

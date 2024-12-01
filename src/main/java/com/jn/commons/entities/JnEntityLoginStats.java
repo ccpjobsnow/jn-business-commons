@@ -1,15 +1,13 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class JnEntityLoginStats extends JnAuditableEntity{
+//super(Fields.values());
+public class JnEntityLoginStats{
 	
-	public static final JnEntityLoginStats INSTANCE = new JnEntityLoginStats();
-	
-	private JnEntityLoginStats() {
-		super(Fields.values());
-	}
+	public static final CcpEntity INSTANCE = CcpFactoryEntity.getEntityInstance(JnEntityLoginStats.class);
 	
 	public static enum Fields implements CcpEntityField{
 		email(true), balance(false), lastAccess(false), countAccess(false),

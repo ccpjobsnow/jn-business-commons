@@ -1,15 +1,14 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class JnEntityLoginConflict extends JnAuditableEntity{
+//super(Fields.values());
+public class JnEntityLoginConflict {
 
-	public static final JnEntityLoginConflict INSTANCE = new JnEntityLoginConflict();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityLoginConflict.class);
 
-	private JnEntityLoginConflict() {
-		super(Fields.values());
-	}
 	
 	public static enum Fields implements CcpEntityField{
 		email(true), oldLogin(false), newLogin(false)

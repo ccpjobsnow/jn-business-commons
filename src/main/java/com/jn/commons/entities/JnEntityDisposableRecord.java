@@ -1,14 +1,14 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+//audit
+public class JnEntityDisposableRecord {
 
-public class JnEntityDisposableRecord extends JnAuditableEntity{
-
-	public static final JnEntityDisposableRecord INSTANCE = new JnEntityDisposableRecord();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityDisposableRecord.class);
 
 	private JnEntityDisposableRecord() {
-		super(Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{
@@ -26,7 +26,7 @@ public class JnEntityDisposableRecord extends JnAuditableEntity{
 		}
 	}
 	
-	public boolean canSaveCopy() {
+	public boolean isCopyableEntity() {
 		return false;
 	}
 

@@ -1,15 +1,15 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnDisposableEntity;
-import com.jn.commons.entities.base.JnDiposableRecordTimeExpiration;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-public class JnEntityJobsnowWarning extends JnDisposableEntity{
+//super(CcpLongevityEntity.hourly, Fields.values());
+public class JnEntityJobsnowWarning {
 
-	public static final JnEntityJobsnowWarning INSTANCE = new JnEntityJobsnowWarning();
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityJobsnowWarning.class);
 
 	private JnEntityJobsnowWarning() {
-		super(JnDiposableRecordTimeExpiration.hourly, Fields.values());
 	}
 	
 	public static enum Fields implements CcpEntityField{

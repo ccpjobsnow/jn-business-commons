@@ -1,16 +1,13 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+//audit
+public class JnEntityAsyncTask{
 
-public class JnEntityAsyncTask extends JnAuditableEntity{
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityAsyncTask.class);
 
-	public static final JnEntityAsyncTask INSTANCE = new JnEntityAsyncTask();
-
-	private JnEntityAsyncTask() {
-		super(Fields.values());
-	}
-	
 	public static enum Fields implements CcpEntityField{
 		started(false), finished(false), enlapsedTime(false), data(false),
 		topic(false), request(false), messageId(true), success(false), 
@@ -28,7 +25,7 @@ public class JnEntityAsyncTask extends JnAuditableEntity{
 		}
 	}
 	
-	public boolean canSaveCopy() {
+	public boolean isCopyableEntity() {
 		return false;
 	}
 }

@@ -1,15 +1,12 @@
 package com.jn.commons.entities;
 
+import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+//audit
+public class JnEntityEmailReportedAsSpam {
 
-public class JnEntityEmailReportedAsSpam extends JnAuditableEntity{
-
-	public static final JnEntityEmailReportedAsSpam INSTANCE = new JnEntityEmailReportedAsSpam();
-	
-	private JnEntityEmailReportedAsSpam() {
-		super(Fields.values());
-	}
+	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityEmailReportedAsSpam.class);
 	
 	public static enum Fields implements CcpEntityField{
 		subject(false), subjectType(false), email(true), sender(true), message(false)
