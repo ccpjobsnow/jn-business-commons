@@ -15,14 +15,14 @@ import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.decorators.CcpDelegatorEntity;
-import com.ccp.especifications.db.utils.decorators.CcpLongevityEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityExpurg;
 import com.jn.commons.entities.JnEntityDisposableRecord;
 
-public final class JnDisposableEntity extends CcpDelegatorEntity {
+public final class JnEntityExpurgable extends CcpDelegatorEntity {
 
-	private final CcpLongevityEntity timeOption;
+	private final CcpEntityExpurg timeOption;
 	
-	protected JnDisposableEntity(CcpLongevityEntity timeOption, CcpEntity entity) {
+	protected JnEntityExpurgable(CcpEntityExpurg timeOption, CcpEntity entity) {
 		super(entity);
 		this.timeOption = timeOption;
 	}

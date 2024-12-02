@@ -11,9 +11,9 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.decorators.CcpDelegatorEntity;
 import com.jn.commons.entities.JnEntityAudit;
 
-public final class JnAuditableEntity extends CcpDelegatorEntity {
+public final class JnEntityVersionable extends CcpDelegatorEntity {
 	
-	protected JnAuditableEntity(CcpEntity entity) {
+	protected JnEntityVersionable(CcpEntity entity) {
 		super(entity);
 	}
 	

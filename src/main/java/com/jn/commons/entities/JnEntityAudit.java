@@ -4,10 +4,7 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-import com.ccp.validation.annotations.CcpJsonValidation;
-import com.jn.commons.validations.JsonFieldsValidationJnAudit;
 
-@CcpJsonValidation(rulesClass = JsonFieldsValidationJnAudit.class)
 @CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityAudit {
 

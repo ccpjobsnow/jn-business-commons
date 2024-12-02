@@ -5,10 +5,10 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-import com.ccp.especifications.db.utils.decorators.CcpLongevityEntity;
-import com.jn.commons.utils.JnDisposableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityExpurg;
+import com.jn.commons.utils.JnEntityExpurgable;
 
-@CcpEntityExpurgable(expurgableEntityFactory = JnDisposableEntity.class, longevityEntity = CcpLongevityEntity.yearly)
+@CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurg.yearly)
 @CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityEmailMessageSent {
 	

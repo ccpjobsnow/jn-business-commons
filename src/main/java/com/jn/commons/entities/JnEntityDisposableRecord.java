@@ -5,14 +5,11 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
 
-@CcpEntitySpecifications(cacheableEntity = false)
+@CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityDisposableRecord {
 
 	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityDisposableRecord.class);
 
-	private JnEntityDisposableRecord() {
-	}
-	
 	public static enum Fields implements CcpEntityField{
 		entity(true), 
 		date(false),

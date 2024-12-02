@@ -2,8 +2,13 @@ package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntityVersionable;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-//audit
+import com.jn.commons.utils.JnEntityVersionable;
+
+@CcpEntitySpecifications(cacheableEntity = true)
+@CcpEntityVersionable(versionableEntityFactory = JnEntityVersionable.class)
 public class JnEntityInstantMessengerTemplateMessage {
 
 	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityInstantMessengerTemplateMessage.class);
