@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.ccp.validation.annotations.SimpleObject;
-import com.ccp.validation.annotations.ValidationRules;
+import com.ccp.validation.annotations.CcpJsonValidation;
 import com.ccp.validation.enums.SimpleObjectValidations;
 
 public interface JnTopic {
@@ -14,7 +14,7 @@ public interface JnTopic {
 	
 	default String[] getFields() {
 		Class<?> clazz = this.validationClass();
-		ValidationRules rules = clazz.getAnnotation(ValidationRules.class);
+		CcpJsonValidation rules = clazz.getAnnotation(CcpJsonValidation.class);
 		ArrayList<String> list = new ArrayList<>();
 		if(rules == null) {
 			return new String[] {};

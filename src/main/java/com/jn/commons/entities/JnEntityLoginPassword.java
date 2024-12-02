@@ -3,17 +3,14 @@ package com.jn.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityAuditable;
-import com.ccp.especifications.db.utils.decorators.CcpEntityCacheable;
-import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifcations;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-import com.ccp.especifications.db.utils.decorators.CcpLongevityCache;
-import com.jn.commons.entities.base.JnAuditableEntity;
+import com.jn.commons.utils.JnAuditableEntity;
 
 @CcpEntityAuditable(auditableEntityFactory = JnAuditableEntity.class)
-@CcpEntityCacheable(cacheLongevity = CcpLongevityCache.DAY)
 @CcpEntityTwin(twinEntityName = "login_password_locked")
-@CcpEntitySpecifcations
+@CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityLoginPassword {
 	
 	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityLoginPassword.class);

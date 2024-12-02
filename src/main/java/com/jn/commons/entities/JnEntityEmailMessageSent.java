@@ -2,8 +2,14 @@ package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-//disposable daily
+import com.ccp.especifications.db.utils.decorators.CcpLongevityEntity;
+import com.jn.commons.utils.JnDisposableEntity;
+
+@CcpEntityExpurgable(expurgableEntityFactory = JnDisposableEntity.class, longevityEntity = CcpLongevityEntity.yearly)
+@CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityEmailMessageSent {
 	
 	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityEmailMessageSent.class);

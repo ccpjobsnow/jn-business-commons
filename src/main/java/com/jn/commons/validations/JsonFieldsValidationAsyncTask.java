@@ -1,10 +1,10 @@
 package com.jn.commons.validations;
 
 import com.ccp.validation.annotations.SimpleObject;
-import com.ccp.validation.annotations.ValidationRules;
+import com.ccp.validation.annotations.CcpJsonValidation;
 import com.ccp.validation.enums.SimpleObjectValidations;
 
-@ValidationRules(
+@CcpJsonValidation(
 		simpleObject = {
 				@SimpleObject(
 						fields = {"topic", "request", "success", "response"},

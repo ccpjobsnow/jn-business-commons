@@ -2,19 +2,16 @@ package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.decorators.CcpEntityCacheable;
-import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifcations;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-import com.ccp.especifications.db.utils.decorators.CcpLongevityCache;
-import com.ccp.especifications.db.utils.decorators.CcpLongevityEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
-import com.jn.commons.entities.base.JnDisposableEntity;
+import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.ccp.especifications.db.utils.decorators.CcpLongevityEntity;
+import com.jn.commons.utils.JnDisposableEntity;
 
 @CcpEntityExpurgable(expurgableEntityFactory = JnDisposableEntity.class, longevityEntity = CcpLongevityEntity.hourly)
-@CcpEntityCacheable(cacheLongevity = CcpLongevityCache.HOUR)
 @CcpEntityTwin(twinEntityName = "login_session_terminated")
-@CcpEntitySpecifcations
+@CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityLoginSessionCurrent {
 
 	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityLoginSessionCurrent.class);

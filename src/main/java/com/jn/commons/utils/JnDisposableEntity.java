@@ -1,4 +1,4 @@
-package com.jn.commons.entities.base;
+package com.jn.commons.utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,18 +14,17 @@ import com.ccp.especifications.db.bulk.CcpEntityOperationType;
 import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpEntity;
-import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpDelegatorEntity;
 import com.ccp.especifications.db.utils.decorators.CcpLongevityEntity;
 import com.jn.commons.entities.JnEntityDisposableRecord;
 
-public final class JnDisposableEntity implements CcpEntity {
+public final class JnDisposableEntity extends CcpDelegatorEntity {
 
 	private final CcpLongevityEntity timeOption;
-	private final CcpEntity entity;
 	
 	protected JnDisposableEntity(CcpLongevityEntity timeOption, CcpEntity entity) {
+		super(entity);
 		this.timeOption = timeOption;
-		this.entity = entity;
 	}
 
 	public final String calculateId(CcpJsonRepresentation json) {
@@ -321,74 +320,4 @@ public final class JnDisposableEntity implements CcpEntity {
 		CcpJsonRepresentation innerJson = recordFromDisposable.getInnerJson(JnEntityDisposableRecord.Fields.json.name());
 		return innerJson;
 	}
-
-	public String getEntityName() {
-		return this.entity.getEntityName();
-	}
-
-	public CcpJsonRepresentation getPrimaryKeyValues(CcpJsonRepresentation json) {
-		return this.entity.getPrimaryKeyValues(json);
-	}
-
-	public CcpEntityField[] getFields() {
-		return this.entity.getFields();
-	}
-
-	public boolean hasTwinEntity() {
-		return this.entity.hasTwinEntity();
-	}
-
-	public CcpBulkItem toBulkItem(CcpJsonRepresentation json, CcpEntityOperationType operation) {
-		return this.entity.toBulkItem(json, operation);
-	}
-
-	public CcpEntity getTwinEntity() {
-		return this.entity.getTwinEntity();
-	}
-
-	public CcpJsonRepresentation getOneById(String id) {
-		return this.entity.getOneById(id);
-	}
-
-	public boolean exists(String id) {
-		return this.entity.exists(id);
-	}
-
-	public CcpJsonRepresentation getOnlyExistingFields(CcpJsonRepresentation json) {
-		return this.entity.getOnlyExistingFields(json);
-	}
-
-	public List<String> getPrimaryKeyNames() {
-		return this.entity.getPrimaryKeyNames();
-	}
-
-	public boolean isVirtualEntity() {
-		return this.entity.isVirtualEntity();
-	}
-
-	public CcpJsonRepresentation getRequiredEntityRow(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
-		return this.entity.getRequiredEntityRow(unionAll, json);
-	}
-
-	public boolean isPresentInThisJsonInMainEntity(CcpJsonRepresentation json) {
-		return this.entity.isPresentInThisJsonInMainEntity(json);
-	}
-
-	public CcpJsonRepresentation getInnerJsonFromMainAndTwinEntities(CcpJsonRepresentation json) {
-		return this.entity.getInnerJsonFromMainAndTwinEntities(json);
-	}
-
-	public CcpJsonRepresentation getData(CcpJsonRepresentation json) {
-		return this.entity.getData(json);
-	}
-
-	public String[] getEntitiesToSelect() {
-		return this.entity.getEntitiesToSelect();
-	}
-
-	public ArrayList<Object> getSortedPrimaryKeyValues(CcpJsonRepresentation json) {
-		return this.entity.getSortedPrimaryKeyValues(json);
-	}
-	
-	
 }

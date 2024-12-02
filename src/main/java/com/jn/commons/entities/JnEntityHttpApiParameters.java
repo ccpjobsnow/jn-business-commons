@@ -2,8 +2,13 @@ package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntityAuditable;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-//audit
+import com.jn.commons.utils.JnAuditableEntity;
+
+@CcpEntityAuditable(auditableEntityFactory = JnAuditableEntity.class)
+@CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityHttpApiParameters {
 
 	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityHttpApiParameters.class);

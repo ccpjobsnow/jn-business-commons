@@ -2,8 +2,10 @@ package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-//disposable DAILY
+
+@CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityContactUs{
 
 	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityContactUs.class);

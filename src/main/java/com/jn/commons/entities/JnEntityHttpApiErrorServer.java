@@ -2,8 +2,14 @@ package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-//disposable hourly
+import com.ccp.especifications.db.utils.decorators.CcpLongevityEntity;
+import com.jn.commons.utils.JnDisposableEntity;
+
+@CcpEntityExpurgable(expurgableEntityFactory = JnDisposableEntity.class, longevityEntity = CcpLongevityEntity.hourly)
+@CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityHttpApiErrorServer {
 	
 	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityHttpApiErrorServer.class);

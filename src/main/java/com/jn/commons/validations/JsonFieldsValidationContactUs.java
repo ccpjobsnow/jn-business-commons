@@ -1,8 +1,8 @@
 package com.jn.commons.validations;
 
-import com.ccp.validation.annotations.ValidationRules;
+import com.ccp.validation.annotations.CcpJsonValidation;
 
-@ValidationRules(
+@CcpJsonValidation(
 		
 		)
 
