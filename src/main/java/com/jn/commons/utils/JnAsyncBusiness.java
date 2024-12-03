@@ -13,10 +13,10 @@ public enum JnAsyncBusiness implements JnTopic{
 	sendInstantMessage, 
 	sendEmailMessage, 
 	lockPassword, 
-	lockToken,
+	lockToken, 
+	deleteKeysFromCache,
 	;
 
-	@Override
 	public Class<?> validationClass() {
 		Class<? extends JnAsyncBusiness> class1 = this.getClass();
 		return class1;

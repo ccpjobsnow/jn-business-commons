@@ -198,12 +198,12 @@ public final class JnEntityExpurgable extends CcpEntityDelegator {
 		}
 
 		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.ENTITY.getRequiredEntityRow(searchResults, putAll);
-		Long timeStamp = requiredEntityRow.getAsLongNumber("timestamp");
+		Long timeStamp = requiredEntityRow.getAsLongNumber(JnEntityDisposableRecord.Fields.timestamp.name());
 		
 		boolean validTimeStamp = timeStamp > System.currentTimeMillis();
 		
 		if(validTimeStamp) {
-			CcpJsonRepresentation innerJson = requiredEntityRow.getInnerJson("json");
+			CcpJsonRepresentation innerJson = requiredEntityRow.getInnerJson(JnEntityDisposableRecord.Fields.json.name());
 			return innerJson;
 		}
 		
