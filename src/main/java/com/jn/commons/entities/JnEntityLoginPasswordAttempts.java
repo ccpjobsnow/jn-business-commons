@@ -4,19 +4,15 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-import com.ccp.especifications.db.utils.decorators.CcpEntityExpurg;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
+import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
 import com.jn.commons.utils.JnEntityExpurgable;
 
-//super(CcpLongevityEntity.daily, Fields.values());
 @CcpEntitySpecifications(cacheableEntity = true)
-@CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurg.daily)
+@CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurgableOptions.daily)
 public class JnEntityLoginPasswordAttempts {
 
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityLoginPasswordAttempts.class);
-	
-	private JnEntityLoginPasswordAttempts() {
-	}
+	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityLoginPasswordAttempts.class).entityInstance;
 	
 	public static enum Fields implements CcpEntityField{
 		email(true), attempts(false)

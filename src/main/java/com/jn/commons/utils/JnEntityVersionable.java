@@ -8,10 +8,10 @@ import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.bulk.CcpEntityOperationType;
 import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.utils.CcpEntity;
-import com.ccp.especifications.db.utils.decorators.CcpDelegatorEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityDelegator;
 import com.jn.commons.entities.JnEntityAudit;
 
-public final class JnEntityVersionable extends CcpDelegatorEntity {
+public final class JnEntityVersionable extends CcpEntityDelegator {
 	
 	protected JnEntityVersionable(CcpEntity entity) {
 		super(entity);

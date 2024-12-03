@@ -3,12 +3,12 @@ package com.jn.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 
 @CcpEntitySpecifications(cacheableEntity = false)
 public class JnEntityAsyncTask{
 
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityAsyncTask.class);
+	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityAsyncTask.class).entityInstance;
 
 	public static enum Fields implements CcpEntityField{
 		started(false), finished(false), enlapsedTime(false), data(false),
@@ -25,9 +25,5 @@ public class JnEntityAsyncTask{
 		public boolean isPrimaryKey() {
 			return this.primaryKey;
 		}
-	}
-	
-	public boolean isCopyableEntity() {
-		return false;
 	}
 }

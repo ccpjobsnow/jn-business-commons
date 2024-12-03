@@ -4,14 +4,14 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityVersionable;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntitySpecifications(cacheableEntity = true)
 @CcpEntityVersionable(versionableEntityFactory = JnEntityVersionable.class)
 public class JnEntityInstantMessengerParametersToSend{
 	
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityInstantMessengerParametersToSend.class);
+	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityInstantMessengerParametersToSend.class).entityInstance;
 
 	public static enum Fields implements CcpEntityField{
 		recipient(false), templateId(true), subjectType(false), moreParameters(false)

@@ -3,12 +3,12 @@ package com.jn.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 
 @CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityLoginStats{
 	
-	public static final CcpEntity INSTANCE = CcpFactoryEntity.getEntityInstance(JnEntityLoginStats.class);
+	public static final CcpEntity INSTANCE = new CcpEntityFactory(JnEntityLoginStats.class).entityInstance;
 	
 	public static enum Fields implements CcpEntityField{
 		email(true), balance(false), lastAccess(false), countAccess(false),

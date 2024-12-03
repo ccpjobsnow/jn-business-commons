@@ -5,15 +5,15 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-import com.ccp.especifications.db.utils.decorators.CcpEntityExpurg;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
+import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
 import com.jn.commons.utils.JnEntityExpurgable;
 
-@CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurg.hourly)
+@CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurgableOptions.hourly)
 @CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityHttpApiRetrySendRequest {
 
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityHttpApiRetrySendRequest.class);
+	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityHttpApiRetrySendRequest.class).entityInstance;
 	
 	public static boolean exceededTries(CcpJsonRepresentation json, String fieldName, int limit) {
 		

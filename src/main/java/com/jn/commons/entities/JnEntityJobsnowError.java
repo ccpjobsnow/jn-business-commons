@@ -4,15 +4,15 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
-import com.ccp.especifications.db.utils.decorators.CcpEntityExpurg;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
+import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
 import com.jn.commons.utils.JnEntityExpurgable;
 
-@CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurg.hourly)
+@CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurgableOptions.hourly)
 @CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityJobsnowError{
 
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityJobsnowError.class);
+	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityJobsnowError.class).entityInstance;
 	
 	public static enum Fields implements CcpEntityField{
 		cause(false), stackTrace(false), type(true), message(false)

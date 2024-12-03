@@ -3,12 +3,12 @@ package com.jn.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 
 @CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityEmailReportedAsSpam {
 
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityEmailReportedAsSpam.class);
+	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityEmailReportedAsSpam.class).entityInstance;
 	
 	public static enum Fields implements CcpEntityField{
 		subject(false), subjectType(false), email(true), sender(true), message(false)

@@ -3,12 +3,12 @@ package com.jn.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpFactoryEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 
 @CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityContactUs{
 
-	public static final CcpEntity ENTITY = CcpFactoryEntity.getEntityInstance(JnEntityContactUs.class);
+	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityContactUs.class).entityInstance;
 	
 	public static enum Fields implements CcpEntityField{
 		subjectType(true), email(true), subject(false), message(false), chatId(false), sender(false)
