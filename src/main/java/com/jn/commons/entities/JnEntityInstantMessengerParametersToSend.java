@@ -4,12 +4,13 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityVersionable;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntitySpecifications(cacheableEntity = true)
 @CcpEntityVersionable(versionableEntityFactory = JnEntityVersionable.class)
-public class JnEntityInstantMessengerParametersToSend{
+public class JnEntityInstantMessengerParametersToSend implements CcpEntityConfigurator {
 	
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityInstantMessengerParametersToSend.class).entityInstance;
 
@@ -28,7 +29,7 @@ public class JnEntityInstantMessengerParametersToSend{
 
 	}
 //	public List<CcpBulkItem> getFirstRecordsToInsert() {
-//		List<CcpBulkItem> createBulkItems = super.toCreateBulkItems("{"
+//		List<CcpBulkItem> createBulkItems = CcpEntityConfigurator.super.toCreateBulkItems(ENTITY, "{"
 //				+ "	\"recipient\": 751717896,"
 //				+ "	\"templateId\": \"notifyError\","
 //				+ "	\"subjectType\": \"notifyError\","

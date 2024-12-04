@@ -4,11 +4,11 @@ import com.ccp.constantes.CcpConstants;
 import com.ccp.validation.annotations.ObjectTextSize;
 import com.ccp.validation.annotations.Regex;
 import com.ccp.validation.annotations.SimpleObject;
-import com.ccp.validation.annotations.CcpJsonValidation;
+import com.ccp.validation.annotations.CcpJsonFieldsValidation;
 import com.ccp.validation.enums.ObjectTextSizeValidations;
 import com.ccp.validation.enums.SimpleObjectValidations;
 
-@CcpJsonValidation(
+@CcpJsonFieldsValidation(
 		regex = {
 				@Regex(value = CcpConstants.STRONG_PASSWORD_REGEX, fields = "password")
 		},

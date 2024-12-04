@@ -1,15 +1,19 @@
 package com.jn.commons.entities;
 
+import java.util.List;
+
+import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.decorators.CcpEntityVersionable;
-import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.CcpEntityVersionable;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntityVersionable(versionableEntityFactory = JnEntityVersionable.class)
-@CcpEntitySpecifications(cacheableEntity = true, pathToFirstRecords = "algumacoisa")
-public class JnEntityInstantMessengerTemplateMessage {
+@CcpEntitySpecifications(cacheableEntity = true)
+public class JnEntityInstantMessengerTemplateMessage  implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityInstantMessengerTemplateMessage.class).entityInstance;
 
@@ -27,14 +31,14 @@ public class JnEntityInstantMessengerTemplateMessage {
 			return this.primaryKey;
 		}
 	}
-//	public List<CcpBulkItem> getFirstRecordsToInsert() {
-//		List<CcpBulkItem> createBulkItems = super.toCreateBulkItems("{"
-//				+ "	\"language\": \"portuguese\","
-//				+ "	\"templateId\": \"notifyError\","
-//				+ "	\"message\": \"{type}\\n\\n{stackTrace}\\n\\n\\n{msg}\\n\\nCaused by:\\n{cause}\""
-//				+ "}");
-//
-//		return createBulkItems;
-//	}
+	public List<CcpBulkItem> getFirstRecordsToInsert() {
+		List<CcpBulkItem> createBulkItems = CcpEntityConfigurator.super.toCreateBulkItems(ENTITY, "{"
+				+ "	\"language\": \"portuguese\","
+				+ "	\"templateId\": \"notifyError\","
+				+ "	\"message\": \"{type}\\n\\n{stackTrace}\\n\\n\\n{msg}\\n\\nCaused by:\\n{cause}\""
+				+ "}");
+
+		return createBulkItems;
+	}
 
 }
