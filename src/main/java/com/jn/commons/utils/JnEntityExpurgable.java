@@ -22,7 +22,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator {
 
 	private final CcpEntityExpurgableOptions timeOption;
 	
-	protected JnEntityExpurgable(CcpEntityExpurgableOptions timeOption, CcpEntity entity) {
+	protected JnEntityExpurgable(CcpEntity entity, CcpEntityExpurgableOptions timeOption) {
 		super(entity);
 		this.timeOption = timeOption;
 	}
