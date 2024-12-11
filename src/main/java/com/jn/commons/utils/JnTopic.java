@@ -38,6 +38,8 @@ public interface JnTopic {
 		
 		String[] array = list.toArray(new String[list.size()]);
 		return array;
-		
+	}
+	default boolean canSave() {
+		return true;
 	}
 }
