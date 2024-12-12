@@ -287,6 +287,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator {
 		String timeStampFieldName = JnEntityDisposableRecord.Fields.timestamp.name();
 		
 		boolean recordNotFound = requiredEntityRow.containsAllFields(timeStampFieldName) == false;
+	
 		if(recordNotFound) {
 			return false;
 		}
@@ -308,16 +309,23 @@ public final class JnEntityExpurgable extends CcpEntityDelegator {
 		if(recordFound) {
 			return recordFromUnionAll;
 		}
+
 		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
 		CcpJsonRepresentation recordFromDisposable = JnEntityDisposableRecord.ENTITY.getRecordFromUnionAll(unionAll, copyIdToSearch);
 		
 		boolean isInvalid = this.isValidTimestamp(recordFromDisposable) == false;
 	
 		if(isInvalid) {
-			return CcpConstants.EMPTY_JSON;
+			CcpJsonRepresentation requiredEntityRow = this.entity.getRequiredEntityRow(unionAll, json);
+			return requiredEntityRow;
 		}
 		
 		CcpJsonRepresentation innerJson = recordFromDisposable.getInnerJson(JnEntityDisposableRecord.Fields.json.name());
 		return innerJson;
 	}
+	
+	public CcpJsonRepresentation getRequiredEntityRow(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
+		CcpJsonRepresentation recordFromUnionAll = this.getRecordFromUnionAll(unionAll, json);
+		return recordFromUnionAll;
+	}	
 }
