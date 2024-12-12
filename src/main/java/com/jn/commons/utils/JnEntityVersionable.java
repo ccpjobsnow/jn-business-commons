@@ -7,11 +7,18 @@ import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.bulk.CcpEntityOperationType;
 import com.ccp.especifications.db.crud.CcpCrud;
+import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpEntity;
+import com.ccp.especifications.db.utils.decorators.CcpEntityDecoratorFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntityDelegator;
 import com.jn.commons.entities.JnEntityAudit;
 
-public final class JnEntityVersionable extends CcpEntityDelegator {
+public final class JnEntityVersionable extends CcpEntityDelegator implements CcpEntityDecoratorFactory {
+	
+	public JnEntityVersionable() {
+		//GAMBETA
+		super(null);
+	}
 	
 	protected JnEntityVersionable(CcpEntity entity) {
 		super(entity);
@@ -97,5 +104,16 @@ public final class JnEntityVersionable extends CcpEntityDelegator {
 		CcpEntityOperationType operation = created ? CcpEntityOperationType.create : CcpEntityOperationType.update;
 		this.saveAuditory(json, operation);
 		return created;
+	}
+
+	public boolean isPresentInThisUnionAll(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
+		boolean presentInThisUnionAll = this.entity.isPresentInThisUnionAll(unionAll, json);
+		return presentInThisUnionAll;
+	}
+
+	@Override
+	public CcpEntity getEntity(CcpEntity entity) {
+		JnEntityVersionable jnEntityVersionable = new JnEntityVersionable(entity);
+		return jnEntityVersionable;
 	}
 }

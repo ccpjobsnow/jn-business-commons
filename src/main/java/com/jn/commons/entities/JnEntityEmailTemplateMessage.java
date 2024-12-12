@@ -8,11 +8,11 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpEntityVersionable;
+import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntitySpecifications(cacheableEntity = true)
-@CcpEntityVersionable(versionableEntityFactory = JnEntityVersionable.class)
+@CcpEntityDecorators(decorators = JnEntityVersionable.class)
 public class JnEntityEmailTemplateMessage  implements CcpEntityConfigurator{
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityEmailTemplateMessage.class).entityInstance;

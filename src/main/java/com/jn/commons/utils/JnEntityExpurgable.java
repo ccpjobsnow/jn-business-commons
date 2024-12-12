@@ -15,12 +15,17 @@ import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.decorators.CcpEntityDelegator;
+import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
 import com.jn.commons.entities.JnEntityDisposableRecord;
 
-public final class JnEntityExpurgable extends CcpEntityDelegator {
+public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpEntityExpurgableFactory {
 
 	private final CcpEntityExpurgableOptions timeOption;
+	
+	public JnEntityExpurgable() {
+		this(null, null);
+	}
 	
 	protected JnEntityExpurgable(CcpEntity entity, CcpEntityExpurgableOptions timeOption) {
 		super(entity);
@@ -327,5 +332,10 @@ public final class JnEntityExpurgable extends CcpEntityDelegator {
 	public CcpJsonRepresentation getRequiredEntityRow(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
 		CcpJsonRepresentation recordFromUnionAll = this.getRecordFromUnionAll(unionAll, json);
 		return recordFromUnionAll;
+	}
+
+	public CcpEntity getEntity(CcpEntity entity, CcpEntityExpurgableOptions timeOption) {
+		JnEntityExpurgable jnEntityExpurgable = new JnEntityExpurgable(entity, timeOption);
+		return jnEntityExpurgable;
 	}	
 }
