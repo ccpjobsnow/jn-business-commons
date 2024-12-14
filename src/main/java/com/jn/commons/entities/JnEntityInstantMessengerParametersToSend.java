@@ -1,11 +1,14 @@
 package com.jn.commons.entities;
 
+import java.util.List;
+
+import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
-import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
+import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntitySpecifications(cacheableEntity = true)
@@ -28,18 +31,18 @@ public class JnEntityInstantMessengerParametersToSend implements CcpEntityConfig
 		}
 
 	}
-//	public List<CcpBulkItem> getFirstRecordsToInsert() {
-//		List<CcpBulkItem> createBulkItems = CcpEntityConfigurator.super.toCreateBulkItems(ENTITY, "{"
-//				+ "	\"recipient\": 751717896,"
-//				+ "	\"templateId\": \"notifyError\","
-//				+ "	\"subjectType\": \"notifyError\","
-//				+ "	\"moreParameters\":{"
-//				+ "		\"maxTriesToSendMessage\": 10,"
-//				+ "		\"sleepToSendMessage\":3000"
-//				+ "	}"
-//				+ "}");
-//
-//		return createBulkItems;
-//	}
+	public List<CcpBulkItem> getFirstRecordsToInsert() {
+		List<CcpBulkItem> createBulkItems = CcpEntityConfigurator.super.toCreateBulkItems(ENTITY, "{"
+				+ "	\"recipient\": 751717896,"
+				+ "	\"templateId\": \"notifyError\","
+				+ "	\"subjectType\": \"notifyError\","
+				+ "	\"moreParameters\":{"
+				+ "		\"maxTriesToSendMessage\": 10,"
+				+ "		\"sleepToSendMessage\":3000"
+				+ "	}"
+				+ "}");
+
+		return createBulkItems;
+	}
 
 }

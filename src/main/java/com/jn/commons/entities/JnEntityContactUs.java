@@ -3,9 +3,10 @@ package com.jn.commons.entities;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
 import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
-
+@CcpEntityTwin(twinEntityName = "contact_us_solved")
 @CcpEntitySpecifications(cacheableEntity = true)
 public class JnEntityContactUs implements CcpEntityConfigurator {
 

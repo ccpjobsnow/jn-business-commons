@@ -15,8 +15,7 @@ import com.jn.commons.entities.JnEntityAudit;
 
 public final class JnEntityVersionable extends CcpEntityDelegator implements CcpEntityDecoratorFactory {
 	
-	public JnEntityVersionable() {
-		//GAMBETA
+	private JnEntityVersionable() {
 		super(null);
 	}
 	
@@ -34,7 +33,9 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		
 		CcpJsonRepresentation audit = this.getAuditRecord(json, operation);
 		CcpCrud dependency = CcpDependencyInjection.getDependency(CcpCrud.class);
-		dependency.createOrUpdate(JnEntityAudit.ENTITY, audit);
+		String calculateId = JnEntityAudit.ENTITY.calculateId(audit);
+		String auditEntity = JnEntityAudit.ENTITY.getEntityName();
+		dependency.createOrUpdate(auditEntity, audit, calculateId);
 	}
 
 	public final CcpBulkItem getRecordCopyToBulkOperation(CcpJsonRepresentation json, CcpEntityOperationType operation) {

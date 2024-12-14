@@ -28,7 +28,7 @@ public class JnValidateSession implements Function<CcpJsonRepresentation, CcpJso
 			.ifThisIdIsNotPresentInEntity(JnEntityLoginPassword.ENTITY).returnStatus(StatusExecuteLogin.missingPassword).and()
 			.ifThisIdIsNotPresentInEntity(JnEntityLoginEmail.ENTITY).returnStatus(StatusExecuteLogin.missingEmail).and()
 			.ifThisIdIsNotPresentInEntity(JnEntityLoginSessionToken.ENTITY).returnStatus(StatusExecuteLogin.invalidSession).andFinallyReturningThisFields("sessionToken")
-			.endThisProcedureRetrievingTheResultingData(CcpConstants.DO_NOTHING);
+			.endThisProcedureRetrievingTheResultingData(CcpConstants.DO_NOTHING, JnDeleteKeysFromCache.INSTANCE);
 			return transformed;
 		} catch (Exception e) {
 			return json;
