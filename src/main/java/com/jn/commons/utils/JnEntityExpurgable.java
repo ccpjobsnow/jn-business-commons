@@ -16,6 +16,7 @@ import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpDbRequester;
 import com.ccp.especifications.db.utils.CcpEntity;
+import com.ccp.especifications.db.utils.decorators.CcpAddTimeFields;
 import com.ccp.especifications.db.utils.decorators.CcpEntityDelegator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
@@ -36,12 +37,12 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		this.timeOption = timeOption;
 	}
 
-	public final String calculateId(CcpJsonRepresentation json) {
-		Long time = System.currentTimeMillis();
-		String formattedCurrentDate = this.timeOption.getFormattedDate(time);
+	private final String getId(CcpJsonRepresentation json) {
+		Long timestamp = json.getOrDefault("timestamp", System.currentTimeMillis());
+		String formattedTimestamp = this.timeOption.getFormattedDate(timestamp);
 
 		ArrayList<Object> onlyPrimaryKeysValues = new ArrayList<>();
-		onlyPrimaryKeysValues.add(formattedCurrentDate);
+		onlyPrimaryKeysValues.add(formattedTimestamp);
 		ArrayList<Object> sortedPrimaryKeyValues = this.getSortedPrimaryKeyValues(json);
 		onlyPrimaryKeysValues.addAll(sortedPrimaryKeyValues);
 		
@@ -51,54 +52,60 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		return hash;
 	}
 
-	public CcpJsonRepresentation getCopyIdToSearch(CcpJsonRepresentation json) {
+	private CcpJsonRepresentation getExpurgableId(CcpJsonRepresentation json) {
 		
 		String id = this.getPrimaryKeyValues(json).asUgglyJson();
 		
 		String entityName = this.getEntityName();
 		
-		CcpJsonRepresentation copyIdToSearch = CcpConstants.EMPTY_JSON.put("id", id).put("entity", entityName);
-		return copyIdToSearch;
+		CcpJsonRepresentation expurgableId = CcpConstants.EMPTY_JSON.put("id", id).put("entity", entityName);
+		return expurgableId;
 	}
 	
 	public final CcpBulkItem getRecordCopyToBulkOperation(CcpJsonRepresentation json, CcpEntityOperationType operation) {
-		CcpJsonRepresentation recordCopy = this.getRecordCopy(json);
+		CcpJsonRepresentation recordCopy = this.getExpurgable(json);
 		
 		CcpBulkItem ccpBulkItem = new CcpBulkItem(recordCopy, operation, JnEntityDisposableRecord.ENTITY);
 		
 		return ccpBulkItem;
 	}
 	
-	private boolean saveCopy(CcpJsonRepresentation json) {
+	private boolean saveExpurgable(CcpJsonRepresentation json) {
 		
-		CcpJsonRepresentation recordCopyToSave = this.getRecordCopy(json);
+		CcpJsonRepresentation recordCopyToSave = this.getExpurgable(json);
 		
 		boolean createdCopy = JnEntityDisposableRecord.ENTITY.create(recordCopyToSave);
 		
 		return createdCopy;
 	}
 
-	private CcpJsonRepresentation getRecordCopy(CcpJsonRepresentation json) {
-		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
+	private CcpJsonRepresentation getExpurgable(CcpJsonRepresentation json) {
+		
+		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
 		String id = this.getPrimaryKeyValues(json).asUgglyJson();
-
-		Long nextTimeStamp = this.timeOption.getNextTimeStamp();
-		String nextDate = this.timeOption.getNextDate();
+		Long timestamp = json.getAsLongNumber("timestamp");
+		Long nextTimeStamp = this.timeOption.getNextTimeStamp(timestamp);
+		String nextDate = this.timeOption.getNextDate(timestamp);
 		CcpJsonRepresentation onlyExistingFields = this.getOnlyExistingFields(json);
-		CcpJsonRepresentation recordCopyToSave = copyIdToSearch
+		CcpJsonRepresentation expurgable = expurgableId
 				.put("timestamp", nextTimeStamp)
 				.put("json", onlyExistingFields)
 				.put("date", nextDate)
 				.put("id", id)
 				;
-		return recordCopyToSave;
+		return expurgable;
 	}
 
 	public boolean create(CcpJsonRepresentation json) {
-		String calculateId = this.calculateId(json);
-		this.entity.createOrUpdate(json, calculateId);
 		
-		this.saveCopy(json);
+		CcpJsonRepresentation transformed = json.getTransformed(CcpAddTimeFields.INSTANCE);
+		
+		String mainEntityId = this.getId(transformed);
+		
+		this.entity.createOrUpdate(transformed, mainEntityId);
+		
+		this.saveExpurgable(transformed);
+
 		return true;
 	}
 
@@ -106,7 +113,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 
 		CcpJsonRepresentation createOrUpdate =  this.entity.createOrUpdate(json, id);
 		
-		boolean saveCopy = this.saveCopy(json);
+		boolean saveCopy = this.saveExpurgable(json);
 		
 		CcpJsonRepresentation put = createOrUpdate.put("createCopy", saveCopy);
 		
@@ -114,11 +121,11 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	}
 	
 	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation json) {
-		String calculateId = this.calculateId(json);
+		String calculateId = this.getId(json);
 		
 		CcpJsonRepresentation createOrUpdate = this.entity.createOrUpdate(json, calculateId);
 		
-		boolean saveCopy = this.saveCopy(json);
+		boolean saveCopy = this.saveExpurgable(json);
 
 		CcpJsonRepresentation put = createOrUpdate.put("createCopy", saveCopy);
 		
@@ -126,21 +133,25 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	}
 	
 	public boolean delete(CcpJsonRepresentation json) {
-
-		String calculateId = this.calculateId(json);
 		
-		boolean delete =  this.entity.delete(calculateId);
+		CcpJsonRepresentation transformed = json.getTransformed(CcpAddTimeFields.INSTANCE);
 		
-		this.deleteCopy(json);
+		String calculateId = this.getId(transformed);
+		
+		boolean delete = this.entity.delete(calculateId);
+		
+		this.deleteCopy(transformed);
 
 		return delete;
 	}
 
 	private boolean deleteCopy(CcpJsonRepresentation json) {
 	
-		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
+		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
 		
-		boolean deleteCopy = JnEntityDisposableRecord.ENTITY.delete(copyIdToSearch);
+		CcpJsonRepresentation allValuesTogether = expurgableId.putAll(json);
+		
+		boolean deleteCopy = JnEntityDisposableRecord.ENTITY.delete(allValuesTogether);
 		
 		return deleteCopy;
 	}
@@ -158,24 +169,25 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	}
 	
 	public boolean exists(CcpJsonRepresentation json) {
-		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
+		
+		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
-		CcpJsonRepresentation putAll = copyIdToSearch.putAll(json);
-		CcpSelectUnionAll unionAll = crud.unionAll(putAll, JnDeleteKeysFromCache.INSTANCE, this, JnEntityDisposableRecord.ENTITY);
+		CcpJsonRepresentation allValuesTogether = expurgableId.putAll(json);
+		CcpSelectUnionAll unionAll = crud.unionAll(allValuesTogether, JnDeleteKeysFromCache.INSTANCE, this, JnEntityDisposableRecord.ENTITY);
 
-		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(unionAll, json);
+		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(unionAll, allValuesTogether);
 		
 		if(isPresentInOriginalEntity) {
 			return true;
 		}
 	
-		boolean isNotPresentInCopyEntity = JnEntityDisposableRecord.ENTITY.isPresentInThisUnionAll(unionAll, copyIdToSearch) == false;
+		boolean isNotPresentInCopyEntity = JnEntityDisposableRecord.ENTITY.isPresentInThisUnionAll(unionAll, expurgableId) == false;
 		
 		if(isNotPresentInCopyEntity) {
 			return false;
 		}
 		
-		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.ENTITY.getRequiredEntityRow(unionAll, copyIdToSearch);
+		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.ENTITY.getRequiredEntityRow(unionAll, expurgableId);
 		Long timeStamp = requiredEntityRow.getAsLongNumber("timestamp");
 		
 		boolean obsoleteTimeStamp = timeStamp <= System.currentTimeMillis();
@@ -191,26 +203,27 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	public CcpJsonRepresentation getOneById(CcpJsonRepresentation json) {
 		
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
-		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
-		CcpJsonRepresentation putAll = copyIdToSearch.putAll(json);
-		CcpSelectUnionAll searchResults = crud.unionAll(putAll, JnDeleteKeysFromCache.INSTANCE, this, JnEntityDisposableRecord.ENTITY);
+		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
+		CcpJsonRepresentation allValuesTogether = expurgableId.putAll(json);
+		
+		CcpSelectUnionAll unionAll = crud.unionAll(allValuesTogether, JnDeleteKeysFromCache.INSTANCE, this, JnEntityDisposableRecord.ENTITY);
 
-		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(searchResults, putAll);
+		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(unionAll, allValuesTogether);
 		
 		if(isPresentInOriginalEntity) {
-			CcpJsonRepresentation requiredEntityRow = this.getRequiredEntityRow(searchResults, putAll);
+			CcpJsonRepresentation requiredEntityRow = this.getRequiredEntityRow(unionAll, allValuesTogether);
 			return requiredEntityRow;
 		}
 	
-		boolean isNotPresentInCopyEntity = JnEntityDisposableRecord.ENTITY.isPresentInThisUnionAll(searchResults, json) == false;
+		boolean isNotPresentInCopyEntity = JnEntityDisposableRecord.ENTITY.isPresentInThisUnionAll(unionAll, allValuesTogether) == false;
 
 		if(isNotPresentInCopyEntity) {
-			String calculateId = this.calculateId(json);
+			String calculateId = this.getId(allValuesTogether);
 			CcpJsonRepresentation oneById =  this.entity.getOneById(calculateId);
 			return oneById;
 		}
 
-		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.ENTITY.getRequiredEntityRow(searchResults, putAll);
+		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.ENTITY.getRequiredEntityRow(unionAll, allValuesTogether);
 		Long timeStamp = requiredEntityRow.getAsLongNumber(JnEntityDisposableRecord.Fields.timestamp.name());
 		
 		boolean validTimeStamp = timeStamp > System.currentTimeMillis();
@@ -220,7 +233,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 			return innerJson;
 		}
 
-		String calculateId = this.calculateId(json);
+		String calculateId = this.getId(allValuesTogether);
 		CcpJsonRepresentation oneById =  this.entity.getOneById(calculateId);
 		
 		return oneById;
@@ -228,26 +241,26 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 
 	public CcpJsonRepresentation getOneById(CcpJsonRepresentation json, Function<CcpJsonRepresentation, CcpJsonRepresentation> ifNotFound) {
 		
-		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
+		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
-		CcpJsonRepresentation putAll = copyIdToSearch.putAll(json);
-		CcpSelectUnionAll unionAll = crud.unionAll(putAll, JnDeleteKeysFromCache.INSTANCE, this, JnEntityDisposableRecord.ENTITY);
+		CcpJsonRepresentation allValuesTogether = expurgableId.putAll(json);
+		CcpSelectUnionAll unionAll = crud.unionAll(allValuesTogether, JnDeleteKeysFromCache.INSTANCE, this, JnEntityDisposableRecord.ENTITY);
 
-		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(unionAll, json);
+		boolean isPresentInOriginalEntity = this.isPresentInThisUnionAll(unionAll, allValuesTogether);
 		
 		if(isPresentInOriginalEntity) {
-			CcpJsonRepresentation requiredEntityRow = this.getRequiredEntityRow(unionAll, json);
+			CcpJsonRepresentation requiredEntityRow = this.getRequiredEntityRow(unionAll, allValuesTogether);
 			return requiredEntityRow;
 		}
 	
-		boolean isNotPresentInCopyEntity = JnEntityDisposableRecord.ENTITY.isPresentInThisUnionAll(unionAll, copyIdToSearch) == false;
+		boolean isNotPresentInCopyEntity = JnEntityDisposableRecord.ENTITY.isPresentInThisUnionAll(unionAll, allValuesTogether) == false;
 
 		if(isNotPresentInCopyEntity) {
-			CcpJsonRepresentation apply = ifNotFound.apply(json);
+			CcpJsonRepresentation apply = ifNotFound.apply(allValuesTogether);
 			return apply;
 		}
 
-		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.ENTITY.getRequiredEntityRow(unionAll, copyIdToSearch);
+		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.ENTITY.getRequiredEntityRow(unionAll, allValuesTogether);
 		Long timeStamp = requiredEntityRow.getAsLongNumber("timestamp");
 		
 		boolean validTimeStamp = timeStamp > System.currentTimeMillis();
@@ -256,7 +269,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 			CcpJsonRepresentation innerJson = requiredEntityRow.getInnerJson("json");
 			return innerJson;
 		}
-		CcpJsonRepresentation whenNotFound =  ifNotFound.apply(json);
+		CcpJsonRepresentation whenNotFound =  ifNotFound.apply(allValuesTogether);
 		return whenNotFound;
 	}
 	
@@ -266,7 +279,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	
 	private List<CcpJsonRepresentation> getParametersToSearchExpurgable(CcpJsonRepresentation json) {
 		
-		String id = this.calculateId(json);
+		String id = this.getId(json);
 
 		CcpDbRequester dependency = CcpDependencyInjection.getDependency(CcpDbRequester.class);
 		
@@ -286,8 +299,8 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 
 	public List<CcpJsonRepresentation> getParametersToSearch(CcpJsonRepresentation json) {
 		List<CcpJsonRepresentation> mainParametersToSearch =  this.getParametersToSearchExpurgable(json);
-		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
-		List<CcpJsonRepresentation> othersParametersToSearch = JnEntityDisposableRecord.ENTITY.getParametersToSearch(copyIdToSearch);
+		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
+		List<CcpJsonRepresentation> othersParametersToSearch = JnEntityDisposableRecord.ENTITY.getParametersToSearch(expurgableId);
 		ArrayList<CcpJsonRepresentation> result = new ArrayList<>();
 		result.addAll(othersParametersToSearch);
 		result.addAll(mainParametersToSearch);
@@ -296,7 +309,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 
 	public boolean isPresentInThisUnionAll(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
 
-		String id = this.calculateId(json);
+		String id = this.getId(json);
 
 		String entityName = this.getEntityName();
 		
@@ -306,18 +319,23 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 			return true;
 		}
 		
-		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
+		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
 
-		boolean notFoundInDisposable = JnEntityDisposableRecord.ENTITY.isPresentInThisUnionAll(unionAll, copyIdToSearch) == false;
+		boolean notFoundInDisposable = JnEntityDisposableRecord.ENTITY.isPresentInThisUnionAll(unionAll, expurgableId) == false;
 		
 		if(notFoundInDisposable) {
 			return false;
 		}
 		
-		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.ENTITY.getRequiredEntityRow(unionAll, copyIdToSearch);
+		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.ENTITY.getRequiredEntityRow(unionAll, expurgableId);
 		
 		boolean valid = this.isValidTimestamp(requiredEntityRow);
-		return valid;
+		
+		if(valid) {
+			return true;
+		}
+		
+		return false;
 	}
 
 	private boolean isValidTimestamp(CcpJsonRepresentation requiredEntityRow) {
@@ -340,7 +358,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 
 	public CcpJsonRepresentation getRecordFromUnionAll(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
 	
-		String id = this.calculateId(json);
+		String id = this.getId(json);
 		String index = this.getEntityName();
 		
 		CcpJsonRepresentation recordFromUnionAll = unionAll.getEntityRow(index, id);
@@ -351,13 +369,13 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 			return recordFromUnionAll;
 		}
 
-		CcpJsonRepresentation copyIdToSearch = this.getCopyIdToSearch(json);
-		CcpJsonRepresentation recordFromDisposable = JnEntityDisposableRecord.ENTITY.getRecordFromUnionAll(unionAll, copyIdToSearch);
+		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
+		CcpJsonRepresentation recordFromDisposable = JnEntityDisposableRecord.ENTITY.getRecordFromUnionAll(unionAll, expurgableId);
 		
 		boolean isInvalid = this.isValidTimestamp(recordFromDisposable) == false;
 	
 		if(isInvalid) {
-			throw new CcpEntityRecordNotFound(this, json);
+			throw new CcpEntityRecordNotFound(this, expurgableId);
 		}
 		
 		CcpJsonRepresentation innerJson = recordFromDisposable.getInnerJson(JnEntityDisposableRecord.Fields.json.name());
@@ -373,4 +391,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		JnEntityExpurgable jnEntityExpurgable = new JnEntityExpurgable(entity, timeOption);
 		return jnEntityExpurgable;
 	}	
+	
+	
+	
 }
