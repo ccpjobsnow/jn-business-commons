@@ -83,7 +83,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		
 		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
 		String id = this.getPrimaryKeyValues(json).asUgglyJson();
-		Long timestamp = json.getAsLongNumber("timestamp");
+		Long timestamp = json.getOrDefault("timestamp", System.currentTimeMillis());
 		Long nextTimeStamp = this.timeOption.getNextTimeStamp(timestamp);
 		String nextDate = this.timeOption.getNextDate(timestamp);
 		CcpJsonRepresentation onlyExistingFields = this.getOnlyExistingFields(json);
