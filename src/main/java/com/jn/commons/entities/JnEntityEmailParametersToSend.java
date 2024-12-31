@@ -9,6 +9,7 @@ import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
+import com.jn.commons.utils.JnAsyncBusiness;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
@@ -34,9 +35,13 @@ public class JnEntityEmailParametersToSend  implements CcpEntityConfigurator{
 	public List<CcpBulkItem> getFirstRecordsToInsert() {
 		List<CcpBulkItem> createBulkItems = CcpEntityConfigurator.super.toCreateBulkItems(ENTITY, 
 				"{" + "	\"email\": \"devs.jobsnow@gmail.com\"," + "	\"sender\": \"devs.jobsnow@gmail.com\","
-						+ "	\"subjectType\": \"notifyError\"," + "	\"templateId\": \"notifyError\"" + "}",
+						+ "	\"subjectType\": \"notifyError\"," + "	\"templateId\": \""
+						+ JnAsyncBusiness.notifyError.name()		
+						+ "\"" + "}",
 				"{" + "	\"sender\": \"devs.jobsnow@gmail.com\"," + "	\"subjectType\": \"sendUserToken\","
-						+ "	\"templateId\": \"sendUserToken\"," + "	\"moreParameters\": {"
+						+ "	\"templateId\": \""
+						+ JnAsyncBusiness.sendUserToken.name()
+						+ "\"," + "	\"moreParameters\": {"
 						+ "		\"linkedinAddress\": \"https://www.linkedin.com/in/onias85/\","
 						+ "		\"linkedinName\": \"Onias\","
 						+ "		\"accessLink\": \"https://ccpjobsnow.com/#/tokenToSetPassword?email={email}&msgType=info&msgValue=newUser&token={token}\","

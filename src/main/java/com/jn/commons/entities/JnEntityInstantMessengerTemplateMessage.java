@@ -9,7 +9,9 @@ import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
+import com.jn.commons.utils.JnAsyncBusiness;
 import com.jn.commons.utils.JnEntityVersionable;
+import com.jn.commons.utils.JnLanguage;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
 @CcpEntitySpecifications(cacheableEntity = true)
@@ -33,8 +35,12 @@ public class JnEntityInstantMessengerTemplateMessage  implements CcpEntityConfig
 	}
 	public List<CcpBulkItem> getFirstRecordsToInsert() {
 		List<CcpBulkItem> createBulkItems = CcpEntityConfigurator.super.toCreateBulkItems(ENTITY, "{"
-				+ "	\"language\": \"portuguese\","
-				+ "	\"templateId\": \"notifyError\","
+				+ "	\"language\": \""
+				+ JnLanguage.portuguese.name()
+				+ "\","
+				+ "	\"templateId\": \""
+				+ JnAsyncBusiness.notifyError.name()
+				+ "\","
 				+ "	\"message\": \"{type}\\n\\n{stackTrace}\\n\\n\\n{msg}\\n\\nCaused by:\\n{cause}\""
 				+ "}");
 
