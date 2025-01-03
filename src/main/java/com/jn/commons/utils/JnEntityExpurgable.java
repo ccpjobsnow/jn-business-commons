@@ -5,7 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 
-import com.ccp.constantes.CcpConstants;
+import com.ccp.constantes.CcpOtherConstants;
+import com.ccp.decorators.CcpHashAlgorithm;
 import com.ccp.decorators.CcpHashDecorator;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;
@@ -48,7 +49,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		
 		String replace = onlyPrimaryKeysValues.toString().replace("[", "").replace("]", "");
 		CcpHashDecorator hash2 = new CcpStringDecorator(replace).hash();
-		String hash = hash2.asString("SHA1");
+		String hash = hash2.asString(CcpHashAlgorithm.SHA1);
 		return hash;
 	}
 
@@ -58,7 +59,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		
 		String entityName = this.getEntityName();
 		
-		CcpJsonRepresentation expurgableId = CcpConstants.EMPTY_JSON.put("id", id).put("entity", entityName);
+		CcpJsonRepresentation expurgableId = CcpOtherConstants.EMPTY_JSON.put("id", id).put("entity", entityName);
 		return expurgableId;
 	}
 	
@@ -288,7 +289,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		
 		String entityName = this.getEntityName();
 		
-		CcpJsonRepresentation mainRecord = CcpConstants.EMPTY_JSON
+		CcpJsonRepresentation mainRecord = CcpOtherConstants.EMPTY_JSON
 		.put(fieldNameToEntity, entityName)
 		.put(fieldNameToId, id)
 		;

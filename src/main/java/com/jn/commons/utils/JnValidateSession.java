@@ -2,9 +2,11 @@ package com.jn.commons.utils;
 
 import java.util.function.Function;
 
-import com.ccp.constantes.CcpConstants;
+import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.crud.CcpGetEntityId;
+import com.ccp.exceptions.process.CcpFlow;
+import com.ccp.process.CcpDefaultProcessStatus;
 import com.jn.commons.entities.JnEntityLoginEmail;
 import com.jn.commons.entities.JnEntityLoginPassword;
 import com.jn.commons.entities.JnEntityLoginSessionToken;
@@ -18,21 +20,26 @@ public class JnValidateSession implements Function<CcpJsonRepresentation, CcpJso
 	public static final JnValidateSession INSTANCE = new JnValidateSession();
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
-		try {
-			
-			CcpJsonRepresentation transformed = json.putEmailHash("SHA1");
-			new CcpGetEntityId(transformed)
-			.toBeginProcedureAnd()
-			.ifThisIdIsPresentInEntity(JnEntityLoginToken.ENTITY.getTwinEntity()).returnStatus(StatusExecuteLogin.lockedToken).and()
-			.ifThisIdIsPresentInEntity(JnEntityLoginPassword.ENTITY.getTwinEntity()).returnStatus(StatusExecuteLogin.lockedPassword).and()
-			.ifThisIdIsNotPresentInEntity(JnEntityLoginPassword.ENTITY).returnStatus(StatusExecuteLogin.missingPassword).and()
-			.ifThisIdIsNotPresentInEntity(JnEntityLoginEmail.ENTITY).returnStatus(StatusExecuteLogin.missingEmail).and()
-			.ifThisIdIsNotPresentInEntity(JnEntityLoginSessionToken.ENTITY).returnStatus(StatusExecuteLogin.invalidSession).andFinallyReturningThisFields("sessionToken")
-			.endThisProcedureRetrievingTheResultingData(CcpConstants.DO_NOTHING, JnDeleteKeysFromCache.INSTANCE);
-			return transformed;
-		} catch (Exception e) {
-			return json;
+		
+		boolean isSessionLess = json.containsAllFields("sessionToken") == false;
+		
+		if(isSessionLess) {
+			throw new CcpFlow(json, CcpDefaultProcessStatus.UNHAUTHORIZED);
 		}
+		
+//		CcpJsonRepresentation transformed = json.putEmailHash(CcpHashAlgorithm.SHA1);
+		
+		new CcpGetEntityId(json)
+		.toBeginProcedureAnd()
+		.ifThisIdIsPresentInEntity(JnEntityLoginToken.ENTITY.getTwinEntity()).returnStatus(StatusExecuteLogin.lockedToken).and()
+		.ifThisIdIsPresentInEntity(JnEntityLoginPassword.ENTITY.getTwinEntity()).returnStatus(StatusExecuteLogin.lockedPassword).and()
+		.ifThisIdIsNotPresentInEntity(JnEntityLoginPassword.ENTITY).returnStatus(StatusExecuteLogin.missingPassword).and()
+		.ifThisIdIsNotPresentInEntity(JnEntityLoginEmail.ENTITY).returnStatus(StatusExecuteLogin.missingEmail).and()
+		.ifThisIdIsNotPresentInEntity(JnEntityLoginSessionToken.ENTITY).returnStatus(StatusExecuteLogin.invalidSession)
+		.andFinallyReturningTheseFields("sessionToken")
+		.endThisProcedureRetrievingTheResultingData(CcpOtherConstants.DO_NOTHING, JnDeleteKeysFromCache.INSTANCE);
+
+		return json;
 	}
 
 }

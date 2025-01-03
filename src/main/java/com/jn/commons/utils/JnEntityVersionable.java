@@ -1,6 +1,6 @@
 package com.jn.commons.utils;
 
-import com.ccp.constantes.CcpConstants;
+import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpTimeDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
@@ -53,7 +53,7 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		CcpTimeDecorator ctd = new CcpTimeDecorator();
 		String formattedDateTime = ctd.getFormattedDateTime("dd/MM/yyyy HH:mm:ss.SSS");
 		CcpJsonRepresentation audit = 
-				CcpConstants.EMPTY_JSON
+				CcpOtherConstants.EMPTY_JSON
 				.put("timestamp", System.currentTimeMillis())
 				.put("json", "" + onlyExistingFields)
 				.put("date", formattedDateTime)

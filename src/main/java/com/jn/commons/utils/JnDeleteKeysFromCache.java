@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-import com.ccp.constantes.CcpConstants;
+import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.cache.CcpCacheDecorator;
 
@@ -27,7 +27,7 @@ public class JnDeleteKeysFromCache implements Function<CcpJsonRepresentation, Cc
 	}
 
 	public void accept(String[] keysToDeleteInCache) {
-		CcpJsonRepresentation json = CcpConstants.EMPTY_JSON.put(KEYS_TO_DELETE_IN_CACHE, keysToDeleteInCache);
+		CcpJsonRepresentation json = CcpOtherConstants.EMPTY_JSON.put(KEYS_TO_DELETE_IN_CACHE, keysToDeleteInCache);
 		this.apply(json);
 		
 	}
