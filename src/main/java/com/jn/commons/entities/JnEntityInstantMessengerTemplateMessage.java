@@ -14,7 +14,7 @@ import com.jn.commons.utils.JnEntityVersionable;
 import com.jn.commons.utils.JnLanguage;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
-@CcpEntitySpecifications(cacheableEntity = true)
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
 public class JnEntityInstantMessengerTemplateMessage  implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityInstantMessengerTemplateMessage.class).entityInstance;

@@ -1,4 +1,4 @@
-package com.jn.commons.validations;
+package com.jn.commons.json.validations;
 
 import com.ccp.validation.annotations.CcpJsonFieldsValidation;
 
@@ -6,6 +6,6 @@ import com.ccp.validation.annotations.CcpJsonFieldsValidation;
 		
 		)
 
-public class JsonFieldsValidationContactUs {
+public class JnJsonValidationContactUs {
 
 }

@@ -10,7 +10,7 @@ import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
 import com.jn.commons.utils.JnEntityExpurgable;
 
 @CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurgableOptions.hourly)
-@CcpEntitySpecifications(cacheableEntity = true)
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
 public class JnEntityHttpApiErrorClient  implements CcpEntityConfigurator {
 	
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityHttpApiErrorClient.class).entityInstance;

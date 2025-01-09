@@ -6,7 +6,7 @@ import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 
-@CcpEntitySpecifications(cacheableEntity = false)
+@CcpEntitySpecifications(cacheableEntity = false, jsonTransformations = {})
 public class JnEntityAsyncTask implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityAsyncTask.class).entityInstance;

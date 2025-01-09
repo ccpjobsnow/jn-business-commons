@@ -4,10 +4,11 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
+import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 @CcpEntityTwin(twinEntityName = "contact_us_solved")
-@CcpEntitySpecifications(cacheableEntity = true)
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class})
 public class JnEntityContactUs implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityContactUs.class).entityInstance;

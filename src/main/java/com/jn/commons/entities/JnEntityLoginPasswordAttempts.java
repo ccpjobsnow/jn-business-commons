@@ -4,12 +4,13 @@ import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
-import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
+import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
+import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
+import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.jn.commons.utils.JnEntityExpurgable;
 
-@CcpEntitySpecifications(cacheableEntity = true)
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class})
 @CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurgableOptions.daily)
 public class JnEntityLoginPasswordAttempts implements CcpEntityConfigurator {
 

@@ -12,8 +12,8 @@ import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.jn.commons.utils.JnAsyncBusiness;
 import com.jn.commons.utils.JnEntityVersionable;
 
-@CcpEntitySpecifications(cacheableEntity = true)
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
 public class JnEntityInstantMessengerParametersToSend implements CcpEntityConfigurator {
 	
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityInstantMessengerParametersToSend.class).entityInstance;

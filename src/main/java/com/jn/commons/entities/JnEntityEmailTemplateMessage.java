@@ -6,14 +6,14 @@ import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
+import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
 import com.jn.commons.utils.JnAsyncBusiness;
 import com.jn.commons.utils.JnEntityVersionable;
 import com.jn.commons.utils.JnLanguage;
 
-@CcpEntitySpecifications(cacheableEntity = true)
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
 public class JnEntityEmailTemplateMessage  implements CcpEntityConfigurator{
 

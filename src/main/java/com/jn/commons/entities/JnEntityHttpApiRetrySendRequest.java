@@ -8,10 +8,11 @@ import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
+import com.jn.commons.json.transformers.JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp;
 import com.jn.commons.utils.JnEntityExpurgable;
 
 @CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurgableOptions.hourly)
-@CcpEntitySpecifications(cacheableEntity = true)
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
 public class JnEntityHttpApiRetrySendRequest implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityHttpApiRetrySendRequest.class).entityInstance;

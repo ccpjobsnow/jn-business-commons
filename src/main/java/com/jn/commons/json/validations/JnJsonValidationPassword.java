@@ -1,4 +1,4 @@
-package com.jn.commons.validations;
+package com.jn.commons.json.validations;
 
 import com.ccp.constantes.CcpStringConstants;
 import com.ccp.validation.annotations.CcpJsonFieldsValidation;
@@ -17,6 +17,6 @@ import com.ccp.validation.enums.SimpleObjectValidations;
 		objectTextSize  = {
 				@ObjectTextSize(rule = ObjectTextSizeValidations.equalsOrGreaterThan, fields = { "password"}, bound = 8) }
 )
-public class JsonFieldsValidationJnPassword {
+public class JnJsonValidationPassword {
 
 }

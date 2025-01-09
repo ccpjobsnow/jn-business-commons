@@ -12,7 +12,7 @@ import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
-@CcpEntitySpecifications(cacheableEntity = true)
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
 public class JnEntityHttpApiParameters implements CcpEntityConfigurator{
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityHttpApiParameters.class).entityInstance;

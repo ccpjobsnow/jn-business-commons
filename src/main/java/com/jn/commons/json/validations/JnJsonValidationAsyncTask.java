@@ -1,4 +1,4 @@
-package com.jn.commons.validations;
+package com.jn.commons.json.validations;
 
 import com.ccp.validation.annotations.SimpleObject;
 import com.ccp.validation.annotations.CcpJsonFieldsValidation;
@@ -21,6 +21,6 @@ import com.ccp.validation.enums.SimpleObjectValidations;
 //		}
 		)
 
-public class JsonFieldsValidationAsyncTask {
+public class JnJsonValidationAsyncTask {
 
 }

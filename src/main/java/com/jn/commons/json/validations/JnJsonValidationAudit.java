@@ -1,4 +1,4 @@
-package com.jn.commons.validations;
+package com.jn.commons.json.validations;
 
 import com.ccp.validation.annotations.AllowedValues;
 import com.ccp.validation.annotations.SimpleObject;
@@ -13,6 +13,6 @@ import com.ccp.validation.enums.SimpleObjectValidations;
 				"delete" }, rule = AllowedValuesValidations.objectWithAllowedTexts) }
 
 )
-public class JsonFieldsValidationJnAudit {
+public class JnJsonValidationAudit {
 
 }
