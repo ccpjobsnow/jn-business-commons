@@ -12,8 +12,6 @@ import com.jn.commons.entities.JnEntityLoginToken;
 
 public class JnJsonTransformerPutRandomTokenHash implements Function<CcpJsonRepresentation, CcpJsonRepresentation> {
 
-	public final static JnJsonTransformerPutRandomTokenHash INSTANCE = new JnJsonTransformerPutRandomTokenHash();
-
 	private JnJsonTransformerPutRandomTokenHash() {}
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {

@@ -9,12 +9,11 @@ import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.CcpEntityDecorators;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.jn.commons.utils.JnAsyncBusiness;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class})
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
 public class JnEntityEmailParametersToSend  implements CcpEntityConfigurator{
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityEmailParametersToSend.class).entityInstance;

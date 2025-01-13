@@ -10,8 +10,6 @@ import com.ccp.utils.CcpHashAlgorithm;
 
 public class JnJsonTransformerPutEmailHash implements Function<CcpJsonRepresentation, CcpJsonRepresentation> {
 
-	public final static JnJsonTransformerPutEmailHash INSTANCE = new JnJsonTransformerPutEmailHash();
-
 	private JnJsonTransformerPutEmailHash() {}
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {

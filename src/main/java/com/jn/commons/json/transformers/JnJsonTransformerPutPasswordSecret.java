@@ -9,8 +9,6 @@ import com.jn.commons.entities.JnEntityLoginPassword;
 
 public class JnJsonTransformerPutPasswordSecret implements Function<CcpJsonRepresentation, CcpJsonRepresentation> {
 
-	public final static JnJsonTransformerPutPasswordSecret INSTANCE = new JnJsonTransformerPutPasswordSecret();
-
 	private JnJsonTransformerPutPasswordSecret() {}
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {

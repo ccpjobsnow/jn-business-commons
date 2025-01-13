@@ -41,7 +41,7 @@ public class JnEntityInstantMessengerTemplateMessage  implements CcpEntityConfig
 				+ "	\"templateId\": \""
 				+ JnAsyncBusiness.notifyError.name()
 				+ "\","
-				+ "	\"message\": \"{type}\\n\\n{stackTrace}\\n\\n\\n{msg}\\n\\nCaused by:\\n{cause}\""
+				+ "	\"message\": \"{type}\\n\\nError Description:\n {msg}\\n\\n{stackTrace}\\n\\nCaused by:\\n{cause}\""
 				+ "}");
 
 		return createBulkItems;

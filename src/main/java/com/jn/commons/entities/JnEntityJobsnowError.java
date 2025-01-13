@@ -16,7 +16,7 @@ public class JnEntityJobsnowError implements CcpEntityConfigurator {
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityJobsnowError.class).entityInstance;
 	
 	public static enum Fields implements CcpEntityField{
-		cause(true), stackTrace(true), type(false), message(false)
+		cause(true), stackTrace(true), type(true), message(false)
 		;
 		
 		private final boolean primaryKey;

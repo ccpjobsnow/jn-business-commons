@@ -51,7 +51,7 @@ public class JnEntityEmailTemplateMessage  implements CcpEntityConfigurator{
 				+ "	\"templateId\": \"" + JnAsyncBusiness.notifyError.name()
 				+ "\","
 				+ "	\"subject\": \"[ERROR] {type}\","
-				+ "	\"message\": \"{type}<br/><br/><br/>{msg}<br/><br/>{stackTrace}<br/><br/>Caused by:<br/>{cause}\""
+				+ "	\"message\": \"{type}<br/><br/><br/>Error Description:&nbsp;&nbsp;&nbsp;{msg}<br/><br/>{stackTrace}<br/><br/>Caused by:<br/>{cause}\""
 				+ "}"
 				
 				);
