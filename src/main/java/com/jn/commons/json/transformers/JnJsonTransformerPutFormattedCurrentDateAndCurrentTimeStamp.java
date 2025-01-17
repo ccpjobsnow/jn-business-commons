@@ -9,8 +9,6 @@ import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
 
 public class JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp implements Function<CcpJsonRepresentation, CcpJsonRepresentation> {
 
-	public final static JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp INSTANCE = new JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp();
-
 	private JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp() {}
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {

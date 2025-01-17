@@ -22,7 +22,6 @@ import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
 import com.ccp.exceptions.db.CcpEntityRecordNotFound;
 import com.ccp.utils.CcpHashAlgorithm;
 import com.jn.commons.entities.JnEntityDisposableRecord;
-import com.jn.commons.json.transformers.JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp;
 
 public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpEntityExpurgableFactory {
 
@@ -39,7 +38,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	}
 
 	private final String getId(CcpJsonRepresentation json) {
-		Long timestamp = json.getOrDefault("timestamp", System.currentTimeMillis());
+		Long timestamp = json.getOrDefault(JnEntityDisposableRecord.Fields.timestamp.name(), System.currentTimeMillis());
 		String formattedTimestamp = this.timeOption.getFormattedDate(timestamp);
 
 		ArrayList<Object> onlyPrimaryKeysValues = new ArrayList<>();
@@ -59,14 +58,29 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		
 		String entityName = this.getEntityName();
 		
-		CcpJsonRepresentation expurgableId = CcpOtherConstants.EMPTY_JSON.put("id", id).put("entity", entityName);
+		CcpJsonRepresentation expurgableId = CcpOtherConstants.EMPTY_JSON
+				.put(JnEntityDisposableRecord.Fields.entity.name(), entityName)
+				.put(JnEntityDisposableRecord.Fields.id.name(), id)
+				;
 		return expurgableId;
 	}
 	
+	public CcpBulkItem toBulkItem(CcpJsonRepresentation json, CcpEntityOperationType operation) {
+
+		String mainEntityId = this.getId(json);
+
+		CcpBulkItem ccpBulkItem = new CcpBulkItem(json, operation, this, mainEntityId);
+
+		return ccpBulkItem;
+	}
+	
 	public final CcpBulkItem getRecordCopyToBulkOperation(CcpJsonRepresentation json, CcpEntityOperationType operation) {
+		
 		CcpJsonRepresentation recordCopy = this.getExpurgable(json);
 		
-		CcpBulkItem ccpBulkItem = new CcpBulkItem(recordCopy, operation, JnEntityDisposableRecord.ENTITY);
+		String calculateId = JnEntityDisposableRecord.ENTITY.calculateId(recordCopy);
+		
+		CcpBulkItem ccpBulkItem = new CcpBulkItem(recordCopy, operation, JnEntityDisposableRecord.ENTITY, calculateId);
 		
 		return ccpBulkItem;
 	}
@@ -80,31 +94,28 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	}
 
 	private CcpJsonRepresentation getExpurgable(CcpJsonRepresentation json) {
-		
+		CcpJsonRepresentation onlyExistingFields = this.entity.getOnlyExistingFields(json);
 		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
 		String id = this.getPrimaryKeyValues(json).asUgglyJson();
-		Long timestamp = json.getOrDefault("timestamp", System.currentTimeMillis());
+		Long timestamp = json.getOrDefault(JnEntityDisposableRecord.Fields.timestamp.name(), System.currentTimeMillis());
 		Long nextTimeStamp = this.timeOption.getNextTimeStamp(timestamp);
 		String nextDate = this.timeOption.getNextDate(timestamp);
-		CcpJsonRepresentation onlyExistingFields = this.getOnlyExistingFields(json);
 		CcpJsonRepresentation expurgable = expurgableId
-				.put("timestamp", nextTimeStamp)
-				.put("json", onlyExistingFields)
-				.put("date", nextDate)
-				.put("id", id)
+				.put(JnEntityDisposableRecord.Fields.timestamp.name(), nextTimeStamp)
+				.put(JnEntityDisposableRecord.Fields.json.name(), onlyExistingFields)
+				.put(JnEntityDisposableRecord.Fields.date.name(), nextDate)
+				.put(JnEntityDisposableRecord.Fields.id.name(), id)
 				;
 		return expurgable;
 	}
 
 	public boolean create(CcpJsonRepresentation json) {
 		
-		CcpJsonRepresentation transformed = json.getTransformed(JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.INSTANCE);
+		String mainEntityId = this.getId(json);
 		
-		String mainEntityId = this.getId(transformed);
+		CcpJsonRepresentation createOrUpdate = this.entity.createOrUpdate(json, mainEntityId);
 		
-		this.entity.createOrUpdate(transformed, mainEntityId);
-		
-		this.saveExpurgable(transformed);
+		this.saveExpurgable(createOrUpdate);
 
 		return true;
 	}
@@ -113,7 +124,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 
 		CcpJsonRepresentation createOrUpdate =  this.entity.createOrUpdate(json, id);
 		
-		this.saveExpurgable(json);
+		this.saveExpurgable(createOrUpdate);
 		
 		return createOrUpdate;
 	}
@@ -129,13 +140,11 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	
 	public boolean delete(CcpJsonRepresentation json) {
 		
-		CcpJsonRepresentation transformed = json.getTransformed(JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.INSTANCE);
-		
-		String calculateId = this.getId(transformed);
+		String calculateId = this.getId(json);
 		
 		boolean delete = this.entity.delete(calculateId);
 		
-		this.deleteCopy(transformed);
+		this.deleteCopy(json);
 
 		return delete;
 	}

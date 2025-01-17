@@ -2,7 +2,6 @@ package com.jn.commons.utils;
 
 import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.ccp.decorators.CcpTimeDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.bulk.CcpEntityOperationType;
@@ -41,25 +40,20 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 	public final CcpBulkItem getRecordCopyToBulkOperation(CcpJsonRepresentation json, CcpEntityOperationType operation) {
 		
 		CcpJsonRepresentation audit = this.getAuditRecord(json, operation);
-		CcpBulkItem ccpBulkItem = new CcpBulkItem(audit, CcpEntityOperationType.create, JnEntityAudit.ENTITY);
+		CcpBulkItem ccpBulkItem = JnEntityAudit.ENTITY.toBulkItem(audit, CcpEntityOperationType.create);
 		return ccpBulkItem;
 	}
 
 	private CcpJsonRepresentation getAuditRecord(CcpJsonRepresentation json, CcpEntityOperationType operation) {
-	
+		CcpJsonRepresentation oneById = this.entity.getOneById(json, x -> json);
 		String id = this.entity.getPrimaryKeyValues(json).asUgglyJson();
 		String entityName = this.entity.getEntityName();
-		CcpJsonRepresentation onlyExistingFields = this.entity.getOnlyExistingFields(json);
-		CcpTimeDecorator ctd = new CcpTimeDecorator();
-		String formattedDateTime = ctd.getFormattedDateTime("dd/MM/yyyy HH:mm:ss.SSS");
 		CcpJsonRepresentation audit = 
 				CcpOtherConstants.EMPTY_JSON
-				.put("timestamp", System.currentTimeMillis())
-				.put("json", "" + onlyExistingFields)
-				.put("date", formattedDateTime)
-				.put("operation", operation)
-				.put("entity", entityName)
-				.put("id", id)
+				.put(JnEntityAudit.Fields.operation.name(), operation)
+				.put(JnEntityAudit.Fields.entity.name(), entityName)
+				.put(JnEntityAudit.Fields.json.name(), "" + oneById)
+				.put(JnEntityAudit.Fields.id.name(), id)
 		;
 		return audit;
 	}
@@ -85,7 +79,7 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		try {
 			boolean exists = this.entity.exists(json);
 			CcpEntityOperationType operation = exists ? CcpEntityOperationType.create : CcpEntityOperationType.update;
-			this.saveAuditory(createOrUpdate, operation);
+			this.saveAuditory(json, operation);
 			return createOrUpdate;
 			
 		} catch (Exception e) {
@@ -96,7 +90,7 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		CcpJsonRepresentation createOrUpdate = this.entity.createOrUpdate(json, id);
 		boolean exists = this.entity.exists(id);
 		CcpEntityOperationType operation = exists ? CcpEntityOperationType.create : CcpEntityOperationType.update;
-		this.saveAuditory(createOrUpdate, operation);
+		this.saveAuditory(json, operation);
 		return createOrUpdate;
 	}
 
@@ -112,7 +106,6 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		return presentInThisUnionAll;
 	}
 
-	@Override
 	public CcpEntity getEntity(CcpEntity entity) {
 		JnEntityVersionable jnEntityVersionable = new JnEntityVersionable(entity);
 		return jnEntityVersionable;
