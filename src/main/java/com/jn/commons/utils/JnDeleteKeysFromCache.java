@@ -1,6 +1,8 @@
 package com.jn.commons.utils;
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -27,7 +29,8 @@ public class JnDeleteKeysFromCache implements Function<CcpJsonRepresentation, Cc
 	}
 
 	public void accept(String[] keysToDeleteInCache) {
-		CcpJsonRepresentation json = CcpOtherConstants.EMPTY_JSON.put(KEYS_TO_DELETE_IN_CACHE, keysToDeleteInCache);
+		List<String> asList = Arrays.asList(keysToDeleteInCache);
+		CcpJsonRepresentation json = CcpOtherConstants.EMPTY_JSON.put(KEYS_TO_DELETE_IN_CACHE,asList);
 		this.apply(json);
 		
 	}
