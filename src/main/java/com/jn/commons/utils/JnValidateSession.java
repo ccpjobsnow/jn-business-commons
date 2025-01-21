@@ -6,7 +6,6 @@ import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.crud.CcpGetEntityId;
 import com.ccp.exceptions.process.CcpFlow;
-import com.ccp.process.CcpDefaultProcessStatus;
 import com.jn.commons.entities.JnEntityLoginEmail;
 import com.jn.commons.entities.JnEntityLoginPassword;
 import com.jn.commons.entities.JnEntityLoginSessionToken;
@@ -24,10 +23,8 @@ public class JnValidateSession implements Function<CcpJsonRepresentation, CcpJso
 		boolean isSessionLess = json.containsAllFields("sessionToken") == false;
 		
 		if(isSessionLess) {
-			throw new CcpFlow(json, CcpDefaultProcessStatus.UNHAUTHORIZED);
+			throw new CcpFlow(StatusExecuteLogin.missingSessionToken);
 		}
-		
-//		CcpJsonRepresentation transformed = json.putEmailHash(CcpHashAlgorithm.SHA1);
 		
 		new CcpGetEntityId(json)
 		.toBeginProcedureAnd()
