@@ -5,14 +5,14 @@ import com.ccp.process.CcpProcessStatus;
 public enum StatusExecuteLogin implements CcpProcessStatus{
 	passwordLockedRecently(429),
 	missingSessionToken(401),
-	missingPassword(202),
+	missingSavePassword(202),
 	lockedPassword(423),
 	expectedStatus(200),
 	invalidSession(401),
 	wrongPassword(421),
 	loginConflict(409),
 	invalidEmail(400),
-	missingEmail(404),
+	missingSaveEmail(404),
 	weakPassword(422),
 	lockedToken(403),
 	;

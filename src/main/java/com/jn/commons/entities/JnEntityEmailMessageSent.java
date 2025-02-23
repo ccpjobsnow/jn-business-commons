@@ -17,7 +17,7 @@ public class JnEntityEmailMessageSent implements CcpEntityConfigurator {
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityEmailMessageSent.class).entityInstance;
 
 	public static enum Fields implements CcpEntityField{
-		subject(false), subjectType(true), email(true), sender(false), message(false)
+		subject(false), subjectType(true), email(true), sender(false)
 		;
 		
 		private final boolean primaryKey;
