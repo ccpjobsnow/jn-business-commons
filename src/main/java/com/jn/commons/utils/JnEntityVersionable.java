@@ -66,8 +66,8 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		return delete;
 	}
 
-	public boolean delete(CcpJsonRepresentation json) {
-		boolean delete = this.entity.delete(json);
+	public CcpJsonRepresentation delete(CcpJsonRepresentation json) {
+		CcpJsonRepresentation delete = this.entity.delete(json);
 		this.saveAuditory(json, CcpEntityOperationType.delete);
 		return delete;
 	}

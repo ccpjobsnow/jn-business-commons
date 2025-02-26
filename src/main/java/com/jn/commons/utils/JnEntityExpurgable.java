@@ -138,15 +138,15 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		return createOrUpdate;
 	}
 	
-	public boolean delete(CcpJsonRepresentation json) {
+	public CcpJsonRepresentation delete(CcpJsonRepresentation json) {
 		
 		String calculateId = this.getId(json);
 		
-		boolean delete = this.entity.delete(calculateId);
+		this.entity.delete(calculateId);
 		
 		this.deleteCopy(json);
 
-		return delete;
+		return json;
 	}
 
 	private boolean deleteCopy(CcpJsonRepresentation json) {
@@ -155,9 +155,9 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		
 		CcpJsonRepresentation allValuesTogether = expurgableId.putAll(json);
 		
-		boolean deleteCopy = JnEntityDisposableRecord.ENTITY.delete(allValuesTogether);
+		JnEntityDisposableRecord.ENTITY.delete(allValuesTogether);
 		
-		return deleteCopy;
+		return true;
 	}
 	
 	public boolean delete(String id) {
