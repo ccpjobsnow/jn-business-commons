@@ -192,7 +192,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		}
 		
 		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.ENTITY.getRequiredEntityRow(unionAll, expurgableId);
-		Long timeStamp = requiredEntityRow.getAsLongNumber("timestamp");
+		Long timeStamp = requiredEntityRow.getAsLongNumber(JnEntityDisposableRecord.Fields.timestamp.name());
 		
 		boolean obsoleteTimeStamp = timeStamp <= System.currentTimeMillis();
 		
@@ -265,12 +265,12 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		}
 
 		CcpJsonRepresentation requiredEntityRow = JnEntityDisposableRecord.ENTITY.getRequiredEntityRow(unionAll, allValuesTogether);
-		Long timeStamp = requiredEntityRow.getAsLongNumber("timestamp");
+		Long timeStamp = requiredEntityRow.getAsLongNumber(JnEntityDisposableRecord.Fields.timestamp.name());
 		
 		boolean validTimeStamp = timeStamp > System.currentTimeMillis();
 		
 		if(validTimeStamp) {
-			CcpJsonRepresentation innerJson = requiredEntityRow.getInnerJson("json");
+			CcpJsonRepresentation innerJson = requiredEntityRow.getInnerJson(JnEntityDisposableRecord.Fields.json.name());
 			return innerJson;
 		}
 		CcpJsonRepresentation whenNotFound =  ifNotFound.apply(allValuesTogether);
