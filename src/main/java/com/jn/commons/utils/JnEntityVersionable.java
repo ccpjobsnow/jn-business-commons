@@ -22,12 +22,12 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		super(entity);
 	}
 	
-	private final void saveAuditory(CcpJsonRepresentation json, CcpEntityOperationType operation) {
+	private final JnEntityVersionable saveAuditory(CcpJsonRepresentation json, CcpEntityOperationType operation) {
 		
 		boolean canNotSaveCopy = this.entity.isCopyableEntity() == false;
 	
 		if(canNotSaveCopy) {
-			return;
+			return this;
 		}
 		
 		CcpJsonRepresentation audit = this.getAuditRecord(json, operation);
@@ -35,6 +35,7 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		String calculateId = JnEntityAudit.ENTITY.calculateId(audit);
 		String auditEntity = JnEntityAudit.ENTITY.getEntityName();
 		dependency.createOrUpdate(auditEntity, audit, calculateId);
+		return this;
 	}
 
 	public final CcpBulkItem getRecordCopyToBulkOperation(CcpJsonRepresentation json, CcpEntityOperationType operation) {

@@ -85,12 +85,13 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		return ccpBulkItem;
 	}
 	
-	private void saveExpurgable(CcpJsonRepresentation json) {
+	private JnEntityExpurgable saveExpurgable(CcpJsonRepresentation json) {
 		
 		CcpJsonRepresentation recordCopyToSave = this.getExpurgable(json);
 		
 		JnEntityDisposableRecord.ENTITY.create(recordCopyToSave);
 		
+		return this;
 	}
 
 	private CcpJsonRepresentation getExpurgable(CcpJsonRepresentation json) {
