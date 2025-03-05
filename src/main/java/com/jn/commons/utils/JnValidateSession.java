@@ -18,9 +18,9 @@ public class JnValidateSession implements Function<CcpJsonRepresentation, CcpJso
 	
 	public static final JnValidateSession INSTANCE = new JnValidateSession();
 	
-	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
+	public CcpJsonRepresentation apply(CcpJsonRepresentation json) { 
 		
-		boolean isSessionLess = json.containsAllFields("sessionToken") == false;
+		boolean isSessionLess = json.getAsString("sessionToken").trim().isEmpty(); 
 		
 		if(isSessionLess) {
 			throw new CcpFlowDiversion(StatusExecuteLogin.missingSessionToken);
@@ -28,15 +28,15 @@ public class JnValidateSession implements Function<CcpJsonRepresentation, CcpJso
 		
 		new CcpGetEntityId(json)
 		.toBeginProcedureAnd()
+		.ifThisIdIsNotPresentInEntity(JnEntityLoginSessionToken.ENTITY).returnStatus(StatusExecuteLogin.invalidSession).and()
 		.ifThisIdIsPresentInEntity(JnEntityLoginToken.ENTITY.getTwinEntity()).returnStatus(StatusExecuteLogin.lockedToken).and()
 		.ifThisIdIsPresentInEntity(JnEntityLoginPassword.ENTITY.getTwinEntity()).returnStatus(StatusExecuteLogin.lockedPassword).and()
 		.ifThisIdIsNotPresentInEntity(JnEntityLoginPassword.ENTITY).returnStatus(StatusExecuteLogin.missingSavePassword).and()
-		.ifThisIdIsNotPresentInEntity(JnEntityLoginEmail.ENTITY).returnStatus(StatusExecuteLogin.missingSaveEmail).and()
-		.ifThisIdIsNotPresentInEntity(JnEntityLoginSessionToken.ENTITY).returnStatus(StatusExecuteLogin.invalidSession)
+		.ifThisIdIsNotPresentInEntity(JnEntityLoginEmail.ENTITY).returnStatus(StatusExecuteLogin.missingSaveEmail)
 		.andFinallyReturningTheseFields("sessionToken")
 		.endThisProcedureRetrievingTheResultingData(CcpOtherConstants.DO_NOTHING, JnDeleteKeysFromCache.INSTANCE);
 
-		return json;
+		return json; 
 	}
 
 }
