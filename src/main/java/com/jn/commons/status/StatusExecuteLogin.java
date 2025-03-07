@@ -12,7 +12,7 @@ public enum StatusExecuteLogin implements CcpProcessStatus{
 	wrongPassword(421),
 	loginConflict(409),
 	invalidEmail(400),
-	missingSaveEmail(404),
+	missingSavingEmail(404),
 	weakPassword(422),
 	lockedToken(403),
 	;
