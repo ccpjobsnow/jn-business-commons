@@ -15,6 +15,7 @@ public class JnJsonTransformerPutRandomTokenHash implements Function<CcpJsonRepr
 	private JnJsonTransformerPutRandomTokenHash() {}
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
+		
 		CcpStringDecorator csd = new CcpStringDecorator(CcpStringConstants.CHARACTERS_TO_GENERATE_TOKEN.value);
 		CcpTextDecorator text = csd.text();
 		CcpTextDecorator generateToken = text.generateToken(8);

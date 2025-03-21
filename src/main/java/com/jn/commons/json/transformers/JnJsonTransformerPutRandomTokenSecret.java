@@ -15,10 +15,9 @@ public class JnJsonTransformerPutRandomTokenSecret implements Function<CcpJsonRe
 	private JnJsonTransformerPutRandomTokenSecret() {}
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
-		CcpStringDecorator csd = new CcpStringDecorator(CcpStringConstants.CHARACTERS_TO_GENERATE_TOKEN.value);
-		CcpTextDecorator text = csd.text();
-		CcpTextDecorator generateToken = text.generateToken(8);
-		String originalToken = generateToken.content;
+		String createOriginalToken = this.createOriginalToken();
+		String originalToken = json.getOrDefault("originalToken", createOriginalToken);
+		 
 		CcpPasswordHandler dependency = CcpDependencyInjection.getDependency(CcpPasswordHandler.class);
 		
 		String token = dependency.getHash(originalToken);
@@ -29,6 +28,14 @@ public class JnJsonTransformerPutRandomTokenSecret implements Function<CcpJsonRe
 				;
 		
 		return put;
+	}
+
+	private String createOriginalToken() {
+		CcpStringDecorator csd = new CcpStringDecorator(CcpStringConstants.CHARACTERS_TO_GENERATE_TOKEN.value);
+		CcpTextDecorator text = csd.text();
+		CcpTextDecorator generateToken = text.generateToken(8);
+		String originalToken = generateToken.content;
+		return originalToken;
 	}
 
 }

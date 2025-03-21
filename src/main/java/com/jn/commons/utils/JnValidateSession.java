@@ -35,7 +35,7 @@ public class JnValidateSession implements Function<CcpJsonRepresentation, CcpJso
 		.ifThisIdIsNotPresentInEntity(JnEntityLoginEmail.ENTITY).returnStatus(StatusExecuteLogin.missingSavingEmail)
 		.andFinallyReturningTheseFields("sessionToken")
 		.endThisProcedureRetrievingTheResultingData(CcpOtherConstants.DO_NOTHING, JnDeleteKeysFromCache.INSTANCE);
-
+		//FIXME CATCH E PORQUE NAO ESTÁ VALIDANDO O TOKEN DE SESSÃO???
 		return json; 
 	}
 
