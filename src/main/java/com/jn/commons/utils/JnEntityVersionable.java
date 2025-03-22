@@ -4,7 +4,7 @@ import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
-import com.ccp.especifications.db.bulk.CcpEntityOperationType;
+import com.ccp.especifications.db.bulk.CcpEntityBulkOperationType;
 import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpEntity;
@@ -22,7 +22,7 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		super(entity);
 	}
 	
-	private final JnEntityVersionable saveAuditory(CcpJsonRepresentation json, CcpEntityOperationType operation) {
+	private final JnEntityVersionable saveAuditory(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
 		
 		boolean canNotSaveCopy = this.entity.isCopyableEntity() == false;
 	
@@ -38,14 +38,14 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		return this;
 	}
 
-	public final CcpBulkItem getRecordCopyToBulkOperation(CcpJsonRepresentation json, CcpEntityOperationType operation) {
+	public final CcpBulkItem getRecordCopyToBulkOperation(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
 		
 		CcpJsonRepresentation audit = this.getAuditRecord(json, operation);
-		CcpBulkItem ccpBulkItem = JnEntityAudit.ENTITY.toBulkItem(audit, CcpEntityOperationType.create);
+		CcpBulkItem ccpBulkItem = JnEntityAudit.ENTITY.toBulkItem(audit, CcpEntityBulkOperationType.create);
 		return ccpBulkItem;
 	}
 
-	private CcpJsonRepresentation getAuditRecord(CcpJsonRepresentation json, CcpEntityOperationType operation) {
+	private CcpJsonRepresentation getAuditRecord(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
 		CcpJsonRepresentation oneById = this.entity.getOneById(json, x -> json);
 		String id = this.entity.getPrimaryKeyValues(json).asUgglyJson();
 		String entityName = this.entity.getEntityName();
@@ -63,13 +63,13 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 	public boolean delete(String id) {
 		boolean delete = this.entity.delete(id);
 		CcpJsonRepresentation oneById = this.entity.getOneById(id);
-		this.saveAuditory(oneById, CcpEntityOperationType.delete);
+		this.saveAuditory(oneById, CcpEntityBulkOperationType.delete);
 		return delete;
 	}
 
 	public CcpJsonRepresentation delete(CcpJsonRepresentation json) {
 		CcpJsonRepresentation delete = this.entity.delete(json);
-		this.saveAuditory(json, CcpEntityOperationType.delete);
+		this.saveAuditory(json, CcpEntityBulkOperationType.delete);
 		return delete;
 	}
 	
@@ -79,7 +79,7 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		
 		try {
 			boolean exists = this.entity.exists(json);
-			CcpEntityOperationType operation = exists ? CcpEntityOperationType.create : CcpEntityOperationType.update;
+			CcpEntityBulkOperationType operation = exists ? CcpEntityBulkOperationType.create : CcpEntityBulkOperationType.update;
 			this.saveAuditory(json, operation);
 			return createOrUpdate;
 			
@@ -90,16 +90,9 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation json, String id) {
 		CcpJsonRepresentation createOrUpdate = this.entity.createOrUpdate(json, id);
 		boolean exists = this.entity.exists(id);
-		CcpEntityOperationType operation = exists ? CcpEntityOperationType.create : CcpEntityOperationType.update;
+		CcpEntityBulkOperationType operation = exists ? CcpEntityBulkOperationType.create : CcpEntityBulkOperationType.update;
 		this.saveAuditory(json, operation);
 		return createOrUpdate;
-	}
-
-	public boolean create(CcpJsonRepresentation json) {
-		boolean created = this.entity.create(json);
-		CcpEntityOperationType operation = created ? CcpEntityOperationType.create : CcpEntityOperationType.update;
-		this.saveAuditory(json, operation);
-		return created;
 	}
 
 	public boolean isPresentInThisUnionAll(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {

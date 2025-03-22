@@ -7,16 +7,17 @@ import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
 import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
 import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
 import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
-import com.jn.commons.json.transformers.JnJsonTransformerPutRandomTokenHash;
+import com.jn.commons.json.transformers.JnJsonTransformerPutRandomTokenSecret;
 import com.jn.commons.utils.JnEntityExpurgable;
 
-@CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurgableOptions.hourly)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class, JnJsonTransformerPutRandomTokenHash.class})
-public class JnEntityLoginSessionToken implements CcpEntityConfigurator {
+@CcpEntityExpurgable(expurgTime = CcpEntityExpurgableOptions.hourly, expurgableEntityFactory = JnEntityExpurgable.class)
+@CcpEntityTwin(twinEntityName = "login_session_terminated")
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class, JnJsonTransformerPutRandomTokenSecret.class})
+public class JnEntityLoginSessionValidation implements CcpEntityConfigurator {
 
-	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityLoginSessionToken.class).entityInstance;
-	
+	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityLoginSessionValidation.class).entityInstance;
 	public static enum Fields implements CcpEntityField{
 		email(true), token(true), ip(true), coordinates(false), macAddress(false), userAgent(true)
 		;

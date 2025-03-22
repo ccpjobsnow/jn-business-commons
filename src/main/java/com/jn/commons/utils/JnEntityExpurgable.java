@@ -11,7 +11,7 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
-import com.ccp.especifications.db.bulk.CcpEntityOperationType;
+import com.ccp.especifications.db.bulk.CcpEntityBulkOperationType;
 import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpDbRequester;
@@ -65,7 +65,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		return expurgableId;
 	}
 	
-	public CcpBulkItem toBulkItem(CcpJsonRepresentation json, CcpEntityOperationType operation) {
+	public CcpBulkItem toBulkItem(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
 
 		String mainEntityId = this.getId(json);
 
@@ -74,7 +74,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		return ccpBulkItem;
 	}
 	
-	public final CcpBulkItem getRecordCopyToBulkOperation(CcpJsonRepresentation json, CcpEntityOperationType operation) {
+	public final CcpBulkItem getRecordCopyToBulkOperation(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
 		
 		CcpJsonRepresentation recordCopy = this.getExpurgable(json);
 		
@@ -89,7 +89,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		
 		CcpJsonRepresentation recordCopyToSave = this.getExpurgable(json);
 		
-		JnEntityDisposableRecord.ENTITY.create(recordCopyToSave);
+		JnEntityDisposableRecord.ENTITY.createOrUpdate(recordCopyToSave);
 		
 		return this;
 	}
