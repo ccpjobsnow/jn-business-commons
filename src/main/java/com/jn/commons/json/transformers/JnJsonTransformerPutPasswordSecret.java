@@ -17,7 +17,7 @@ public class JnJsonTransformerPutPasswordSecret implements Function<CcpJsonRepre
 		
 		CcpPasswordHandler dependency = CcpDependencyInjection.getDependency(CcpPasswordHandler.class);
 		
-		String passwordHash = dependency.getHash(token);
+		String passwordHash = dependency.getHash(token); 
 		
 		CcpJsonRepresentation put = json.put(JnEntityLoginPassword.Fields.password.name(), passwordHash);
 		

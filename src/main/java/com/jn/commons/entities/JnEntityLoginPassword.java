@@ -18,11 +18,11 @@ import com.jn.commons.utils.JnEntityExpurgable;
 public class JnEntityLoginPassword implements CcpEntityConfigurator {
 	
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityLoginPassword.class).entityInstance;
-	
+	 
 	public static enum Fields implements CcpEntityField{
 		email(true), password(false)
 		;
-		
+		 
 		private final boolean primaryKey;
 
 		private Fields(boolean primaryKey) {
