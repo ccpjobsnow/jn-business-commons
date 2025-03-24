@@ -12,7 +12,7 @@ import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.jn.commons.json.transformers.JnJsonTransformerPutRandomTokenHash;
 import com.jn.commons.utils.JnEntityExpurgable;
 
-@CcpEntityExpurgable(expurgTime = CcpEntityExpurgableOptions.minute, expurgableEntityFactory = JnEntityExpurgable.class)
+@CcpEntityExpurgable(expurgTime = CcpEntityExpurgableOptions.hourly, expurgableEntityFactory = JnEntityExpurgable.class)
 @CcpEntityTwin(twinEntityName = "login_session_terminated")
 @CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class, JnJsonTransformerPutRandomTokenHash.class})
 public class JnEntityLoginSessionValidation implements CcpEntityConfigurator {

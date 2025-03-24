@@ -8,6 +8,7 @@ import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;
 import com.ccp.decorators.CcpTextDecorator;
 import com.ccp.utils.CcpHashAlgorithm;
+import com.jn.commons.entities.JnEntityLoginSessionValidation;
 import com.jn.commons.entities.JnEntityLoginToken;
 
 public class JnJsonTransformerPutRandomTokenHash implements Function<CcpJsonRepresentation, CcpJsonRepresentation> {
@@ -18,7 +19,7 @@ public class JnJsonTransformerPutRandomTokenHash implements Function<CcpJsonRepr
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 		
-		String originalToken = json.getOrDefault("originalToken", this.getOriginalToken());
+		String originalToken = json.getOrDefault(JnEntityLoginSessionValidation.Fields.token.name(), this.getOriginalToken());
 		CcpHashDecorator hash = new CcpStringDecorator(originalToken).hash();
 		
 		String token = hash.asString(CcpHashAlgorithm.SHA1);
