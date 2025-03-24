@@ -2,11 +2,11 @@ package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
+import com.ccp.especifications.db.utils.decorators.configurations.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityTwin;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
-import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
-import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
 @CcpEntityTwin(twinEntityName = "contact_us_solved")
 @CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class})
 public class JnEntityContactUs implements CcpEntityConfigurator {

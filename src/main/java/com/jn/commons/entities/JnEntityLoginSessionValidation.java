@@ -2,19 +2,19 @@ package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
-import com.ccp.especifications.db.utils.decorators.CcpEntityConfigurator;
-import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgable;
-import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
-import com.ccp.especifications.db.utils.decorators.CcpEntityFactory;
-import com.ccp.especifications.db.utils.decorators.CcpEntitySpecifications;
-import com.ccp.especifications.db.utils.decorators.CcpEntityTwin;
+import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityExpurgable;
+import com.ccp.especifications.db.utils.decorators.configurations.CcpEntitySpecifications;
+import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityTwin;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityExpurgableOptions;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
-import com.jn.commons.json.transformers.JnJsonTransformerPutRandomTokenSecret;
+import com.jn.commons.json.transformers.JnJsonTransformerPutRandomTokenHash;
 import com.jn.commons.utils.JnEntityExpurgable;
 
-@CcpEntityExpurgable(expurgTime = CcpEntityExpurgableOptions.hourly, expurgableEntityFactory = JnEntityExpurgable.class)
+@CcpEntityExpurgable(expurgTime = CcpEntityExpurgableOptions.minute, expurgableEntityFactory = JnEntityExpurgable.class)
 @CcpEntityTwin(twinEntityName = "login_session_terminated")
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class, JnJsonTransformerPutRandomTokenSecret.class})
+@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class, JnJsonTransformerPutRandomTokenHash.class})
 public class JnEntityLoginSessionValidation implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityLoginSessionValidation.class).entityInstance;

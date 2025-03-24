@@ -14,12 +14,11 @@ public class JnJsonTransformerPutRandomTokenHash implements Function<CcpJsonRepr
 
 	private JnJsonTransformerPutRandomTokenHash() {}
 	
+	public static final JnJsonTransformerPutRandomTokenHash INSTANCE = new JnJsonTransformerPutRandomTokenHash();
+	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 		
-		CcpStringDecorator csd = new CcpStringDecorator(CcpStringConstants.CHARACTERS_TO_GENERATE_TOKEN.value);
-		CcpTextDecorator text = csd.text();
-		CcpTextDecorator generateToken = text.generateToken(8);
-		String originalToken = generateToken.content;
+		String originalToken = json.getOrDefault("originalToken", this.getOriginalToken());
 		CcpHashDecorator hash = new CcpStringDecorator(originalToken).hash();
 		
 		String token = hash.asString(CcpHashAlgorithm.SHA1);
@@ -30,6 +29,14 @@ public class JnJsonTransformerPutRandomTokenHash implements Function<CcpJsonRepr
 				;
 		
 		return put;
+	}
+
+	private String getOriginalToken() {
+		CcpStringDecorator csd = new CcpStringDecorator(CcpStringConstants.CHARACTERS_TO_GENERATE_TOKEN.value);
+		CcpTextDecorator text = csd.text();
+		CcpTextDecorator generateToken = text.generateToken(8);
+		String originalToken = generateToken.content;
+		return originalToken;
 	}
 
 }

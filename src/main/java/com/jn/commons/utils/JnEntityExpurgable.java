@@ -16,10 +16,10 @@ import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpDbRequester;
 import com.ccp.especifications.db.utils.CcpEntity;
-import com.ccp.especifications.db.utils.decorators.CcpEntityDelegator;
-import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableFactory;
-import com.ccp.especifications.db.utils.decorators.CcpEntityExpurgableOptions;
-import com.ccp.exceptions.db.CcpEntityRecordNotFound;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityDelegator;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityExpurgableFactory;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityExpurgableOptions;
+import com.ccp.exceptions.db.utils.CcpEntityRecordNotFound;
 import com.ccp.utils.CcpHashAlgorithm;
 import com.jn.commons.entities.JnEntityDisposableRecord;
 
@@ -95,7 +95,8 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	}
 
 	private CcpJsonRepresentation getExpurgable(CcpJsonRepresentation json) {
-		CcpJsonRepresentation onlyExistingFields = this.entity.getOnlyExistingFields(json);
+		CcpJsonRepresentation handledJson = this.entity.getHandledJson(json);
+		CcpJsonRepresentation onlyExistingFields = this.entity.getOnlyExistingFields(handledJson);
 		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
 		String id = this.getPrimaryKeyValues(json).asUgglyJson();
 		Long timestamp = json.getOrDefault(JnEntityDisposableRecord.Fields.timestamp.name(), System.currentTimeMillis());
@@ -125,7 +126,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 
 		CcpJsonRepresentation createOrUpdate =  this.entity.createOrUpdate(json, id);
 		
-		this.saveExpurgable(createOrUpdate);
+		this.saveExpurgable(json);
 		
 		return createOrUpdate;
 	}
@@ -134,7 +135,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		
 		String calculateId = this.getId(json);
 		
-		CcpJsonRepresentation createOrUpdate = this.entity.createOrUpdate(json, calculateId);
+		CcpJsonRepresentation createOrUpdate = this.createOrUpdate(json, calculateId);
 		
 		return createOrUpdate;
 	}

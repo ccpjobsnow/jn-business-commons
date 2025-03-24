@@ -8,8 +8,8 @@ import com.ccp.especifications.db.bulk.CcpEntityBulkOperationType;
 import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpEntity;
-import com.ccp.especifications.db.utils.decorators.CcpEntityDecoratorFactory;
-import com.ccp.especifications.db.utils.decorators.CcpEntityDelegator;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityDecoratorFactory;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityDelegator;
 import com.jn.commons.entities.JnEntityAudit;
 
 public final class JnEntityVersionable extends CcpEntityDelegator implements CcpEntityDecoratorFactory {
