@@ -10,7 +10,7 @@ import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.jn.commons.utils.JnEntityExpurgable;
 
-@CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurgableOptions.yearly)
+@CcpEntityExpurgable(expurgTime = CcpEntityExpurgableOptions.yearly, expurgableEntityFactory = JnEntityExpurgable.class)
 @CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class})
 public class JnEntityEmailMessageSent implements CcpEntityConfigurator {
 	

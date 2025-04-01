@@ -16,6 +16,7 @@ import com.ccp.especifications.db.crud.CcpCrud;
 import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpDbRequester;
 import com.ccp.especifications.db.utils.CcpEntity;
+import com.ccp.especifications.db.utils.CcpEntityCrudOperationType;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityDelegator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityExpurgableFactory;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityExpurgableOptions;
@@ -65,16 +66,17 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		return expurgableId;
 	}
 	
-	public CcpBulkItem toBulkItem(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
+	public List<CcpBulkItem> toBulkItems(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
 
 		String mainEntityId = this.getId(json);
 
-		CcpBulkItem ccpBulkItem = new CcpBulkItem(json, operation, this, mainEntityId);
-
-		return ccpBulkItem;
+		CcpBulkItem mainItem = new CcpBulkItem(json, operation, this, mainEntityId);
+		CcpBulkItem expurgableToBulkOperation = this.getExpurgableToBulkOperation(json, operation);
+		List<CcpBulkItem> asList = Arrays.asList(mainItem, expurgableToBulkOperation);
+		return asList;
 	}
-	
-	public final CcpBulkItem getRecordCopyToBulkOperation(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
+
+	private final CcpBulkItem getExpurgableToBulkOperation(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
 		
 		CcpJsonRepresentation recordCopy = this.getExpurgable(json);
 		
@@ -398,6 +400,10 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		return jnEntityExpurgable;
 	}	
 	
+	public Function<CcpJsonRepresentation, CcpJsonRepresentation> getOperationCallback(CcpEntityCrudOperationType operation){
+		return json -> operation.execute(this, json);
+	}
+
 	
 	
 }

@@ -20,7 +20,7 @@ public class JnDeleteFromEntity implements CcpHandleWithSearchResultsInTheEntity
 
 	public List<CcpBulkItem> whenRecordWasFoundInTheEntitySearch(CcpJsonRepresentation json, CcpJsonRepresentation recordFound) {
 	
-		CcpBulkItem attempts = this.entityToDelete.toBulkItem(json, CcpEntityBulkOperationType.delete);
+		CcpBulkItem attempts = this.entityToDelete.getMainBulkItem(json, CcpEntityBulkOperationType.delete);
 		List<CcpBulkItem> asList = Arrays.asList(attempts);
 		return asList;
 	}
