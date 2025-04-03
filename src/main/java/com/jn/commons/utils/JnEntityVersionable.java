@@ -1,17 +1,14 @@
 package com.jn.commons.utils;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
 import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpTimeDecorator;
-import com.ccp.dependency.injection.CcpDependencyInjection;
 import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.bulk.CcpEntityBulkOperationType;
-import com.ccp.especifications.db.crud.CcpCrud;
-import com.ccp.especifications.db.crud.CcpSelectUnionAll;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityCrudOperationType;
 import com.ccp.especifications.db.utils.CcpEntityField;
@@ -28,7 +25,9 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 	protected JnEntityVersionable(CcpEntity entity) {
 		super(entity);
 	}
-	private boolean isCopyableEntity() {
+	
+	
+	private boolean isVersionableEntity() {
 		List<String> primaryKeyNames = this.entity.getPrimaryKeyNames();
 		int primaryKeyFieldsSize = primaryKeyNames.size();
 		CcpEntityField[] fields = this.entity.getFields();
@@ -36,22 +35,6 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		return thisEntityHasMoreFieldsBesidesPrimaryKeys;
 	}
 	
-	private final JnEntityVersionable saveAuditory(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
-		
-		boolean canNotSaveCopy = this.isCopyableEntity() == false;
-	
-		if(canNotSaveCopy) {
-			return this;
-		}
-		
-		CcpJsonRepresentation audit = this.getAuditRecord(json, operation);
-		CcpCrud dependency = CcpDependencyInjection.getDependency(CcpCrud.class);
-		String calculateId = JnEntityAudit.ENTITY.calculateId(audit);
-		String auditEntity = JnEntityAudit.ENTITY.getEntityName();
-		dependency.createOrUpdate(auditEntity, audit, calculateId);
-		return this;
-	}
-
 	private final CcpBulkItem getVersionableToBulkOperationToBulkOperation(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
 		
 		CcpJsonRepresentation audit = this.getAuditRecord(json, operation);
@@ -78,42 +61,28 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 
 	public boolean delete(String id) {
 		boolean delete = this.entity.delete(id);
-		CcpJsonRepresentation oneById = this.entity.getOneById(id);
-		this.saveAuditory(oneById, CcpEntityBulkOperationType.delete);
+		CcpJsonRepresentation json = this.entity.getOneById(id);
+		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.delete);
+		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		return delete;
 	}
 
 	public CcpJsonRepresentation delete(CcpJsonRepresentation json) {
-		CcpJsonRepresentation delete = this.entity.delete(json);
-		this.saveAuditory(json, CcpEntityBulkOperationType.delete);
-		return delete;
+		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.delete);
+		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		return json;
 	}
 	
 	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation json) {
 		
-		CcpJsonRepresentation createOrUpdate = this.entity.createOrUpdate(json);
-		
-		try {
-			boolean exists = this.entity.exists(json);
-			CcpEntityBulkOperationType operation = exists ? CcpEntityBulkOperationType.create : CcpEntityBulkOperationType.update;
-			this.saveAuditory(json, operation);
-			return createOrUpdate;
-			
-		} catch (Exception e) {
-			return createOrUpdate;
-		}
+		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.create);
+		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		return json;
 	}
 	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation json, String id) {
-		CcpJsonRepresentation createOrUpdate = this.entity.createOrUpdate(json, id);
-		boolean exists = this.entity.exists(id);
-		CcpEntityBulkOperationType operation = exists ? CcpEntityBulkOperationType.create : CcpEntityBulkOperationType.update;
-		this.saveAuditory(json, operation);
-		return createOrUpdate;
-	}
-
-	public boolean isPresentInThisUnionAll(CcpSelectUnionAll unionAll, CcpJsonRepresentation json) {
-		boolean presentInThisUnionAll = this.entity.isPresentInThisUnionAll(unionAll, json);
-		return presentInThisUnionAll;
+		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.create);
+		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		return json;
 	}
 
 	public CcpEntity getEntity(CcpEntity entity) {
@@ -126,9 +95,19 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 	}
 
 	public List<CcpBulkItem> toBulkItems(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
-		CcpBulkItem mainBulkItem = this.getMainBulkItem(json, operation);
-		CcpBulkItem versionableToBulkOperation = this.getVersionableToBulkOperationToBulkOperation(json, operation);
-		List<CcpBulkItem> asList = Arrays.asList(mainBulkItem, versionableToBulkOperation);
+		
+		String calculateId = super.calculateId(json);
+		CcpBulkItem mainBulkItem = new CcpBulkItem(json, operation, this, calculateId);
+		List<CcpBulkItem> asList = new ArrayList<>();
+		asList.add(mainBulkItem);
+		
+		boolean versionableEntity = this.isVersionableEntity();
+	
+		if(versionableEntity) {
+			CcpBulkItem versionableToBulkOperation = this.getVersionableToBulkOperationToBulkOperation(json, operation);
+			asList.add(versionableToBulkOperation);
+		}
+
 		return asList;
 	}
 }

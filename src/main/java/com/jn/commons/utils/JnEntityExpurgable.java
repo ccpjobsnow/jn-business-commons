@@ -78,7 +78,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 
 	private final CcpBulkItem getExpurgableToBulkOperation(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
 		
-		CcpJsonRepresentation recordCopy = this.getExpurgable(json);
+		CcpJsonRepresentation recordCopy = this.populateAnExpurgableFromJson(json);
 		
 		String calculateId = JnEntityDisposableRecord.ENTITY.calculateId(recordCopy);
 		
@@ -87,16 +87,8 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		return ccpBulkItem;
 	}
 	
-	private JnEntityExpurgable saveExpurgable(CcpJsonRepresentation json) {
-		
-		CcpJsonRepresentation recordCopyToSave = this.getExpurgable(json);
-		
-		JnEntityDisposableRecord.ENTITY.createOrUpdate(recordCopyToSave);
-		
-		return this;
-	}
 
-	private CcpJsonRepresentation getExpurgable(CcpJsonRepresentation json) {
+	private CcpJsonRepresentation populateAnExpurgableFromJson(CcpJsonRepresentation json) {
 		CcpJsonRepresentation handledJson = this.entity.getHandledJson(json);
 		CcpJsonRepresentation onlyExistingFields = this.entity.getOnlyExistingFields(handledJson);
 		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
@@ -115,22 +107,19 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 
 	public boolean create(CcpJsonRepresentation json) {
 		
-		String mainEntityId = this.getId(json);
 		
-		CcpJsonRepresentation createOrUpdate = this.entity.createOrUpdate(json, mainEntityId);
-		
-		this.saveExpurgable(createOrUpdate);
+		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.create);
+		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 
 		return true;
 	}
 
 	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation json, String id) {
 
-		CcpJsonRepresentation createOrUpdate =  this.entity.createOrUpdate(json, id);
+		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.create);
+		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		
-		this.saveExpurgable(json);
-		
-		return createOrUpdate;
+		return json;
 	}
 	
 	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation json) {
@@ -144,26 +133,13 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	
 	public CcpJsonRepresentation delete(CcpJsonRepresentation json) {
 		
-		String calculateId = this.getId(json);
 		
-		this.entity.delete(calculateId);
+		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.delete);
+		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		
-		this.deleteCopy(json);
-
 		return json;
 	}
 
-	private boolean deleteCopy(CcpJsonRepresentation json) {
-	
-		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
-		
-		CcpJsonRepresentation allValuesTogether = expurgableId.putAll(json);
-		
-		JnEntityDisposableRecord.ENTITY.delete(allValuesTogether);
-		
-		return true;
-	}
-	
 	public boolean delete(String id) {
 		
 		boolean delete =  this.entity.delete(id);
@@ -172,8 +148,9 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 			return false;
 		}
 		CcpJsonRepresentation json = this.getOneById(id);
-		boolean deleteCopy = this.deleteCopy(json);
-		return deleteCopy;
+		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.delete);
+		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		return true;
 	}
 	
 	public boolean exists(CcpJsonRepresentation json) {

@@ -1,8 +1,8 @@
 package com.jn.commons.exceptions;
 
 @SuppressWarnings("serial")
-public class JnAsyncSupportLanguageIsMissing extends RuntimeException {
-	public JnAsyncSupportLanguageIsMissing() {
+public class JnCommonsSupportLanguageIsMissing extends RuntimeException {
+	public JnCommonsSupportLanguageIsMissing() {
 		super("It is missing the configuration 'supportLanguage'");
 	}
 }

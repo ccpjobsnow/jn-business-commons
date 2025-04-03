@@ -3,9 +3,9 @@ package com.jn.commons.exceptions;
 import com.ccp.decorators.CcpJsonRepresentation;
 
 @SuppressWarnings("serial")
-public class JnAsyncUnableToSendInstantMessage extends RuntimeException{
+public class JnCommonsUnableToSendInstantMessage extends RuntimeException{
 
-	public JnAsyncUnableToSendInstantMessage(CcpJsonRepresentation json) {
+	public JnCommonsUnableToSendInstantMessage(CcpJsonRepresentation json) {
 		super("This message couldn't be sent. Details: " + json);
 	}
 	

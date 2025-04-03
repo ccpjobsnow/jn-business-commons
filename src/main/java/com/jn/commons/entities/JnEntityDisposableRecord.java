@@ -5,10 +5,9 @@ import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.configurations.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
-import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.jn.commons.json.transformers.JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp;
 
-@CcpEntitySpecifications(cacheableEntity = false, jsonTransformations = {JnJsonTransformerPutEmailHash.class, JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
+@CcpEntitySpecifications(cacheableEntity = false, jsonTransformations = {JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
 public class JnEntityDisposableRecord implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityDisposableRecord.class).entityInstance;
