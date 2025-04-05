@@ -110,4 +110,10 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 
 		return asList;
 	}
+	
+	public CcpBulkItem getMainBulkItem(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
+		CcpBulkItem bulkItem = this.toBulkItems(json, operation).stream().filter(x -> x.entity.getEntityName().equals(this.entity.getEntityName())).findFirst().get();
+		return bulkItem;
+	}
+
 }

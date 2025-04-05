@@ -2,11 +2,14 @@ package com.jn.commons.entities;
 
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
+import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityDecorators;
 import com.ccp.especifications.db.utils.decorators.configurations.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityReadOnly;
 import com.jn.commons.json.transformers.JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp;
 
+@CcpEntityDecorators(decorators = CcpEntityReadOnly.class)
 @CcpEntitySpecifications(cacheableEntity = false, jsonTransformations = {JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
 public class JnEntityDisposableRecord implements CcpEntityConfigurator {
 

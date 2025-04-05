@@ -381,6 +381,8 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		return json -> operation.execute(this, json);
 	}
 
-	
-	
+	public CcpBulkItem getMainBulkItem(CcpJsonRepresentation json, CcpEntityBulkOperationType operation) {
+		CcpBulkItem bulkItem = this.toBulkItems(json, operation).stream().filter(x -> x.entity.getEntityName().equals(this.entity.getEntityName())).findFirst().get();
+		return bulkItem;
+	}
 }
