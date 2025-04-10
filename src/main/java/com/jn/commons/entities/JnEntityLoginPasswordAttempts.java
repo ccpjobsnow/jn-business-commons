@@ -10,7 +10,7 @@ import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.jn.commons.utils.JnEntityExpurgable;
 
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {JnJsonTransformerPutEmailHash.class})
 @CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurgableOptions.daily)
 public class JnEntityLoginPasswordAttempts implements CcpEntityConfigurator {
 

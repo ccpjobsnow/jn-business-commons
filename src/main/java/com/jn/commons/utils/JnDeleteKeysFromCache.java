@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.cache.CcpCacheDecorator;
+import com.ccp.jn.commons.mensageria.JnTopic;
 
-public class JnDeleteKeysFromCache implements Function<CcpJsonRepresentation, CcpJsonRepresentation>, Consumer<String[]> {
+public class JnDeleteKeysFromCache implements  JnTopic, Consumer<String[]> {
 
 	public static final JnDeleteKeysFromCache INSTANCE = new JnDeleteKeysFromCache();
 	private static final String KEYS_TO_DELETE_IN_CACHE = "keysToDeleteInCache";

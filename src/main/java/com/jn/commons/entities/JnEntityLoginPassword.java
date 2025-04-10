@@ -14,7 +14,7 @@ import com.jn.commons.utils.JnEntityExpurgable;
 
 @CcpEntityTwin(twinEntityName = "login_password_locked")
 @CcpEntityExpurgable(expurgTime = CcpEntityExpurgableOptions.monthly, expurgableEntityFactory = JnEntityExpurgable.class)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {JnJsonTransformerPutEmailHash.class
 		, JnJsonTransformerPutPasswordSecret.class
 		})
 public class JnEntityLoginPassword implements CcpEntityConfigurator {

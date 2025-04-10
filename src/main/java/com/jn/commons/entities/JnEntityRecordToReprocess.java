@@ -8,7 +8,7 @@ import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.jn.commons.json.transformers.JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp;
 
-@CcpEntitySpecifications(cacheableEntity = false, jsonTransformations = {JnJsonTransformerPutEmailHash.class, JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
+@CcpEntitySpecifications(cacheableEntity = false, stepsBeforeSaveEntity = {JnJsonTransformerPutEmailHash.class, JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
 public class JnEntityRecordToReprocess implements CcpEntityConfigurator {
 	
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityRecordToReprocess.class).entityInstance;

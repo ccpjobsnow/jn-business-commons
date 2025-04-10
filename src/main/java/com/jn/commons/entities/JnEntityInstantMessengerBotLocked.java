@@ -7,7 +7,7 @@ import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 
 
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {})
 public class JnEntityInstantMessengerBotLocked implements CcpEntityConfigurator {
 	
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityInstantMessengerBotLocked.class).entityInstance;

@@ -9,11 +9,12 @@ import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityDecor
 import com.ccp.especifications.db.utils.decorators.configurations.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
-import com.jn.commons.utils.JnAsyncBusiness;
+import com.ccp.jn.commons.business.JnAsyncBusinessNotifyError;
+import com.ccp.jn.commons.business.JnAsyncBusinessSendUserToken;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {})
 public class JnEntityEmailParametersToSend  implements CcpEntityConfigurator{
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityEmailParametersToSend.class).entityInstance;
@@ -36,11 +37,11 @@ public class JnEntityEmailParametersToSend  implements CcpEntityConfigurator{
 		List<CcpBulkItem> createBulkItems = CcpEntityConfigurator.super.toCreateBulkItems(ENTITY, 
 				"{" + "	\"email\": \"devs.jobsnow@gmail.com\"," + "	\"sender\": \"devs.jobsnow@gmail.com\","
 						+ "	\"subjectType\": \"notifyError\"," + "	\"templateId\": \""
-						+ JnAsyncBusiness.notifyError.name()		
+						+ JnAsyncBusinessNotifyError.class.getName()		
 						+ "\"" + "}",
 				"{" + "	\"sender\": \"devs.jobsnow@gmail.com\"," + "	\"subjectType\": \"sendUserToken\","
 						+ "	\"templateId\": \""
-						+ JnAsyncBusiness.sendUserToken.name()
+						+ JnAsyncBusinessSendUserToken.class.getName()
 						+ "\"," + "	\"moreParameters\": {"
 						+ "		\"linkedinAddress\": \"https://www.linkedin.com/in/onias85/\","
 						+ "		\"linkedinName\": \"Onias\","

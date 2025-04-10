@@ -10,7 +10,7 @@ import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.jn.commons.utils.JnEntityExpurgable;
 
 @CcpEntityExpurgable(expurgableEntityFactory = JnEntityExpurgable.class, expurgTime = CcpEntityExpurgableOptions.hourly)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {})
 public class JnEntityInstantMessengerMessageSent implements CcpEntityConfigurator {
 	
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityInstantMessengerMessageSent.class).entityInstance;

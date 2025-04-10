@@ -9,7 +9,7 @@ import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.jn.commons.json.transformers.JnJsonTransformerPutEmailHash;
 import com.jn.commons.json.transformers.JnJsonTransformerPutRandomTokenSecret;
 
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class, JnJsonTransformerPutRandomTokenSecret.class})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {JnJsonTransformerPutEmailHash.class, JnJsonTransformerPutRandomTokenSecret.class})
 @CcpEntityTwin(twinEntityName = "login_token_locked")
 public class JnEntityLoginToken implements CcpEntityConfigurator {
 	

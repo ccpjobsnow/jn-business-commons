@@ -12,7 +12,7 @@ import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntityTwin(twinEntityName = "jobsnow_solved_error")
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
 public class JnEntityJobsnowPenddingError implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityJobsnowPenddingError.class).entityInstance;

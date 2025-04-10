@@ -10,7 +10,7 @@ import com.ccp.especifications.db.utils.decorators.engine.CcpEntityReadOnly;
 import com.jn.commons.json.transformers.JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp;
 
 @CcpEntityDecorators(decorators = CcpEntityReadOnly.class)
-@CcpEntitySpecifications(cacheableEntity = false, jsonTransformations = {JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
+@CcpEntitySpecifications(cacheableEntity = false, stepsBeforeSaveEntity = {JnJsonTransformerPutFormattedCurrentDateAndCurrentTimeStamp.class})
 public class JnEntityDisposableRecord implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityDisposableRecord.class).entityInstance;

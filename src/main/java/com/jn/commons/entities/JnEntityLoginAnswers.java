@@ -13,7 +13,7 @@ import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
 @CcpJsonFieldsValidation(rulesClass = JnJsonValidationLoginAnswers.class)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {JnJsonTransformerPutEmailHash.class})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {JnJsonTransformerPutEmailHash.class})
 public class JnEntityLoginAnswers implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityLoginAnswers.class).entityInstance;

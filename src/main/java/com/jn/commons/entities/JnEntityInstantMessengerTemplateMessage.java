@@ -9,12 +9,12 @@ import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityDecor
 import com.ccp.especifications.db.utils.decorators.configurations.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
-import com.jn.commons.utils.JnAsyncBusiness;
+import com.ccp.jn.commons.business.JnAsyncBusinessNotifyError;
 import com.jn.commons.utils.JnEntityVersionable;
 import com.jn.commons.utils.JnLanguage;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {})
 public class JnEntityInstantMessengerTemplateMessage  implements CcpEntityConfigurator {
 
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityInstantMessengerTemplateMessage.class).entityInstance;
@@ -39,7 +39,7 @@ public class JnEntityInstantMessengerTemplateMessage  implements CcpEntityConfig
 				+ JnLanguage.portuguese.name()
 				+ "\","
 				+ "	\"templateId\": \""
-				+ JnAsyncBusiness.notifyError.name()
+				+ JnAsyncBusinessNotifyError.class.getName()
 				+ "\","
 				+ "	\"message\": \"{type}\\n\\nError Description:\n {msg}\\n\\n{stackTrace}\\n\\nCaused by:\\n{cause}\""
 				+ "}");

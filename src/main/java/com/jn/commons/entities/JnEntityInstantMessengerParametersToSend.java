@@ -9,11 +9,11 @@ import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityDecor
 import com.ccp.especifications.db.utils.decorators.configurations.CcpEntitySpecifications;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
-import com.jn.commons.utils.JnAsyncBusiness;
+import com.ccp.jn.commons.business.JnAsyncBusinessNotifyError;
 import com.jn.commons.utils.JnEntityVersionable;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
-@CcpEntitySpecifications(cacheableEntity = true, jsonTransformations = {})
+@CcpEntitySpecifications(cacheableEntity = true, stepsBeforeSaveEntity = {})
 public class JnEntityInstantMessengerParametersToSend implements CcpEntityConfigurator {
 	
 	public static final CcpEntity ENTITY = new CcpEntityFactory(JnEntityInstantMessengerParametersToSend.class).entityInstance;
@@ -36,10 +36,10 @@ public class JnEntityInstantMessengerParametersToSend implements CcpEntityConfig
 		List<CcpBulkItem> createBulkItems = CcpEntityConfigurator.super.toCreateBulkItems(ENTITY, "{"
 				+ "	\"recipient\": 751717896,"
 				+ "	\"templateId\": \""
-				+ JnAsyncBusiness.notifyError.name()
+				+ JnAsyncBusinessNotifyError.class.getName()
 				+ "\","
 				+ "	\"subjectType\": \""
-				+ JnAsyncBusiness.notifyError.name()
+				+ JnAsyncBusinessNotifyError.class.getName()
 				+ "\","
 				+ "	\"moreParameters\":{"
 				+ "		\"maxTriesToSendMessage\": 10,"
