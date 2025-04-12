@@ -2,12 +2,12 @@ package com.ccp.jn.commons.business;
 
 import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityTransferRecordToReverseEntity;
 import com.ccp.jn.commons.mensageria.JnTopic;
 import com.jn.commons.entities.JnEntityLoginSessionConflict;
 import com.jn.commons.entities.JnEntityLoginSessionValidation;
-import com.jn.commons.utils.JnCommonsExecuteBulkOperation;
 import com.jn.commons.utils.JnDeleteFromEntity;
-import com.jn.commons.utils.TransferRecordToReverseEntity;
+import com.jn.commons.utils.JnExecuteBulkOperation;
 
 public class JnAsyncBusinessExecuteLogout implements JnTopic{
 
@@ -19,9 +19,9 @@ public class JnAsyncBusinessExecuteLogout implements JnTopic{
 	@SuppressWarnings("unchecked")
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 		
-		TransferRecordToReverseEntity executeLogout = new TransferRecordToReverseEntity(JnEntityLoginSessionValidation.ENTITY, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING);
+		CcpEntityTransferRecordToReverseEntity executeLogout = JnEntityLoginSessionValidation.ENTITY.getTransferRecordToReverseEntity();
 		JnDeleteFromEntity deleteLoginSessionConflict = new JnDeleteFromEntity(JnEntityLoginSessionConflict.ENTITY);
-		JnCommonsExecuteBulkOperation.INSTANCE.
+		JnExecuteBulkOperation.INSTANCE.
 		executeSelectUnionAllThenExecuteBulkOperation(
 				json 
 				, executeLogout

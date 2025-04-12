@@ -2,6 +2,7 @@
 package com.ccp.jn.commons.business;
 
 import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.db.utils.CcpEntityCrudOperationType;
 import com.ccp.jn.commons.mensageria.JnTopic;
 import com.ccp.jn.commons.messages.JnCommonsSendMessage;
 import com.jn.commons.entities.JnEntityEmailTemplateMessage;
@@ -17,8 +18,8 @@ public class JnAsyncBusinessSendUserToken implements JnTopic{
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 		String language = json.getAsString(JnEntityEmailTemplateMessage.Fields.language.name());
-		CcpJsonRepresentation jsonPiece = JnEntityLoginToken.ENTITY.getHandledJson(json);
-		
+		CcpJsonRepresentation jsonPiece = JnEntityLoginToken.ENTITY.getTransformedJsonBeforeOperation(json, CcpEntityCrudOperationType.save);
+	
 		String topic = this.getClass().getName();
 		JnCommonsSendMessage getMessage = new JnCommonsSendMessage();
 		

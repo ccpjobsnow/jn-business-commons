@@ -2,10 +2,10 @@ package com.ccp.jn.commons.business;
 
 import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityTransferRecordToReverseEntity;
 import com.ccp.jn.commons.mensageria.JnTopic;
 import com.jn.commons.entities.JnEntityLoginToken;
-import com.jn.commons.utils.JnCommonsExecuteBulkOperation;
-import com.jn.commons.utils.TransferRecordToReverseEntity;
+import com.jn.commons.utils.JnExecuteBulkOperation;
 
 public class JnAsyncBusinessLockToken implements JnTopic {
 
@@ -19,9 +19,9 @@ public class JnAsyncBusinessLockToken implements JnTopic {
 	@SuppressWarnings("unchecked")
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 		
-		TransferRecordToReverseEntity registerLock = new TransferRecordToReverseEntity(JnEntityLoginToken.ENTITY, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING);
+		CcpEntityTransferRecordToReverseEntity registerLock = JnEntityLoginToken.ENTITY.getTransferRecordToReverseEntity();
 
-		JnCommonsExecuteBulkOperation.INSTANCE.
+		JnExecuteBulkOperation.INSTANCE.
 		executeSelectUnionAllThenExecuteBulkOperation(
 				json 
 				, registerLock

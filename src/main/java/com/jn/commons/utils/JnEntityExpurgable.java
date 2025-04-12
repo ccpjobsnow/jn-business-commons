@@ -89,7 +89,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	
 
 	private CcpJsonRepresentation populateAnExpurgableFromJson(CcpJsonRepresentation json) {
-		CcpJsonRepresentation handledJson = this.entity.getHandledJson(json);
+		CcpJsonRepresentation handledJson = this.entity.getTransformedJsonBeforeOperation(json, CcpEntityCrudOperationType.save);
 		CcpJsonRepresentation onlyExistingFields = this.entity.getOnlyExistingFields(handledJson);
 		CcpJsonRepresentation expurgableId = this.getExpurgableId(json);
 		String id = this.getPrimaryKeyValues(json).asUgglyJson();
@@ -109,7 +109,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		
 		
 		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.create);
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 
 		return true;
 	}
@@ -117,7 +117,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation json, String id) {
 
 		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.create);
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		
 		return json;
 	}
@@ -135,7 +135,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		
 		
 		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.delete);
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		
 		return json;
 	}
@@ -149,7 +149,7 @@ public final class JnEntityExpurgable extends CcpEntityDelegator implements CcpE
 		}
 		CcpJsonRepresentation json = this.getOneById(id);
 		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.delete);
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		return true;
 	}
 	

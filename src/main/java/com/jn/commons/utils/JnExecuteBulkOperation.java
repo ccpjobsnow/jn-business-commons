@@ -24,13 +24,13 @@ import com.ccp.jn.commons.actions.SaveSupportEntity;
 import com.jn.commons.entities.JnEntityRecordToReprocess;
 
 
-public class JnCommonsExecuteBulkOperation {
+public class JnExecuteBulkOperation {
 
-	public static final JnCommonsExecuteBulkOperation INSTANCE = new JnCommonsExecuteBulkOperation();
+	public static final JnExecuteBulkOperation INSTANCE = new JnExecuteBulkOperation();
 	
-	private JnCommonsExecuteBulkOperation() {}
+	private JnExecuteBulkOperation() {}
 	
-	public JnCommonsExecuteBulkOperation executeBulk(List<CcpJsonRepresentation> records, CcpEntityBulkOperationType operation, CcpEntity entity) {
+	public JnExecuteBulkOperation executeBulk(List<CcpJsonRepresentation> records, CcpEntityBulkOperationType operation, CcpEntity entity) {
 		
 		boolean emptyRecords = records.isEmpty();
 		
@@ -40,25 +40,25 @@ public class JnCommonsExecuteBulkOperation {
 		
 		List<CcpBulkItem> collect = records.stream().map(json -> entity.getMainBulkItem(json, operation)).collect(Collectors.toList());
 		
-		JnCommonsExecuteBulkOperation executeBulk = this.executeBulk(collect);
+		JnExecuteBulkOperation executeBulk = this.executeBulk(collect);
 		return executeBulk;
 	}
 	
-	public JnCommonsExecuteBulkOperation executeBulk(CcpJsonRepresentation json, CcpEntity entity, CcpEntityBulkOperationType operation) {
+	public JnExecuteBulkOperation executeBulk(CcpJsonRepresentation json, CcpEntity entity, CcpEntityBulkOperationType operation) {
 		CcpEntity twinEntity = entity.getTwinEntity();
 		CcpBulkItem bulkItem = entity.getMainBulkItem(json, operation);
 		CcpBulkItem bulkItem2 = twinEntity.getMainBulkItem(json, operation);
-		JnCommonsExecuteBulkOperation executeBulk = this.executeBulk(bulkItem, bulkItem2);
+		JnExecuteBulkOperation executeBulk = this.executeBulk(bulkItem, bulkItem2);
 		return executeBulk;
 	}
 	
-	public JnCommonsExecuteBulkOperation executeBulk(CcpBulkItem... items) {
+	public JnExecuteBulkOperation executeBulk(CcpBulkItem... items) {
 		List<CcpBulkItem> asList = Arrays.asList(items);
-		JnCommonsExecuteBulkOperation executeBulk = this.executeBulk(asList);
+		JnExecuteBulkOperation executeBulk = this.executeBulk(asList);
 		return executeBulk;
 	}
 	
-	public JnCommonsExecuteBulkOperation executeBulk(Collection<CcpBulkItem> items) {
+	public JnExecuteBulkOperation executeBulk(Collection<CcpBulkItem> items) {
 		
 		boolean emptyItems = items.isEmpty();
 		
@@ -71,21 +71,21 @@ public class JnCommonsExecuteBulkOperation {
 		for (CcpBulkItem item : items) {
 			dbBulkExecutor = dbBulkExecutor.addRecord(item);
 		}
- 		JnCommonsExecuteBulkOperation commitAndSaveErrorsAndDeleteRecordsFromCache = this.commitAndSaveErrorsAndDeleteRecordsFromCache(dbBulkExecutor);
+ 		JnExecuteBulkOperation commitAndSaveErrorsAndDeleteRecordsFromCache = this.commitAndSaveErrorsAndDeleteRecordsFromCache(dbBulkExecutor);
 		return commitAndSaveErrorsAndDeleteRecordsFromCache;
 	}
 	
-	private JnCommonsExecuteBulkOperation commitAndSaveErrorsAndDeleteRecordsFromCache(CcpDbBulkExecutor dbBulkExecutor) {
+	private JnExecuteBulkOperation commitAndSaveErrorsAndDeleteRecordsFromCache(CcpDbBulkExecutor dbBulkExecutor) {
 
 		List<CcpBulkOperationResult> allResults = dbBulkExecutor.getBulkOperationResult();
 		List<CcpBulkOperationResult> errors = allResults.stream().filter(x -> x.hasError()).collect(Collectors.toList());
 		List<CcpBulkItem> collect = errors.stream().map(x -> x.getReprocess(ReprocessMapper.INSTANCE, JnEntityRecordToReprocess.ENTITY)).collect(Collectors.toList());
 		this.executeBulk(collect);
-		JnCommonsExecuteBulkOperation deleteKeysFromCache = this.deleteKeysFromCache(allResults);
+		JnExecuteBulkOperation deleteKeysFromCache = this.deleteKeysFromCache(allResults);
 		return deleteKeysFromCache; 
 	}
 
-	private JnCommonsExecuteBulkOperation deleteKeysFromCache(List<CcpBulkOperationResult> allResults) {
+	private JnExecuteBulkOperation deleteKeysFromCache(List<CcpBulkOperationResult> allResults) {
 		Set<String> keysToDeleteInCache = new ArrayList<>(allResults).stream()
 		.filter(x -> x.hasError() == false)
 		.map(x -> x.getCacheKey())
@@ -131,12 +131,12 @@ public class JnCommonsExecuteBulkOperation {
 			boolean presentInThisUnionAll = entityToSearch.isPresentInThisUnionAll(unionAll, data);
 			
 			if(presentInThisUnionAll) {
-				Function<CcpJsonRepresentation, CcpJsonRepresentation> doAfterSavingIfRecordIsFound = handler.doAfterSavingIfRecordIsFound();
-				data = doAfterSavingIfRecordIsFound.apply(data);
+				List<Function<CcpJsonRepresentation, CcpJsonRepresentation>> doAfterSavingIfRecordIsFound = handler.doAfterSavingIfRecordIsFound();
+				data = data.getTransformedJson(doAfterSavingIfRecordIsFound);
 				continue;
 			}
-			Function<CcpJsonRepresentation, CcpJsonRepresentation> doAfterSavingIfRecordIsNotFound = handler.doAfterSavingIfRecordIsNotFound();
-			data = doAfterSavingIfRecordIsNotFound.apply(data);
+			List<Function<CcpJsonRepresentation, CcpJsonRepresentation>> doAfterSavingIfRecordIsNotFound = handler.doAfterSavingIfRecordIsNotFound();
+			data = data.getTransformedJson(doAfterSavingIfRecordIsNotFound);
 		}
 		
 		return unionAll;
@@ -176,7 +176,7 @@ public class JnCommonsExecuteBulkOperation {
 		return json;
 	}
 
-	public JnCommonsExecuteBulkOperation executeBulk(CcpJsonRepresentation json, CcpEntityBulkOperationType operation, CcpEntity...entities) {
+	public JnExecuteBulkOperation executeBulk(CcpJsonRepresentation json, CcpEntityBulkOperationType operation, CcpEntity...entities) {
 		
 		List<CcpBulkItem> items = new ArrayList<>();
  		
@@ -187,7 +187,7 @@ public class JnCommonsExecuteBulkOperation {
 			}			
 		}
 		
-		JnCommonsExecuteBulkOperation executeBulk = this.executeBulk(items);
+		JnExecuteBulkOperation executeBulk = this.executeBulk(items);
 		return executeBulk;
 	}
 }

@@ -18,7 +18,7 @@ import com.ccp.especifications.db.utils.CcpEntityCrudOperationType;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityExpurgableOptions;
 import com.ccp.especifications.mensageria.sender.CcpMensageriaSender;
 import com.jn.commons.entities.JnEntityAsyncTask;
-import com.jn.commons.utils.JnCommonsExecuteBulkOperation;
+import com.jn.commons.utils.JnExecuteBulkOperation;
 
 public class JnMensageriaSender implements Function<CcpJsonRepresentation, CcpJsonRepresentation> {
 	
@@ -35,7 +35,11 @@ public class JnMensageriaSender implements Function<CcpJsonRepresentation, CcpJs
 	public JnMensageriaSender(CcpEntity entity, CcpEntityCrudOperationType operation) {
 		this.topic = entity.getClass().getSimpleName();
 		this.operationType = operation.name();
-		
+	}
+
+	public JnMensageriaSender(CcpEntity entity, Class<?> operation) {
+		this.topic = entity.getClass().getSimpleName();
+		this.operationType = operation.getName();
 	}
 
 	public Map<String, Object> apply(Map<String, Object> map) {
@@ -92,7 +96,7 @@ public class JnMensageriaSender implements Function<CcpJsonRepresentation, CcpJs
 	public JnMensageriaSender send(CcpEntity entity, CcpJsonRepresentation... messages) {
 		List<CcpJsonRepresentation> msgs = Arrays.asList(messages).stream().map(json -> this.getMessageDetails(json)).collect(Collectors.toList());
 		List<CcpBulkItem> bulkItems = msgs.stream().filter(x -> this.canSave(x)).map(msg -> this.toBulkItem(entity, msg)).collect(Collectors.toList());
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		this.mensageriaSender.send(this.topic, msgs);
 		return this;
 	}

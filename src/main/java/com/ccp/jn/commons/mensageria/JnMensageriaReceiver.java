@@ -33,7 +33,7 @@ public class JnMensageriaReceiver {
 	
 	
 	
-	public JnMensageriaReceiver executeProcesss(
+	public JnMensageriaReceiver executeProcess(
 			CcpEntity entity,
 			String processName, 
 			CcpJsonRepresentation json,
@@ -62,17 +62,30 @@ public class JnMensageriaReceiver {
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
-		
 		if(newInstance instanceof JnTopic topic) {
 			return topic;
 		}
 		
-		if(newInstance instanceof CcpEntity entity) {
+		boolean invalidTopic = newInstance instanceof CcpEntity == false;
+	
+		if(invalidTopic) {
+			throw new JnInvalidTopic(processName);
+		}		
+		
+		CcpEntity entity = (CcpEntity)newInstance;
+		try {
+			String operation = json.getAsString(JnEntityAsyncTask.Fields.operation.name());
+			Class<?> forName = Class.forName(operation);
+			Constructor<?> constructor = forName.getConstructor(CcpEntity.class);
+			JnTopic topic = (JnTopic)constructor.newInstance(entity);
+			return topic;
+		} catch (ClassNotFoundException e) {
 			JnEntityTopic jnEntityTopic = new JnEntityTopic(entity, json);
 			return jnEntityTopic;
+		}catch (Exception e) {
+			throw new RuntimeException(e);
 		}
 		
-		throw new JnInvalidTopic(processName);
 	}
 	
 	private JnMensageriaReceiver saveResult(CcpEntity entity, CcpJsonRepresentation messageDetails, CcpJsonRepresentation response, boolean success) {

@@ -63,25 +63,25 @@ public final class JnEntityVersionable extends CcpEntityDelegator implements Ccp
 		boolean delete = this.entity.delete(id);
 		CcpJsonRepresentation json = this.entity.getOneById(id);
 		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.delete);
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		return delete;
 	}
 
 	public CcpJsonRepresentation delete(CcpJsonRepresentation json) {
 		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.delete);
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		return json;
 	}
 	
 	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation json) {
 		
 		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.create);
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		return json;
 	}
 	public CcpJsonRepresentation createOrUpdate(CcpJsonRepresentation json, String id) {
 		List<CcpBulkItem> bulkItems = this.toBulkItems(json, CcpEntityBulkOperationType.create);
-		JnCommonsExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
+		JnExecuteBulkOperation.INSTANCE.executeBulk(bulkItems);
 		return json;
 	}
 

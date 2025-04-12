@@ -3,14 +3,14 @@ package com.ccp.jn.commons.business;
 import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.utils.CcpEntity;
+import com.ccp.especifications.db.utils.decorators.engine.CcpEntityTransferRecordToReverseEntity;
 import com.ccp.jn.commons.actions.RegisterLogin;
 import com.ccp.jn.commons.actions.RemoveAttempts;
 import com.ccp.jn.commons.mensageria.JnTopic;
 import com.jn.commons.entities.JnEntityLoginPassword;
 import com.jn.commons.entities.JnEntityLoginPasswordAttempts;
 import com.jn.commons.entities.JnEntityLoginSessionValidation;
-import com.jn.commons.utils.JnCommonsExecuteBulkOperation;
-import com.jn.commons.utils.TransferRecordToReverseEntity;
+import com.jn.commons.utils.JnExecuteBulkOperation;
 
 public class JnAsyncBusinessExecuteLogin implements JnTopic {
 
@@ -23,11 +23,11 @@ public class JnAsyncBusinessExecuteLogin implements JnTopic {
 		CcpJsonRepresentation renameField = json.renameField("sessionToken", JnEntityLoginSessionValidation.Fields.token.name());
 		
 		CcpEntity twinEntity = JnEntityLoginPassword.ENTITY.getTwinEntity();
-		TransferRecordToReverseEntity executeUnlock = new TransferRecordToReverseEntity(twinEntity, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING, CcpOtherConstants.DO_NOTHING);
+		CcpEntityTransferRecordToReverseEntity executeUnlock = twinEntity.getTransferRecordToReverseEntity();
 		CcpEntity entityAttempts = JnEntityLoginPasswordAttempts.ENTITY;
 		RemoveAttempts removeAttempts = new RemoveAttempts(entityAttempts);
 
-		JnCommonsExecuteBulkOperation.INSTANCE.
+		JnExecuteBulkOperation.INSTANCE.
 		executeSelectUnionAllThenExecuteBulkOperation(
 				renameField 
 				, executeUnlock
