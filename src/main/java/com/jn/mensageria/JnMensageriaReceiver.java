@@ -62,6 +62,7 @@ public class JnMensageriaReceiver {
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
+		
 		if(newInstance instanceof JnTopic topic) {
 			return topic;
 		}
@@ -73,20 +74,10 @@ public class JnMensageriaReceiver {
 		}		
 		
 		CcpEntity entity = (CcpEntity)newInstance;
-		try {
-			String operation = json.getAsString(JnEntityAsyncTask.Fields.operation.name());
-			Class<?> forName = Class.forName(operation);
-			Constructor<?> constructor = forName.getConstructor(CcpEntity.class);
-			JnTopic topic = (JnTopic)constructor.newInstance(entity);
-			return topic;
-		} catch (ClassNotFoundException e) {
-			String operationType = json.getAsString(JnEntityAsyncTask.Fields.operationType.name());
-			JnMensageriaOperationType valueOf = JnMensageriaOperationType.valueOf(operationType);
-			JnTopic jnEntityTopic = valueOf.getTopicType(entity);
-			return jnEntityTopic;
-		}catch (Exception e) {
-			throw new RuntimeException(e);
-		}
+		String operationType = json.getAsString(JnEntityAsyncTask.Fields.operationType.name());
+		JnMensageriaOperationType valueOf = JnMensageriaOperationType.valueOf(operationType);
+		JnTopic jnEntityTopic = valueOf.getTopicType(entity);
+		return jnEntityTopic;
 		
 	}
 	
