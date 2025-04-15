@@ -8,9 +8,9 @@ import java.util.function.Consumer;
 import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.cache.CcpCacheDecorator;
-import com.jn.mensageria.JnTopic;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 
-public class JnDeleteKeysFromCache implements  JnTopic, Consumer<String[]> {
+public class JnDeleteKeysFromCache implements  CcpTopic, Consumer<String[]> {
 
 	public static final JnDeleteKeysFromCache INSTANCE = new JnDeleteKeysFromCache();
 	private static final String KEYS_TO_DELETE_IN_CACHE = "keysToDeleteInCache";

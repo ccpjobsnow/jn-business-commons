@@ -1,10 +1,10 @@
-package com.jn.business;
+package com.jn.business.commons;
 
 import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.jn.entities.JnEntityInstantMessengerParametersToSend;
-import com.jn.mensageria.JnTopic;
 
-public class JnBusinessTryToSendInstantMessage implements JnTopic {
+public class JnBusinessTryToSendInstantMessage implements CcpTopic {
 	
 	public static final JnBusinessTryToSendInstantMessage INSTANCE = new JnBusinessTryToSendInstantMessage();
 	

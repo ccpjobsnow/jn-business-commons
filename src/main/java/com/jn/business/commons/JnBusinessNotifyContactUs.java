@@ -1,11 +1,11 @@
-package com.jn.business;
+package com.jn.business.commons;
 
 import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.jn.entities.JnEntityContactUs;
-import com.jn.mensageria.JnTopic;
 import com.jn.messages.JnSendMessage;
 
-public class JnBusinessNotifyContactUs implements JnTopic{
+public class JnBusinessNotifyContactUs implements CcpTopic{
 
 	public static final JnBusinessNotifyContactUs INSTANCE = new JnBusinessNotifyContactUs();
 	

@@ -6,11 +6,12 @@ import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.crud.CcpGetEntityId;
 import com.ccp.especifications.db.utils.CcpEntityCrudOperationType;
-import com.jn.business.JnBusinessEvaluateAttempts;
-import com.jn.business.JnBusinessExecuteLogin;
-import com.jn.business.JnBusinessExecuteLogout;
-import com.jn.business.JnBusinessSendUserToken;
-import com.jn.business.JnBusinessUpdatePassword;
+import com.ccp.especifications.mensageria.receiver.CcpBulkHandlers;
+import com.jn.business.login.JnBusinessEvaluateAttempts;
+import com.jn.business.login.JnBusinessExecuteLogin;
+import com.jn.business.login.JnBusinessExecuteLogout;
+import com.jn.business.login.JnBusinessSendUserToken;
+import com.jn.business.login.JnBusinessUpdatePassword;
 import com.jn.entities.JnEntityLoginAnswers;
 import com.jn.entities.JnEntityLoginEmail;
 import com.jn.entities.JnEntityLoginPassword;
@@ -21,7 +22,6 @@ import com.jn.entities.JnEntityLoginStats;
 import com.jn.entities.JnEntityLoginToken;
 import com.jn.entities.JnEntityLoginTokenAttempts;
 import com.jn.json.transformers.JnJsonTransformerPutRandomTokenHash;
-import com.jn.mensageria.JnBulkHandlers;
 import com.jn.mensageria.JnMensageriaSender;
 import com.jn.status.login.JnStatusCreateLoginEmail;
 import com.jn.status.login.JnStatusCreateLoginToken;
@@ -40,7 +40,7 @@ public class JnServiceLogin{
 	
 	public CcpJsonRepresentation executeLogin(CcpJsonRepresentation json){
 		
-		JnMensageriaSender lockPassword = new JnMensageriaSender(JnEntityLoginPassword.ENTITY, JnBulkHandlers.transferToReverseEntity);
+		JnMensageriaSender lockPassword = new JnMensageriaSender(JnEntityLoginPassword.ENTITY, CcpBulkHandlers.transferToReverseEntity);
 		JnMensageriaSender executeLogin = new JnMensageriaSender(JnBusinessExecuteLogin.INSTANCE);
 		Function<CcpJsonRepresentation, CcpJsonRepresentation> evaluateTries =
 				new JnBusinessEvaluateAttempts(
@@ -159,7 +159,7 @@ public class JnServiceLogin{
 	}
 
 	public CcpJsonRepresentation savePassword(CcpJsonRepresentation json){
-		JnMensageriaSender lockToken = new JnMensageriaSender(JnEntityLoginToken.ENTITY, JnBulkHandlers.transferToReverseEntity);
+		JnMensageriaSender lockToken = new JnMensageriaSender(JnEntityLoginToken.ENTITY, CcpBulkHandlers.transferToReverseEntity);
 		JnMensageriaSender updatePassword = new JnMensageriaSender(JnBusinessUpdatePassword.INSTANCE);
 		Function<CcpJsonRepresentation, CcpJsonRepresentation> evaluateAttempts =
 				new JnBusinessEvaluateAttempts(

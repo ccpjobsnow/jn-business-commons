@@ -1,16 +1,21 @@
 package com.jn.mensageria;
 
-import java.lang.reflect.Constructor;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.db.bulk.CcpExecuteBulkOperation;
 import com.ccp.especifications.db.utils.CcpEntity;
+import com.ccp.especifications.mensageria.receiver.CcpMensageriaReceiver;
+import com.jn.db.bulk.JnExecuteBulkOperation;
 import com.jn.entities.JnEntityAsyncTask;
-import com.jn.exceptions.JnInvalidTopic;
+import com.jn.utils.JnDeleteKeysFromCache;
 
-public class JnMensageriaReceiver {
+public class JnMensageriaReceiver extends CcpMensageriaReceiver{
 	
-	private JnMensageriaReceiver() {}
+	private JnMensageriaReceiver() {
+		super(JnEntityAsyncTask.Fields.operationType.name(), JnEntityAsyncTask.Fields.operation.name());
+	}
 	
 	public static final JnMensageriaReceiver INSTANCE = new JnMensageriaReceiver();
 	
@@ -50,37 +55,6 @@ public class JnMensageriaReceiver {
 		}
 	}
 	
-	public JnTopic getProcess(String processName, CcpJsonRepresentation json){
-		
-		Object newInstance;
-
-		try {
-			Class<?> forName = Class.forName(processName);
-			Constructor<?> constructor = forName.getConstructor();
-			constructor.setAccessible(true);
-			newInstance = constructor.newInstance();
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-		
-		if(newInstance instanceof JnTopic topic) {
-			return topic;
-		}
-		
-		boolean invalidTopic = newInstance instanceof CcpEntity == false;
-	
-		if(invalidTopic) {
-			throw new JnInvalidTopic(processName);
-		}		
-		
-		CcpEntity entity = (CcpEntity)newInstance;
-		String operationType = json.getAsString(JnEntityAsyncTask.Fields.operationType.name());
-		JnMensageriaOperationType valueOf = JnMensageriaOperationType.valueOf(operationType);
-		JnTopic jnEntityTopic = valueOf.getTopicType(entity);
-		return jnEntityTopic;
-		
-	}
-	
 	private JnMensageriaReceiver saveResult(CcpEntity entity, CcpJsonRepresentation messageDetails, CcpJsonRepresentation response, boolean success) {
 		Long finished = System.currentTimeMillis();
 		CcpJsonRepresentation oneById = entity.getOneById(messageDetails);
@@ -93,6 +67,14 @@ public class JnMensageriaReceiver {
 				.put(JnEntityAsyncTask.Fields.success.name(), success);
 		entity.createOrUpdate(processResult);
 		return this;
+	}
+
+	public CcpExecuteBulkOperation getExecuteBulkOperation() {
+		return JnExecuteBulkOperation.INSTANCE;
+	}
+
+	public Consumer<String[]> getFunctionToDeleteKeysInTheCache() {
+		return JnDeleteKeysFromCache.INSTANCE;
 	}
 
 }

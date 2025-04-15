@@ -1,16 +1,16 @@
 
-package com.jn.business;
+package com.jn.business.login;
 
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.utils.CcpEntityCrudOperationType;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.jn.entities.JnEntityEmailTemplateMessage;
 import com.jn.entities.JnEntityInstantMessengerMessageSent;
 import com.jn.entities.JnEntityInstantMessengerParametersToSend;
 import com.jn.entities.JnEntityLoginToken;
-import com.jn.mensageria.JnTopic;
 import com.jn.messages.JnSendMessage;
 
-public class JnBusinessSendUserToken implements JnTopic{
+public class JnBusinessSendUserToken implements CcpTopic{
 	
 	public static final JnBusinessSendUserToken INSTANCE = new JnBusinessSendUserToken();
 	

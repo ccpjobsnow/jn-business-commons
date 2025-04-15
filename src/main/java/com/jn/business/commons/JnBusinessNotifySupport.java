@@ -1,4 +1,4 @@
-package com.jn.business;
+package com.jn.business.commons;
 
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.decorators.CcpStringDecorator;

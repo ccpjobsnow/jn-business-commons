@@ -1,12 +1,12 @@
-package com.jn.business;
+package com.jn.business.commons;
 
 import com.ccp.decorators.CcpJsonRepresentation;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.jn.entities.JnEntityJobsnowError;
-import com.jn.mensageria.JnTopic;
 import com.jn.messages.JnSendMessage;
 import com.jn.messages.JnSendMessageIgnoringProcessErrors;
 
-public class JnBusinessNotifyError implements JnTopic{
+public class JnBusinessNotifyError implements CcpTopic{
 
 	public static final JnBusinessNotifyError INSTANCE = new JnBusinessNotifyError();
 	

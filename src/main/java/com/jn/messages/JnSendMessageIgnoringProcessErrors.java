@@ -4,8 +4,8 @@ import java.util.function.Function;
 
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.utils.CcpEntity;
-import com.jn.business.JnBusinessNotifyError;
-import com.jn.business.JnBusinessNotifySupport;
+import com.jn.business.commons.JnBusinessNotifyError;
+import com.jn.business.commons.JnBusinessNotifySupport;
 import com.jn.entities.JnEntityJobsnowWarning;
 
 public class JnSendMessageIgnoringProcessErrors extends JnSendMessage{

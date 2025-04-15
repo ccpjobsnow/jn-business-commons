@@ -1,18 +1,19 @@
-package com.jn.business;
+package com.jn.business.login;
 
 import com.ccp.constantes.CcpOtherConstants;
 import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.bulk.handlers.CcpBulkHandlerDelete;
 import com.ccp.especifications.db.bulk.handlers.CcpBulkHandlerTransferRecordToReverseEntity;
 import com.ccp.especifications.db.utils.CcpEntity;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.jn.db.bulk.JnExecuteBulkOperation;
 import com.jn.db.bulk.handlers.JnBulkHandlerRegisterLogin;
 import com.jn.entities.JnEntityLoginPassword;
 import com.jn.entities.JnEntityLoginPasswordAttempts;
 import com.jn.entities.JnEntityLoginSessionValidation;
-import com.jn.mensageria.JnTopic;
+import com.jn.utils.JnDeleteKeysFromCache;
 
-public class JnBusinessExecuteLogin implements JnTopic {
+public class JnBusinessExecuteLogin implements CcpTopic {
 
 	public static final JnBusinessExecuteLogin INSTANCE = new JnBusinessExecuteLogin();
 	
@@ -30,6 +31,7 @@ public class JnBusinessExecuteLogin implements JnTopic {
 		JnExecuteBulkOperation.INSTANCE.
 		executeSelectUnionAllThenExecuteBulkOperation(
 				renameField 
+				,JnDeleteKeysFromCache.INSTANCE
 				, executeUnlock
 				, removeAttempts
 				, JnBulkHandlerRegisterLogin.INSTANCE

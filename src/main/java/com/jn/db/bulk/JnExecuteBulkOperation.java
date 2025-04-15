@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -15,6 +16,7 @@ import com.ccp.especifications.db.bulk.CcpBulkItem;
 import com.ccp.especifications.db.bulk.CcpBulkOperationResult;
 import com.ccp.especifications.db.bulk.CcpDbBulkExecutor;
 import com.ccp.especifications.db.bulk.CcpEntityBulkOperationType;
+import com.ccp.especifications.db.bulk.CcpExecuteBulkOperation;
 import com.ccp.especifications.db.bulk.handlers.CcpBulkHandlerSave;
 import com.ccp.especifications.db.bulk.handlers.CcpBulkHandlerSaveTwin;
 import com.ccp.especifications.db.crud.CcpCrud;
@@ -25,7 +27,7 @@ import com.jn.entities.JnEntityRecordToReprocess;
 import com.jn.utils.JnDeleteKeysFromCache;
 
 
-public class JnExecuteBulkOperation {
+public class JnExecuteBulkOperation implements CcpExecuteBulkOperation{
 
 	public static final JnExecuteBulkOperation INSTANCE = new JnExecuteBulkOperation();
 	
@@ -109,11 +111,11 @@ public class JnExecuteBulkOperation {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public CcpSelectUnionAll executeSelectUnionAllThenExecuteBulkOperation(CcpJsonRepresentation json,  CcpHandleWithSearchResultsInTheEntity<List<CcpBulkItem>> ... handlers) {
+	public CcpSelectUnionAll executeSelectUnionAllThenExecuteBulkOperation(CcpJsonRepresentation json,  Consumer<String[]> functionToDeleteKeysInTheCache, CcpHandleWithSearchResultsInTheEntity<List<CcpBulkItem>> ... handlers) {
 		Set<CcpEntity> collect = Arrays.asList(handlers).stream().map(x -> x.getEntityToSearch()).collect(Collectors.toSet());
 		CcpEntity[] array = collect.toArray(new CcpEntity[collect.size()]);
 		CcpCrud crud = CcpDependencyInjection.getDependency(CcpCrud.class);
-		CcpSelectUnionAll unionAll = crud.unionAll(json, JnDeleteKeysFromCache.INSTANCE, array);
+		CcpSelectUnionAll unionAll = crud.unionAll(json, functionToDeleteKeysInTheCache, array);
 		
 		Set<CcpBulkItem> all = new HashSet<>();
 		
@@ -158,7 +160,7 @@ public class JnExecuteBulkOperation {
 				saveSupportEntity
 		};
 		
-		CcpSelectUnionAll result = this.executeSelectUnionAllThenExecuteBulkOperation(json, array);
+		CcpSelectUnionAll result = this.executeSelectUnionAllThenExecuteBulkOperation(json, JnDeleteKeysFromCache.INSTANCE, array);
 		
 		boolean isPresentInMainEntity = mainEntity.isPresentInThisUnionAll(result, json);
 		

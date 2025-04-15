@@ -12,8 +12,8 @@ import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityTrans
 import com.ccp.especifications.db.utils.decorators.configurations.CcpIgnoreFieldsValidation;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
-import com.jn.business.JnBusinessNotifyError;
-import com.jn.business.JnBusinessSendUserToken;
+import com.jn.business.commons.JnBusinessNotifyError;
+import com.jn.business.login.JnBusinessSendUserToken;
 import com.jn.entities.decorators.JnEntityVersionable;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)

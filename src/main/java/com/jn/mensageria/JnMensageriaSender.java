@@ -16,6 +16,9 @@ import com.ccp.especifications.db.bulk.CcpEntityBulkOperationType;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityCrudOperationType;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityExpurgableOptions;
+import com.ccp.especifications.mensageria.receiver.CcpBulkHandlers;
+import com.ccp.especifications.mensageria.receiver.CcpMensageriaOperationType;
+import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.ccp.especifications.mensageria.sender.CcpMensageriaSender;
 import com.jn.db.bulk.JnExecuteBulkOperation;
 import com.jn.entities.JnEntityAsyncTask;
@@ -28,20 +31,20 @@ public class JnMensageriaSender implements Function<CcpJsonRepresentation, CcpJs
 	private final String operation;
 	private final String topic;
 	
-	public JnMensageriaSender(JnTopic topic) {
+	public JnMensageriaSender(CcpTopic topic) {
 		this.topic = topic.getClass().getSimpleName();
 		this.operation = CcpEntityCrudOperationType.none.name();
-		this.operationType = JnMensageriaOperationType.none.name();
+		this.operationType = CcpMensageriaOperationType.none.name();
 	}
 
 	public JnMensageriaSender(CcpEntity entity, CcpEntityCrudOperationType operation) {
-		this.operationType = JnMensageriaOperationType.entityCrud.name();
+		this.operationType = CcpMensageriaOperationType.entityCrud.name();
 		this.topic = entity.getClass().getSimpleName();
 		this.operation = operation.name();
 	}
 
-	public JnMensageriaSender(CcpEntity entity, JnBulkHandlers operation) {
-		this.operationType = JnMensageriaOperationType.entityBulkHandler.name();
+	public JnMensageriaSender(CcpEntity entity, CcpBulkHandlers operation) {
+		this.operationType = CcpMensageriaOperationType.entityBulkHandler.name();
 		this.topic = entity.getClass().getSimpleName();
 		this.operation = operation.name();
 	}
@@ -93,7 +96,7 @@ public class JnMensageriaSender implements Function<CcpJsonRepresentation, CcpJs
 	}
 	
 	private boolean canSave(CcpJsonRepresentation x) {
-		JnTopic process = JnMensageriaReceiver.INSTANCE.getProcess(this.topic, x);
+		CcpTopic process = JnMensageriaReceiver.INSTANCE.getProcess(this.topic, x);
 		boolean canSave = process.canSave();
 		return canSave;
 	}

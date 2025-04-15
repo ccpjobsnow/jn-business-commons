@@ -1,4 +1,4 @@
-package com.jn.business;
+package com.jn.business.commons;
 
 import java.util.function.Function;
 

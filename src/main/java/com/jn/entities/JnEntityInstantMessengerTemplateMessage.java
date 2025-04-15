@@ -12,7 +12,7 @@ import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityTrans
 import com.ccp.especifications.db.utils.decorators.configurations.CcpIgnoreFieldsValidation;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
-import com.jn.business.JnBusinessNotifyError;
+import com.jn.business.commons.JnBusinessNotifyError;
 import com.jn.entities.decorators.JnEntityVersionable;
 import com.jn.utils.JnLanguage;
 
