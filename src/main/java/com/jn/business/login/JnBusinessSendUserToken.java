@@ -2,7 +2,6 @@
 package com.jn.business.login;
 
 import com.ccp.decorators.CcpJsonRepresentation;
-import com.ccp.especifications.db.utils.CcpEntityCrudOperationType;
 import com.ccp.especifications.mensageria.receiver.CcpTopic;
 import com.jn.entities.JnEntityEmailTemplateMessage;
 import com.jn.entities.JnEntityInstantMessengerMessageSent;
@@ -18,7 +17,7 @@ public class JnBusinessSendUserToken implements CcpTopic{
 	
 	public CcpJsonRepresentation apply(CcpJsonRepresentation json) {
 		String language = json.getAsString(JnEntityEmailTemplateMessage.Fields.language.name());
-		CcpJsonRepresentation jsonPiece = JnEntityLoginToken.ENTITY.getTransformedJsonBeforeOperation(json, CcpEntityCrudOperationType.save);
+		CcpJsonRepresentation jsonPiece = JnEntityLoginToken.ENTITY.getTransformedJsonBeforeAnyCrudOperations(json);
 	
 		String topic = this.getClass().getName();
 		JnSendMessage getMessage = new JnSendMessage();

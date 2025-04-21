@@ -1,5 +1,9 @@
 package com.jn.entities;
 
+import java.util.function.Function;
+
+import com.ccp.constantes.CcpOtherConstants;
+import com.ccp.decorators.CcpJsonRepresentation;
 import com.ccp.especifications.db.utils.CcpEntity;
 import com.ccp.especifications.db.utils.CcpEntityField;
 import com.ccp.especifications.db.utils.decorators.configurations.CcpEntityDecorators;
@@ -10,15 +14,15 @@ import com.ccp.especifications.db.utils.decorators.configurations.CcpIgnoreField
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityConfigurator;
 import com.ccp.especifications.db.utils.decorators.engine.CcpEntityFactory;
 import com.jn.entities.decorators.JnEntityVersionable;
-import com.jn.json.fields.validations.JnJsonFieldsValidationLoginAnswers;
-import com.jn.json.transformers.JnJsonTransformerPutEmailHash;
+import com.jn.json.transformers.JnDefaultEntityFields;
 
 @CcpEntityDecorators(decorators = JnEntityVersionable.class)
 @CcpEntitySpecifications(
-		inactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class)),
-		reactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class)),
-		delete = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {}, classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class),
-	    save = @CcpEntityOperationSpecification(afterOperation = {}, beforeOperation = {JnJsonTransformerPutEmailHash.class}, classWithFieldsValidationsRules = JnJsonFieldsValidationLoginAnswers.class),
+		classWithFieldsValidationsRules = CcpIgnoreFieldsValidation.class,
+		inactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {})),
+		reactivate = @CcpEntityTransferOperationEspecification(whenRecordToTransferIsFound = @CcpEntityOperationSpecification(afterOperation = {}), whenRecordToTransferIsNotFound = @CcpEntityOperationSpecification(afterOperation = {})),
+		delete = @CcpEntityOperationSpecification(afterOperation = {}),
+	    save = @CcpEntityOperationSpecification(afterOperation = {}),
 		cacheableEntity = true
 )
 public class JnEntityLoginAnswers implements CcpEntityConfigurator {
@@ -31,8 +35,19 @@ public class JnEntityLoginAnswers implements CcpEntityConfigurator {
 		
 		private final boolean primaryKey;
 
+		private final Function<CcpJsonRepresentation, CcpJsonRepresentation> transformer;
+		
 		private Fields(boolean primaryKey) {
+			this(primaryKey, CcpOtherConstants.DO_NOTHING);
+		}
+
+		private Fields(boolean primaryKey, Function<CcpJsonRepresentation, CcpJsonRepresentation> transformer) {
+			this.transformer = transformer;
 			this.primaryKey = primaryKey;
+		}
+		
+		public Function<CcpJsonRepresentation, CcpJsonRepresentation> getTransformer() {
+			return this.transformer == CcpOtherConstants.DO_NOTHING ? JnDefaultEntityFields.getTransformer(this) : this.transformer;
 		}
 		public boolean isPrimaryKey() {
 			return this.primaryKey;
